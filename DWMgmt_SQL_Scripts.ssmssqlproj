@@ -1,0 +1,1474 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DWMgmt_SQL_Scripts">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="CORRUSCANT\IMPERIAL_SENATE:CORRUSCANT\fdpugh">
+          <Created>2016-04-29T23:46:50.9697333-06:00</Created>
+          <Type>SQL</Type>
+          <Server>CORRUSCANT\IMPERIAL_SENATE</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>DWMgmt</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="CAT.LNK_0100_0200_Server_Databases.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_0100_0200_Server_Databases.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_0200_0205_Database_Maintenance_Links.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_0200_0205_Database_Maintenance_Links.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_0204_0300_Schema_Binding.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_0204_0300_Schema_Binding.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_0300_0300_Object_Dependencies.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_0300_0300_Object_Dependencies.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_0300_0400_Object_Column_Collection.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_0300_0400_Object_Column_Collection.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_0300_0500_Object_Parameter_Collection.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_0300_0500_Object_Parameter_Collection.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_0300_0600_Object_Code_Sections.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_0300_0600_Object_Code_Sections.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_T500_Peers.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_T500_Peers.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_Tier1_Peers.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_Tier1_Peers.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_Tier2_Peers.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_Tier2_Peers.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_Tier3_Peers.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_Tier3_Peers.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.LNK_Tier4_Peers.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.LNK_Tier4_Peers.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_000_Full_Server_Scan.StoredProcedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_000_Full_Server_Scan.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_001_SERVER_CENSUS.StoredProcedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_001_SERVER_CENSUS.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_002_DATABASE_CENSUS.StoredProcedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_002_DATABASE_CENSUS.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_003_CENTRAL_REGISTRY_PROCESS.StoredProcedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_003_CENTRAL_REGISTRY_PROCESS.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_004_GLOBAL_METRIC_CAPTURE_DRIVER.StoredProcedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_004_GLOBAL_METRIC_CAPTURE_DRIVER.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_005_OBJECT_METRIC_CAPTURE_DRIVER.StoredProcedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_005_OBJECT_METRIC_CAPTURE_DRIVER.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_006_CLEAR_INVENTORY.StoredProcedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_006_CLEAR_INVENTORY.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_015_Index_Maintenance_Switch.StoredProcedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_015_Index_Maintenance_Switch.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_0901_Table_Create_Scripter.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_0901_Table_Create_Scripter.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_DataDiver_2022.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_DataDiver_2022.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_Load_Registry_Defaults.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_Load_Registry_Defaults.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.MP_LockPick.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.MP_LockPick.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0100_Server_Registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0100_Server_Registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0101_Linked_Server_Settings.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0101_Linked_Server_Settings.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0102_Publication_Replication_Server_Settings.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0102_Publication_Replication_Server_Settings.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0103_Server_Providers.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0103_Server_Providers.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0200_Database_Registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0200_Database_Registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0201_Database_Extended_Properties_A.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0201_Database_Extended_Properties_A.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0202_Database_Extended_Properties_B.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0202_Database_Extended_Properties_B.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0203_Database_files.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0203_Database_files.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0204_Database_Schemas.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0204_Database_Schemas.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0205_Database_Maintenance_Properties.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0205_Database_Maintenance_Properties.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0300_Object_registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0300_Object_registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0301_Index_Details.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0301_Index_Details.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0302_Foreign_Key_Details.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0302_Foreign_Key_Details.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0400_Column_registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0400_Column_registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0401_Column_Properties.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0401_Column_Properties.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0402_Column_Index_Details.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0402_Column_Index_Details.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0500_Parameter_Registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0500_Parameter_Registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0501_Parameter_Properties.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0501_Parameter_Properties.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.REG_0600_Object_Code_Library.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.REG_0600_Object_Code_Library.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0100_Object_Detail_Lookup.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0100_Object_Detail_Lookup.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0200_Tier_Inventory_Summary.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0200_Tier_Inventory_Summary.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0300_Object_Lookup.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0300_Object_Lookup.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0301_Data_Footprint.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0301_Data_Footprint.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0303_Index_Coverage.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0303_Index_Coverage.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0304_Constraint_Enforcement.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0304_Constraint_Enforcement.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0306_Referencing_Code.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0306_Referencing_Code.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0334_Relational_Integrity.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0334_Relational_Integrity.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0350_Full_Object_Data_Profile.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0350_Full_Object_Data_Profile.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.RPT_0354_Data_Quality_Overview.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.RPT_0354_Data_Quality_Overview.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.Schema.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.Schema.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.SUB_0300_Database_Object_Utilization.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.SUB_0300_Database_Object_Utilization.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.SUB_0350_Index_Metric_Capture_Driver.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.SUB_0350_Index_Metric_Capture_Driver.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.SUB_0354_Mass_Value_Summary.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.SUB_0354_Mass_Value_Summary.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.SUB_0440_Stats_Metric_Capture.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.SUB_0440_Stats_Metric_Capture.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.SUB_0445_Pruning_Stats.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.SUB_0445_Pruning_Stats.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.TRK_0203_Database_File_Changes.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.TRK_0203_Database_File_Changes.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.TRK_0300_Object_Utiliztion_Metrics.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.TRK_0300_Object_Utiliztion_Metrics.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.TRK_0350_Object_Index_Metrics.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.TRK_0350_Object_Index_Metrics.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.TRK_0400_Column_Metrics.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.TRK_0400_Column_Metrics.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.TRK_0454_Column_Metrics.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.TRK_0454_Column_Metrics.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.TRK_SSIS_Import_Audit.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.TRK_SSIS_Import_Audit.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.TRK_SSIS_Import_Errors.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.TRK_SSIS_Import_Errors.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VH_0100_Server_Database_Reference.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_0100_Server_Database_Reference.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VH_0200_Column_Tier_Latches.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_0200_Column_Tier_Latches.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VH_0300_Full_Object_Map.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_0300_Full_Object_Map.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VH_Tier1_Full_Historic.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_Tier1_Full_Historic.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VH_Tier2_Full_Historic.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_Tier2_Full_Historic.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VH_Tier3_Full_Historic.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_Tier3_Full_Historic.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VH_Tier4_Full_Historic.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_Tier4_Full_Historic.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0100_Server_Database_Reference.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0100_Server_Database_Reference.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0200_Column_Tier_Latches.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0200_Column_Tier_Latches.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0201_Schema_Inventory_Core.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0201_Schema_Inventory_Core.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0205_DB_Maintenance_Plan.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0205_DB_Maintenance_Plan.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0300_Full_Object_Map.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0300_Full_Object_Map.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0330_Object_Dependencies.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0330_Object_Dependencies.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0343_Index_Column_Latches.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0343_Index_Column_Latches.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0344_Constraint_Column_Latches.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0344_Constraint_Column_Latches.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0345_Foreign_Key_Column_Latches.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0345_Foreign_Key_Column_Latches.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0350_Index_Integrity_Report.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0350_Index_Integrity_Report.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0354_Object_Data_Profile.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0354_Object_Data_Profile.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0360_Object_Code_Reference.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0360_Object_Code_Reference.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0361_Code_Criteria_Reference.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0361_Code_Criteria_Reference.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0362_Code_Source_Reference.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0362_Code_Source_Reference.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_1454_Data_Model_Overview.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_1454_Data_Model_Overview.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_Tier1_Full_Current.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_Tier1_Full_Current.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_Tier2_Full_Current.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_Tier2_Full_Current.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_Tier3_Full_Current.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_Tier3_Full_Current.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_Tier4_Full_Current.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_Tier4_Full_Current.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VT_0102_Database_File_Size_Tracking.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VT_0102_Database_File_Size_Tracking.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VT_0241_Schema_Inventory_Tracking.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VT_0241_Schema_Inventory_Tracking.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VT_0300_Object_Utilization_Vectors.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VT_0300_Object_Utilization_Vectors.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VT_0301_Dropped_Objects_Last_Seven_Days.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VT_0301_Dropped_Objects_Last_Seven_Days.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VT_0302_New_Objects_Last_Seven_Days.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VT_0302_New_Objects_Last_Seven_Days.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VT_0331_Table_Disparity.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VT_0331_Table_Disparity.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CORRUSCANT DWMgmt_Agent.User.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CORRUSCANT DWMgmt_Agent.User.sql</FullPath>
+        </FileNode>
+        <FileNode Name="dbo.Split.UserDefinedFunction.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>dbo.Split.UserDefinedFunction.sql</FullPath>
+        </FileNode>
+        <FileNode Name="dbo.SQL_Module_Intake_Stack.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>dbo.SQL_Module_Intake_Stack.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="dbo.StatementInsert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>dbo.StatementInsert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="dbo.SUB_0998_DBCC_SHOW_CONTIG.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>dbo.SUB_0998_DBCC_SHOW_CONTIG.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="dbo.SUB_0999_DBCC_Show_Stats.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>dbo.SUB_0999_DBCC_Show_Stats.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="dbo.TXT_String_Content_Intake_Stack.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>dbo.TXT_String_Content_Intake_Stack.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DIM.Date.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DIM.Date.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DIM.Schema.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DIM.Schema.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DWMgmt.Database.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DWMgmt.Database.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DWMgmt_Interserver_Agent.User.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DWMgmt_Interserver_Agent.User.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ECO.LNK_1100_1101_Schema_Namespaces.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ECO.LNK_1100_1101_Schema_Namespaces.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ECO.LNK_1100_1102_Schema_Heirarchy.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ECO.LNK_1100_1102_Schema_Heirarchy.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ECO.LNK_1100_1104_Node_Properties.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ECO.LNK_1100_1104_Node_Properties.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ECO.REG_1100_XML_Schema_Registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ECO.REG_1100_XML_Schema_Registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ECO.REG_1101_XML_Namespaces.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ECO.REG_1101_XML_Namespaces.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ECO.REG_1102_XML_Nodes.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ECO.REG_1102_XML_Nodes.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ECO.REG_1103_XML_Node_Properties.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ECO.REG_1103_XML_Node_Properties.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ECO.REG_1104_XML_Property_Values.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ECO.REG_1104_XML_Property_Values.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ECO.Schema.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ECO.Schema.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.CUR_DB_Collection_Currator.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.CUR_DB_Collection_Currator.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.CUR_Txt_Alphabetix.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.CUR_Txt_Alphabetix.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.CUR_Txt_GlyphStripper.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.CUR_Txt_GlyphStripper.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.CUR_TXT_StringMapper.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.CUR_TXT_StringMapper.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.DOC_Code_Control_Words.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.DOC_Code_Control_Words.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.DOC_File_Delimeters.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.DOC_File_Delimeters.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.DOC_Version_Editions.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.DOC_Version_Editions.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.DOC_Version_Generes.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.DOC_Version_Generes.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.DOC_Version_Series.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.DOC_Version_Series.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.External_String_Intake_Stack.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.External_String_Intake_Stack.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.GlyphList.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.GlyphList.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.HSH_Collection_Alphabet.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.HSH_Collection_Alphabet.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.HSH_Collection_Documents.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.HSH_Collection_Documents.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.HSH_Collection_Glyphs.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.HSH_Collection_Glyphs.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.HSH_Collection_Heirarchy.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.HSH_Collection_Heirarchy.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.HSH_Collection_Lexicon.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.HSH_Collection_Lexicon.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.HSH_Collection_Source_Catalog.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.HSH_Collection_Source_Catalog.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.HSH_Phrases.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.HSH_Phrases.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.HSH_Word_Categories.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.HSH_Word_Categories.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.Internal_String_Intake_Stack.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.Internal_String_Intake_Stack.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.Levenshtein.UserDefinedFunction.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.Levenshtein.UserDefinedFunction.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.LKP_Key_Value_Map.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.LKP_Key_Value_Map.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.MP_Library_Content_Collection_Processing.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.MP_Library_Content_Collection_Processing.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.MP_Load_Library_Defaults.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.MP_Load_Library_Defaults.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.REG_Alphabet.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.REG_Alphabet.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.REG_Categories.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.REG_Categories.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.REG_Collections.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.REG_Collections.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.REG_Dictionary.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.REG_Dictionary.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.REG_Documents.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.REG_Documents.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.REG_Glyphs.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.REG_Glyphs.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.REG_Sources.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.REG_Sources.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.Schema.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.Schema.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.Splitter.UserDefinedFunction.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.Splitter.UserDefinedFunction.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.SQL_010_Module_Logging.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.SQL_010_Module_Logging.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.SQL_012_Shredder.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.SQL_012_Shredder.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.SQL_013_Code_Object_Dependencies.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.SQL_013_Code_Object_Dependencies.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.SQL_Dependency_Prototype.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.SQL_Dependency_Prototype.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.TXT_010_File_System_Logging.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.TXT_010_File_System_Logging.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.TXT_011_String_Mapper.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.TXT_011_String_Mapper.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.TXT_012_String_Processing.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.TXT_012_String_Processing.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.unf_SplitString.UserDefinedFunction.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.unf_SplitString.UserDefinedFunction.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.VC_2100_Meta_Dictionary.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.VC_2100_Meta_Dictionary.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.VC_2101_Collection_Seed_Words.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.VC_2101_Collection_Seed_Words.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.VC_2102_Low_Frequency_Words.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.VC_2102_Low_Frequency_Words.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.VC_2103_High_Frequency_Words.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.VC_2103_High_Frequency_Words.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.VC_2110_Collection_Documents.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.VC_2110_Collection_Documents.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.VC_2110_Collection_Seed_Words.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.VC_2110_Collection_Seed_Words.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.VI_2019_Simple_Collection_List.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.VI_2019_Simple_Collection_List.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.VI_2111_Collection_Alphabet.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.VI_2111_Collection_Alphabet.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.XML_010_Schema_Logging.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.XML_010_Schema_Logging.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LIB.XML_012_Shredder.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LIB.XML_012_Shredder.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="NT Service MSOLAP$IMPERIAL_SENATE.User.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>NT Service MSOLAP$IMPERIAL_SENATE.User.sql</FullPath>
+        </FileNode>
+        <FileNode Name="REG_0600_Code_Catalog.FullTextCatalog.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>REG_0600_Code_Catalog.FullTextCatalog.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Test.MP_0000_Unlocker.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Test.MP_0000_Unlocker.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Test.PipeOutput.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Test.PipeOutput.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Test.Schema.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Test.Schema.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.Column_Latch_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.Column_Latch_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.Database_Latch_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.Database_Latch_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.DOC_File_Staging.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.DOC_File_Staging.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.GTMP_Object_Detail_Lookup.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.GTMP_Object_Detail_Lookup.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.Object_Latch_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.Object_Latch_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0100_0200_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0100_0200_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0100_Server_Registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0100_Server_Registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0101_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0101_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0101_Linked_Server_Settings.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0101_Linked_Server_Settings.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0102_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0102_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0102_Publication_Replication_Server_Settings.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0102_Publication_Replication_Server_Settings.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0103_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0103_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0103_Server_Providers.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0103_Server_Providers.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0200_Database_Registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0200_Database_Registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0201_Database_Extended_Properties_A.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0201_Database_Extended_Properties_A.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0201_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0201_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0202_Database_Extended_Properties_B.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0202_Database_Extended_Properties_B.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0202_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0202_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0203_Database_files.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0203_Database_files.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0203_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0203_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0204_0300_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0204_0300_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0204_Database_Schemas.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0204_Database_Schemas.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0205_Database_Maintenance_Properties.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0205_Database_Maintenance_Properties.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0300_0300_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0300_0300_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0300_0401_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0300_0401_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0300_Object_registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0300_Object_registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0301_Index_Details.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0301_Index_Details.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0302_Foreign_Key_Details.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0302_Foreign_Key_Details.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0400_Column_registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0400_Column_registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0401_Column_Properties.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0401_Column_Properties.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0402_Column_Index_Details.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0402_Column_Index_Details.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0500_0501_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0500_0501_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0500_Parameter_Registry.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0500_Parameter_Registry.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0501_Parameter_Properties.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0501_Parameter_Properties.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0600_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0600_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_0600_Object_Code_Library.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_0600_Object_Code_Library.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_Constraint_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_Constraint_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_Foreign_Key_insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_Foreign_Key_insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_Index_insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_Index_insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.REG_Trigger_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.REG_Trigger_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.Schema.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.Schema.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.SQL_Parsed_Segments.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.SQL_Parsed_Segments.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.SQL_Process_Hash.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.SQL_Process_Hash.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.SQL_String_Map.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.SQL_String_Map.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TRK_0300_Utiliztion_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TRK_0300_Utiliztion_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TRK_0350_Index_Metric_Insert.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TRK_0350_Index_Metric_Insert.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TRK_0354_Long_String_Values.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TRK_0354_Long_String_Values.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TRK_0354_Value_Hash.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TRK_0354_Value_Hash.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TRK_0354_Value_Hash_Objects.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TRK_0354_Value_Hash_Objects.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TRK_0440_Column_Statistics.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TRK_0440_Column_Statistics.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TRK_0452_Column_Stat_Scans.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TRK_0452_Column_Stat_Scans.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TRK_0601_Performance_Tracking.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TRK_0601_Performance_Tracking.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TRK_0602_SQL_Plan_Handles.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TRK_0602_SQL_Plan_Handles.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TXT_Parsed_Segments.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TXT_Parsed_Segments.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TXT_Process_Hash.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TXT_Process_Hash.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TXT_Shred_List.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TXT_Shred_List.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.TXT_String_Map.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.TXT_String_Map.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_Nodes.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_Nodes.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_Parsed_Nodes.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_Parsed_Nodes.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_Parsed_Properties.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_Parsed_Properties.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_Parsed_Segments.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_Parsed_Segments.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_Process_Hash.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_Process_Hash.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_Property_Bounds.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_Property_Bounds.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_Property_Map.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_Property_Map.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_Property_Owners.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_Property_Owners.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_PropertyMap.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_PropertyMap.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TMP.XML_String_Map.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TMP.XML_String_Map.Table.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
