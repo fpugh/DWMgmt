@@ -1,0 +1,47 @@
+USE DWMgmt
+GO
+
+/* Primary New Adds Daily */
+SELECT *
+FROM CAT.LNK_0100_0200_Server_Databases AS LSD
+WHERE LSD.LNK_Post_Date >= GETDATE()-1
+
+SELECT *
+FROM CAT.LNK_0204_0300_Schema_Binding AS LSB
+WHERE LSB.LNK_Post_Date >= GETDATE()-1
+
+SELECT *
+FROM CAT.LNK_0300_0400_Object_Column_Collection AS OCC
+WHERE OCC.LNK_Post_Date >= GETDATE()-1
+
+/* Peripheral New Adds Daily */
+SELECT *
+FROM CAT.LNK_0300_0300_Object_Dependencies AS LOD
+WHERE LOD.LNK_Post_Date >= GETDATE()-1
+
+SELECT *
+FROM CAT.LNK_0300_0500_Object_Parameter_Collection AS OPC
+WHERE OPC.LNK_Post_Date >= GETDATE()-1
+
+SELECT *
+FROM CAT.LNK_0300_0600_Object_Code_Sections AS OCS
+WHERE OCS.LNK_Post_Date >= GETDATE()-1
+
+
+/* Tier New Adds Daily */
+SELECT *
+FROM CAT.LNK_Tier1_Peers AS LTP1
+WHERE LTP1.LNK_Post_Date >= GETDATE()-1
+
+SELECT *
+FROM CAT.LNK_Tier2_Peers AS LTP2
+WHERE LTP2.LNK_Post_Date >= GETDATE()-1
+
+SELECT *
+FROM CAT.LNK_Tier3_Peers AS LTP3
+WHERE LTP3.LNK_Post_Date >= GETDATE()-1
+
+SELECT *
+FROM CAT.LNK_Tier4_Peers AS LTP4
+WHERE LTP4.LNK_Post_Date >= GETDATE()-1
+

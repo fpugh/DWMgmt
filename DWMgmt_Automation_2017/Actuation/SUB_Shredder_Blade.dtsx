@@ -1,0 +1,129 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="DNVRHLTH\fpugh"
+  DTS:CreatorComputerName="DH87NRXR1"
+  DTS:CreationDate="2/14/2015 1:33:24 PM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{01C6F68F-4BCE-44D3-9FA8-77140E5F1671}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:ISOLevel="256"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SUB_Shredder_Blade"
+  DTS:DTSID="{5D1CA94E-3580-4F3D-A8D2-23669DB91DFC}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:DataType="8"
+      DTS:ObjectName="DestinationObject"
+      DTS:DTSID="{619AB45A-2DDA-47E0-9437-9A76549AFBE2}"
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">TMP.TXT_String_Map</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:DataType="3"
+      DTS:ObjectName="Segment"
+      DTS:DTSID="{C7CEB194-3BFE-4772-99EB-3337CE84682F}"
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="3">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:DataType="8"
+      DTS:ObjectName="SourceObject"
+      DTS:DTSID="{24E1AA03-31BD-480B-8ACA-61116BD9794F}"
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">TMP.TXT_Process_Hash</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:Required="True"
+      DTS:DataType="3"
+      DTS:ObjectName="StringLength"
+      DTS:DTSID="{F70EEA33-0896-4B38-9DE3-269C2D6A382D}"
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="3">4000</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:Expression="&quot;EXEC LIB.TXT_011_String_Mapper @Segment = &quot;+ (DT_WSTR,10) @[$Package::Segment] +&quot;, @MaxLen = &quot;+ (DT_WSTR,10)  @[$Package::StringLength]+&quot;, @Destination = '&quot;+ @[$Package::DestinationObject] +&quot;', @Source = '&quot; + @[$Package::SourceObject]+&quot;'&quot;"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="ExecuteMapper"
+      DTS:DTSID="{32EC399F-A9FB-4DFE-8AB5-622D68FC1251}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">EXEC LIB.TXT_011_String_Mapper @Segment = 0, @MaxLen = 4000, @Destination = 'TMP.TXT_String_Map', @Source = 'TMP.TXT_Process_Hash'</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute String Mapper"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:MaxErrorCount="0"
+      DTS:ISOLevel="256"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="Execute String Mapper"
+      DTS:DTSID="{F6E8661F-1571-4B77-8B99-AD9E2E3F025B}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::ExecuteMapper" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::Segment"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="$Package::StringLength"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Execute String Mapper"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

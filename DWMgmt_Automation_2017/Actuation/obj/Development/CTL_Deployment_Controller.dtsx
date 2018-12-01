@@ -1,0 +1,992 @@
+<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="Mordor\Forrest"
+  DTS:CreatorComputerName="MORDOR"
+  DTS:CreationDate="3/5/2015 11:32:34 AM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="163"
+  DTS:VersionGUID="{69DCC027-72A5-4987-B3C4-75A890C456FA}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:DelayValidation="True"
+  DTS:ObjectName="CTL_Deployment_Controller"
+  DTS:DTSID="{6AD68E2B-16A3-4443-BD70-7CDC5594F9DF}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AAA.Primary_Deployment_Structures.sql]"
+      DTS:ObjectName="AAA.Primary_Deployment_Structures.sql"
+      DTS:DTSID="{A5CEAA3D-09FC-418A-8C46-D1C2AD8564CF}"
+      DTS:CreationName="FILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::RootDirectory] + @[$Project::SQLFileDirectory] +"AAA.Primary_Deployment_Structures.sql"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_SQL_Code\DWMgmt_SQL_PROD_Scripts\AAA.Primary_Deployment_Structures.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DynamicDeploymentMasterOLEDB]"
+      DTS:ObjectName="DynamicDeploymentMasterOLEDB"
+      DTS:DTSID="{426C315E-0AF1-4ADB-A913-6F8F4FE6237D}"
+      DTS:CreationName="OLEDB">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source="+ @[$Project::DestinationServer] +";Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;MARS Connection=True;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CORRUSCANT\IMPERIAL_SENATE;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;MARS Connection=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:Required="True"
+      DTS:DataType="8"
+      DTS:ObjectName="DestinationDatabase"
+      DTS:DTSID="{384A9708-9E57-4A97-96E2-10A09331239C}"
+      DTS:Description="Database where deployment will occur."
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">DWMgmt</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:Required="True"
+      DTS:DataType="8"
+      DTS:ObjectName="DestinationServer"
+      DTS:DTSID="{1A03A2F1-5F7F-45E6-98BE-FAFE2BDF8045}"
+      DTS:Description="Server where deployment will occur."
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">CORRUSCANT\IMPERIAL_SENATE</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:Required="True"
+      DTS:DataType="8"
+      DTS:ObjectName="DTSXFileDirectory"
+      DTS:DTSID="{06AB1422-3BDE-4856-A1D1-C5172E82B541}"
+      DTS:Description="Subfolder where package files (.dtsx) are stored."
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">DWMgmt_Automation\Actuation\</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:Required="True"
+      DTS:DataType="8"
+      DTS:ObjectName="RDLFileDirectory"
+      DTS:DTSID="{E69C7E06-CAA6-4509-83BA-A31902C76571}"
+      DTS:Description="Subfolder where report files (.rdl) are stored."
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">DWMgmt_Automation\Review\</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:Required="True"
+      DTS:DataType="8"
+      DTS:ObjectName="RootDirectory"
+      DTS:DTSID="{A88E6A26-59D1-4B8C-8241-9AF4630A8E25}"
+      DTS:Description="Root path of solution files."
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:Required="True"
+      DTS:DataType="8"
+      DTS:ObjectName="SQLFileDirectory"
+      DTS:DTSID="{02E35404-DA4A-4B6B-9255-94D8AAE9263F}"
+      DTS:Description="Subfolder where TSQL scripts (.sql) are stored."
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">DWMgmt_SQL_Code\DWMgmt_SQL_PROD_Scripts\</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="6789"
+      DTS:ObjectName="DBStatus"
+      DTS:DTSID="{624E1147-2C30-4800-B0D2-6E7151AB1555}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="&quot;SELECT count(*) AS DBStatus&#xA;FROM sys.databases&#xA;WHERE name = N'&quot;+ @[$Project::DestinationDatabase] +&quot;'&quot;"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="DB_Check_String"
+      DTS:DTSID="{19FC2157-1F85-4EBD-864B-6C88DAD0C06A}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT count(*) AS DBStatus
+FROM sys.databases
+WHERE name = N'DWMgmt'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="&quot;CREATE DATABASE &quot;+ @[$Project::DestinationDatabase] +&quot;&#xA;GO&#xA;&#xA;USE &quot;+ @[$Project::DestinationDatabase] +&quot;&#xA;GO&quot;"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="DB_Creation_String"
+      DTS:DTSID="{562E6F2F-17E7-4E83-8B6D-B6C3C09CEBA0}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">CREATE DATABASE DWMgmt
+GO
+
+USE DWMgmt
+GO</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="@[$Package::RootDirectory]+ @[$Package::DTSXFileDirectory]"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="SSISFileDir"
+      DTS:DTSID="{85191A04-A3BF-4DE1-94E6-D11469E2CE0C}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Actuation\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="SSISFileSpec"
+      DTS:DTSID="{55C2BE3E-E5BB-497E-835E-DAA97B173A4A}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">*.dtsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="@[$Package::RootDirectory]+ @[$Package::RDLFileDirectory]"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="SSRSFileDir"
+      DTS:DTSID="{DF5F1641-7334-4665-8FA9-46D29A794172}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="SSRSFileSpec"
+      DTS:DTSID="{441FDC71-6132-4FA8-8C00-BCE38BCF72C4}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">*.rdl</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="@[$Package::RootDirectory]+ @[$Package::SQLFileDirectory]"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="TSQLFileDir"
+      DTS:DTSID="{4856BB89-8EF8-4F59-96D3-AB11F0E9FA91}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_SQL_Code\DWMgmt_SQL_PROD_Scripts\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="TSQLFileSpec"
+      DTS:DTSID="{D65FB710-5625-4CAE-A42C-F9BBBF42A6E6}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">*.sql</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Acquire SSIS Packages"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Acquire SSIS Packages"
+      DTS:DTSID="{B729065D-BA8A-43C7-9A18-2C0DE4B3C6C4}"
+      DTS:Description="Execute Package Task"
+      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>IMP_BLOB_File_Imports.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>FileDir</ParameterName>
+            <BindedVariableOrParameterName>User::SSISFileDir</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>FileSpec</ParameterName>
+            <BindedVariableOrParameterName>User::SSISFileSpec</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Acquire SSRS Reports"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Acquire SSRS Reports"
+      DTS:DTSID="{78ABEE83-216D-4C92-AE6A-774585E8F5F2}"
+      DTS:Description="Execute Package Task"
+      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>IMP_BLOB_File_Imports.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>FileDir</ParameterName>
+            <BindedVariableOrParameterName>User::SSRSFileDir</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>FileSpec</ParameterName>
+            <BindedVariableOrParameterName>User::SSRSFileSpec</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Database"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="Create Database"
+      DTS:DTSID="{1DE351CF-CB45-4973-88B2-847A3232480E}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{426C315E-0AF1-4ADB-A913-6F8F4FE6237D}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::DB_Creation_String" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Deploy Primary Control Structures and Error Tracking"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:FailParentOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Deploy Primary Control Structures and Error Tracking"
+      DTS:DTSID="{F02EDAA7-350C-41EA-9D41-D36F00A2AB85}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="AAA.Primary_Deployment_Structures.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DEP_LoadCycle"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:MaxErrorCount="0"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="DEP_LoadCycle"
+      DTS:DTSID="{79722F99-9082-45D3-8D12-51AE5A3FC04A}"
+      DTS:Description="Execute Package Task"
+      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>DEP_Load_Cycle.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>FileSpec</ParameterName>
+            <BindedVariableOrParameterName>User::TSQLFileSpec</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>FilePath</ParameterName>
+            <BindedVariableOrParameterName>$Project::SQLFileDirectory</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute XML_Turbo_Shredder"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:Disabled="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute XML_Turbo_Shredder"
+      DTS:DTSID="{61319FE0-8DA9-4545-BF43-AC8CF6010CDB}"
+      DTS:Description="Execute Package Task"
+      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\REG_Server_Master"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:MaxErrorCount="0"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="REG_Server_Master"
+      DTS:DTSID="{64463AA8-AB44-4AA7-B6B9-FD1638A94526}"
+      DTS:Description="Execute Package Task"
+      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>REG_Server_Master.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>TargetServer</ParameterName>
+            <BindedVariableOrParameterName>$Project::TargetServer</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>DestinationServer</ParameterName>
+            <BindedVariableOrParameterName>$Project::DestinationDatabase</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Turbo_Shredder"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="SQL_Turbo_Shredder"
+      DTS:DTSID="{CED146D6-EB9A-4A50-9231-31DB25E12428}"
+      DTS:Description="Execute Package Task"
+      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>SQL_Turbo_Shredder.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>Blades</ParameterName>
+            <BindedVariableOrParameterName>$Project::Blades</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Test for DB Deployment"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Test for DB Deployment"
+      DTS:DTSID="{1F612D36-B78D-4908-A45A-3AECDD01D3B8}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{426C315E-0AF1-4ADB-A913-6F8F4FE6237D}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::DB_Check_String"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DBStatus"
+            SQLTask:DtsVariableName="User::DBStatus" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\Test for DB Deployment"
+      DTS:To="Package\Create Database"
+      DTS:EvalOp="1"
+      DTS:LogicalAnd="True"
+      DTS:Expression="@[User::DBStatus] == 0"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{1C0D5C72-3C4E-4D38-87A9-9DCF4929CA94}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:From="Package\Deploy Primary Control Structures and Error Tracking"
+      DTS:To="Package\DEP_LoadCycle"
+      DTS:ObjectName="Constraint 1"
+      DTS:DTSID="{2C24F9F0-9DD4-4C97-8683-611370A80CA6}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:From="Package\REG_Server_Master"
+      DTS:To="Package\Acquire SSIS Packages"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:DTSID="{ABBEA685-91A2-4197-8BFC-359AAE3507DA}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:From="Package\Acquire SSRS Reports"
+      DTS:To="Package\Execute XML_Turbo_Shredder"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:DTSID="{AC3F8014-CE32-4CB0-9D97-210CDC4B1C56}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:From="Package\Acquire SSIS Packages"
+      DTS:To="Package\Execute XML_Turbo_Shredder"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 12"
+      DTS:DTSID="{1D9203EB-B303-4D13-82C7-57BFB35E3161}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:From="Package\Create Database"
+      DTS:To="Package\Deploy Primary Control Structures and Error Tracking"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:DTSID="{03D7DAF3-BAE4-4CA0-B3E2-AC0459B3F63D}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:From="Package\DEP_LoadCycle"
+      DTS:To="Package\REG_Server_Master"
+      DTS:Value="2"
+      DTS:ObjectName="Constraint 3"
+      DTS:DTSID="{DDD0C9ED-ADF5-4178-AD94-3571FCAF603F}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:From="Package\Test for DB Deployment"
+      DTS:To="Package\REG_Server_Master"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::DBStatus]==1"
+      DTS:ObjectName="Constraint 4"
+      DTS:DTSID="{056AFAC3-A2D3-4619-AB64-48BC7F3C0AE4}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:From="Package\REG_Server_Master"
+      DTS:To="Package\SQL_Turbo_Shredder"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:DTSID="{B9F3129B-C95D-470D-8310-BC707E414B72}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:From="Package\REG_Server_Master"
+      DTS:To="Package\Acquire SSRS Reports"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:DTSID="{7784FFFA-8861-4536-8EED-D2274C6A7AF2}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1"
+      DTS:DTSID="{8F0C2687-1C22-4276-B824-D0AB22D0D68B}"
+      DTS:CreationName="OnError">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:Namespace="System"
+          DTS:IncludeInDebugDump="6789"
+          DTS:ObjectName="Propagate"
+          DTS:DTSID="{60164258-D36E-4A0E-9718-811AD2BBD250}"
+          DTS:Description="The propagate property of the event"
+          DTS:CreationName="">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Log Errors"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Errors"
+          DTS:DTSID="{fb84473c-5c7d-4e06-9b5a-78e80e92a895}"
+          DTS:Description="Execute SQL Task"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+              SQLTask:SqlStatementSource="INSERT INTO CAT.trk_SSIS_Import_Errors (&#xA;Execution_ID, Target_Server, Target_Database, Task_Name, Error_Code, Error_Description, Records)&#xA;&#xA;VALUES (?,?,?,?,?,?,0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="$Project::TargetServer"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="$Project::TargetDatabase"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::TaskName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Acquire SSIS Packages"
+          TopLeft="59,515.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Acquire SSRS Reports"
+          TopLeft="549.5,515.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Create Database"
+          TopLeft="111.5,107.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\DEP_LoadCycle"
+          TopLeft="185,311.5" />
+        <NodeLayout
+          Size="329,42"
+          Id="Package\Deploy Primary Control Structures and Error Tracking"
+          TopLeft="5.5,209.5" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Execute XML_Turbo_Shredder"
+          TopLeft="264.5,690" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\REG_Server_Master"
+          TopLeft="311.5,413.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\SQL_Turbo_Shredder"
+          TopLeft="307.5,515.5" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Test for DB Deployment"
+          TopLeft="301,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="367,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-177.5,60"
+              Start="0,0"
+              End="-177.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2944785276074" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2944785276074"
+                    Point2="0,24.2944785276074"
+                    Point3="-4,24.2944785276074" />
+                  <mssgle:LineSegment
+                    End="-173.5,24.2944785276074" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-173.5,24.2944785276074"
+                    Point2="-177.5,24.2944785276074"
+                    Point3="-177.5,28.2944785276074" />
+                  <mssgle:LineSegment
+                    End="-177.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-96.75,29.2944785276074,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="170,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103,60"
+              Start="0,0"
+              End="103,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="99,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="99,30"
+                    Point2="103,30"
+                    Point3="103,34" />
+                  <mssgle:LineSegment
+                    End="103,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="360.25,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-207.75,60"
+              Start="0,0"
+              End="-207.75,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5623901581722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5623901581722"
+                    Point2="0,20.5623901581722"
+                    Point3="-4,20.5623901581722" />
+                  <mssgle:LineSegment
+                    End="-203.75,20.5623901581722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-203.75,20.5623901581722"
+                    Point2="-207.75,20.5623901581722"
+                    Point3="-207.75,24.5623901581722" />
+                  <mssgle:LineSegment
+                    End="-207.75,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-129.179453125,25.5623901581722,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="641,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-229.166666666667,132.5"
+              Start="0,0"
+              End="-229.166666666667,125">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.933659839715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,74.933659839715"
+                    Point2="0,78.933659839715"
+                    Point3="-4,78.933659839715" />
+                  <mssgle:LineSegment
+                    End="-225.166666666667,78.933659839715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-225.166666666667,78.933659839715"
+                    Point2="-229.166666666667,78.933659839715"
+                    Point3="-229.166666666667,82.933659839715" />
+                  <mssgle:LineSegment
+                    End="-229.166666666667,125" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-139.887786458333,83.933659839715,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="152.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="187.666666666667,132.5"
+              Start="0,0"
+              End="187.666666666667,125">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.9336598397151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,74.9336598397151"
+                    Point2="0,78.9336598397151"
+                    Point3="4,78.9336598397151" />
+                  <mssgle:LineSegment
+                    End="183.666666666667,78.9336598397151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="183.666666666667,78.9336598397151"
+                    Point2="187.666666666667,78.9336598397151"
+                    Point3="187.666666666667,82.9336598397151" />
+                  <mssgle:LineSegment
+                    End="187.666666666667,125" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="68.5288802083333,83.9336598397151,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="189.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.5,60"
+              Start="0,0"
+              End="-19.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-15.5,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.5,30"
+                    Point2="-19.5,30"
+                    Point3="-19.5,34" />
+                  <mssgle:LineSegment
+                    End="-19.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.054453125,35,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="273,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.166666666667,60"
+              Start="0,0"
+              End="102.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.694591728526" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.694591728526"
+                    Point2="0,35.694591728526"
+                    Point3="4,35.694591728526" />
+                  <mssgle:LineSegment
+                    End="98.1666666666667,35.694591728526" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98.1666666666667,35.694591728526"
+                    Point2="102.166666666667,35.694591728526"
+                    Point3="102.166666666667,39.694591728526" />
+                  <mssgle:LineSegment
+                    End="102.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.7788802083333,40.694591728526,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="431.916666666667,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,366"
+              Start="0,0"
+              End="0,358.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,358.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,171.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="401.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,20.4453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="449.75,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="191.25,60"
+              Start="0,0"
+              End="191.25,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5623901581722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5623901581722"
+                    Point2="0,20.5623901581722"
+                    Point3="4,20.5623901581722" />
+                  <mssgle:LineSegment
+                    End="187.25,20.5623901581722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="187.25,20.5623901581722"
+                    Point2="191.25,20.5623901581722"
+                    Point3="191.25,24.5623901581722" />
+                  <mssgle:LineSegment
+                    End="191.25,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.320546875,25.5623901581722,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="ToDo: Tier deployment logic so that&#xA;new objects can be added at run-time.&#xA;!! Create functional test/deploy code&#xA;for each secondary tier; Schemas and &#xA;Objects.&#xA;&#xA;Develop some method of versioning for &#xA;the database, schemas, and objects.&#xA;&#xA;Consider the posibility of querying an SQL &#xA;Project schema for a list of expected objects.&#xA;1. Use an in memory dataset to execute the&#xA;   IMP_BLOB_File_Imports procedure for missing&#xA;   objects.&#xA;2. Feed this to DEP_LoadCycle?? Excute Singly??"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="280,263"
+          Id="8fb3def6-781f-47ee-a673-c90b234f25bc"
+          TopLeft="777,441.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="128,42"
+          Id="Package.EventHandlers[OnError]\Log Errors"
+          TopLeft="NaN,NaN" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

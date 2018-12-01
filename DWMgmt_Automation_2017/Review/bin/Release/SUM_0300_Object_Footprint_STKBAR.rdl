@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DWMgmt">
+      <DataSourceReference>DWMgmt</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>d79af545-44d8-4373-a9ac-1c3086563f82</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="RPT_0301_Object_Data_Footpring">
+      <SharedDataSet>
+        <SharedDataSetReference>RPT_0301_Object_Data_Footprint</SharedDataSetReference>
+        <QueryParameters>
+          <QueryParameter Name="@NamePart">
+            <Value>=Parameters!NamePart.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TierLevel">
+            <Value>=Parameters!TierLevel.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ExactName">
+            <Value>=Parameters!ExactName.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="Data_Class">
+          <DataField>Data_Class</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Target_Name">
+          <DataField>Target_Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="user_data_type">
+          <DataField>User_Data_Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Column_Count">
+          <DataField>Column_Count</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Chart Name="Chart8">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label />
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart8_SeriesGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!user_data_type.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Data_Class.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!user_data_type.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Column_Type_Count">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <X>=Fields!user_data_type.Value</X>
+                        <Y>=First(Fields!Column_Count.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style>
+                          <FontStyle>Italic</FontStyle>
+                          <FontFamily>Verdana</FontFamily>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>White</Color>
+                        </Style>
+                        <Label>=Fields!user_data_type.Value</Label>
+                      </ChartDataLabel>
+                      <ToolTip>Data selectivity (certainty) as visual spectrum - from greatest to least;
+Uniqueidentifiers
+, bigint through bit
+, exact numerics
+, approximate numerics
+, datetimes
+, dateparts
+, fixed character
+, variabhle character
+, text/string</ToolTip>
+                      <Style>
+                        <Border>
+                          <Color>White</Color>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <Color>= iif(First(Fields!Data_Class.Value) = "GUID", "Maroon"
+, iif(First(Fields!Data_Class.Value) = "Integer 16.32", "Red"
+, iif(First(Fields!Data_Class.Value) = "Precise Numeric", "Salmon"
+, iif(First(Fields!Data_Class.Value) = "Integer 2.4.8", "Orange"
+, iif(First(Fields!Data_Class.Value) = "Non-precise Numeric", "Yellow"
+, iif(First(Fields!Data_Class.Value) = "Date or Time", "LimeGreen"
+, iif(First(Fields!Data_Class.Value) = "Precise Datetime", "Green"
+, iif(First(Fields!Data_Class.Value) = "Fixed String", "CornflowerBlue"
+, iif(First(Fields!Data_Class.Value) = "Variable String", "Blue"
+, iif(First(Fields!Data_Class.Value) = "Large Text", "DarkBlue", "Gray"))))))))))</Color>
+                      </Style>
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ChartItemInLegend>
+                        <LegendText>=Fields!user_data_type.Value</LegendText>
+                      </ChartItemInLegend>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Bar</Type>
+                  <Subtype>PercentStacked</Subtype>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <CustomProperties>
+                    <CustomProperty>
+                      <Name>PointWidth</Name>
+                      <Value>1.4</Value>
+                    </CustomProperty>
+                  </CustomProperties>
+                  <ChartItemInLegend>
+                    <LegendText>=Fields!user_data_type.Value</LegendText>
+                  </ChartItemInLegend>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <AllowOutSidePlotArea>True</AllowOutSidePlotArea>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <CalloutStyle>None</CalloutStyle>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Visible>False</Visible>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Visible>False</Visible>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Rotation>15</Rotation>
+                  <Inclination>18</Inclination>
+                  <WallThickness>2</WallThickness>
+                </ChartThreeDProperties>
+                <Style>
+                  <Border>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <BackgroundColor>#00ffffff</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <ShadowColor>SeaGreen</ShadowColor>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <Palette>Excel</Palette>
+            <ChartCustomPaletteColors>
+              <ChartCustomPaletteColor>Firebrick</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Crimson</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Red</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>LightCoral</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Pink</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Gray</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>DarkSlateBlue</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>SlateBlue</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>RoyalBlue</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>CornflowerBlue</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>DeepSkyBlue</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>SkyBlue</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Indigo</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Purple</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>DarkViolet</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>MediumOrchid</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Violet</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Plum</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>DarkGreen</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>ForestGreen</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>LimeGreen</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>YellowGreen</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>PaleGreen</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>DarkOliveGreen</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>OliveDrab</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Cyan</ChartCustomPaletteColor>
+              <ChartCustomPaletteColor>Yellow</ChartCustomPaletteColor>
+            </ChartCustomPaletteColors>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>RPT_0301_Object_Data_Footpring</DataSetName>
+            <Height>0.29375in</Height>
+            <Width>5in</Width>
+            <Style>
+              <Border>
+                <Color>Orange</Color>
+                <Style>Solid</Style>
+                <Width>3.5pt</Width>
+              </Border>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+        </ReportItems>
+        <Height>0.29375in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>5in</Width>
+      <Page>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="NamePart">
+      <DataType>String</DataType>
+      <Prompt>Name Lookup:</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TierLevel">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Tier Level</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ExactName">
+      <DataType>Boolean</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>false</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Exact Name</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Function GetSeriesColor(ByVal DataType As String)
+
+Dim ColorCode As String
+
+ColorCode = Hex(DataType)
+
+Return ColorCode
+
+End Function</Code>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>7e301a4e-979b-4346-9f2f-b6f8288b9a9e</rd:ReportID>
+</Report>

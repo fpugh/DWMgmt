@@ -1,0 +1,14 @@
+Transition Data from different DWMgmt Catalog tables to new versions in production - Write a script to do this deep parsing, then apply via stored procedure.
+
+Stored procedure should do the following:
+
+Execute Table Paring logic - identify similar names or name prefixes, column structures, etc.
+
+Execute data profiling on the source (Remote DWMgmt or early Management databases) and destination (latest version/primary production node of DWMgmt) tables of candidates identified as likely matches above.
+
+Use profiled data to refine match selection.
+ - For now, return suggestions for human review.
+ - Prepare code to generate appropriate SQL and then DTSX packages to perform regular ETL if needed.
+
+Create a mapping script from the identified selections. 
+Create a TMP schema table containing the information columns and original data markup columns. The table should include a map column for each identity. Original markup columns such as datetime stamps, are given preference to host system markup constraints, but NULLs should be allowed on the map table and handled by markup constraints on the destination tables.

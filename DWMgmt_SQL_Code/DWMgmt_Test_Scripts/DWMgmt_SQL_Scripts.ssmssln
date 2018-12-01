@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# SQL Server Management Studio Solution File, Format Version 11.00
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DWMgmt_SQL_PROD_Scripts", "..\DWMgmt_SQL_PROD_Scripts\DWMgmt_SQL_PROD_Scripts.ssmssqlproj", "{8EDDA042-1D98-4C9B-A80B-12C895FDFF7F}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DWMgmt_SQL_DEV_Scripts", "..\DWMgmt_SQL_DEV_Scripts\DWMgmt_SQL_DEV_Scripts.ssmssqlproj", "{21CD7CE2-F65B-4E5D-BE4A-85EA7EE84D0F}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DWMgmt_Test_Scripts", "DWMgmt_Test_Scripts.ssmssqlproj", "{3444C52B-E094-4557-8AFE-D95159AEFE24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55804CC1-9C8D-4B00-935D-84A84CDBE775}.Default|Default.ActiveCfg = Default
+		{8EDDA042-1D98-4C9B-A80B-12C895FDFF7F}.Default|Default.ActiveCfg = Default
+		{21CD7CE2-F65B-4E5D-BE4A-85EA7EE84D0F}.Default|Default.ActiveCfg = Default
+		{3444C52B-E094-4557-8AFE-D95159AEFE24}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

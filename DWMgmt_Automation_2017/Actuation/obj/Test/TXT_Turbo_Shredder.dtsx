@@ -1,0 +1,1669 @@
+<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="DNVRHLTH\fpugh"
+  DTS:CreatorComputerName="DH87NRXR1"
+  DTS:CreationDate="2/6/2015 9:05:19 AM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="262"
+  DTS:VersionGUID="{F76773C5-CBCD-4962-B9A9-8BF56D848F7C}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="TXT_Turbo_Shredder"
+  DTS:DTSID="{555EE709-752D-45D9-BCFF-94438EC7AB45}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:Required="True"
+      DTS:DataType="3"
+      DTS:ObjectName="Blades"
+      DTS:DTSID="{E22A795A-1493-468D-9CE2-CD1A3F80C6A9}"
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="3">8</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:Expression="&quot;IF NOT EXISTS (SELECT name FROM sys.tables WHERE name = 'TXT_String_Map_&quot;+(DT_WSTR,10)@[User::Segment]+&quot;') CREATE TABLE TMP.TXT_String_Map_&quot;+(DT_WSTR,10)@[User::Segment]+&quot; (Source_ID INT, ASCII_Char TINYINT, Char_Pos BIGINT)&quot;"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="CreateTable"
+      DTS:DTSID="{1D5873CD-D8F5-44FD-B328-6A5CC9CCCF49}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">IF NOT EXISTS (SELECT name FROM sys.tables WHERE name = 'TXT_String_Map_1') CREATE TABLE TMP.TXT_String_Map_1 (Source_ID INT, ASCII_Char TINYINT, Char_Pos BIGINT)</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="&quot;IF EXISTS (SELECT name FROM sys.tables WHERE name = 'TXT_String_Map_&quot;+(DT_WSTR,12)@[User::Segment]+&quot;') DROP TABLE TMP.TXT_String_Map_&quot;+(DT_WSTR,12)@[User::Segment]+&quot;&quot;"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="DropTable"
+      DTS:DTSID="{95B7EAFC-3906-44C7-BD00-322E66788F30}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">IF EXISTS (SELECT name FROM sys.tables WHERE name = 'TXT_String_Map_1') DROP TABLE TMP.TXT_String_Map_1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="@[$Project::Length]"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="Length"
+      DTS:DTSID="{85181011-0BFF-491B-99F5-1610F94612D6}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="3">4000</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="6789"
+      DTS:ObjectName="Segment"
+      DTS:DTSID="{234D4A53-D390-4A75-B94D-150BC065B24C}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="&quot;SELECT CAST(ROUND(MAX(String_Length)/&quot;+ (DT_WSTR,10)@[User::Length] +&quot;.00, 0)  as int) + 1 FROM TMP.TXT_Process_Hash&quot;"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="Segmentation"
+      DTS:DTSID="{F9100224-6EA9-4D57-A2A2-FE15E094572F}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT CAST(ROUND(MAX(String_Length)/4000.00, 0)  as int) + 1 FROM TMP.TXT_Process_Hash</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="6789"
+      DTS:ObjectName="Segments"
+      DTS:DTSID="{310C80D4-000F-46CE-9ED9-D5DA3ADA9E9B}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="3">8</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clear Staging Tables"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="Clear Staging Tables"
+      DTS:DTSID="{9335C9F0-AFE9-433E-9853-B833F8979A6E}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE tmp.TXT_Process_Hash&#xA;&#xA;TRUNCATE TABLE tmp.TXT_String_Map&#xA;&#xA;TRUNCATE TABLE tmp.TXT_Parsed_Segments&#xA;&#xA;IF EXISTS (SELECT name FROM sys.tables WHERE name  = N'TXT_Shred_List')&#xA;DROP TABLE tmp.TXT_Shred_List" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Work Tables"
+      DTS:ExecutableType="STOCK:FORLOOP"
+      DTS:InitExpression="@Segment = 1"
+      DTS:EvalExpression="@Segment &lt;= @Segments"
+      DTS:AssignExpression="@Segment = @Segment + 1"
+      DTS:MaxConcurrent="1"
+      DTS:ISOLevel="256"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="Create Work Tables"
+      DTS:DTSID="{2D05F997-8098-45E5-9464-249C25E57238}"
+      DTS:Description="For Loop Container"
+      DTS:CreationName="STOCK:FORLOOP">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Create Work Tables\Create StringMap Tables"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ThreadHint="0"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Create StringMap Tables"
+          DTS:DTSID="{EF8EA197-B1A9-4DA4-B525-E8F2E5EA4C56}"
+          DTS:Description="Execute SQL Task"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::CreateTable" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Create Work Tables\Drop Old StringMap Tables"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ThreadHint="0"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Drop Old StringMap Tables"
+          DTS:DTSID="{09A669E0-B94D-4531-99E6-ECFDD0D26BD0}"
+          DTS:Description="Execute SQL Task"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::DropTable" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Create Work Tables.PrecedenceConstraints[Constraint]"
+          DTS:From="Package\Create Work Tables\Drop Old StringMap Tables"
+          DTS:To="Package\Create Work Tables\Create StringMap Tables"
+          DTS:Value="2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:DTSID="{7C005075-DE72-43DD-B96C-15BA6C448B46}"
+          DTS:CreationName="" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Determine TXT File Segments"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="Determine TXT File Segments"
+      DTS:DTSID="{0E5880A9-18AD-480C-B88C-6A7AB4DE9082}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::Segmentation"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Segments" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute TXT File Logger"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="Execute TXT File Logger"
+      DTS:DTSID="{D6934886-A433-4BA1-9990-62334926AB89}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+          SQLTask:SqlStatementSource="EXECUTE LIB.TXT_010_File_System_Logging" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute TXT Shredder"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute TXT Shredder"
+      DTS:DTSID="{0D15F446-EB3D-4496-A0BC-5428A03607A9}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+          SQLTask:SqlStatementSource="EXEC LIB.TXT_012_String_Processing" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@ExecuteStatus"
+            SQLTask:DtsVariableName="$Project::ExecuteStatus"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="2"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:MaxErrorCount="0"
+      DTS:ISOLevel="65536"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="Sequence Container"
+      DTS:DTSID="{063DB4CB-AEAF-4D15-819A-80CD7D6EE728}"
+      DTS:Description="Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Mapper Loop 1"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@Segment1 = 1"
+          DTS:EvalExpression="@Segment1 &lt;= @Segments &amp;&amp; @Segment1 &gt; 0"
+          DTS:AssignExpression="@Segment1 = @Segment1+@[$Package::Blades]"
+          DTS:MaxConcurrent="1"
+          DTS:MaxErrorCount="0"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Mapper Loop 1"
+          DTS:DTSID="{7B568B30-0A8E-4C07-9F98-E614F018FC10}"
+          DTS:Description="For Loop Container"
+          DTS:CreationName="STOCK:FORLOOP">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:Namespace="User"
+              DTS:IncludeInDebugDump="6789"
+              DTS:ObjectName="Segment1"
+              DTS:DTSID="{57FDB042-8F5F-4373-BC62-4AE7FFDDDBB4}"
+              DTS:CreationName="">
+              <DTS:VariableValue
+                DTS:DataType="3">1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 1\Mark List Processed 1"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ThreadHint="0"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:Disabled="True"
+              DTS:MaxErrorCount="0"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Mark List Processed 1"
+              DTS:DTSID="{2DD4A699-021B-4DC3-8525-A133F74857F0}"
+              DTS:Description="Execute SQL Task"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+                  SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#x9;DECLARE @Ordinal INT&#xA;&#xA;&#x9;SELECT @Ordinal = MIN(Ordinal)&#xA;&#x9;FROM tmp.SQL_Shred_List WITH(TABLOCK)&#xA;&#x9;WHERE Processed = 0&#xA;&#xA;&#x9;UPDATE tmp.SQL_Shred_List SET Processed = 1&#xA;&#x9;WHERE Ordinal = @Ordinal&#xA;&#xA;&#x9;SELECT @Ordinal&#x9;AS Segment&#xA;&#xA;COMMIT TRANSACTION"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Segment"
+                    SQLTask:DtsVariableName="User::Segment1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 1\Shredder Blade 1"
+              DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:MaxErrorCount="0"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Shredder Blade 1"
+              DTS:DTSID="{2D35B041-A323-40A0-89E9-C269B59B44A3}"
+              DTS:Description="Execute Package Task"
+              DTS:CreationName="SSIS.ExecutePackageTask.3">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>TXT_Shredder_Blade.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Length</ParameterName>
+                    <BindedVariableOrParameterName>User::Length</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                  <ParameterAssignment>
+                    <ParameterName>Segment</ParameterName>
+                    <BindedVariableOrParameterName>User::Segment1</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Sequence Container\Mapper Loop 1.PrecedenceConstraints[Constraint]"
+              DTS:From="Package\Sequence Container\Mapper Loop 1\Mark List Processed 1"
+              DTS:To="Package\Sequence Container\Mapper Loop 1\Shredder Blade 1"
+              DTS:EvalOp="3"
+              DTS:LogicalAnd="True"
+              DTS:Expression="@[User::Segment1]&gt;=1"
+              DTS:ObjectName="Constraint"
+              DTS:DTSID="{72E28857-2701-48E7-95B9-1AE252877FA7}"
+              DTS:CreationName="" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Mapper Loop 2"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@Segment2 = 2"
+          DTS:EvalExpression="@Segment2 &lt;= @Segments &amp;&amp; @Segment2 &gt; 0"
+          DTS:AssignExpression="@Segment2 = @Segment2+@[$Package::Blades]"
+          DTS:MaxConcurrent="1"
+          DTS:MaxErrorCount="0"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Mapper Loop 2"
+          DTS:DTSID="{42CC0640-E3B1-4833-8996-6CCB9AC08D06}"
+          DTS:Description="For Loop Container"
+          DTS:CreationName="STOCK:FORLOOP">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:Namespace="User"
+              DTS:IncludeInDebugDump="6789"
+              DTS:ObjectName="Segment2"
+              DTS:DTSID="{171DC9F5-C57E-43F9-9B64-89569AF588BD}"
+              DTS:CreationName="">
+              <DTS:VariableValue
+                DTS:DataType="3">2</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[$Package::Blades]&lt;2  ||  @[User::Segments] &lt;2</DTS:PropertyExpression>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 2\Mark List Processed 2"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ThreadHint="1"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:Disabled="True"
+              DTS:MaxErrorCount="0"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Mark List Processed 2"
+              DTS:DTSID="{42686788-41EF-429E-AF84-29C9FF7F74B1}"
+              DTS:Description="Execute SQL Task"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+                  SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#x9;DECLARE @Ordinal INT&#xA;&#xA;&#x9;SELECT @Ordinal = MIN(Ordinal)&#xA;&#x9;FROM tmp.SQL_Shred_List WITH(TABLOCK)&#xA;&#x9;WHERE Processed = 0&#xA;&#xA;&#x9;UPDATE tmp.SQL_Shred_List SET Processed = 1&#xA;&#x9;WHERE Ordinal = @Ordinal&#xA;&#xA;&#x9;SELECT @Ordinal&#x9;AS Segment&#xA;&#xA;COMMIT TRANSACTION"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Segment"
+                    SQLTask:DtsVariableName="User::Segment2" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 2\Shredder Blade 2"
+              DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:MaxErrorCount="0"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Shredder Blade 2"
+              DTS:DTSID="{AFE1BB77-CA27-4590-BC2A-44D2402F59C0}"
+              DTS:Description="Execute Package Task"
+              DTS:CreationName="SSIS.ExecutePackageTask.3">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>TXT_Shredder_Blade.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Length</ParameterName>
+                    <BindedVariableOrParameterName>User::Length</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                  <ParameterAssignment>
+                    <ParameterName>Segment</ParameterName>
+                    <BindedVariableOrParameterName>User::Segment2</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Sequence Container\Mapper Loop 2.PrecedenceConstraints[Constraint]"
+              DTS:From="Package\Sequence Container\Mapper Loop 2\Mark List Processed 2"
+              DTS:To="Package\Sequence Container\Mapper Loop 2\Shredder Blade 2"
+              DTS:EvalOp="3"
+              DTS:LogicalAnd="True"
+              DTS:Expression="@[User::Segment2]&gt;=2"
+              DTS:ObjectName="Constraint"
+              DTS:DTSID="{D334A743-1F7B-48BD-B466-B7D875224770}"
+              DTS:CreationName="" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Mapper Loop 3"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@Segment3 = 3"
+          DTS:EvalExpression="@Segment3 &lt;= @Segments &amp;&amp; @Segment3 &gt; 0"
+          DTS:AssignExpression="@Segment3 = @Segment3+@[$Package::Blades]"
+          DTS:MaxConcurrent="1"
+          DTS:MaxErrorCount="0"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Mapper Loop 3"
+          DTS:DTSID="{858C6C13-1C51-41DC-8626-C1772DD5EECB}"
+          DTS:Description="For Loop Container"
+          DTS:CreationName="STOCK:FORLOOP">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:Namespace="User"
+              DTS:IncludeInDebugDump="6789"
+              DTS:ObjectName="Segment3"
+              DTS:DTSID="{64043FCB-3532-4825-A623-031F123717BC}"
+              DTS:CreationName="">
+              <DTS:VariableValue
+                DTS:DataType="3">3</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[$Package::Blades]&lt;3 ||  @[User::Segments] &lt;3</DTS:PropertyExpression>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 3\Mark List Processed 3"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ThreadHint="3"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:Disabled="True"
+              DTS:MaxErrorCount="0"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Mark List Processed 3"
+              DTS:DTSID="{24CECE7E-EB41-43AE-8D69-320C99557462}"
+              DTS:Description="Execute SQL Task"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+                  SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#x9;DECLARE @Ordinal INT&#xA;&#xA;&#x9;SELECT @Ordinal = MIN(Ordinal)&#xA;&#x9;FROM tmp.SQL_Shred_List WITH(TABLOCK)&#xA;&#x9;WHERE Processed = 0&#xA;&#xA;&#x9;UPDATE tmp.SQL_Shred_List SET Processed = 1&#xA;&#x9;WHERE Ordinal = @Ordinal&#xA;&#xA;&#x9;SELECT @Ordinal&#x9;AS Segment&#xA;&#xA;COMMIT TRANSACTION"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Segment"
+                    SQLTask:DtsVariableName="User::Segment3" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 3\Shredder Blade 3"
+              DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:MaxErrorCount="0"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Shredder Blade 3"
+              DTS:DTSID="{8426A56A-92D8-4672-968E-D7E0CFC27AA6}"
+              DTS:Description="Execute Package Task"
+              DTS:CreationName="SSIS.ExecutePackageTask.3">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>TXT_Shredder_Blade.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Length</ParameterName>
+                    <BindedVariableOrParameterName>User::Length</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                  <ParameterAssignment>
+                    <ParameterName>Segment</ParameterName>
+                    <BindedVariableOrParameterName>User::Segment3</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Sequence Container\Mapper Loop 3.PrecedenceConstraints[Constraint]"
+              DTS:From="Package\Sequence Container\Mapper Loop 3\Mark List Processed 3"
+              DTS:To="Package\Sequence Container\Mapper Loop 3\Shredder Blade 3"
+              DTS:EvalOp="3"
+              DTS:LogicalAnd="True"
+              DTS:Expression="@[User::Segment3]&gt;=3"
+              DTS:ObjectName="Constraint"
+              DTS:DTSID="{D54C87CA-0B21-4E21-9755-558863B4B38F}"
+              DTS:CreationName="" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Mapper Loop 4"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@Segment4 = 4"
+          DTS:EvalExpression="@Segment4 &lt;= @Segments &amp;&amp; @Segment4 &gt; 0"
+          DTS:AssignExpression="@Segment4 = @Segment4+@[$Package::Blades]"
+          DTS:MaxConcurrent="1"
+          DTS:MaxErrorCount="0"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Mapper Loop 4"
+          DTS:DTSID="{8F80DC12-9D3B-44F8-A5DB-F1F28C3AC398}"
+          DTS:Description="For Loop Container"
+          DTS:CreationName="STOCK:FORLOOP">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:Namespace="User"
+              DTS:IncludeInDebugDump="6789"
+              DTS:ObjectName="Segment4"
+              DTS:DTSID="{6CF53DB3-06B6-4C5F-9527-618971A2D8DB}"
+              DTS:CreationName="">
+              <DTS:VariableValue
+                DTS:DataType="3">4</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[$Package::Blades]&lt;4  ||  @[User::Segments]&lt;4</DTS:PropertyExpression>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 4\Mark List Processed 4"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ThreadHint="2"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:Disabled="True"
+              DTS:MaxErrorCount="0"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Mark List Processed 4"
+              DTS:DTSID="{0F27D3BE-21C5-408F-A34A-3EB60D6FBFD9}"
+              DTS:Description="Execute SQL Task"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+                  SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#x9;DECLARE @Ordinal INT&#xA;&#xA;&#x9;SELECT @Ordinal = MIN(Ordinal)&#xA;&#x9;FROM tmp.SQL_Shred_List WITH(TABLOCK)&#xA;&#x9;WHERE Processed = 0&#xA;&#xA;&#x9;UPDATE tmp.SQL_Shred_List SET Processed = 1&#xA;&#x9;WHERE Ordinal = @Ordinal&#xA;&#xA;&#x9;SELECT @Ordinal&#x9;AS Segment&#xA;&#xA;COMMIT TRANSACTION"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Segment"
+                    SQLTask:DtsVariableName="User::Segment4" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::Segment4"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 4\Shredder Blade 4"
+              DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:MaxErrorCount="0"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Shredder Blade 4"
+              DTS:DTSID="{62273442-EECE-4133-9A02-59855DB7DBA6}"
+              DTS:Description="Execute Package Task"
+              DTS:CreationName="SSIS.ExecutePackageTask.3">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>TXT_Shredder_Blade.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Length</ParameterName>
+                    <BindedVariableOrParameterName>User::Length</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                  <ParameterAssignment>
+                    <ParameterName>Segment</ParameterName>
+                    <BindedVariableOrParameterName>User::Segment4</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Sequence Container\Mapper Loop 4.PrecedenceConstraints[Constraint]"
+              DTS:From="Package\Sequence Container\Mapper Loop 4\Mark List Processed 4"
+              DTS:To="Package\Sequence Container\Mapper Loop 4\Shredder Blade 4"
+              DTS:EvalOp="3"
+              DTS:LogicalAnd="True"
+              DTS:Expression="@[User::Segment4]&gt;=4"
+              DTS:ObjectName="Constraint"
+              DTS:DTSID="{2A23F69F-BC08-4B0F-A32C-AC81F3896C77}"
+              DTS:CreationName="" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Mapper Loop 5"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@Segment5 = 5"
+          DTS:EvalExpression="@Segment5 &lt;= @Segments &amp;&amp; @Segment5 &gt; 0"
+          DTS:AssignExpression="@Segment5 = @Segment5+@[$Package::Blades]"
+          DTS:MaxConcurrent="1"
+          DTS:MaxErrorCount="0"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Mapper Loop 5"
+          DTS:DTSID="{8BF49A08-6F28-4562-99C3-94DD09013520}"
+          DTS:Description="For Loop Container"
+          DTS:CreationName="STOCK:FORLOOP">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:Namespace="User"
+              DTS:IncludeInDebugDump="6789"
+              DTS:ObjectName="Segment5"
+              DTS:DTSID="{BB3095FE-4859-483A-9305-972200FF6550}"
+              DTS:CreationName="">
+              <DTS:VariableValue
+                DTS:DataType="3">5</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[$Package::Blades]&lt;5  ||  @[User::Segments] &lt;5</DTS:PropertyExpression>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 5\Mark List Processed 5"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ThreadHint="6"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:Disabled="True"
+              DTS:MaxErrorCount="0"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Mark List Processed 5"
+              DTS:DTSID="{DD40FBBD-D8FF-455B-B1C5-11854CDA50C6}"
+              DTS:Description="Execute SQL Task"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+                  SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#x9;DECLARE @Ordinal INT&#xA;&#xA;&#x9;SELECT @Ordinal = MIN(Ordinal)&#xA;&#x9;FROM tmp.SQL_Shred_List WITH(TABLOCK)&#xA;&#x9;WHERE Processed = 0&#xA;&#xA;&#x9;UPDATE tmp.SQL_Shred_List SET Processed = 1&#xA;&#x9;WHERE Ordinal = @Ordinal&#xA;&#xA;&#x9;SELECT @Ordinal&#x9;AS Segment&#xA;&#xA;COMMIT TRANSACTION"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Segment"
+                    SQLTask:DtsVariableName="User::Segment5" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 5\Shredder Blade 5"
+              DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:MaxErrorCount="0"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Shredder Blade 5"
+              DTS:DTSID="{E7D39D78-0AF7-4B8A-BD11-39BCD04BCD61}"
+              DTS:Description="Execute Package Task"
+              DTS:CreationName="SSIS.ExecutePackageTask.3">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>TXT_Shredder_Blade.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Length</ParameterName>
+                    <BindedVariableOrParameterName>User::Length</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                  <ParameterAssignment>
+                    <ParameterName>Segment</ParameterName>
+                    <BindedVariableOrParameterName>User::Segment5</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Sequence Container\Mapper Loop 5.PrecedenceConstraints[Constraint]"
+              DTS:From="Package\Sequence Container\Mapper Loop 5\Mark List Processed 5"
+              DTS:To="Package\Sequence Container\Mapper Loop 5\Shredder Blade 5"
+              DTS:EvalOp="3"
+              DTS:LogicalAnd="True"
+              DTS:Expression="@[User::Segment5]&gt;=5"
+              DTS:ObjectName="Constraint"
+              DTS:DTSID="{2C60F484-0259-4536-868A-6B7C4A0F4DD0}"
+              DTS:CreationName="" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Mapper Loop 6"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@Segment6 = 6"
+          DTS:EvalExpression="@Segment6 &lt;= @Segments &amp;&amp; @Segment6 &gt; 0"
+          DTS:AssignExpression="@Segment6 = @Segment6+@[$Package::Blades]"
+          DTS:MaxConcurrent="1"
+          DTS:MaxErrorCount="0"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Mapper Loop 6"
+          DTS:DTSID="{F9459438-C324-4458-89F7-5C24FA0EAA15}"
+          DTS:Description="For Loop Container"
+          DTS:CreationName="STOCK:FORLOOP">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:Namespace="User"
+              DTS:IncludeInDebugDump="6789"
+              DTS:ObjectName="Segment6"
+              DTS:DTSID="{F388D339-302C-446B-950C-D5A1124FD4BA}"
+              DTS:CreationName="">
+              <DTS:VariableValue
+                DTS:DataType="3">6</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[$Package::Blades]&lt;6  ||  @[User::Segments] &lt;6</DTS:PropertyExpression>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 6\Mark List Processed 6"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ThreadHint="4"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:Disabled="True"
+              DTS:MaxErrorCount="0"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Mark List Processed 6"
+              DTS:DTSID="{0952C5EB-D605-4757-9B4C-092CEC52E368}"
+              DTS:Description="Execute SQL Task"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+                  SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#x9;DECLARE @Ordinal INT&#xA;&#xA;&#x9;SELECT @Ordinal = MIN(Ordinal)&#xA;&#x9;FROM tmp.SQL_Shred_List WITH(TABLOCK)&#xA;&#x9;WHERE Processed = 0&#xA;&#xA;&#x9;UPDATE tmp.SQL_Shred_List SET Processed = 1&#xA;&#x9;WHERE Ordinal = @Ordinal&#xA;&#xA;&#x9;SELECT @Ordinal&#x9;AS Segment&#xA;&#xA;COMMIT TRANSACTION"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Segment"
+                    SQLTask:DtsVariableName="User::Segment6" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 6\Shredder Blade 6"
+              DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:MaxErrorCount="0"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Shredder Blade 6"
+              DTS:DTSID="{E155561C-B602-449E-98AD-C043256E24B8}"
+              DTS:Description="Execute Package Task"
+              DTS:CreationName="SSIS.ExecutePackageTask.3">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>TXT_Shredder_Blade.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Length</ParameterName>
+                    <BindedVariableOrParameterName>User::Length</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                  <ParameterAssignment>
+                    <ParameterName>Segment</ParameterName>
+                    <BindedVariableOrParameterName>User::Segment6</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Sequence Container\Mapper Loop 6.PrecedenceConstraints[Constraint]"
+              DTS:From="Package\Sequence Container\Mapper Loop 6\Mark List Processed 6"
+              DTS:To="Package\Sequence Container\Mapper Loop 6\Shredder Blade 6"
+              DTS:EvalOp="3"
+              DTS:LogicalAnd="True"
+              DTS:Expression="@[User::Segment6]&gt;=6"
+              DTS:ObjectName="Constraint"
+              DTS:DTSID="{9F0F8EA5-3055-4038-B223-2EF69CD36D9D}"
+              DTS:CreationName="" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Mapper Loop 7"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@Segment7 = 7"
+          DTS:EvalExpression="@Segment7 &lt;= @Segments &amp;&amp; @Segment7 &gt; 0"
+          DTS:AssignExpression="@Segment7 = @Segment7+@[$Package::Blades]"
+          DTS:MaxConcurrent="1"
+          DTS:MaxErrorCount="0"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Mapper Loop 7"
+          DTS:DTSID="{364523C2-20BA-45C6-BEB1-E8B3F105301B}"
+          DTS:Description="For Loop Container"
+          DTS:CreationName="STOCK:FORLOOP">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:Namespace="User"
+              DTS:IncludeInDebugDump="6789"
+              DTS:ObjectName="Segment7"
+              DTS:DTSID="{72F65ADA-0A0B-4F11-A499-D97D3EFD6D35}"
+              DTS:CreationName="">
+              <DTS:VariableValue
+                DTS:DataType="3">7</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[$Package::Blades]&lt;7  ||  @[User::Segments] &lt;7</DTS:PropertyExpression>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 7\Mark List Processed 7"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ThreadHint="5"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:Disabled="True"
+              DTS:MaxErrorCount="0"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Mark List Processed 7"
+              DTS:DTSID="{1E3E6D89-6AC5-41A8-A0DE-D14850ADC54B}"
+              DTS:Description="Execute SQL Task"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+                  SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#x9;DECLARE @Ordinal INT&#xA;&#xA;&#x9;SELECT @Ordinal = MIN(Ordinal)&#xA;&#x9;FROM tmp.SQL_Shred_List WITH(TABLOCK)&#xA;&#x9;WHERE Processed = 0&#xA;&#xA;&#x9;UPDATE tmp.SQL_Shred_List SET Processed = 1&#xA;&#x9;WHERE Ordinal = @Ordinal&#xA;&#xA;&#x9;SELECT @Ordinal&#x9;AS Segment&#xA;&#xA;COMMIT TRANSACTION"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Segment"
+                    SQLTask:DtsVariableName="User::Segment7" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 7\Shredder Blade 7"
+              DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:MaxErrorCount="0"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Shredder Blade 7"
+              DTS:DTSID="{0F3DFA2A-9E7C-4FAF-BCF5-3D8BADBE77B2}"
+              DTS:Description="Execute Package Task"
+              DTS:CreationName="SSIS.ExecutePackageTask.3">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>TXT_Shredder_Blade.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Length</ParameterName>
+                    <BindedVariableOrParameterName>User::Length</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                  <ParameterAssignment>
+                    <ParameterName>Segment</ParameterName>
+                    <BindedVariableOrParameterName>User::Segment7</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Sequence Container\Mapper Loop 7.PrecedenceConstraints[Constraint]"
+              DTS:From="Package\Sequence Container\Mapper Loop 7\Mark List Processed 7"
+              DTS:To="Package\Sequence Container\Mapper Loop 7\Shredder Blade 7"
+              DTS:EvalOp="3"
+              DTS:LogicalAnd="True"
+              DTS:Expression="@[User::Segment7]&gt;=7"
+              DTS:ObjectName="Constraint"
+              DTS:DTSID="{DC53CF00-AF26-437C-A8B0-19A960A6BF7F}"
+              DTS:CreationName="" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Mapper Loop 8"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@Segment8 = 8"
+          DTS:EvalExpression="@Segment8 &lt;= @Segments &amp;&amp; @Segment8 &gt; 0"
+          DTS:AssignExpression="@Segment8 = @Segment8+@[$Package::Blades]"
+          DTS:MaxConcurrent="1"
+          DTS:MaxErrorCount="0"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Mapper Loop 8"
+          DTS:DTSID="{91044A8C-321B-4CAB-A622-BFBBF8B9C4E3}"
+          DTS:Description="For Loop Container"
+          DTS:CreationName="STOCK:FORLOOP">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:Namespace="User"
+              DTS:IncludeInDebugDump="6789"
+              DTS:ObjectName="Segment8"
+              DTS:DTSID="{2CE86619-2504-4633-BC13-7847CCFD634B}"
+              DTS:CreationName="">
+              <DTS:VariableValue
+                DTS:DataType="3">8</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[$Package::Blades]&lt;8  ||  @[User::Segments] &lt;8</DTS:PropertyExpression>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 8\Mark List Processed 8"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ThreadHint="7"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:Disabled="True"
+              DTS:MaxErrorCount="0"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Mark List Processed 8"
+              DTS:DTSID="{84A7D427-BA16-40B5-9D7F-5D18AC4104CC}"
+              DTS:Description="Execute SQL Task"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+                  SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#x9;DECLARE @Ordinal INT&#xA;&#xA;&#x9;SELECT @Ordinal = MIN(Ordinal)&#xA;&#x9;FROM tmp.SQL_Shred_List WITH(TABLOCK)&#xA;&#x9;WHERE Processed = 0&#xA;&#xA;&#x9;UPDATE tmp.SQL_Shred_List SET Processed = 1&#xA;&#x9;WHERE Ordinal = @Ordinal&#xA;&#xA;&#x9;SELECT @Ordinal&#x9;AS Segment&#xA;&#xA;COMMIT TRANSACTION"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Segment"
+                    SQLTask:DtsVariableName="User::Segment8" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Mapper Loop 8\Shredder Blade 8"
+              DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:MaxErrorCount="0"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:DelayValidation="True"
+              DTS:ObjectName="Shredder Blade 8"
+              DTS:DTSID="{0CCCC2E1-9784-4FC6-8C90-7AE89E206291}"
+              DTS:Description="Execute Package Task"
+              DTS:CreationName="SSIS.ExecutePackageTask.3">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>TXT_Shredder_Blade.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Length</ParameterName>
+                    <BindedVariableOrParameterName>User::Length</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                  <ParameterAssignment>
+                    <ParameterName>Segment</ParameterName>
+                    <BindedVariableOrParameterName>User::Segment8</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Sequence Container\Mapper Loop 8.PrecedenceConstraints[Constraint]"
+              DTS:From="Package\Sequence Container\Mapper Loop 8\Mark List Processed 8"
+              DTS:To="Package\Sequence Container\Mapper Loop 8\Shredder Blade 8"
+              DTS:EvalOp="3"
+              DTS:LogicalAnd="True"
+              DTS:Expression="@[User::Segment8]&gt;=8"
+              DTS:ObjectName="Constraint"
+              DTS:DTSID="{FD293C34-227D-48A3-82C4-C9E92F6EF4D8}"
+              DTS:CreationName="" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TXT_StringMap_List"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="TXT_StringMap_List"
+      DTS:DTSID="{A5116676-101F-4241-BA1B-2D8CA9153205}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+          SQLTask:SqlStatementSource="SELECT cast(substring(obj.name,16,len(obj.name)-15) as int) as Ordinal&#xA;, 0 as Processed&#xA;, obj.name&#xA;INTO tmp.TXT_Shred_List&#xA;FROM sys.schemas AS scm&#xA;JOIN sys.objects AS obj&#xA;ON obj.schema_id = scm.schema_id&#xA;WHERE scm.name = 'TMP'&#xA;AND obj.name like 'TXT_String_Map_%'&#xA;ORDER BY Ordinal" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\Execute TXT File Logger"
+      DTS:To="Package\Determine TXT File Segments"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{D2658B79-B9A6-4874-B4E8-0A3ABEEA25C5}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:From="Package\Determine TXT File Segments"
+      DTS:To="Package\Create Work Tables"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:DTSID="{69EB5AF6-2CCD-4D6B-A447-117F41D61AD2}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:From="Package\Create Work Tables"
+      DTS:To="Package\TXT_StringMap_List"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:DTSID="{A839AB81-91AF-47E6-AECB-65B7EA761D02}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:From="Package\Clear Staging Tables"
+      DTS:To="Package\Execute TXT File Logger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:DTSID="{9134481C-B5C6-41E8-90C9-A460824745F6}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:From="Package\TXT_StringMap_List"
+      DTS:To="Package\Sequence Container"
+      DTS:Value="2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:DTSID="{553090D6-8BEE-489F-B756-8F2A7377BB89}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:From="Package\Sequence Container"
+      DTS:To="Package\Execute TXT Shredder"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:DTSID="{93D9527C-2E22-44EC-B485-A6B316227526}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="242,42"
+          Id="Package\Clear Staging Tables"
+          TopLeft="879.5,5.5" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Create Work Tables\Create StringMap Tables"
+          TopLeft="6.00000000000001,107.5" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Create Work Tables\Drop Old StringMap Tables"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package\Create Work Tables.PrecedenceConstraints[Constraint]"
+          TopLeft="109.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,20.4453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="219,205"
+          Size="219,248"
+          Id="Package\Create Work Tables"
+          TopLeft="891,311.5" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Determine TXT File Segments"
+          TopLeft="890.5,209.5" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Execute TXT File Logger"
+          TopLeft="903.5,107.5" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Execute TXT Shredder"
+          TopLeft="909.14285716232,1150.40588111745" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence Container\Mapper Loop 1\Mark List Processed 1"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Sequence Container\Mapper Loop 1\Shredder Blade 1"
+          TopLeft="16,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Mapper Loop 1.PrecedenceConstraints[Constraint]"
+          TopLeft="97,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,205"
+          Size="194,248"
+          Id="Package\Sequence Container\Mapper Loop 1"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence Container\Mapper Loop 2\Mark List Processed 2"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Sequence Container\Mapper Loop 2\Shredder Blade 2"
+          TopLeft="17.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Mapper Loop 2.PrecedenceConstraints[Constraint]"
+          TopLeft="97,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,205"
+          Size="194,248"
+          Id="Package\Sequence Container\Mapper Loop 2"
+          TopLeft="260.5,5.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence Container\Mapper Loop 3\Mark List Processed 3"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Sequence Container\Mapper Loop 3\Shredder Blade 3"
+          TopLeft="17.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Mapper Loop 3.PrecedenceConstraints[Constraint]"
+          TopLeft="97,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,205"
+          Size="194,248"
+          Id="Package\Sequence Container\Mapper Loop 3"
+          TopLeft="515.5,5.49999999999989" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence Container\Mapper Loop 4\Mark List Processed 4"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Sequence Container\Mapper Loop 4\Shredder Blade 4"
+          TopLeft="17.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Mapper Loop 4.PrecedenceConstraints[Constraint]"
+          TopLeft="97,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,205"
+          Size="194,248"
+          Id="Package\Sequence Container\Mapper Loop 4"
+          TopLeft="770.5,5.49999999999989" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence Container\Mapper Loop 5\Mark List Processed 5"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Sequence Container\Mapper Loop 5\Shredder Blade 5"
+          TopLeft="17.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Mapper Loop 5.PrecedenceConstraints[Constraint]"
+          TopLeft="97,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,205"
+          Size="194,248"
+          Id="Package\Sequence Container\Mapper Loop 5"
+          TopLeft="1025.5,5.49999999999989" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence Container\Mapper Loop 6\Mark List Processed 6"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Sequence Container\Mapper Loop 6\Shredder Blade 6"
+          TopLeft="17.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Mapper Loop 6.PrecedenceConstraints[Constraint]"
+          TopLeft="97,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,205"
+          Size="194,248"
+          Id="Package\Sequence Container\Mapper Loop 6"
+          TopLeft="1280.5,5.49999999999989" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence Container\Mapper Loop 7\Mark List Processed 7"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Sequence Container\Mapper Loop 7\Shredder Blade 7"
+          TopLeft="17.5,106.071428571429" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Mapper Loop 7.PrecedenceConstraints[Constraint]"
+          TopLeft="97,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.5714285714286"
+              Start="0,0"
+              End="0,51.0714285714286">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.0714285714286" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,17.5357142857143,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,205"
+          Size="194,248"
+          Id="Package\Sequence Container\Mapper Loop 7"
+          TopLeft="1535.5,5.49999999999977" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence Container\Mapper Loop 8\Mark List Processed 8"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Sequence Container\Mapper Loop 8\Shredder Blade 8"
+          TopLeft="17.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Mapper Loop 8.PrecedenceConstraints[Constraint]"
+          TopLeft="97,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,205"
+          Size="194,248"
+          Id="Package\Sequence Container\Mapper Loop 8"
+          TopLeft="1790.5,5.49999999999977" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="1990,309"
+          Size="1990,352"
+          Id="Package\Sequence Container"
+          TopLeft="5.50000000000023,721.5" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\TXT_StringMap_List"
+          TopLeft="898.5,619.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1000.4,149.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.4"
+              Start="0,0"
+              End="0,52.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,20.6453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="1000.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,20.4453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="1000.5,559.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,20.4453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="1000.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.4"
+              Start="0,0"
+              End="0,52.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1000.5,661.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,20.4453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="1001.07142858116,1073.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76.90588111745"
+              Start="0,0"
+              End="0,69.40588111745">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.40588111745" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="TXT_Turbo_Shredder is used to process files acquired from the file system.&#xA;Any type of file is valid - global text-parsing rules determine structure and &#xA;format of unknown file types. Known file types may bypass certain steps - &#xA;see SQL Documentation for full details."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="422,88"
+          Id="3a94e05b-3bc6-465f-b5ca-fd6a3a59bbdb"
+          TopLeft="399.166672661191,593.423529137212" />
+        <AnnotationLayout
+          Text="Stacks 1 - 3 may be especially cumbersome.&#xA;MOST code encountered so far is &lt; 8000 characters&#xA;80%-90% is within 12,000 characters. As 80% of&#xA;the processing load is carried by the first three stages;&#xA;it is expected that stages 4+ may complete ALL stacks&#xA;assigned, and sit idle while stacks 1 - 3 spin through&#xA;their first cycle.&#xA;&#xA;Retain the disabled SQL statement to assist with &#xA;provisioning idle stacks with back-shredding."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="295,247"
+          Id="7aa6d9c4-b7f3-4bfd-a9c1-6dc2c88d7509"
+          TopLeft="1140.14287569085,435.531372960849" />
+        <AnnotationLayout
+          Text="File Processing Logic&#xA;&#xA;1. ALL external files are collected into LIB.TXT_String_Content_Intake_Stack&#xA;2. Content stack is logged and processed.&#xA;3. TXT String_Map is built&#xA;4. Specialty file types are shunted to their own processing queues - XML, SQL, TXT, etc.&#xA;5a. XML Documents have their own routines which: &#xA;- Test the schema against known schema types&#xA;-- Log and process new schmeas&#xA;-- Execute derivative queries against known schemas to extract critical values (connection strings, attributes, etc.)&#xA;5b. SQL documents DO NOT move into the SQL processing collection automatically&#xA;- Files are tested against catalog objects&#xA;-- Files associated with a catalog object are parsed for version attribution&#xA;-- Files unassociated with a catalog object are logged under Foreign Server/Foreign Database and staged for SQL_012_Shredder&#xA;5c. String based documents such as .txt or .doc, or any unknown types are parsed for strong structure (potential code file or structured data) or &#xA;natural language structure (looser syntax, language detection, etc.)&#xA;5d. Binary/Stream type files such as images, audio files, or sensor streams have minimal parsing available."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="735,311"
+          Id="4e566df2-81b8-4dee-8ee5-1c5ae604718c"
+          TopLeft="111.476191721806,56.7470576909999" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

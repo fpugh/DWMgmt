@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DWMgmt_SQL_DEV_Scripts">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="CORRUSCANT\IMPERIAL_SENATE:CORRUSCANT\Forrest Pugh">
+          <Created>2015-12-18T20:25:44.0139226-07:00</Created>
+          <Type>SQL</Type>
+          <Server>CORRUSCANT\IMPERIAL_SENATE</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>DWMgmt</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="CORRUSCANT\JEDI_COUNCIL:CORRUSCANT\Forrest Pugh">
+          <Created>2018-03-14T21:08:54.1425893-06:00</Created>
+          <Type>SQL</Type>
+          <Server>CORRUSCANT\JEDI_COUNCIL</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="CORRUSCANT\MOS_EISLEY:CORRUSCANT\Forrest Pugh">
+          <Created>2018-04-28T18:20:33.4719195-06:00</Created>
+          <Type>SQL</Type>
+          <Server>CORRUSCANT\MOS_EISLEY</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="20140323_Default_Library_Description_For_Database_Enries..sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20140323_Default_Library_Description_For_Database_Enries..sql</FullPath>
+        </FileNode>
+        <FileNode Name="20150304_Adhoc_Query_Capture.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20150304_Adhoc_Query_Capture.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20150321_ToDo_SQL_Statements_for_Performance_Monitoring.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20150321_ToDo_SQL_Statements_for_Performance_Monitoring.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20150405_Drop_Constraints_Keys_Triggers_and_Indices.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20150405_Drop_Constraints_Keys_Triggers_and_Indices.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20150709_Data_Quality_Analysis_Prototype_Code.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20150709_Data_Quality_Analysis_Prototype_Code.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20151028_Data_Quality_Type_II.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20151028_Data_Quality_Type_II.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20151028_Data_Quality_Type_III.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20151028_Data_Quality_Type_III.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20151031_Full_Value_Hash_Analysis.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20151031_Full_Value_Hash_Analysis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20160329_DWMgmt_Column_Compare.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20160329_DWMgmt_Column_Compare.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20160420_Using_Current_Key_Table_Concept.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20160420_Using_Current_Key_Table_Concept.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20160824_Functional_Junctioning.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20160824_Functional_Junctioning.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20170109_TXT_010_File_System_Logging_Reconfiguration.Procedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20170109_TXT_010_File_System_Logging_Reconfiguration.Procedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20170212_Batch_Sizing_for_Shredding.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20170212_Batch_Sizing_for_Shredding.sql</FullPath>
+        </FileNode>
+        <FileNode Name="AAA.Agent_Job_Creation_Script.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>AAA.Agent_Job_Creation_Script.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.Critical_Field_Analysis.StoredProcedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.Critical_Field_Analysis.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VI_0300_Full_Object_Map.View.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.VI_0300_Full_Object_Map.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VT_Import_Audit_Tracking.View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.VT_Import_Audit_Tracking.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VT_Import_Error_Tracking.View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.VT_Import_Error_Tracking.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.WFT_0454_Profile_Assessor.Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CAT.WFT_0454_Profile_Assessor.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.WFT_Maintenance_Job_Queue.Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.WFT_Maintenance_Job_Queue.Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CNX_String_Builder.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CNX_String_Builder.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Daily New Object Poll..sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Daily New Object Poll..sql</FullPath>
+        </FileNode>
+        <FileNode Name="dbo.SUB_0998_DBCC_SHOW_CONTIG.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>dbo.SUB_0998_DBCC_SHOW_CONTIG.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="dbo.SUB_0999_DBCC_Show_Stats.StoredProcedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>dbo.SUB_0999_DBCC_Show_Stats.StoredProcedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Debug.Internal_String_Intake_Stack_Tracking.Script.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Debug.Internal_String_Intake_Stack_Tracking.Script.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DWMgmt.Database.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DWMgmt.Database.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DWMgmtAgent.User.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DWMgmtAgent.User.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Miscelaneous_Procedures_20131126.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Miscelaneous_Procedures_20131126.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Miscelaneous_Views_20131126.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Miscelaneous_Views_20131126.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MP_Table_Creator.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>MP_Table_Creator.sql</FullPath>
+        </FileNode>
+        <FileNode Name="PipeDelimiterOutput_20131106.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>PipeDelimiterOutput_20131106.sql</FullPath>
+        </FileNode>
+        <FileNode Name="PRT.Language_Analysis_Rules_Prototype.Script.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>PRT.Language_Analysis_Rules_Prototype.Script.sql</FullPath>
+        </FileNode>
+        <FileNode Name="PRT.Language_Analysis_Rules_Prototype_PtII.Script.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>PRT.Language_Analysis_Rules_Prototype_PtII.Script.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SCAN_ASSESSMENT_PROCESSOR.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SCAN_ASSESSMENT_PROCESSOR.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

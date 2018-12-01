@@ -1,0 +1,16 @@
+File Processing Logic
+
+1. ALL external files are collected into LIB.TXT_String_Content_Intake_Stack
+2. Content stack is logged and processed.
+3. TXT String_Map is built
+4. Specialty file types are shunted to their own processing queues - XML, SQL, TXT, etc.
+5a. XML Documents have their own routines which: 
+-	Test the schema against known schema types
+--	Log and process new schmeas
+--	Execute derivative queries against known schemas to extract critical values (connection strings, attributes, etc.)
+5b. SQL documents DO NOT move into the SQL processing collection automatically
+-	Files are tested against catalog objects
+--	Files associated with a catalog object are parsed for version attribution
+--	Files unassociated with a catalog object are logged under Foreign Server/Foreign Database and staged for SQL_012_Shredder
+5c. String based documents such as .txt or .doc, or any unknown types are parsed for strong structure (potential code file or structured data) or natural language structure (looser syntax, language detection, etc.)
+5d. Binary/Stream type files such as images, audio files, or sensor streams have minimal parsing available.

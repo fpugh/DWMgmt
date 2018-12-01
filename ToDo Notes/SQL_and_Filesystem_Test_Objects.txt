@@ -1,0 +1,56 @@
+/* Original File Paths
+
+E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\
+E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_SQL_Code\
+E:\Databases\NLM\2014AA\LEX\
+
+*/
+
+
+	  /* Came out funny
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\SUM_0350_Data_Profile.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\SUM_0300_Object_Footprint_STKBAR.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\SUM_0200_Tier_Inventory.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\Searchable_Catalog.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\RPT_Object_Analysis_Report.xlsx
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\RPT_Object_Analysis_Report.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\Review.rptproj.user
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Observation\Observation.suo
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MOD_Referencing_Code_Objects.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MOD_Object_Footprint_STKBAR.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MOD_Index_Summary.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MOD_FKey_Summary.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MOD_Constraint_Summary.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MOD_0334_Relational_Integrity_Summary.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MOD_0306_Referencing_Code_Objects.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MOD_0304_Constraint_Enforcement_Summary.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MOD_0303_Index_Coverage_Summary.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MINI_Tier_Inventory.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\MINI_Data_Integrity.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\HDR_Object_Footprint_STKBAR.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\DSS_Automation_Tests.v12.suo.doc
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\DSS_Automation_Tests.v12.suo
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\DSS_Automation_Tests.suo
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\CMP_Minigraph_Server.rdl.data
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\bin\Release\build.obj
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\bin\DebugLocal\build.obj
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\bin\Debug\build.obj
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Observation\obj\Development\vssver2.scc
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Actuation\vssver2.scc
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Observation\vssver2.scc
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\vssver2.scc
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\vssver2.scc
+	E:\Databases\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Observation\bin\vssver2.scc
+	  
+  */
+
+
+
+/* Version stamp on file content needs a little extra work - these should not be duplicate
+
+0000-A535:000000000r:0000005137:2015113
+0000-C300:000000000.:0000003430:2015521
+0000-B430:000000000b:0000015881:201587
+0000-C510:000000000a:0000023552:201555
+
+*/

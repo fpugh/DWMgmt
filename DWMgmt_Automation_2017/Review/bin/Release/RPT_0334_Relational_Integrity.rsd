@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="RelationalIntegrity">
+    <Query>
+      <DataSourceReference>DWMgmt</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@NamePart">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+        </DataSetParameter>
+        <DataSetParameter Name="@ExactName">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Boolean</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>CAT.RPT_0334_Relational_Integrity</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Relational_Vector">
+        <DataField>Relational_Vector</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Fully_Qualified_Name">
+        <DataField>Fully_Qualified_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Relational_Column_Count">
+        <DataField>Relational_Column_Count</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Table_Column_Count">
+        <DataField>Table_Column_Count</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Foreign_Key_Count">
+        <DataField>Foreign_Key_Count</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Relational_Integrity_Ratio">
+        <DataField>Relational_Integrity_Ratio</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

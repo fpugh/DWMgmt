@@ -1,0 +1,489 @@
+<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="CORRUSCANT\fdpugh"
+  DTS:CreatorComputerName="CORRUSCANT"
+  DTS:CreationDate="9/2/2017 7:33:57 PM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{47C98DE0-FCF3-491D-859E-7E78C42A37CF}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package2"
+  DTS:DTSID="{33E74236-0096-408A-B6AA-61CBAECA3B6F}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="BatchID"
+      DTS:DTSID="{79728BF9-143A-4FD2-91EF-001AF54263C4}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">TXTL000</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="6789"
+      DTS:ObjectName="ForceLongParse"
+      DTS:DTSID="{3185827D-6955-44BF-8672-E5855BFB9228}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="2">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="6789"
+      DTS:ObjectName="ForceTextParse"
+      DTS:DTSID="{0C2E1181-16C4-41C2-8F1D-574C43E89A67}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="2">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="6789"
+      DTS:ObjectName="ShredderFiles"
+      DTS:DTSID="{7BFA6478-D8D4-4A81-8E2E-E8B31B1EDAE1}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Shredding by Batch"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Shredding by Batch"
+      DTS:DTSID="{62D65D75-196E-47BD-A144-F21C7F1CE9E7}"
+      DTS:Description="Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP">
+      <DTS:ForEachEnumerator
+        DTS:ObjectName="{8AD74D09-5543-44C9-B069-2D2BDBCCE2C6}"
+        DTS:DTSID="{8AD74D09-5543-44C9-B069-2D2BDBCCE2C6}"
+        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::ShredderFiles" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Shredding by Batch\Execute Package Task"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package Task"
+          DTS:DTSID="{F5AA6E6C-8F2E-415D-AF93-6801865F0058}"
+          DTS:Description="Execute Package Task"
+          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>TXT_Turbo_Shredder.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>BatchID</ParameterName>
+                <BindedVariableOrParameterName>User::BatchID</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>ForceTextParse</ParameterName>
+                <BindedVariableOrParameterName>User::ForceTextParse</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>ForceLongParse</ParameterName>
+                <BindedVariableOrParameterName>User::ForceLongParse</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Blades</ParameterName>
+                <BindedVariableOrParameterName>$Project::Blades</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:VariableName="User::BatchID"
+          DTS:ValueIndex="0"
+          DTS:ObjectName="{44D86AF6-7FB9-4E7D-A6F0-D51B9AAD2535}"
+          DTS:DTSID="{44D86AF6-7FB9-4E7D-A6F0-D51B9AAD2535}"
+          DTS:CreationName="" />
+        <DTS:ForEachVariableMapping
+          DTS:VariableName="User::ForceTextParse"
+          DTS:ValueIndex="1"
+          DTS:ObjectName="{5E16719C-7D72-49C6-BAF2-F1A32A62E671}"
+          DTS:DTSID="{5E16719C-7D72-49C6-BAF2-F1A32A62E671}"
+          DTS:CreationName="" />
+        <DTS:ForEachVariableMapping
+          DTS:VariableName="User::ForceLongParse"
+          DTS:ValueIndex="2"
+          DTS:ObjectName="{DBCD94EE-2C9D-47AA-9B1A-317E113F30FD}"
+          DTS:DTSID="{DBCD94EE-2C9D-47AA-9B1A-317E113F30FD}"
+          DTS:CreationName="" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Text Shred Candidates"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Text Shred Candidates"
+      DTS:DTSID="{007742AB-F9C8-4051-96A6-11928A5574BE}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Text Shred Candidates\Recordset Destination"
+              name="Recordset Destination"
+              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
+              contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <properties>
+                <property
+                  name="VariableName"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the recordset.">User::ShredderFiles</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Text Shred Candidates\Recordset Destination.Inputs[Recordset Destination Input]"
+                  name="Recordset Destination Input"
+                  hasSideEffects="true">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Text Shred Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[Batch_ID]"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].Columns[Batch_ID]"
+                      cachedName="Batch_ID"
+                      cachedDataType="wstr"
+                      cachedLength="7" />
+                    <inputColumn
+                      refId="Package\Text Shred Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[ForceTextParse]"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].Columns[ForceTextParse]"
+                      cachedName="ForceTextParse"
+                      cachedDataType="i2" />
+                    <inputColumn
+                      refId="Package\Text Shred Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[ForceLongParse]"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].Columns[ForceLongParse]"
+                      cachedName="ForceLongParse"
+                      cachedDataType="i2" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Text Shred Candidates\Shredding Candidate Selection"
+              name="Shredding Candidate Selection"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."></property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT Batch_ID
+, 1 as ForceTextParse
+, 0 as ForceLongParse
+FROM LIB.External_String_Intake_Stack
+where Batch_ID = 'TXTL001'</property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">2</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Text Shred Candidates\Shredding Candidate Selection.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="{746F9285-349E-460D-B4DB-67E8D24A726B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DynamicDestinationOLEDB]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].Columns[Batch_ID]"
+                      name="Batch_ID"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].Columns[Batch_ID]"
+                      length="7"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].ExternalColumns[Batch_ID]" />
+                    <outputColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].Columns[ForceTextParse]"
+                      name="ForceTextParse"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].Columns[ForceTextParse]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].ExternalColumns[ForceTextParse]" />
+                    <outputColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].Columns[ForceLongParse]"
+                      name="ForceLongParse"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].Columns[ForceLongParse]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].ExternalColumns[ForceLongParse]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].ExternalColumns[Batch_ID]"
+                      name="Batch_ID"
+                      dataType="wstr"
+                      length="7" />
+                    <externalMetadataColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].ExternalColumns[ForceTextParse]"
+                      name="ForceTextParse"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output].ExternalColumns[ForceLongParse]"
+                      name="ForceLongParse"
+                      dataType="i4" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[Batch_ID]"
+                      name="Batch_ID"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[Batch_ID]"
+                      length="7"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[ForceTextParse]"
+                      name="ForceTextParse"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[ForceTextParse]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[ForceLongParse]"
+                      name="ForceLongParse"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[ForceLongParse]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Text Shred Candidates.Paths[OLE DB Source Output]"
+              name="OLE DB Source Output"
+              startId="Package\Text Shred Candidates\Shredding Candidate Selection.Outputs[OLE DB Source Output]"
+              endId="Package\Text Shred Candidates\Recordset Destination.Inputs[Recordset Destination Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\Text Shred Candidates"
+      DTS:To="Package\Shredding by Batch"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{C7F36C24-E447-472A-8060-B428E5EEC51C}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Text Shred Candidates"
+          TopLeft="291,95" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Shredding by Batch\Execute Package Task"
+          TopLeft="33,29" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="220,126"
+          Size="220,169"
+          Id="Package\Shredding by Batch"
+          TopLeft="289,250" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="383,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16,113"
+              Start="0,0"
+              End="16,105.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.5"
+                    Point2="0,56.5"
+                    Point3="4,56.5" />
+                  <mssgle:LineSegment
+                    End="12,56.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,56.5"
+                    Point2="16,56.5"
+                    Point3="16,60.5" />
+                  <mssgle:LineSegment
+                    End="16,105.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Text Shred Candidates">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Text Shred Candidates\Shredding Candidate Selection"
+          TopLeft="309,65" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Text Shred Candidates\Recordset Destination"
+          TopLeft="262,250" />
+        <EdgeLayout
+          Id="Package\Text Shred Candidates.Paths[OLE DB Source Output]"
+          TopLeft="419.5,107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-67,143"
+              Start="0,0"
+              End="-67,135.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,67.5"
+                    Point2="0,71.5"
+                    Point3="-4,71.5" />
+                  <mssgle:LineSegment
+                    End="-63,71.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-63,71.5"
+                    Point2="-67,71.5"
+                    Point3="-67,75.5" />
+                  <mssgle:LineSegment
+                    End="-67,135.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Text Shred Candidates\Shredding Candidate Selection">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

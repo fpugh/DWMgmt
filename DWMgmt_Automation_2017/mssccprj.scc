@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[DataWarehouseCatalog.sln]
+SCC_Aux_Path = "\\Dhdcwiprapp01\vss\DSS"
+SCC_Project_Name = "$/ICD10_Remediation/SSMS.root/SSIS/DWMgmt_Actuation_and_Reporting/DWMgmt_Automation", DJDEAAAA
+
+[DSS_Automation_Tests.sln]
+SCC_Aux_Path = "\\Dhdcwiprapp01\vss\DSS"
+SCC_Project_Name = "$/ICD10_Remediation/SSMS.root/SSIS/DWMgmt_Actuation_and_Reporting/DWMgmt_Automation", DJDEAAAA

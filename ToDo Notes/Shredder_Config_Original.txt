@@ -1,0 +1,13 @@
+@Segment1 > 0 && @Segment1 <= @Segments
+@Segment2 > 1 && @Segment1 <= @Segments
+@Segment3 > 2 && @Segment3 <= @Segments
+@Segment4 > 3 && @Segment4 <= @Segments
+@Segment5 > 4 && @Segment5 <= @Segments
+@Segment6 > 5 && @Segment6 <= @Segments
+@Segment8 > 7 && @Segment7 <= @Segments
+@Segment8 > 7 && @Segment8 <= @Segments
+
+
+
+@Segment# <= @Segments
+AE: @Segment# = @Segment#+8

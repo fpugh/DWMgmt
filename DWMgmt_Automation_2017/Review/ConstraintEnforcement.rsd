@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="Constraint_Integrity">
+    <Query>
+      <DataSourceReference>DWMgmt</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@NamePart">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>CAT.RPT_0302_Constraint_Enforcement</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Column_Count">
+        <DataField>Column_Count</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="reg_Fully_Qualified_name">
+        <DataField>reg_Fully_Qualified_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Constraint_Columns">
+        <DataField>Constraint_Columns</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Constraint_Count">
+        <DataField>Constraint_Count</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Constraint_Type_Count">
+        <DataField>Constraint_Type_Count</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Relational_Integrity_Ratio">
+        <DataField>Relational_Integrity_Ratio</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

@@ -1,0 +1,2658 @@
+<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="Corruscant\FDPugh"
+  DTS:CreatorComputerName="CORRUSCANT"
+  DTS:CreationDate="7/29/2015 8:59:19 AM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:MaxConcurrentExecutables="1"
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{43E66E59-B4B2-482E-A682-D2CFCD6CA038}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:DelayValidation="True"
+  DTS:ObjectName="IMP_Excel_File_Imports"
+  DTS:DTSID="{C99DE722-FE74-4A4C-AB7E-B548E2714FE5}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CORRUSCANT\JEDI_COUNCIL.International_Classification_of_Diseases]"
+      DTS:ObjectName="CORRUSCANT\JEDI_COUNCIL.International_Classification_of_Diseases"
+      DTS:DTSID="{510074B9-53A9-4C4C-8014-461790149754}"
+      DTS:CreationName="OLEDB">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source="+ @[$Project::DestinationServer] +";Initial Catalog="+ @[$Project::DestinationDatabase] +";Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CORRUSCANT\MOS_EISLEY;Initial Catalog=DWMgmt;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ExcelSchema]"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="ExcelSchema"
+      DTS:DTSID="{D8D1065F-5170-43FE-98CC-4A0208EF3DAB}"
+      DTS:CreationName="ADO.NET:System.Data.OleDb.OleDbConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::FilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=&quot;Excel 12.0 XML;HDR=1;IMEX=1&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionExcel]"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="SourceConnectionExcel"
+      DTS:DTSID="{4362664C-30D8-4206-9ADA-43CC8ECC8A11}"
+      DTS:CreationName="EXCEL">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::FilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES;IMEX=1;IMPORTMIXEDTYPES=TEXT;TYPEGUESSROWS=0&quot;; Data Source=E:\Databases\03_Import_File_Staging\ICD9_ICD10_Conversion_Project\ICD10_Translations\DX_ICD10_PRM_Diet_In_V_Exclusions.xlsx;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:DataType="11"
+      DTS:ObjectName="DirTraverse"
+      DTS:DTSID="{99866E0A-727A-4D55-87BD-90E020E49C47}"
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="11">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:DataType="8"
+      DTS:ObjectName="FileDir"
+      DTS:DTSID="{4C86875B-621D-4841-B8DF-2678C55CA429}"
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">E:\Databases\DWMgmt_Projects\DWMgmt_Automation_Test_Code\</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:DataType="8"
+      DTS:ObjectName="FileSpec"
+      DTS:DTSID="{34B249FB-5160-481F-A288-DDCFCFFC2571}"
+      DTS:CreationName="">
+      <DTS:Property
+        DTS:Name="ParameterValue"
+        DTS:DataType="8">*.xls*</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:Expression="right(@[User::FilePath],5) == &quot;.xlsx&quot; ? &quot;Provider=Microsoft.ACE.OLEDB.12.0;&quot; +&quot; Data Source=&quot; + @[User::FilePath]  + &quot;;Extended Properties=&quot; + @[User::ExtProperties]  : &#xA;&quot;Provider=Microsoft.Jet.OLEDB.4.0;&quot; +&quot; Data Source=&quot; + @[User::FilePath]  + &quot;;Extended Properties=&quot; + @[User::ExtProperties]"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="ConnectionString"
+      DTS:DTSID="{C9E3AB2F-707A-44FC-86D3-32C1CE2F04EC}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">Provider=Microsoft.Jet.OLEDB.4.0; Data Source=;Extended Properties="Excel 12.0 Xml;HDR=Yes;IMEX=1;ImportMixedTypes=Text;TypeGuessRows=0"</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="@[$Package::DirTraverse]"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="DirTraverse"
+      DTS:DTSID="{5FCDF720-4379-4CB4-BC9E-8F9736756D9A}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="ExtProperties"
+      DTS:DTSID="{70393D8F-A04B-4AED-BDF3-6A81BE2ECB8A}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">"Excel 12.0 Xml;HDR=Yes;IMEX=1;ImportMixedTypes=Text;TypeGuessRows=0"</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="@[$Package::FileDir]"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="FileDir"
+      DTS:DTSID="{7D143224-3D47-4C8F-A8E9-286D71601817}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\Databases\DWMgmt_Projects\DWMgmt_Automation_Test_Code\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="RIGHT(@[User::FilePath],FINDSTRING(REVERSE(@[User::FilePath]),&quot;\\&quot;,1)-1)"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="FileName"
+      DTS:DTSID="{CE446749-8460-4AA8-A67B-22EB64F9757D}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">DX_ICD10_PRM_Diet_In_V_Exclusions.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="FilePath"
+      DTS:DTSID="{4A653847-61A5-48BC-A130-EE43B1AF4779}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Expression="@[$Package::FileSpec]"
+      DTS:EvaluateAsExpression="True"
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="FileSpec"
+      DTS:DTSID="{2A3845B9-560B-47EB-AA12-7D1F9CD34E2D}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">*.xls*</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="FileTable"
+      DTS:DTSID="{2E44417D-823D-4D6C-985C-8C17D350B823}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">Relations</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container"
+      DTS:DTSID="{B733C211-6405-4A6A-AC53-76F73C8800F3}"
+      DTS:Description="Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP">
+      <DTS:ForEachEnumerator
+        DTS:ObjectName="{09EAC134-9A49-4030-989F-41B40665FEAF}"
+        DTS:DTSID="{09EAC134-9A49-4030-989F-41B40665FEAF}"
+        DTS:CreationName="DTS.ForEachFileEnumerator.3">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[$Package::FileDir]</DTS:PropertyExpression>
+        <DTS:PropertyExpression
+          DTS:Name="FileSpec">@[$Package::FileSpec]</DTS:PropertyExpression>
+        <DTS:PropertyExpression
+          DTS:Name="Recurse">@[$Package::DirTraverse]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="E:\Databases\DWMgmt_Projects\DWMgmt_Automation_Test_Code\" />
+            <FEFEProperty
+              FileSpec="*.xls*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Import Excel WkBooks"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:Disabled="True"
+          DTS:FailPackageOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:DelayValidation="True"
+          DTS:ObjectName="Import Excel WkBooks"
+          DTS:DTSID="{f5705291-662b-448a-8053-11a94489cabe}"
+          DTS:CreationName="SSIS.Pipeline.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              defaultBufferSize="3145728"
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate"
+                  name="Aggregate"
+                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+                  version="3"
+                  contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3">
+                  <properties>
+                    <property
+                      name="KeyScale"
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      name="Keys"
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence." />
+                    <property
+                      name="CountDistinctScale"
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      name="CountDistinctKeys"
+                      dataType="System.Null"
+                      description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence." />
+                    <property
+                      name="AutoExtendFactor"
+                      dataType="System.Int32"
+                      description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100.">25</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Inputs[Aggregate Input 1]"
+                      name="Aggregate Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Inputs[Aggregate Input 1].Columns[SET_Title]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Title]"
+                          cachedName="SET_Title"
+                          cachedDataType="wstr"
+                          cachedLength="18" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Inputs[Aggregate Input 1].Columns[SET_Description]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Description]"
+                          cachedName="SET_Description"
+                          cachedDataType="wstr"
+                          cachedLength="92" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Inputs[Aggregate Input 1].Columns[SET_Code]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Code]"
+                          cachedName="SET_Code"
+                          cachedDataType="wstr"
+                          cachedLength="3" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Inputs[Aggregate Input 1].Columns[File_Table]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Table]"
+                          cachedName="File_Table"
+                          cachedDataType="wstr"
+                          cachedLength="256" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Inputs[Aggregate Input 1].Columns[File_Path]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Path]"
+                          cachedName="File_Path"
+                          cachedDataType="wstr"
+                          cachedLength="1024" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Inputs[Aggregate Input 1].Columns[File_Name]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Name]"
+                          cachedName="File_Name"
+                          cachedDataType="wstr"
+                          cachedLength="256" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1]"
+                      name="Aggregate Output 1">
+                      <properties>
+                        <property
+                          name="KeyScale"
+                          dataType="System.Int32"
+                          description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                          typeConverter="KeyScaleType">0</property>
+                        <property
+                          name="Keys"
+                          dataType="System.Null"
+                          description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence." />
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[SET_Title]"
+                          name="SET_Title"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[SET_Title]"
+                          length="18"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Title]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[SET_Description]"
+                          name="SET_Description"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[SET_Description]"
+                          length="92"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Description]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[SET_Code]"
+                          name="SET_Code"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[SET_Code]"
+                          length="3"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Code]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[File_Table]"
+                          name="File_Table"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[File_Table]"
+                          length="256"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Table]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[File_Path]"
+                          name="File_Path"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[File_Path]"
+                          length="1024"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Path]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[File_Name]"
+                          name="File_Name"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[File_Name]"
+                          length="256"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Name]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[Count all]"
+                          name="Count all"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[Count all]"
+                          dataType="ui8">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\0:invalid}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">2</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1"
+                  name="Aggregate 1"
+                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+                  version="3"
+                  contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3">
+                  <properties>
+                    <property
+                      name="KeyScale"
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      name="Keys"
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence." />
+                    <property
+                      name="CountDistinctScale"
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      name="CountDistinctKeys"
+                      dataType="System.Null"
+                      description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence." />
+                    <property
+                      name="AutoExtendFactor"
+                      dataType="System.Int32"
+                      description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100.">25</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1]"
+                      name="Aggregate Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1].Columns[Error_Code]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Code]"
+                          cachedName="Error_Code"
+                          cachedDataType="i4" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1].Columns[Error_Description]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Description]"
+                          cachedName="Error_Description"
+                          cachedDataType="i4" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1].Columns[Execution_ID]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Execution_ID]"
+                          cachedName="Execution_ID"
+                          cachedDataType="wstr"
+                          cachedLength="38" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1].Columns[Task_Name]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Task_Name]"
+                          cachedName="Task_Name"
+                          cachedDataType="wstr"
+                          cachedLength="64" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1].Columns[Target_Server]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Target_Server]"
+                          cachedName="Target_Server"
+                          cachedDataType="wstr"
+                          cachedLength="256" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1].Columns[Target_Database]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Target_Database]"
+                          cachedName="Target_Database"
+                          cachedDataType="wstr"
+                          cachedLength="256" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1]"
+                      name="Aggregate Output 1">
+                      <properties>
+                        <property
+                          name="KeyScale"
+                          dataType="System.Int32"
+                          description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                          typeConverter="KeyScaleType">0</property>
+                        <property
+                          name="Keys"
+                          dataType="System.Null"
+                          description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence." />
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Error_Code]"
+                          name="Error_Code"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Error_Code]"
+                          dataType="i4">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Code]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Error_Description]"
+                          name="Error_Description"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Error_Description]"
+                          dataType="i4">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Description]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Execution_ID]"
+                          name="Execution_ID"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Execution_ID]"
+                          length="38"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Execution_ID]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Task_Name]"
+                          name="Task_Name"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Task_Name]"
+                          length="64"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Task_Name]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Target_Server]"
+                          name="Target_Server"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Target_Server]"
+                          length="256"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Target_Server]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Target_Database]"
+                          name="Target_Database"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Target_Database]"
+                          length="256"
+                          dataType="wstr">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Target_Database]}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Count all]"
+                          name="Count all"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Count all]"
+                          dataType="ui8">
+                          <properties>
+                            <property
+                              name="AggregationColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\0:invalid}</property>
+                            <property
+                              name="AggregationType"
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              typeConverter="AggregationType">2</property>
+                            <property
+                              name="IsBig"
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                            <property
+                              name="AggregationComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options.">0</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors"
+                  name="Capture_Errors"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  usesDispositions="true"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Inputs[Derived Column Input]"
+                      name="Derived Column Input"
+                      description="Input to the Derived Column Transformation">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output]"
+                      name="Derived Column Output"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Execution_ID]"
+                          name="Execution_ID"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Execution_ID]"
+                          length="38"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">@[System::ExecutionInstanceGUID]</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">@[System::ExecutionInstanceGUID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Target_Server]"
+                          name="Target_Server"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Target_Server]"
+                          length="256"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">@[User::FileDir]</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">@[User::FileDir]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Target_Database]"
+                          name="Target_Database"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Target_Database]"
+                          length="256"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">@[User::FileName]</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">@[User::FileName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Task_Name]"
+                          name="Task_Name"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output].Columns[Task_Name]"
+                          length="64"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">"Excel_File_Import"</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">"Excel_File_Import"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Error Output]"
+                      name="Derived Column Error Output"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Inputs[Derived Column Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Error Output].Columns[Error_Code]"
+                          name="Error_Code"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Error Output].Columns[Error_Code]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Error Output].Columns[Error_Description]"
+                          name="Error_Description"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Error Output].Columns[Error_Description]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column"
+                  name="Derived Column"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  usesDispositions="true"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Inputs[Derived Column Input]"
+                      name="Derived Column Input"
+                      description="Input to the Derived Column Transformation">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output]"
+                      name="Derived Column Output"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Name]"
+                          name="File_Name"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Name]"
+                          length="256"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">@[User::FileName]</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">@[User::FileName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Path]"
+                          name="File_Path"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Path]"
+                          length="1024"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">@[User::FilePath]</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">@[User::FilePath]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Table]"
+                          name="File_Table"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Table]"
+                          length="256"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">@[User::FileTable]</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">@[User::FileTable]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Error Output]"
+                      name="Derived Column Error Output"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Inputs[Derived Column Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations"
+                  name="Destination - Relations"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  description="OLE DB Destination"
+                  usesDispositions="true"
+                  validateExternalMetadata="False"
+                  version="4"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+                  <properties>
+                    <property
+                      name="CommandTimeout"
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                    <property
+                      name="OpenRowset"
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset.">[IMP].[Relations]</property>
+                    <property
+                      name="OpenRowsetVariable"
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                    <property
+                      name="SqlCommand"
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      name="DefaultCodePage"
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                    <property
+                      name="AlwaysUseDefaultCodePage"
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                    <property
+                      name="AccessMode"
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      name="FastLoadKeepIdentity"
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                    <property
+                      name="FastLoadKeepNulls"
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                    <property
+                      name="FastLoadOptions"
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      name="FastLoadMaxInsertCommitSize"
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Connections[OleDbConnection]"
+                      name="OleDbConnection"
+                      description="The OLE DB runtime connection used to access the database."
+                      connectionManagerID="Package.ConnectionManagers[CORRUSCANT\JEDI_COUNCIL.International_Classification_of_Diseases]"
+                      connectionManagerRefId="Package.ConnectionManagers[CORRUSCANT\JEDI_COUNCIL.International_Classification_of_Diseases]" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input]"
+                      name="Destination Input"
+                      hasSideEffects="true"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="RedirectRow">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].Columns[Source FY2015 ICD-9-CM diagnosis]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source FY2015 ICD-9-CM diagnosis]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD9_dx_cd]"
+                          cachedName="Source FY2015 ICD-9-CM diagnosis"
+                          cachedDataType="wstr"
+                          cachedLength="255" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].Columns[Source Code Title]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source Code Title]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD9_Title]"
+                          cachedName="Source Code Title"
+                          cachedDataType="wstr"
+                          cachedLength="255" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].Columns[Source Status]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source Status]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD9_Status]"
+                          cachedName="Source Status"
+                          cachedDataType="wstr"
+                          cachedLength="255" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].Columns[Source Comment]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source Comment]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD9_Comment]"
+                          cachedName="Source Comment"
+                          cachedDataType="wstr"
+                          cachedLength="255" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].Columns[Target FY2015 ICD-10-CM diagnosis]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Target FY2015 ICD-10-CM diagnosis]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD10_dx_cd]"
+                          cachedName="Target FY2015 ICD-10-CM diagnosis"
+                          cachedDataType="wstr"
+                          cachedLength="255" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].Columns[Target Code Title]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Target Code Title]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD10_Title]"
+                          cachedName="Target Code Title"
+                          cachedDataType="wstr"
+                          cachedLength="255" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].Columns[Target Status]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Target Status]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD10_Status]"
+                          cachedName="Target Status"
+                          cachedDataType="wstr"
+                          cachedLength="255" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].Columns[File_Name]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output].Columns[File_Name]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD_Source]"
+                          cachedName="File_Name"
+                          cachedDataType="wstr"
+                          cachedLength="256" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD9_dx_cd]"
+                          name="ICD9_dx_cd"
+                          dataType="wstr"
+                          length="64" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD9_Title]"
+                          name="ICD9_Title"
+                          dataType="wstr"
+                          length="1024" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD9_Status]"
+                          name="ICD9_Status"
+                          dataType="wstr"
+                          length="1024" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD9_Comment]"
+                          name="ICD9_Comment"
+                          dataType="wstr"
+                          length="1024" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD10_dx_cd]"
+                          name="ICD10_dx_cd"
+                          dataType="wstr"
+                          length="64" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD10_Title]"
+                          name="ICD10_Title"
+                          dataType="wstr"
+                          length="1024" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD10_Status]"
+                          name="ICD10_Status"
+                          dataType="wstr"
+                          length="1024" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input].ExternalColumns[ICD_Source]"
+                          name="ICD_Source"
+                          dataType="wstr"
+                          length="512" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Outputs[OLE DB Destination Error Output]"
+                      name="OLE DB Destination Error Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs"
+                  name="Error_Logs"
+                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  usesDispositions="true"
+                  version="2"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2">
+                  <properties>
+                    <property
+                      name="TableOrViewName"
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                      expressionType="Notify">"CAT"."trk_SSIS_Import_Errors"</property>
+                    <property
+                      name="BatchSize"
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify">0</property>
+                    <property
+                      name="CommandTimeout"
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify">30</property>
+                    <property
+                      name="UseBulkInsertWhenPossible"
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify">true</property>
+                    <property
+                      name="UserComponentTypeName"
+                      dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.ADONETDestination, Microsoft.SqlServer.ADONETDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Connections[IDbConnection]"
+                      name="IDbConnection"
+                      description="Managed connection manager"
+                      connectionManagerID="{BE7CA656-8A90-4DE9-B712-6DD314BC7495}:invalid"
+                      connectionManagerRefId="{BE7CA656-8A90-4DE9-B712-6DD314BC7495}:invalid" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input]"
+                      name="ADO NET Destination Input"
+                      hasSideEffects="true"
+                      errorRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].Columns[Error_Code]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Error_Code]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Error_Code]"
+                          cachedName="Error_Code"
+                          cachedDataType="i4" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].Columns[Error_Description]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Error_Description]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Error_Description]"
+                          cachedName="Error_Description"
+                          cachedDataType="i4" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].Columns[Execution_ID]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Execution_ID]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Execution_ID]"
+                          cachedName="Execution_ID"
+                          cachedDataType="wstr"
+                          cachedLength="38" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].Columns[Target_Server]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Target_Server]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Target_Server]"
+                          cachedName="Target_Server"
+                          cachedDataType="wstr"
+                          cachedLength="256" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].Columns[Target_Database]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Target_Database]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Target_Database]"
+                          cachedName="Target_Database"
+                          cachedDataType="wstr"
+                          cachedLength="256" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].Columns[Task_Name]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Task_Name]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Task_Name]"
+                          cachedName="Task_Name"
+                          cachedDataType="wstr"
+                          cachedLength="64" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].Columns[Count all]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1].Columns[Count all]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Records]"
+                          cachedName="Count all"
+                          cachedDataType="ui8" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Post_Date]"
+                          name="Post_Date"
+                          dataType="dbTimeStamp" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Execution_ID]"
+                          name="Execution_ID"
+                          dataType="wstr"
+                          length="40" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Target_Server]"
+                          name="Target_Server"
+                          dataType="wstr"
+                          length="256" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Target_Database]"
+                          name="Target_Database"
+                          dataType="wstr"
+                          length="256" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Task_Name]"
+                          name="Task_Name"
+                          dataType="wstr"
+                          length="256" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Error_Code]"
+                          name="Error_Code"
+                          dataType="i4" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Error_Description]"
+                          name="Error_Description"
+                          dataType="wstr"
+                          length="2147483647" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Records]"
+                          name="Records"
+                          dataType="i4" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Outputs[ADO NET Destination Error Output]"
+                      name="ADO NET Destination Error Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Outputs[ADO NET Destination Error Output].Columns[Error_Code]"
+                          name="Error_Code"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Outputs[ADO NET Destination Error Output].Columns[Error_Code]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Outputs[ADO NET Destination Error Output].Columns[Error_Description]"
+                          name="Error_Description"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Outputs[ADO NET Destination Error Output].Columns[Error_Description]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets"
+                  name="ICD10_Sets"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  description="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+                  <properties>
+                    <property
+                      name="CommandTimeout"
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                    <property
+                      name="OpenRowset"
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset.">[ICD].[ICD_Sets]</property>
+                    <property
+                      name="OpenRowsetVariable"
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                    <property
+                      name="SqlCommand"
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      name="DefaultCodePage"
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                    <property
+                      name="AlwaysUseDefaultCodePage"
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                    <property
+                      name="AccessMode"
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      name="FastLoadKeepIdentity"
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                    <property
+                      name="FastLoadKeepNulls"
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                    <property
+                      name="FastLoadOptions"
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      name="FastLoadMaxInsertCommitSize"
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Connections[OleDbConnection]"
+                      name="OleDbConnection"
+                      description="The OLE DB runtime connection used to access the database."
+                      connectionManagerID="Package.ConnectionManagers[CORRUSCANT\JEDI_COUNCIL.International_Classification_of_Diseases]"
+                      connectionManagerRefId="Package.ConnectionManagers[CORRUSCANT\JEDI_COUNCIL.International_Classification_of_Diseases]" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input]"
+                      name="OLE DB Destination Input"
+                      hasSideEffects="true"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].Columns[File_Path]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[File_Path]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Source_Path]"
+                          cachedName="File_Path"
+                          cachedDataType="wstr"
+                          cachedLength="1024" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].Columns[SET_Code]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[SET_Code]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Code]"
+                          cachedName="SET_Code"
+                          cachedDataType="wstr"
+                          cachedLength="3" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].Columns[SET_Title]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[SET_Title]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Title]"
+                          cachedName="SET_Title"
+                          cachedDataType="wstr"
+                          cachedLength="18" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].Columns[SET_Description]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[SET_Description]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Desc]"
+                          cachedName="SET_Description"
+                          cachedDataType="wstr"
+                          cachedLength="92" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].Columns[Count all]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[Count all]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Rows]"
+                          cachedName="Count all"
+                          cachedDataType="ui8" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].Columns[File_Table]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1].Columns[File_Table]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_File_Spec]"
+                          cachedName="File_Table"
+                          cachedDataType="wstr"
+                          cachedLength="256" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_ID]"
+                          name="SET_ID"
+                          dataType="i4" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Code]"
+                          name="SET_Code"
+                          dataType="wstr"
+                          length="64" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Title]"
+                          name="SET_Title"
+                          dataType="wstr"
+                          length="256" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Desc]"
+                          name="SET_Desc"
+                          dataType="wstr"
+                          length="4000" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Source_Path]"
+                          name="SET_Source_Path"
+                          dataType="wstr"
+                          length="1024" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_File_Spec]"
+                          name="SET_File_Spec"
+                          dataType="wstr"
+                          length="64" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Post_Date]"
+                          name="SET_Post_Date"
+                          dataType="dbTimeStamp" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input].ExternalColumns[SET_Rows]"
+                          name="SET_Rows"
+                          dataType="i4" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Outputs[OLE DB Destination Error Output]"
+                      name="OLE DB Destination Error Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast"
+                  name="Multicast"
+                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Outputs[Multicast Output 2]"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Inputs[Multicast Input 1]"
+                      deleteOutputOnPathDetached="true">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Outputs[Multicast Output 3]"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Inputs[Multicast Input 1]"
+                      deleteOutputOnPathDetached="true">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Outputs[Multicast Output 1]"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Inputs[Multicast Input 1]"
+                      deleteOutputOnPathDetached="true"
+                      dangling="true">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup"
+                  name="Set Markup"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  usesDispositions="true"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Inputs[Derived Column Input]"
+                      name="Derived Column Input"
+                      description="Input to the Derived Column Transformation">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output]"
+                      name="Derived Column Output"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Code]"
+                          name="SET_Code"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Code]"
+                          length="3"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">"TRN"</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">"TRN"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Title]"
+                          name="SET_Title"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Title]"
+                          length="18"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">"ICD10_Translations"</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">"ICD10_Translations"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Description]"
+                          name="SET_Description"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output].Columns[SET_Description]"
+                          length="92"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              name="Expression"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              containsID="true">"ICD9 to ICD10 Translations from Haugen, 3-M Online Tool, etc. NOT official gems translations"</property>
+                            <property
+                              name="FriendlyExpression"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              containsID="true"
+                              expressionType="Notify">"ICD9 to ICD10 Translations from Haugen, 3-M Online Tool, etc. NOT official gems translations"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Error Output]"
+                      name="Derived Column Error Output"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Inputs[Derived Column Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$"
+                  name="Source - Relations$"
+                  componentClassID="{8C084929-27D1-479F-9641-ABB7CDADF1AC}"
+                  description="Excel Source"
+                  usesDispositions="true"
+                  validateExternalMetadata="False"
+                  version="1"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
+                  <properties>
+                    <property
+                      name="CommandTimeout"
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                    <property
+                      name="OpenRowset"
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset.">Relations$</property>
+                    <property
+                      name="OpenRowsetVariable"
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset.">User::FileTable</property>
+                    <property
+                      name="SqlCommand"
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      name="SqlCommandVariable"
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."></property>
+                    <property
+                      name="AccessMode"
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      typeConverter="AccessMode">1</property>
+                    <property
+                      name="ParameterMapping"
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Connections[OleDbConnection]"
+                      name="OleDbConnection"
+                      description="The OLE DB runtime connection used to access the database."
+                      connectionManagerID="Package.ConnectionManagers[SourceConnectionExcel]"
+                      connectionManagerRefId="Package.ConnectionManagers[SourceConnectionExcel]" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source FY2015 ICD-9-CM diagnosis]"
+                          name="Source FY2015 ICD-9-CM diagnosis"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source FY2015 ICD-9-CM diagnosis]"
+                          length="255"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Source FY2015 ICD-9-CM diagnosis]" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source Code Title]"
+                          name="Source Code Title"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source Code Title]"
+                          length="255"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Source Code Title]" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source Status]"
+                          name="Source Status"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source Status]"
+                          length="255"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Source Status]" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source Comment]"
+                          name="Source Comment"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Source Comment]"
+                          length="255"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Source Comment]" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Target FY2015 ICD-10-CM diagnosis]"
+                          name="Target FY2015 ICD-10-CM diagnosis"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Target FY2015 ICD-10-CM diagnosis]"
+                          length="255"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Target FY2015 ICD-10-CM diagnosis]" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Target Code Title]"
+                          name="Target Code Title"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Target Code Title]"
+                          length="255"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Target Code Title]" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Target Status]"
+                          name="Target Status"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].Columns[Target Status]"
+                          length="255"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          truncationRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Target Status]" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Source FY2015 ICD-9-CM diagnosis]"
+                          name="Source FY2015 ICD-9-CM diagnosis"
+                          dataType="wstr"
+                          length="255" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Source Code Title]"
+                          name="Source Code Title"
+                          dataType="wstr"
+                          length="255" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Source Status]"
+                          name="Source Status"
+                          dataType="wstr"
+                          length="255" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Source Comment]"
+                          name="Source Comment"
+                          dataType="wstr"
+                          length="255" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Target FY2015 ICD-10-CM diagnosis]"
+                          name="Target FY2015 ICD-10-CM diagnosis"
+                          dataType="wstr"
+                          length="255" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Target Code Title]"
+                          name="Target Code Title"
+                          dataType="wstr"
+                          length="255" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output].ExternalColumns[Target Status]"
+                          name="Target Status"
+                          dataType="wstr"
+                          length="255" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output]"
+                      name="Excel Source Error Output"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Source FY2015 ICD-9-CM diagnosis]"
+                          name="Source FY2015 ICD-9-CM diagnosis"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Source FY2015 ICD-9-CM diagnosis]"
+                          length="255"
+                          dataType="wstr" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Source Code Title]"
+                          name="Source Code Title"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Source Code Title]"
+                          length="255"
+                          dataType="wstr" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Source Status]"
+                          name="Source Status"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Source Status]"
+                          length="255"
+                          dataType="wstr" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Source Comment]"
+                          name="Source Comment"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Source Comment]"
+                          length="255"
+                          dataType="wstr" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Target FY2015 ICD-10-CM diagnosis]"
+                          name="Target FY2015 ICD-10-CM diagnosis"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Target FY2015 ICD-10-CM diagnosis]"
+                          length="255"
+                          dataType="wstr" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Target Code Title]"
+                          name="Target Code Title"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Target Code Title]"
+                          length="255"
+                          dataType="wstr" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Target Status]"
+                          name="Target Status"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[Target Status]"
+                          length="255"
+                          dataType="wstr" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All"
+                  name="Union All"
+                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  version="1"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 3]"
+                      name="Union All Input 3"
+                      hasSideEffects="true">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 3].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          cachedName="ErrorCode"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="OutputColumnLineageID"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Code]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 3].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          cachedName="ErrorColumn"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="OutputColumnLineageID"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Description]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 2]"
+                      name="Union All Input 2"
+                      hasSideEffects="true">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          cachedName="ErrorCode"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="OutputColumnLineageID"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Code]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 2].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          cachedName="ErrorColumn"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="OutputColumnLineageID"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              containsID="true">#{Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Description]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1"
+                      hasSideEffects="true">
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 4]"
+                      name="Union All Input 4"
+                      hasSideEffects="true"
+                      dangling="true">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Code]"
+                          name="Error_Code"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Code]"
+                          dataType="i4" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Description]"
+                          name="Error_Description"
+                          lineageId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1].Columns[Error_Description]"
+                          dataType="i4" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Aggregate Output 11]"
+                  name="Aggregate Output 1"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Aggregate Output 1]"
+                  name="Aggregate Output 1"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Error Output]"
+                  name="Derived Column Error Output"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Error Output]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 3]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output2]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output1]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Inputs[Aggregate Input 1]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Inputs[Multicast Input 1]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Excel Source Error Output]"
+                  name="Excel Source Error Output"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Error Output]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 2]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Excel Source Output]"
+                  name="Excel Source Output"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$.Outputs[Excel Source Output]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Inputs[Derived Column Input]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Multicast Output 2]"
+                  name="Multicast Output 2"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Outputs[Multicast Output 2]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Inputs[Destination Input]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Multicast Output 3]"
+                  name="Multicast Output 3"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Outputs[Multicast Output 3]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Inputs[Derived Column Input]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations.Outputs[OLE DB Destination Error Output]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 1]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Union All Output 1]"
+                  name="Union All Output 1"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Outputs[Union All Output 1]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Inputs[Derived Column Input]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:VariableName="User::FilePath"
+          DTS:ValueIndex="0"
+          DTS:ObjectName="{D83BCD47-C94D-4FEF-BBFB-687532AB65C5}"
+          DTS:DTSID="{D83BCD47-C94D-4FEF-BBFB-687532AB65C5}"
+          DTS:CreationName="" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks"
+          TopLeft="35,6" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="253,71"
+          Size="253,114"
+          Id="Package\Foreach Loop Container"
+          TopLeft="208,381" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Import Excel WkBooks">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$"
+          TopLeft="224.5,132.5" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets"
+          TopLeft="247,735.5" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Multicast"
+          TopLeft="249.5,336.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup"
+          TopLeft="251,540.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column"
+          TopLeft="240,234.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate"
+          TopLeft="246.5,642.5" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations"
+          TopLeft="5.50000000000006,438.5" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[OLE DB Destination Error Output]"
+          TopLeft="98.5000000000001,438.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="632.5,-229.5"
+              Start="0,0"
+              End="632.5,-222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-132.772727272727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-132.772727272727"
+                    Point2="0,-136.772727272727"
+                    Point3="4,-136.772727272727" />
+                  <mssgle:LineSegment
+                    End="628.5,-136.772727272727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="628.5,-136.772727272727"
+                    Point2="632.5,-136.772727272727"
+                    Point3="632.5,-140.772727272727" />
+                  <mssgle:LineSegment
+                    End="632.5,-222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="243.04109375,-131.772727272727,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Multicast Output 3]"
+          TopLeft="338.833333333333,378.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.3333333333333,162"
+              Start="0,0"
+              End="-21.3333333333333,154.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.9302325581396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.9302325581396"
+                    Point2="0,65.9302325581396"
+                    Point3="-4,65.9302325581396" />
+                  <mssgle:LineSegment
+                    End="-17.3333333333333,65.9302325581396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.3333333333333,65.9302325581396"
+                    Point2="-21.3333333333333,65.9302325581396"
+                    Point3="-21.3333333333333,69.9302325581396" />
+                  <mssgle:LineSegment
+                    End="-21.3333333333333,154.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Multicast Output 2]"
+          TopLeft="296.166666666667,378.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-197.666666666667,60"
+              Start="0,0"
+              End="-197.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4186046511628" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4186046511628"
+                    Point2="0,24.4186046511628"
+                    Point3="-4,24.4186046511628" />
+                  <mssgle:LineSegment
+                    End="-193.666666666667,24.4186046511628" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-193.666666666667,24.4186046511628"
+                    Point2="-197.666666666667,24.4186046511628"
+                    Point3="-197.666666666667,28.4186046511628" />
+                  <mssgle:LineSegment
+                    End="-197.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Excel Source Output]"
+          TopLeft="317.5,174.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Excel Source Error Output]"
+          TopLeft="410.5,153.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="240.5,34.5"
+              Start="0,0"
+              End="233,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.25,0"
+                    Point2="120.25,0"
+                    Point3="120.25,4" />
+                  <mssgle:LineSegment
+                    End="120.25,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.25,30.5"
+                    Point2="120.25,34.5"
+                    Point3="124.25,34.5" />
+                  <mssgle:LineSegment
+                    End="233,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="62.39861328125,-17.609375,115.7027734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output1]"
+          TopLeft="317.5,582.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output]"
+          TopLeft="317.5,276.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Error Output]"
+          TopLeft="317.5,234.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="489.5,-25.5"
+              Start="0,0"
+              End="489.5,-18">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-11.1969696969697" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-11.1969696969697"
+                    Point2="0,-15.1969696969697"
+                    Point3="4,-15.1969696969697" />
+                  <mssgle:LineSegment
+                    End="485.5,-15.1969696969697" />
+                  <mssgle:CubicBezierSegment
+                    Point1="485.5,-15.1969696969697"
+                    Point2="489.5,-15.1969696969697"
+                    Point3="489.5,-19.1969696969697" />
+                  <mssgle:LineSegment
+                    End="489.5,-18" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="179.78861328125,-10.1969696969697,129.9227734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Aggregate Output 1]"
+          TopLeft="316,684.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors"
+          TopLeft="4.5,88.5" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs"
+          TopLeft="4.5,248.5" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Union All"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Union All Output 1]"
+          TopLeft="123,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1"
+          TopLeft="84,178" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output2]"
+          TopLeft="122.5,130.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30,47.5"
+              Start="0,0"
+              End="30,40">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.75"
+                    Point2="0,23.75"
+                    Point3="4,23.75" />
+                  <mssgle:LineSegment
+                    End="26,23.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26,23.75"
+                    Point2="30,23.75"
+                    Point3="30,27.75" />
+                  <mssgle:LineSegment
+                    End="30,40" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Aggregate Output 11]"
+          TopLeft="152.5,220">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.5,28.5"
+              Start="0,0"
+              End="-82.5,21">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.25"
+                    Point2="0,14.25"
+                    Point3="-4,14.25" />
+                  <mssgle:LineSegment
+                    End="-78.5,14.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.5,14.25"
+                    Point2="-82.5,14.25"
+                    Point3="-82.5,18.25" />
+                  <mssgle:LineSegment
+                    End="-82.5,21" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Group "
+          ParentId="Package\Foreach Loop Container\Import Excel WkBooks"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="247,409"
+          Size="247,452"
+          Id="ed562070-8a7f-436a-9faf-a2b8aba24532"
+          TopLeft="645,118.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors</s:String>
+            <s:String>Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs</s:String>
+            <s:String>Package\Foreach Loop Container\Import Excel WkBooks\Union All</s:String>
+            <s:String>Package\Foreach Loop Container\Import Excel WkBooks.Paths[Union All Output 1]</s:String>
+            <s:String>Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1</s:String>
+            <s:String>Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output2]</s:String>
+            <s:String>Package\Foreach Loop Container\Import Excel WkBooks.Paths[Aggregate Output 11]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

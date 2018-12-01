@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="WarehouseInventory">
+    <Query>
+      <DataSourceReference>DWMgmt</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@NamePart">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+        </DataSetParameter>
+        <DataSetParameter Name="@TierLevel">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:UserDefined>true</rd:UserDefined>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>CAT.RPT_0200_Tier_Inventory_Summary</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="DatabaseCount">
+        <DataField>DatabaseCount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="SchemaCount">
+        <DataField>SchemaCount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ObjectCount">
+        <DataField>ObjectCount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ColumnCount">
+        <DataField>ColumnCount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TargetName">
+        <DataField>TargetName</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

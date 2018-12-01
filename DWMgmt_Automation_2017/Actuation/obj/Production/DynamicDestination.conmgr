@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:DelayValidation="True"
+  DTS:ObjectName="DynamicDestinationOLEDB"
+  DTS:DTSID="{746F9285-349E-460D-B4DB-67E8D24A726B}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">"Data Source="+ @[$Project::DestinationServer] +";Initial Catalog="+ @[$Project::DestinationDatabase] +";Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;MARS Connection=True;"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=CORRUSCANT\MOS_EISLEY;Initial Catalog=DWMgmt;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;MARS Connection=True;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

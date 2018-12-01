@@ -1,0 +1,511 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/18/2014 10:04:56 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="DH87NRXR1"
+  DTS:CreatorName="DNVRHLTH\fpugh"
+  DTS:DTSID="{AA5012A5-51E7-425F-ACD1-2CF712CAC26F}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Table_Status_Capture"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{AEB3A69C-386F-42D8-978B-17B36AC777D7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DynamicDestination]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{82d8b91b-f0b1-4864-a21a-55b166c53eb5}"
+      DTS:ObjectName="DynamicDestination">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source="+ @[User::SourceServer] +";Initial Catalog="+ @[User::SourceDatabase] +";Integrated Security=True;Application Name=SSIS-Package1-{5084EE1C-BE17-470F-A898-54FD132D39E0};"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=vwdssdevsql01;Initial Catalog=DWMgmt;Integrated Security=True;Application Name=SSIS-Package1-{5084EE1C-BE17-470F-A898-54FD132D39E0};" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DynamicSource]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{5084EE1C-BE17-470F-A898-54FD132D39E0}"
+      DTS:ObjectName="DynamicSource">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source="+ @[User::TargetServer] +";Initial Catalog="+ @[User::TargetDatabase] +";Integrated Security=True;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=vwdssdevsql01;Initial Catalog=master;Integrated Security=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CE0A7B6C-C1A0-4ECC-ADDE-3AAA44DA8098}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CollationStandard">
+      <DTS:VariableValue
+        DTS:DataType="8">SQL_Latin1_General_CP1_CI_AS</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C96C9F36-15F4-4ED0-B935-889F2BD9CD38}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="reg_0204_0300_insert">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C3176DA8-FD64-488B-BDC8-893AA294AA2D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DC9157DC-33CC-42FF-8F3C-038602F4A6C8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceDatabase">
+      <DTS:VariableValue
+        DTS:DataType="8">DWMgmt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8A067B23-242B-4819-A146-AB5BF2A3B9B5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceServer">
+      <DTS:VariableValue
+        DTS:DataType="8">vwdssdevsql01</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F345E15D-B953-452D-87EC-411CBEF7A6C9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetDatabase">
+      <DTS:VariableValue
+        DTS:DataType="8">master</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{31046B82-21B5-4395-BACB-6E6CFB063AF5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetServer">
+      <DTS:VariableValue
+        DTS:DataType="8">vwdssdevsql01</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CCB0F66B-A9F8-44AC-840E-FD07F08DCB22}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetServerID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\For_Each_Table_Analysis_Set"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{712C995B-756F-4BD3-B65C-32E92D26BFA8}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="For_Each_Table_Analysis_Set">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\For_Each_Table_Analysis_Set\Data Quality Analysis"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7D2BBC36-D001-429A-9B08-63397F87EC79}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Quality Analysis"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\For_Each_Table_Analysis_Set\Index Metrics"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{F2DB9489-4838-48FB-931D-88E0B26FD186}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Index Metrics"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\For_Each_Table_Analysis_Set\Value Hash"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{E4667CEB-F60C-4117-AF2C-1412B811607B}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Value Hash"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generate Table Processing List"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{85892245-f2fa-4f75-991f-1a89a8a0b123}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generate Table Processing List"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Generate Table Processing List\reg_0204_0300_insert"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="reg_0204_0300_insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT scm.name as SchemaName, tbl.name as TableName
+FROM sys.Schemas AS scm
+JOIN sys.Tables AS tbl
+ON tbl.schema_id = scm.schema_id</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter, Microsoft.SqlServer.ADONETSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter, Microsoft.SqlServer.ADONETSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Generate Table Processing List\reg_0204_0300_insert.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DynamicSource]"
+                  connectionManagerRefId="Package.ConnectionManagers[DynamicSource]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].Columns[SchemaName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].ExternalColumns[SchemaName]"
+                      length="128"
+                      lineageId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].Columns[SchemaName]"
+                      name="SchemaName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].Columns[TableName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].ExternalColumns[TableName]"
+                      length="128"
+                      lineageId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].Columns[TableName]"
+                      name="TableName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].ExternalColumns[SchemaName]"
+                      dataType="wstr"
+                      length="128"
+                      name="SchemaName" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].ExternalColumns[TableName]"
+                      dataType="wstr"
+                      length="128"
+                      name="TableName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Error Output].Columns[SchemaName]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Error Output].Columns[SchemaName]"
+                      name="SchemaName" />
+                    <outputColumn
+                      refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Error Output].Columns[TableName]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Error Output].Columns[TableName]"
+                      name="TableName" />
+                    <outputColumn
+                      refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Generate Table Processing List\Table_Processing_List"
+              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
+              name="Table_Processing_List">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the recordset."
+                  name="VariableName">User::reg_0204_0300_insert</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Generate Table Processing List\Table_Processing_List.Inputs[Recordset Destination Input]"
+                  hasSideEffects="true"
+                  name="Recordset Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Generate Table Processing List\Table_Processing_List.Inputs[Recordset Destination Input].Columns[SchemaName]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="SchemaName"
+                      lineageId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].Columns[SchemaName]" />
+                    <inputColumn
+                      refId="Package\Generate Table Processing List\Table_Processing_List.Inputs[Recordset Destination Input].Columns[TableName]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="TableName"
+                      lineageId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output].Columns[TableName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Generate Table Processing List.Paths[ADO NET Source Output]"
+              endId="Package\Generate Table Processing List\Table_Processing_List.Inputs[Recordset Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Generate Table Processing List\reg_0204_0300_insert.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{35E9A9D3-0F35-4649-B6F7-1F7A3F2AFD9A}"
+      DTS:From="Package\Generate Table Processing List"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\For_Each_Table_Analysis_Set" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\For_Each_Table_Analysis_Set\Data Quality Analysis"
+          TopLeft="18,17" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\For_Each_Table_Analysis_Set\Value Hash"
+          TopLeft="244,16" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\For_Each_Table_Analysis_Set\Index Metrics"
+          TopLeft="417,18" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="583,72"
+          Size="583,115"
+          Id="Package\For_Each_Table_Analysis_Set"
+          TopLeft="68,159" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Generate Table Processing List"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="172.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="187,57"
+              Start="0,0"
+              End="187,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
+                  <mssgle:LineSegment
+                    End="183,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="183,28.5"
+                    Point2="187,28.5"
+                    Point3="187,32.5" />
+                  <mssgle:LineSegment
+                    End="187,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Generate Table Processing List">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Generate Table Processing List\Table_Processing_List"
+          TopLeft="425,201" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Generate Table Processing List\reg_0204_0300_insert"
+          TopLeft="452,83" />
+        <EdgeLayout
+          Id="Package\Generate Table Processing List.Paths[ADO NET Source Output]"
+          TopLeft="545,125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-28.5,76"
+              Start="0,0"
+              End="-28.5,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="-4,38" />
+                  <mssgle:LineSegment
+                    End="-24.5,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.5,38"
+                    Point2="-28.5,38"
+                    Point3="-28.5,42" />
+                  <mssgle:LineSegment
+                    End="-28.5,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generate Table Processing List\reg_0204_0300_insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

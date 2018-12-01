@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# SQL Server Management Studio Solution File, Format Version 11.00
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DWMgmt_SQL_PROD_Scripts", "DWMgmt_SQL_PROD_Scripts\DWMgmt_SQL_PROD_Scripts.ssmssqlproj", "{AE9C6E50-3590-47E1-9A49-051EE56426FA}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DWMgmt_SQL_DEV_Scripts", "DWMgmt_SQL_DEV_Scripts\DWMgmt_SQL_DEV_Scripts.ssmssqlproj", "{BE28B22B-F82E-45D3-90D5-278AEDC7B5F8}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DWMgmt_Test_Scripts", "DWMgmt_Test_Scripts\DWMgmt_Test_Scripts.ssmssqlproj", "{80B9E836-650A-41BB-94B1-0029FE52581A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+		IMPERIAL_SENATE|Default = IMPERIAL_SENATE|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE9C6E50-3590-47E1-9A49-051EE56426FA}.Default|Default.ActiveCfg = Default
+		{AE9C6E50-3590-47E1-9A49-051EE56426FA}.IMPERIAL_SENATE|Default.ActiveCfg = Default
+		{AE9C6E50-3590-47E1-9A49-051EE56426FA}.IMPERIAL_SENATE|Default.Build.0 = Default
+		{BE28B22B-F82E-45D3-90D5-278AEDC7B5F8}.Default|Default.ActiveCfg = Default
+		{BE28B22B-F82E-45D3-90D5-278AEDC7B5F8}.IMPERIAL_SENATE|Default.ActiveCfg = Default
+		{40B0A374-E877-4C08-9558-CC0D7733EB6E}.Default|Default.ActiveCfg = Default
+		{40B0A374-E877-4C08-9558-CC0D7733EB6E}.IMPERIAL_SENATE|Default.ActiveCfg = Default
+		{80B9E836-650A-41BB-94B1-0029FE52581A}.Default|Default.ActiveCfg = Default
+		{80B9E836-650A-41BB-94B1-0029FE52581A}.IMPERIAL_SENATE|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DWMgmt_Test_Scripts">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="CORRUSCANT\IMPERIAL_SENATE:CORRUSCANT\fdpugh">
+          <Created>2015-09-03T23:04:14.2875737-06:00</Created>
+          <Type>SQL</Type>
+          <Server>CORRUSCANT\IMPERIAL_SENATE</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>DWMgmt</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="CORRUSCANT\JEDI_COUNCIL:CORRUSCANT\fdpugh">
+          <Created>2018-09-06T21:53:54.0378964-06:00</Created>
+          <Type>SQL</Type>
+          <Server>CORRUSCANT\JEDI_COUNCIL</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>OGMarket</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="CORRUSCANT\MOS_EISLEY:CORRUSCANT\fdpugh">
+          <Created>2018-09-06T21:54:59.8095053-06:00</Created>
+          <Type>SQL</Type>
+          <Server>CORRUSCANT\MOS_EISLEY</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="DataQuality_and_RI_Probe.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DataQuality_and_RI_Probe.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
