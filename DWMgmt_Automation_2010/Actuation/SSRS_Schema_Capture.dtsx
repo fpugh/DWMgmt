@@ -1,0 +1,2300 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="DNVRHLTH\fpugh"
+  DTS:CreatorComputerName="DH87NRXR1"
+  DTS:CreationDate="9/8/2014 8:32:02 PM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{A31808C5-468F-4765-B85F-BAA06BFDF978}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSRS_Schema_Capture"
+  DTS:DTSID="{E326C0FF-F6B7-4F9B-A0B8-0565801E512C}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DynamicDestination]"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="DynamicDestination"
+      DTS:DTSID="{BB3C7284-7E5D-442B-8BCE-93920834C2C4}"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source="+ @[User::SourceServer] +";Initial Catalog="+ @[User::SourceDatabase] +";Integrated Security=True;Application Name=SSIS-Package1-{5084EE1C-BE17-470F-A898-54FD132D39E0};"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=vwdssdevsql01;Initial Catalog=DWMgmt;Integrated Security=True;Application Name=SSIS-Package1-{5084EE1C-BE17-470F-A898-54FD132D39E0};" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DynamicSource]"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="DynamicSource"
+      DTS:DTSID="{AD946408-FD75-4AD8-9E9F-0BE5440EE303}"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source="+ @[User::TargetServer] +";Initial Catalog="+ @[User::TargetDatabase] +";Integrated Security=True;Application Name=SSIS-Package1-{5084EE1C-BE17-470F-A898-54FD132D39E0};"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=VWDEMOSQL01;Initial Catalog=ReportServer;Integrated Security=True;Application Name=SSIS-Package1-{5084EE1C-BE17-470F-A898-54FD132D39E0};" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="6789"
+      DTS:ObjectName="RowCount"
+      DTS:DTSID="{735F7A79-714A-4809-95E3-D62D8D3A14D5}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="SourceDatabase"
+      DTS:DTSID="{AF152D89-AFC0-48A6-BA41-2737B9F50F72}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">DWMgmt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="SourceServer"
+      DTS:DTSID="{8F5B749E-A98C-4ABD-9693-2C13E17FFBE6}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">vwdssdevsql01</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="TargetDatabase"
+      DTS:DTSID="{E3B91D0E-0257-4BA6-A801-47DE840324E7}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">ReportServer</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="2345"
+      DTS:ObjectName="TargetServer"
+      DTS:DTSID="{0FF2245B-38FC-4E13-938D-BC638437916D}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="8">VWDEMOSQL01</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:Namespace="User"
+      DTS:IncludeInDebugDump="6789"
+      DTS:ObjectName="TargetServerID"
+      DTS:DTSID="{63C41B75-B9DD-47C7-94D0-C3E592AC8337}"
+      DTS:CreationName="">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:DTSID="{776CBC0F-AACB-4DB4-BCE6-BBCB9084B7FE}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas"
+              name="Audit Insert Split SSRS Schemas"
+              componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 7]"
+                  name="Multicast Output 7"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 5]"
+                  name="Multicast Output 5"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 6]"
+                  name="Multicast Output 6"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 4]"
+                  name="Multicast Output 4"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 9]"
+                  name="Multicast Output 9"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 8]"
+                  name="Multicast Output 8"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 2]"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 1]"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 13]"
+                  name="Multicast Output 13"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 12]"
+                  name="Multicast Output 12"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 11]"
+                  name="Multicast Output 11"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 10]"
+                  name="Multicast Output 10"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 3]"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+                  deleteOutputOnPathDetached="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Audit Set Errors"
+              name="Audit Set Errors"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              usesDispositions="true"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]"
+                  name="Derived Column Input"
+                  description="Input to the Derived Column Transformation">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output]"
+                  name="Derived Column Output"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[server_id]"
+                      name="server_id"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[server_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">@[User::TargetServerID]</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">@[User::TargetServerID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[TargetServer]"
+                      name="TargetServer"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[TargetServer]"
+                      length="256"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">@[User::TargetServer]</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">@[User::TargetServer]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[TargetDatabase]"
+                      name="TargetDatabase"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[TargetDatabase]"
+                      length="6"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">@[User::TargetDatabase]</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">@[User::TargetDatabase]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[LoadCount]"
+                      name="LoadCount"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[LoadCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">0</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[TaskName]"
+                      name="TaskName"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[TaskName]"
+                      length="18"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">"SSRS_Schema_Insert"</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">"SSRS_Schema_Insert"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output]"
+                  name="Derived Column Error Output"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Audit Set SSRS Schemas"
+              name="Audit Set SSRS Schemas"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              usesDispositions="true"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Audit Set SSRS Schemas.Inputs[Derived Column Input]"
+                  name="Derived Column Input"
+                  description="Input to the Derived Column Transformation">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output]"
+                  name="Derived Column Output"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Audit Set SSRS Schemas.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[server_id]"
+                      name="server_id"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[server_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">@[User::TargetServerID]</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">@[User::TargetServerID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[TargetServer]"
+                      name="TargetServer"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[TargetServer]"
+                      length="256"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">@[User::TargetServer]</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">@[User::TargetServer]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[TargetDatabase]"
+                      name="TargetDatabase"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[TargetDatabase]"
+                      length="256"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">@[User::TargetDatabase]</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">@[User::TargetDatabase]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[LoadCount]"
+                      name="LoadCount"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[LoadCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">@[User::RowCount]</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">@[User::RowCount]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[TaskName]"
+                      name="TaskName"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[TaskName]"
+                      length="20"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">"reg_0500_0501_insert"</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">"reg_0500_0501_insert"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Error Output]"
+                  name="Derived Column Error Output"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Audit Set SSRS Schemas.Inputs[Derived Column Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Capture_Errors"
+              name="Capture_Errors"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              usesDispositions="true"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Capture_Errors.Inputs[Derived Column Input]"
+                  name="Derived Column Input"
+                  description="Input to the Derived Column Transformation">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Capture_Errors.Inputs[Derived Column Input].Columns[LoadCount]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LoadCount]"
+                      usageType="readWrite"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      cachedName="LoadCount"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">@[User::RowCount]</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">@[User::RowCount]</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Output]"
+                  name="Derived Column Output"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Capture_Errors.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Output].Columns[ExecutionID]"
+                      name="ExecutionID"
+                      lineageId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Output].Columns[ExecutionID]"
+                      length="38"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">@[System::ExecutionInstanceGUID]</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">@[System::ExecutionInstanceGUID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Error Output]"
+                  name="Derived Column Error Output"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Capture_Errors.Inputs[Derived Column Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Error_Count"
+              name="Error_Count"
+              componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <properties>
+                <property
+                  name="VariableName"
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count.">User::RowCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]"
+                  name="Row Count Input 1"
+                  hasSideEffects="true">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Error_Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Error_Logs"
+              name="Error_Logs"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              usesDispositions="true"
+              version="2"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2">
+              <properties>
+                <property
+                  name="TableOrViewName"
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">"CAT"."trk_SSIS_Import_Errors"</property>
+                <property
+                  name="BatchSize"
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify">0</property>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify">30</property>
+                <property
+                  name="UseBulkInsertWhenPossible"
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify">true</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.ADONETDestination, Microsoft.SqlServer.ADONETDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Error_Logs.Connections[IDbConnection]"
+                  name="IDbConnection"
+                  description="Managed connection manager"
+                  connectionManagerID="Package.ConnectionManagers[DynamicDestination]"
+                  connectionManagerRefId="Package.ConnectionManagers[DynamicDestination]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Destination Input"
+                  hasSideEffects="true"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].Columns[TargetServer]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TargetServer]"
+                      externalMetadataColumnId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[TargetServer]"
+                      cachedName="TargetServer"
+                      cachedDataType="wstr"
+                      cachedLength="256" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].Columns[TargetDatabase]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TargetDatabase]"
+                      externalMetadataColumnId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[TargetDatabase]"
+                      cachedName="TargetDatabase"
+                      cachedDataType="wstr"
+                      cachedLength="6" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].Columns[TaskName]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TaskName]"
+                      externalMetadataColumnId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[TaskName]"
+                      cachedName="TaskName"
+                      cachedDataType="wstr"
+                      cachedLength="18" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[ErrorCode]"
+                      cachedName="ErrorCode"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].Columns[ExecutionID]"
+                      lineageId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Output].Columns[ExecutionID]"
+                      externalMetadataColumnId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[ExecutionID]"
+                      cachedName="ExecutionID"
+                      cachedDataType="wstr"
+                      cachedLength="38" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      externalMetadataColumnId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[ErrorDescription]"
+                      cachedName="ErrorColumn"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].Columns[LoadCount]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LoadCount]"
+                      externalMetadataColumnId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Records]"
+                      cachedName="LoadCount"
+                      cachedDataType="i4" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[PostDate]"
+                      name="PostDate"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[ExecutionID]"
+                      name="ExecutionID"
+                      dataType="guid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[TargetServer]"
+                      name="TargetServer"
+                      dataType="wstr"
+                      length="256" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[TargetDatabase]"
+                      name="TargetDatabase"
+                      dataType="wstr"
+                      length="256" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[TaskName]"
+                      name="TaskName"
+                      dataType="wstr"
+                      length="256" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[ErrorCode]"
+                      name="ErrorCode"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[ErrorDescription]"
+                      name="ErrorDescription"
+                      dataType="wstr"
+                      length="2147483647" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input].ExternalColumns[Records]"
+                      name="Records"
+                      dataType="i4" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Error_Logs.Outputs[ADO NET Destination Error Output]"
+                  name="ADO NET Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Error_Logs.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\Error_Logs.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Error_Logs.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Error_Logs.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack"
+              name="LIB_XML_Module_Intake_Stack"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              usesDispositions="true"
+              version="2"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2">
+              <properties>
+                <property
+                  name="TableOrViewName"
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">"LIB"."XML_Schema_Intake_Stack"</property>
+                <property
+                  name="BatchSize"
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify">0</property>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify">30</property>
+                <property
+                  name="UseBulkInsertWhenPossible"
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify">true</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.ADONETDestination, Microsoft.SqlServer.ADONETDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Connections[IDbConnection]"
+                  name="IDbConnection"
+                  description="Managed connection manager"
+                  connectionManagerID="Package.ConnectionManagers[DynamicDestination]"
+                  connectionManagerRefId="Package.ConnectionManagers[DynamicDestination]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Destination Input"
+                  hasSideEffects="true"
+                  errorRowDisposition="RedirectRow">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].Columns[ModifiedDate]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[ModifiedDate]"
+                      externalMetadataColumnId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].ExternalColumns[PostDate]"
+                      cachedName="ModifiedDate"
+                      cachedDataType="dbTimeStamp" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].ExternalColumns[STK_ID]"
+                      name="STK_ID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].ExternalColumns[SchemaClass]"
+                      name="SchemaClass"
+                      dataType="wstr"
+                      length="65" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].ExternalColumns[SchemaAuthor]"
+                      name="SchemaAuthor"
+                      dataType="wstr"
+                      length="256" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].ExternalColumns[SchemaPath]"
+                      name="SchemaPath"
+                      dataType="wstr"
+                      length="256" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].ExternalColumns[SchemaName]"
+                      name="SchemaName"
+                      dataType="wstr"
+                      length="256" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].ExternalColumns[SchemaContent]"
+                      name="SchemaContent"
+                      dataType="wstr"
+                      length="2147483647" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].ExternalColumns[PostDate]"
+                      name="PostDate"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input].ExternalColumns[VersionStamp]"
+                      name="VersionStamp"
+                      dataType="wstr"
+                      length="40" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Outputs[ADO NET Destination Error Output]"
+                  name="ADO NET Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\reg_Audit_Insert"
+              name="reg_Audit_Insert"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              usesDispositions="true"
+              version="2"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2">
+              <properties>
+                <property
+                  name="TableOrViewName"
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">"LIB"."XML_Schema_Intake_Stack"</property>
+                <property
+                  name="BatchSize"
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify">0</property>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify">30</property>
+                <property
+                  name="UseBulkInsertWhenPossible"
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify">true</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.ADONETDestination, Microsoft.SqlServer.ADONETDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\reg_Audit_Insert.Connections[IDbConnection]"
+                  name="IDbConnection"
+                  description="Managed connection manager"
+                  connectionManagerID="Package.ConnectionManagers[DynamicDestination]"
+                  connectionManagerRefId="Package.ConnectionManagers[DynamicDestination]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Destination Input"
+                  hasSideEffects="true"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].Columns[ModifiedDate]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[ModifiedDate]"
+                      externalMetadataColumnId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].ExternalColumns[PostDate]"
+                      cachedName="ModifiedDate"
+                      cachedDataType="dbTimeStamp" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].ExternalColumns[STK_ID]"
+                      name="STK_ID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].ExternalColumns[SchemaClass]"
+                      name="SchemaClass"
+                      dataType="wstr"
+                      length="65" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].ExternalColumns[SchemaAuthor]"
+                      name="SchemaAuthor"
+                      dataType="wstr"
+                      length="256" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].ExternalColumns[SchemaPath]"
+                      name="SchemaPath"
+                      dataType="wstr"
+                      length="256" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].ExternalColumns[SchemaName]"
+                      name="SchemaName"
+                      dataType="wstr"
+                      length="256" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].ExternalColumns[SchemaContent]"
+                      name="SchemaContent"
+                      dataType="wstr"
+                      length="2147483647" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].ExternalColumns[PostDate]"
+                      name="PostDate"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input].ExternalColumns[VersionStamp]"
+                      name="VersionStamp"
+                      dataType="wstr"
+                      length="40" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\reg_Audit_Insert.Outputs[ADO NET Destination Error Output]"
+                  name="ADO NET Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\reg_Audit_Insert.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\reg_Audit_Insert.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\reg_Audit_Insert.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\SSRS Schema Count"
+              name="SSRS Schema Count"
+              componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <properties>
+                <property
+                  name="VariableName"
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count.">User::RowCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\SSRS Schema Count.Inputs[Row Count Input 1]"
+                  name="Row Count Input 1"
+                  hasSideEffects="true">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\SSRS Schema Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Data Flow Task\SSRS Schema Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\SSRS Schema Sources"
+              name="SSRS Schema Sources"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              usesDispositions="true"
+              version="4"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">SELECT name as SchemaName, type as SchemaClass, path as SchemaPath, CAST(CAST(CAST([content] as VARBINARY(max)) AS XML) AS NVARCHAR(max)) SchemaContent, ModifiedDate
+FROM [ReportServer].[dbo].[Catalog]
+WHERE Type in (2,8)</property>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">30</property>
+                <property
+                  name="AllowImplicitStringConversion"
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns.">true</property>
+                <property
+                  name="TableOrViewName"
+                  dataType="System.String"
+                  description="The Source database table name."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify"></property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter, Microsoft.SqlServer.ADONETSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">2</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter, Microsoft.SqlServer.ADONETSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\SSRS Schema Sources.Connections[IDbConnection]"
+                  name="IDbConnection"
+                  description="Managed connection manager"
+                  connectionManagerID="Package.ConnectionManagers[DynamicSource]"
+                  connectionManagerRefId="Package.ConnectionManagers[DynamicSource]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaName]"
+                      name="SchemaName"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaName]"
+                      length="425"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[SchemaName]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaClass]"
+                      name="SchemaClass"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaClass]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[SchemaClass]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaPath]"
+                      name="SchemaPath"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaPath]"
+                      length="425"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[SchemaPath]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaContent]"
+                      name="SchemaContent"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaContent]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[SchemaContent]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[ModifiedDate]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[SchemaName]"
+                      name="SchemaName"
+                      dataType="wstr"
+                      length="425" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[SchemaClass]"
+                      name="SchemaClass"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[SchemaPath]"
+                      name="SchemaPath"
+                      dataType="wstr"
+                      length="425" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[SchemaContent]"
+                      name="SchemaContent"
+                      dataType="nText" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].ExternalColumns[ModifiedDate]"
+                      name="ModifiedDate"
+                      dataType="dbTimeStamp" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output]"
+                  name="ADO NET Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaName]"
+                      name="SchemaName"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaName]"
+                      length="425"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaClass]"
+                      name="SchemaClass"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaClass]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaPath]"
+                      name="SchemaPath"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaPath]"
+                      length="425"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaContent]"
+                      name="SchemaContent"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaContent]"
+                      dataType="nText" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Union All"
+              name="Union All"
+              componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              version="1"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SchemaName]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaName]"
+                      cachedName="SchemaName"
+                      cachedDataType="wstr"
+                      cachedLength="425">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SchemaClass]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaClass]"
+                      cachedName="SchemaClass"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaClass]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SchemaPath]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaPath]"
+                      cachedName="SchemaPath"
+                      cachedDataType="wstr"
+                      cachedLength="425">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaPath]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SchemaContent]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[SchemaContent]"
+                      cachedName="SchemaContent"
+                      cachedDataType="nText">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaContent]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[ModifiedDate]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[ModifiedDate]"
+                      cachedName="ModifiedDate"
+                      cachedDataType="dbTimeStamp">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ModifiedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      cachedName="ErrorCode"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      cachedName="ErrorColumn"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[server_id]"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[server_id]"
+                      cachedName="server_id"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[server_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[TargetServer]"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[TargetServer]"
+                      cachedName="TargetServer"
+                      cachedDataType="wstr"
+                      cachedLength="256">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TargetServer]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[TargetDatabase]"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[TargetDatabase]"
+                      cachedName="TargetDatabase"
+                      cachedDataType="wstr"
+                      cachedLength="6">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TargetDatabase]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[LoadCount]"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[LoadCount]"
+                      cachedName="LoadCount"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LoadCount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[TaskName]"
+                      lineageId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[TaskName]"
+                      cachedName="TaskName"
+                      cachedDataType="wstr"
+                      cachedLength="18">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TaskName]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  name="Union All Input 2"
+                  hasSideEffects="true">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SchemaName]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaName]"
+                      cachedName="SchemaName"
+                      cachedDataType="wstr"
+                      cachedLength="425">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SchemaClass]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaClass]"
+                      cachedName="SchemaClass"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaClass]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SchemaPath]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaPath]"
+                      cachedName="SchemaPath"
+                      cachedDataType="wstr"
+                      cachedLength="425">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaPath]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SchemaContent]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[SchemaContent]"
+                      cachedName="SchemaContent"
+                      cachedDataType="nText">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaContent]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ModifiedDate]"
+                      lineageId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output].Columns[ModifiedDate]"
+                      cachedName="ModifiedDate"
+                      cachedDataType="dbTimeStamp">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ModifiedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[server_id]"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[server_id]"
+                      cachedName="server_id"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[server_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[TargetServer]"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[TargetServer]"
+                      cachedName="TargetServer"
+                      cachedDataType="wstr"
+                      cachedLength="256">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TargetServer]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[LoadCount]"
+                      lineageId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output].Columns[LoadCount]"
+                      cachedName="LoadCount"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LoadCount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      cachedName="ErrorCode"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      cachedName="ErrorColumn"
+                      cachedDataType="i4">
+                      <properties>
+                        <property
+                          name="OutputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          containsID="true">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  name="Union All Input 3"
+                  hasSideEffects="true"
+                  dangling="true">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaName]"
+                      name="SchemaName"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaName]"
+                      length="425"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaClass]"
+                      name="SchemaClass"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaClass]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaPath]"
+                      name="SchemaPath"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaPath]"
+                      length="425"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaContent]"
+                      name="SchemaContent"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SchemaContent]"
+                      dataType="nText" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[server_id]"
+                      name="server_id"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[server_id]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TargetServer]"
+                      name="TargetServer"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TargetServer]"
+                      length="256"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TargetDatabase]"
+                      name="TargetDatabase"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TargetDatabase]"
+                      length="6"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LoadCount]"
+                      name="LoadCount"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LoadCount]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TaskName]"
+                      name="TaskName"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TaskName]"
+                      length="18"
+                      dataType="wstr" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Destination Error Output]"
+              name="ADO NET Destination Error Output"
+              startId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Outputs[ADO NET Destination Error Output]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Error Output]"
+              name="ADO NET Source Error Output"
+              startId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Error Output]"
+              endId="Package\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output]"
+              endId="Package\Data Flow Task\SSRS Schema Count.Inputs[Row Count Input 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output]"
+              endId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Output]"
+              endId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Multicast Output 1]"
+              name="Multicast Output 1"
+              startId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 1]"
+              endId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Multicast Output 2]"
+              name="Multicast Output 2"
+              startId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 2]"
+              endId="Package\Data Flow Task\reg_Audit_Insert.Inputs[ADO NET Destination Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Row Count Output 11]"
+              name="Row Count Output 1"
+              startId="Package\Data Flow Task\Error_Count.Outputs[Row Count Output 1]"
+              endId="Package\Data Flow Task\Capture_Errors.Inputs[Derived Column Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Row Count Output 1]"
+              name="Row Count Output 1"
+              startId="Package\Data Flow Task\SSRS Schema Count.Outputs[Row Count Output 1]"
+              endId="Package\Data Flow Task\Audit Set SSRS Schemas.Inputs[Derived Column Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Union All Output 1]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]"
+              endId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Data Flow Task"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Error Output]"
+          TopLeft="199,161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="523.5,71"
+              Start="0,0"
+              End="523.5,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5"
+                    Point2="0,35.5"
+                    Point3="4,35.5" />
+                  <mssgle:LineSegment
+                    End="519.5,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="519.5,35.5"
+                    Point2="523.5,35.5"
+                    Point3="523.5,39.5" />
+                  <mssgle:LineSegment
+                    End="523.5,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="195.310546875,40.5,134.87890625,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Destination Error Output]"
+          TopLeft="199,383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="523.5,-67"
+              Start="0,0"
+              End="523.5,-59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-29.5"
+                    Point2="0,-33.5"
+                    Point3="4,-33.5" />
+                  <mssgle:LineSegment
+                    End="519.5,-33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="519.5,-33.5"
+                    Point2="523.5,-33.5"
+                    Point3="523.5,-37.5" />
+                  <mssgle:LineSegment
+                    End="523.5,-59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="185.535546875,-28.5,154.42890625,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Data Flow Task\Audit Set Errors"
+          TopLeft="29,5.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Data Flow Task\Error_Count"
+          TopLeft="29,89.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Data Flow Task\Capture_Errors"
+          TopLeft="29,132.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Data Flow Task\Error_Logs"
+          TopLeft="29,174.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Row Count Output 11]"
+          TopLeft="29,116.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6666666666667"
+              Start="0,0"
+              End="-7.5,31.6666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,27.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,27.6666666666667"
+                    Point2="-22.5,31.6666666666667"
+                    Point3="-18.5,31.6666666666667" />
+                  <mssgle:LineSegment
+                    End="-7.5,31.6666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="29,159.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3333333333333"
+              Start="0,0"
+              End="-7.5,36.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,32.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,32.3333333333333"
+                    Point2="-22.5,36.3333333333333"
+                    Point3="-18.5,36.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-7.5,36.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Data Flow Task\Union All"
+          TopLeft="29,47.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="29,26.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3333333333333"
+              Start="0,0"
+              End="-7.5,36.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,32.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,32.3333333333333"
+                    Point2="-22.5,36.3333333333333"
+                    Point3="-18.5,36.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-7.5,36.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="29,74.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.6666666666667"
+              Start="0,0"
+              End="-7.5,30.6666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,26.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,26.6666666666667"
+                    Point2="-22.5,30.6666666666667"
+                    Point3="-18.5,30.6666666666667" />
+                  <mssgle:LineSegment
+                    End="-7.5,30.6666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Group "
+          ParentId="Package\Data Flow Task"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204,222"
+          Size="204,265"
+          Id="8545e05d-cd08-47d0-baf9-7b153e3f77ec"
+          TopLeft="609,183">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Data Flow Task\Audit Set Errors</s:String>
+            <s:String>Package\Data Flow Task\Error_Count</s:String>
+            <s:String>Package\Data Flow Task\Capture_Errors</s:String>
+            <s:String>Package\Data Flow Task\Error_Logs</s:String>
+            <s:String>Package\Data Flow Task.Paths[Row Count Output 11]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Data Flow Task\Union All</s:String>
+            <s:String>Package\Data Flow Task.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Union All Output 1]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Data Flow Task\Audit Set SSRS Schemas"
+          TopLeft="28,48" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Data Flow Task\SSRS Schema Count"
+          TopLeft="28,6" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Data Flow Task\Audit Insert Split SSRS Schemas"
+          TopLeft="28,90" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Data Flow Task\reg_Audit_Insert"
+          TopLeft="28,132" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="28,27">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3333333333333"
+              Start="0,0"
+              End="-7.5,36.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,32.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,32.3333333333333"
+                    Point2="-22.5,36.3333333333333"
+                    Point3="-18.5,36.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-7.5,36.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output2]"
+          TopLeft="28,74.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.6666666666667"
+              Start="0,0"
+              End="-7.5,30.6666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,26.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,26.6666666666667"
+                    Point2="-22.5,30.6666666666667"
+                    Point3="-18.5,30.6666666666667" />
+                  <mssgle:LineSegment
+                    End="-7.5,30.6666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Multicast Output 2]"
+          TopLeft="28,116.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3333333333333"
+              Start="0,0"
+              End="-7.5,36.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,32.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,32.3333333333333"
+                    Point2="-22.5,36.3333333333333"
+                    Point3="-18.5,36.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-7.5,36.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="reg_0500_0501_Basic_Audit"
+          ParentId="3fbc8518-c790-4be1-90e8-0afaaca2f0de"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="266,180"
+          Size="266,222"
+          Id="f02f3e58-b055-4f35-89b2-e5c8af3d28f1"
+          TopLeft="5.5,47.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Data Flow Task\Audit Set SSRS Schemas</s:String>
+            <s:String>Package\Data Flow Task\SSRS Schema Count</s:String>
+            <s:String>Package\Data Flow Task\Audit Insert Split SSRS Schemas</s:String>
+            <s:String>Package\Data Flow Task\reg_Audit_Insert</s:String>
+            <s:String>Package\Data Flow Task.Paths[Row Count Output 1]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Derived Column Output2]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Multicast Output 2]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Data Flow Task\LIB_XML_Module_Intake_Stack"
+          TopLeft="5.5,269.5" />
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Data Flow Task\SSRS Schema Sources"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
+          TopLeft="95.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54,49"
+              Start="0,0"
+              End="54,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.7757847533632" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.7757847533632"
+                    Point2="0,19.7757847533632"
+                    Point3="4,19.7757847533632" />
+                  <mssgle:LineSegment
+                    End="50,19.7757847533632" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50,19.7757847533632"
+                    Point2="54,19.7757847533632"
+                    Point3="54,23.7757847533632" />
+                  <mssgle:LineSegment
+                    End="54,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Multicast Output 1]"
+          TopLeft="149.5,222.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54,47"
+              Start="0,0"
+              End="-54,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0313901345291" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.0313901345291"
+                    Point2="0,28.0313901345291"
+                    Point3="-4,28.0313901345291" />
+                  <mssgle:LineSegment
+                    End="-50,28.0313901345291" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50,28.0313901345291"
+                    Point2="-54,28.0313901345291"
+                    Point3="-54,32.0313901345291" />
+                  <mssgle:LineSegment
+                    End="-54,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="SSRS Schema Capture"
+          ParentId="Package\Data Flow Task"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="276,366"
+          Size="276,409"
+          Id="3fbc8518-c790-4be1-90e8-0afaaca2f0de"
+          TopLeft="60.5,69.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>f02f3e58-b055-4f35-89b2-e5c8af3d28f1</s:String>
+            <s:String>Package\Data Flow Task\LIB_XML_Module_Intake_Stack</s:String>
+            <s:String>Package\Data Flow Task\SSRS Schema Sources</s:String>
+            <s:String>Package\Data Flow Task.Paths[ADO NET Source Output]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Multicast Output 1]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\LIB_XML_Module_Intake_Stack">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\reg_Audit_Insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\SSRS Schema Sources">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

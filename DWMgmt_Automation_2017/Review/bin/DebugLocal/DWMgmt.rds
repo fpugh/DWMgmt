@@ -2,7 +2,7 @@
 <RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DWMgmt">
   <ConnectionProperties>
     <Extension>SQL</Extension>
-    <ConnectString>Data Source=CORRUSCANT\IMPERIAL_SENATE;Initial Catalog=DWMgmt;MultipleActiveResultSets=True</ConnectString>
+    <ConnectString>Data Source=CORRUSCANT\MOS_EISLEY;Initial Catalog=DWMgmt;MultipleActiveResultSets=True</ConnectString>
     <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>620556ad-4873-43da-8415-7121ae26a083</DataSourceID>

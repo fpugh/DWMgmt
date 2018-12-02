@@ -7,7 +7,7 @@
   DTS:CreatorName="Corruscant\FDPugh"
   DTS:DTSID="{ED2026DA-1981-4B71-9125-8DB45BA88053}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="SUB_Value_Scraper"
   DTS:PackageType="5"
@@ -89,7 +89,7 @@
           <components>
             <component
               refId="Package\Value Scrape\Audit Aggregate"
-              componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+              componentClassID="DTSTransform.Aggregate.3"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
               name="Audit Aggregate"
@@ -308,7 +308,7 @@
             </component>
             <component
               refId="Package\Value Scrape\Audit Insert Split 0354"
-              componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+              componentClassID="DTSTransform.Multicast.3"
               contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
               name="Audit Insert Split 0354">
@@ -418,7 +418,7 @@
             </component>
             <component
               refId="Package\Value Scrape\Audit Set 0354"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Audit Set 0354"
@@ -584,7 +584,7 @@
             </component>
             <component
               refId="Package\Value Scrape\Audit Set Errors"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Audit Set Errors"
@@ -780,7 +780,7 @@
             </component>
             <component
               refId="Package\Value Scrape\Error Aggregate"
-              componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+              componentClassID="DTSTransform.Aggregate.3"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
               name="Error Aggregate"
@@ -1061,7 +1061,7 @@
             </component>
             <component
               refId="Package\Value Scrape\Hash Target Source"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="Hash Target Source"
@@ -1264,7 +1264,7 @@
             </component>
             <component
               refId="Package\Value Scrape\Long String Markup"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Long String Markup"
@@ -1313,7 +1313,7 @@
             </component>
             <component
               refId="Package\Value Scrape\Long String Split"
-              componentClassID="{7F88F654-4E20-4D14-84F4-AF9C925D3087}"
+              componentClassID="DTSTransform.ConditionalSplit.3"
               contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
               name="Long String Split"
@@ -1402,7 +1402,7 @@
             </component>
             <component
               refId="Package\Value Scrape\TRK_0350_Long_String_Values"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_0350_Long_String_Values"
@@ -1556,7 +1556,7 @@
             </component>
             <component
               refId="Package\Value Scrape\TRK_0354_Value_Hash"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_0354_Value_Hash"
@@ -1695,7 +1695,7 @@
             </component>
             <component
               refId="Package\Value Scrape\TRK_Data_Audit_Import"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_Data_Audit_Import"
@@ -1860,7 +1860,7 @@
             </component>
             <component
               refId="Package\Value Scrape\TRK_SSIS_Import_Errors"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_SSIS_Import_Errors"
@@ -2044,7 +2044,7 @@
             </component>
             <component
               refId="Package\Value Scrape\Union All"
-              componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+              componentClassID="DTSTransform.UnionAll.3"
               contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
               name="Union All"
@@ -2222,15 +2222,15 @@
           </components>
           <paths>
             <path
-              refId="Package\Value Scrape.Paths[Aggregate Output 11]"
-              endId="Package\Value Scrape\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
-              name="Aggregate Output 1"
-              startId="Package\Value Scrape\Audit Aggregate.Outputs[Aggregate Output 1]" />
-            <path
               refId="Package\Value Scrape.Paths[Aggregate Output 1]"
               endId="Package\Value Scrape\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
               name="Aggregate Output 1"
               startId="Package\Value Scrape\Error Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Value Scrape.Paths[Aggregate Output 11]"
+              endId="Package\Value Scrape\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Value Scrape\Audit Aggregate.Outputs[Aggregate Output 1]" />
             <path
               refId="Package\Value Scrape.Paths[Conditional Split Error Output]"
               endId="Package\Value Scrape\Union All.Inputs[Union All Input 5]"
@@ -2242,20 +2242,20 @@
               name="Derived Column Error Output"
               startId="Package\Value Scrape\Audit Set 0354.Outputs[Derived Column Error Output]" />
             <path
-              refId="Package\Value Scrape.Paths[Derived Column Output2]"
-              endId="Package\Value Scrape\TRK_0350_Long_String_Values.Inputs[OLE DB Destination Input]"
+              refId="Package\Value Scrape.Paths[Derived Column Output]"
+              endId="Package\Value Scrape\Error Aggregate.Inputs[Aggregate Input 1]"
               name="Derived Column Output"
-              startId="Package\Value Scrape\Long String Markup.Outputs[Derived Column Output]" />
+              startId="Package\Value Scrape\Audit Set Errors.Outputs[Derived Column Output]" />
             <path
               refId="Package\Value Scrape.Paths[Derived Column Output1]"
               endId="Package\Value Scrape\Audit Insert Split 0354.Inputs[Multicast Input 1]"
               name="Derived Column Output"
               startId="Package\Value Scrape\Audit Set 0354.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Value Scrape.Paths[Derived Column Output]"
-              endId="Package\Value Scrape\Error Aggregate.Inputs[Aggregate Input 1]"
+              refId="Package\Value Scrape.Paths[Derived Column Output2]"
+              endId="Package\Value Scrape\TRK_0350_Long_String_Values.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Value Scrape\Audit Set Errors.Outputs[Derived Column Output]" />
+              startId="Package\Value Scrape\Long String Markup.Outputs[Derived Column Output]" />
             <path
               refId="Package\Value Scrape.Paths[Long_String]"
               endId="Package\Value Scrape\Long String Markup.Inputs[Derived Column Input]"
@@ -2272,15 +2272,15 @@
               name="Multicast Output 3"
               startId="Package\Value Scrape\Audit Insert Split 0354.Outputs[Multicast Output 3]" />
             <path
-              refId="Package\Value Scrape.Paths[OLE DB Destination Error Output1]"
-              endId="Package\Value Scrape\Union All.Inputs[Union All Input 3]"
-              name="OLE DB Destination Error Output"
-              startId="Package\Value Scrape\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
-            <path
               refId="Package\Value Scrape.Paths[OLE DB Destination Error Output]"
               endId="Package\Value Scrape\Union All.Inputs[Union All Input 2]"
               name="OLE DB Destination Error Output"
               startId="Package\Value Scrape\TRK_0354_Value_Hash.Outputs[OLE DB Destination Error Output]" />
+            <path
+              refId="Package\Value Scrape.Paths[OLE DB Destination Error Output1]"
+              endId="Package\Value Scrape\Union All.Inputs[Union All Input 3]"
+              name="OLE DB Destination Error Output"
+              startId="Package\Value Scrape\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Value Scrape.Paths[OLE DB Source Error Output]"
               endId="Package\Value Scrape\Union All.Inputs[Union All Input 1]"

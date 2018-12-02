@@ -9,14 +9,14 @@
   DTS:DTSID="{AFB81090-0DC2-4C6D-B504-4BADF719049F}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="SUB_Database_Child"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="606"
-  DTS:VersionGUID="{DEF081F3-DE33-4E8D-A5F9-8934A708927E}">
+  DTS:VersionBuild="607"
+  DTS:VersionGUID="{A4630589-FC56-47C8-B692-AFD121449E43}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
         DTS:Name="ConnectionString">"Data Source="+ @[$Package::TargetServer] +";Initial Catalog="+ @[User::TargetDatabase] +";Integrated Security=True;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=CORRUSCANT\MOS_EISLEY;Initial Catalog=master;Integrated Security=True;" />
+          DTS:ConnectionString="Data Source=CORRUSCANT\IMPERIAL_SENATE;Initial Catalog=master;Integrated Security=True;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -43,7 +43,7 @@
       DTS:ObjectName="DestinationServer">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">CORRUSCANT\MOS_EISLEY</DTS:Property>
+        DTS:Name="ParameterValue">CORRUSCANT\IMPERIAL_SENATE</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -63,7 +63,7 @@
       DTS:ObjectName="TargetServer">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">CORRUSCANT\MOS_EISLEY</DTS:Property>
+        DTS:Name="ParameterValue">CORRUSCANT\IMPERIAL_SENATE</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -108,7 +108,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DestinationServer">
       <DTS:VariableValue
-        DTS:DataType="8">CORRUSCANT\MOS_EISLEY</DTS:VariableValue>
+        DTS:DataType="8">CORRUSCANT\IMPERIAL_SENATE</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -157,7 +157,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="TargetServer">
       <DTS:VariableValue
-        DTS:DataType="8">CORRUSCANT\MOS_EISLEY</DTS:VariableValue>
+        DTS:DataType="8">CORRUSCANT\IMPERIAL_SENATE</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -316,7 +316,7 @@
               <components>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -535,7 +535,7 @@
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\Audit Insert Split 0203"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0203">
@@ -653,7 +653,7 @@
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\Audit Set 0203"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0203"
@@ -818,7 +818,7 @@
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -961,7 +961,7 @@
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -1242,7 +1242,7 @@
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\gtmp_reg_0203_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0203_destination"
@@ -1449,7 +1449,7 @@
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\gtmp_reg_0203_source"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0203_source"
@@ -1696,7 +1696,7 @@ FROM sys.database_files AS dbf</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -1861,7 +1861,7 @@ FROM sys.database_files AS dbf</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -2045,7 +2045,7 @@ FROM sys.database_files AS dbf</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0203_Insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -2194,22 +2194,22 @@ FROM sys.database_files AS dbf</property>
                   name="ADO NET Source Output"
                   startId="Package\Database Processor\reg_0203_Insert\gtmp_reg_0203_source.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 11]"
+                  refId="Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 1]"
                   endId="Package\Database Processor\reg_0203_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0203_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 1]"
+                  refId="Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 11]"
                   endId="Package\Database Processor\reg_0203_Insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0203_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output1]"
+                  refId="Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output]"
                   endId="Package\Database Processor\reg_0203_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0203_Insert\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output]"
+                  refId="Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output1]"
                   endId="Package\Database Processor\reg_0203_Insert\Audit Insert Split 0203.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0203_Insert\Audit Set 0203.Outputs[Derived Column Output]" />
@@ -2224,12 +2224,12 @@ FROM sys.database_files AS dbf</property>
                   name="Multicast Output 2"
                   startId="Package\Database Processor\reg_0203_Insert\Audit Insert Split 0203.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Database Processor\reg_0203_Insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Database Processor\reg_0203_Insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Database Processor\reg_0203_Insert\Union All.Inputs[Union All Input 1]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0203_Insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0203_Insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Database Processor\reg_0203_Insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Database Processor\reg_0203_Insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0203_Insert\gtmp_reg_0203_destination.Outputs[OLE DB Destination Error Output]" />
@@ -2263,7 +2263,7 @@ FROM sys.database_files AS dbf</property>
               <components>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -2482,7 +2482,7 @@ FROM sys.database_files AS dbf</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\Audit Insert Split 0204_0300"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0204_0300">
@@ -2600,7 +2600,7 @@ FROM sys.database_files AS dbf</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\Audit Set 0204_0300"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0204_0300"
@@ -2765,7 +2765,7 @@ FROM sys.database_files AS dbf</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -2908,7 +2908,7 @@ FROM sys.database_files AS dbf</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -3189,7 +3189,7 @@ FROM sys.database_files AS dbf</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\gtmp_reg_0204_0300_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0204_0300_destination"
@@ -3428,7 +3428,7 @@ FROM sys.database_files AS dbf</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\gtmp_reg_0204_0300_source"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0204_0300_source"
@@ -3737,7 +3737,7 @@ AND obj.type &lt;&gt; 'IT'</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -3902,7 +3902,7 @@ AND obj.type &lt;&gt; 'IT'</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -4086,7 +4086,7 @@ AND obj.type &lt;&gt; 'IT'</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0204_0300_Insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -4235,22 +4235,22 @@ AND obj.type &lt;&gt; 'IT'</property>
                   name="ADO NET Source Output"
                   startId="Package\Database Processor\reg_0204_0300_Insert\gtmp_reg_0204_0300_source.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 11]"
+                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 1]"
                   endId="Package\Database Processor\reg_0204_0300_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0204_0300_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 1]"
+                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 11]"
                   endId="Package\Database Processor\reg_0204_0300_Insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0204_0300_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output1]"
+                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output]"
                   endId="Package\Database Processor\reg_0204_0300_Insert\Audit Insert Split 0204_0300.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0204_0300_Insert\Audit Set 0204_0300.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output]"
+                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output1]"
                   endId="Package\Database Processor\reg_0204_0300_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0204_0300_Insert\Audit Set Errors.Outputs[Derived Column Output]" />
@@ -4265,12 +4265,12 @@ AND obj.type &lt;&gt; 'IT'</property>
                   name="Multicast Output 2"
                   startId="Package\Database Processor\reg_0204_0300_Insert\Audit Insert Split 0204_0300.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Database Processor\reg_0204_0300_Insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0204_0300_Insert\gtmp_reg_0204_0300_destination.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Database Processor\reg_0204_0300_Insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Database Processor\reg_0204_0300_Insert\Union All.Inputs[Union All Input 1]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0204_0300_Insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
@@ -4303,7 +4303,7 @@ AND obj.type &lt;&gt; 'IT'</property>
               <components>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -4522,7 +4522,7 @@ AND obj.type &lt;&gt; 'IT'</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\Audit Insert Split 0300_0401"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0300_0401">
@@ -4640,7 +4640,7 @@ AND obj.type &lt;&gt; 'IT'</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\Audit Set 0300_0401"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0300_0401"
@@ -4805,7 +4805,7 @@ AND obj.type &lt;&gt; 'IT'</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -4948,7 +4948,7 @@ AND obj.type &lt;&gt; 'IT'</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -5229,7 +5229,7 @@ AND obj.type &lt;&gt; 'IT'</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\gtmp_reg_0300_0401_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0300_0401_destination"
@@ -5538,7 +5538,7 @@ AND obj.type &lt;&gt; 'IT'</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\gtmp_reg_0300_0401_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0300_0401_insert"
@@ -5985,7 +5985,7 @@ AND idc.column_ID = col.column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\TRK_Data_Audit_Insert"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Insert"
@@ -6150,7 +6150,7 @@ AND idc.column_ID = col.column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -6334,7 +6334,7 @@ AND idc.column_ID = col.column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0300_0401_Insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -6483,22 +6483,22 @@ AND idc.column_ID = col.column_id</property>
                   name="ADO NET Source Output"
                   startId="Package\Database Processor\reg_0300_0401_Insert\gtmp_reg_0300_0401_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 11]"
+                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 1]"
                   endId="Package\Database Processor\reg_0300_0401_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0300_0401_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 1]"
+                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 11]"
                   endId="Package\Database Processor\reg_0300_0401_Insert\TRK_Data_Audit_Insert.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0300_0401_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output1]"
+                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output]"
                   endId="Package\Database Processor\reg_0300_0401_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0300_0401_Insert\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output]"
+                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output1]"
                   endId="Package\Database Processor\reg_0300_0401_Insert\Audit Insert Split 0300_0401.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0300_0401_Insert\Audit Set 0300_0401.Outputs[Derived Column Output]" />
@@ -6513,12 +6513,12 @@ AND idc.column_ID = col.column_id</property>
                   name="Multicast Output 2"
                   startId="Package\Database Processor\reg_0300_0401_Insert\Audit Insert Split 0300_0401.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Database Processor\reg_0300_0401_Insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0300_0401_Insert\TRK_Data_Audit_Insert.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Database Processor\reg_0300_0401_Insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Database Processor\reg_0300_0401_Insert\Union All.Inputs[Union All Input 1]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0300_0401_Insert\gtmp_reg_0300_0401_destination.Outputs[OLE DB Destination Error Output]" />
@@ -6551,7 +6551,7 @@ AND idc.column_ID = col.column_id</property>
               <components>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -6770,7 +6770,7 @@ AND idc.column_ID = col.column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\Audit Insert Split 0500_0501"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0500_0501">
@@ -6880,7 +6880,7 @@ AND idc.column_ID = col.column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\Audit Set 0500_0501"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0500_0501"
@@ -7045,7 +7045,7 @@ AND idc.column_ID = col.column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -7188,7 +7188,7 @@ AND idc.column_ID = col.column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -7469,7 +7469,7 @@ AND idc.column_ID = col.column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\gtmp_reg_0500_0501_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0500_0501_destination"
@@ -7784,7 +7784,7 @@ AND idc.column_ID = col.column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\gtmp_reg_0500_0501_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0500_0501_insert"
@@ -8231,7 +8231,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -8396,7 +8396,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -8580,7 +8580,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0500_0501_Insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -8729,22 +8729,22 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                   name="ADO NET Source Output"
                   startId="Package\Database Processor\reg_0500_0501_Insert\gtmp_reg_0500_0501_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 11]"
+                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 1]"
                   endId="Package\Database Processor\reg_0500_0501_Insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0500_0501_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 1]"
+                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 11]"
                   endId="Package\Database Processor\reg_0500_0501_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0500_0501_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output1]"
+                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output]"
                   endId="Package\Database Processor\reg_0500_0501_Insert\Audit Insert Split 0500_0501.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0500_0501_Insert\Audit Set 0500_0501.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output]"
+                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output1]"
                   endId="Package\Database Processor\reg_0500_0501_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0500_0501_Insert\Audit Set Errors.Outputs[Derived Column Output]" />
@@ -8759,12 +8759,12 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                   name="Multicast Output 2"
                   startId="Package\Database Processor\reg_0500_0501_Insert\Audit Insert Split 0500_0501.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Database Processor\reg_0500_0501_Insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0500_0501_Insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Database Processor\reg_0500_0501_Insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Database Processor\reg_0500_0501_Insert\Union All.Inputs[Union All Input 1]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0500_0501_Insert\gtmp_reg_0500_0501_destination.Outputs[OLE DB Destination Error Output]" />
@@ -8820,7 +8820,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
               <components>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -9039,7 +9039,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\Audit Insert Split 0600"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0600">
@@ -9141,7 +9141,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\Audit Set 0600"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0600"
@@ -9306,7 +9306,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -9449,7 +9449,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -9730,7 +9730,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\gtmp_reg_0600_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0600_destination"
@@ -10053,7 +10053,7 @@ WHERE isnull(par.name,'') &lt;&gt; ''</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\gtmp_reg_0600_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0600_insert"
@@ -10513,7 +10513,7 @@ ON obj.object_id = smod.object_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\TRK_Data_Audit_Insert"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Insert"
@@ -10678,7 +10678,7 @@ ON obj.object_id = smod.object_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -10862,7 +10862,7 @@ ON obj.object_id = smod.object_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_0600_Insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -11011,22 +11011,22 @@ ON obj.object_id = smod.object_id</property>
                   name="ADO NET Source Output"
                   startId="Package\Database Processor\reg_0600_Insert\gtmp_reg_0600_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 11]"
+                  refId="Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 1]"
                   endId="Package\Database Processor\reg_0600_Insert\TRK_Data_Audit_Insert.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0600_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 1]"
+                  refId="Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 11]"
                   endId="Package\Database Processor\reg_0600_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_0600_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output1]"
+                  refId="Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output]"
                   endId="Package\Database Processor\reg_0600_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0600_Insert\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output]"
+                  refId="Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output1]"
                   endId="Package\Database Processor\reg_0600_Insert\Audit Insert Split 0600.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_0600_Insert\Audit Set 0600.Outputs[Derived Column Output]" />
@@ -11041,12 +11041,12 @@ ON obj.object_id = smod.object_id</property>
                   name="Multicast Output 2"
                   startId="Package\Database Processor\reg_0600_Insert\Audit Insert Split 0600.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Database Processor\reg_0600_Insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Database Processor\reg_0600_Insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Database Processor\reg_0600_Insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0600_Insert\TRK_Data_Audit_Insert.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Database Processor\reg_0600_Insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Database Processor\reg_0600_Insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Database Processor\reg_0600_Insert\Union All.Inputs[Union All Input 1]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_0600_Insert\gtmp_reg_0600_destination.Outputs[OLE DB Destination Error Output]" />
@@ -11078,7 +11078,7 @@ ON obj.object_id = smod.object_id</property>
               <components>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -11297,7 +11297,7 @@ ON obj.object_id = smod.object_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\Audit Set DFCK"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set DFCK"
@@ -11462,7 +11462,7 @@ ON obj.object_id = smod.object_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -11605,7 +11605,7 @@ ON obj.object_id = smod.object_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\Audit Split DFCK"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Split DFCK">
@@ -11643,7 +11643,7 @@ ON obj.object_id = smod.object_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -11924,7 +11924,7 @@ ON obj.object_id = smod.object_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\gtmp_constraint_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_constraint_destination"
@@ -12289,7 +12289,7 @@ ON obj.object_id = smod.object_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\gtmp_constraint_source"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_constraint_source"
@@ -12868,7 +12868,7 @@ AND typ.is_user_defined = 0</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -13033,7 +13033,7 @@ AND typ.is_user_defined = 0</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -13217,7 +13217,7 @@ AND typ.is_user_defined = 0</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Constraint_Insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -13365,22 +13365,22 @@ AND typ.is_user_defined = 0</property>
                   name="ADO NET Source Output"
                   startId="Package\Database Processor\reg_Constraint_Insert\gtmp_constraint_source.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 11]"
+                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 1]"
                   endId="Package\Database Processor\reg_Constraint_Insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_Constraint_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 1]"
+                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 11]"
                   endId="Package\Database Processor\reg_Constraint_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_Constraint_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output1]"
+                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output]"
                   endId="Package\Database Processor\reg_Constraint_Insert\Audit Split DFCK.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_Constraint_Insert\Audit Set DFCK.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output]"
+                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output1]"
                   endId="Package\Database Processor\reg_Constraint_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_Constraint_Insert\Audit Set Errors.Outputs[Derived Column Output]" />
@@ -13395,12 +13395,12 @@ AND typ.is_user_defined = 0</property>
                   name="Multicast Output 2"
                   startId="Package\Database Processor\reg_Constraint_Insert\Audit Split DFCK.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Database Processor\reg_Constraint_Insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_Constraint_Insert\gtmp_constraint_destination.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Database Processor\reg_Constraint_Insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Database Processor\reg_Constraint_Insert\Union All.Inputs[Union All Input 3]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_Constraint_Insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
@@ -13434,7 +13434,7 @@ AND typ.is_user_defined = 0</property>
               <components>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -13653,7 +13653,7 @@ AND typ.is_user_defined = 0</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\Audit Insert Split FK"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split FK">
@@ -13755,7 +13755,7 @@ AND typ.is_user_defined = 0</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -13898,7 +13898,7 @@ AND typ.is_user_defined = 0</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\Audit Set FK"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set FK"
@@ -14063,7 +14063,7 @@ AND typ.is_user_defined = 0</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -14344,7 +14344,7 @@ AND typ.is_user_defined = 0</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\gtmp_foreign_key_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_foreign_key_destination"
@@ -14809,7 +14809,7 @@ AND typ.is_user_defined = 0</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\gtmp_foreign_key_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_foreign_key_insert"
@@ -15614,7 +15614,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -15779,7 +15779,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -15963,7 +15963,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Foreign_Key_Insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -16112,22 +16112,22 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                   name="ADO NET Source Output"
                   startId="Package\Database Processor\reg_Foreign_Key_Insert\gtmp_foreign_key_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 11]"
+                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 1]"
                   endId="Package\Database Processor\reg_Foreign_Key_Insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_Foreign_Key_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 1]"
+                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 11]"
                   endId="Package\Database Processor\reg_Foreign_Key_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_Foreign_Key_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output1]"
+                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output]"
                   endId="Package\Database Processor\reg_Foreign_Key_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_Foreign_Key_Insert\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output]"
+                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output1]"
                   endId="Package\Database Processor\reg_Foreign_Key_Insert\Audit Insert Split FK.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_Foreign_Key_Insert\Audit Set FK.Outputs[Derived Column Output]" />
@@ -16142,12 +16142,12 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                   name="Multicast Output 3"
                   startId="Package\Database Processor\reg_Foreign_Key_Insert\Audit Insert Split FK.Outputs[Multicast Output 3]" />
                 <path
-                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Database Processor\reg_Foreign_Key_Insert\Union All.Inputs[Union All Input 1]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_Foreign_Key_Insert\gtmp_foreign_key_destination.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Database Processor\reg_Foreign_Key_Insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Database Processor\reg_Foreign_Key_Insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_Foreign_Key_Insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
@@ -16180,7 +16180,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
               <components>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -16399,7 +16399,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\Audit Insert Split IDX"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split IDX">
@@ -16501,7 +16501,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -16644,7 +16644,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\Audit Set IDX"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set IDX"
@@ -16809,7 +16809,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -17090,7 +17090,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\gtmp_index_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_index_destination"
@@ -17573,7 +17573,7 @@ AND cte3.key_reference_type_column_id = keyc.referenced_column_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\gtmp_index_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_index_insert"
@@ -18344,7 +18344,7 @@ WHERE idx.type IS NOT NULL</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -18509,7 +18509,7 @@ WHERE idx.type IS NOT NULL</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -18693,7 +18693,7 @@ WHERE idx.type IS NOT NULL</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Index_Insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -18842,22 +18842,22 @@ WHERE idx.type IS NOT NULL</property>
                   name="ADO NET Source Output"
                   startId="Package\Database Processor\reg_Index_Insert\gtmp_index_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 11]"
+                  refId="Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 1]"
                   endId="Package\Database Processor\reg_Index_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_Index_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 1]"
+                  refId="Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 11]"
                   endId="Package\Database Processor\reg_Index_Insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_Index_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output1]"
+                  refId="Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output]"
                   endId="Package\Database Processor\reg_Index_Insert\Audit Insert Split IDX.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_Index_Insert\Audit Set IDX.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output]"
+                  refId="Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output1]"
                   endId="Package\Database Processor\reg_Index_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_Index_Insert\Audit Set Errors.Outputs[Derived Column Output]" />
@@ -18872,12 +18872,12 @@ WHERE idx.type IS NOT NULL</property>
                   name="Multicast Output 3"
                   startId="Package\Database Processor\reg_Index_Insert\Audit Insert Split IDX.Outputs[Multicast Output 3]" />
                 <path
-                  refId="Package\Database Processor\reg_Index_Insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Database Processor\reg_Index_Insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Database Processor\reg_Index_Insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_Index_Insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Index_Insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Database Processor\reg_Index_Insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Database Processor\reg_Index_Insert\Union All.Inputs[Union All Input 1]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_Index_Insert\gtmp_index_destination.Outputs[OLE DB Destination Error Output]" />
@@ -18910,7 +18910,7 @@ WHERE idx.type IS NOT NULL</property>
               <components>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -19129,7 +19129,7 @@ WHERE idx.type IS NOT NULL</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\Audit Insert Split TGR"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split TGR">
@@ -19231,7 +19231,7 @@ WHERE idx.type IS NOT NULL</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\Audit Set TGR"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set TGR"
@@ -19396,7 +19396,7 @@ WHERE idx.type IS NOT NULL</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\Capture_Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Capture_Errors"
@@ -19539,7 +19539,7 @@ WHERE idx.type IS NOT NULL</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -19820,7 +19820,7 @@ WHERE idx.type IS NOT NULL</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\gtmp_trigger_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_trigger_destination"
@@ -20131,7 +20131,7 @@ WHERE idx.type IS NOT NULL</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\gtmp_trigger_source"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_trigger_source"
@@ -20572,7 +20572,7 @@ ON obj.object_id = trg.parent_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -20737,7 +20737,7 @@ ON obj.object_id = trg.parent_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -20921,7 +20921,7 @@ ON obj.object_id = trg.parent_id</property>
                 </component>
                 <component
                   refId="Package\Database Processor\reg_Trigger_Insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -21070,22 +21070,22 @@ ON obj.object_id = trg.parent_id</property>
                   name="ADO NET Source Output"
                   startId="Package\Database Processor\reg_Trigger_Insert\gtmp_trigger_source.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 11]"
+                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 1]"
                   endId="Package\Database Processor\reg_Trigger_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_Trigger_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 1]"
+                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 11]"
                   endId="Package\Database Processor\reg_Trigger_Insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Database Processor\reg_Trigger_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output1]"
+                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output]"
                   endId="Package\Database Processor\reg_Trigger_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_Trigger_Insert\Capture_Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output]"
+                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output1]"
                   endId="Package\Database Processor\reg_Trigger_Insert\Audit Insert Split TGR.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Database Processor\reg_Trigger_Insert\Audit Set TGR.Outputs[Derived Column Output]" />
@@ -21100,12 +21100,12 @@ ON obj.object_id = trg.parent_id</property>
                   name="Multicast Output 2"
                   startId="Package\Database Processor\reg_Trigger_Insert\Audit Insert Split TGR.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Database Processor\reg_Trigger_Insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_Trigger_Insert\gtmp_trigger_destination.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Database Processor\reg_Trigger_Insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Database Processor\reg_Trigger_Insert\Union All.Inputs[Union All Input 1]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Database Processor\reg_Trigger_Insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
@@ -21276,7 +21276,7 @@ ON obj.object_id = trg.parent_id</property>
           <components>
             <component
               refId="Package\Generate_DB_Processing_List\Database_Processing_List"
-              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              componentClassID="DTSAdapter.RecordsetDestination.3"
               contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
               name="Database_Processing_List">
@@ -21311,7 +21311,7 @@ ON obj.object_id = trg.parent_id</property>
             </component>
             <component
               refId="Package\Generate_DB_Processing_List\Local_Master_DB_Query"
-              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              componentClassID="DTS.ManagedComponentWrapper.3"
               contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
               name="Local_Master_DB_Query"
@@ -21435,7 +21435,7 @@ WHERE name != 'tempdb'</property>
             </component>
             <component
               refId="Package\Generate_DB_Processing_List\reg_0100_0200_Server_database_exceptions"
-              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              componentClassID="DTSTransform.Lookup.3"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
               name="reg_0100_0200_Server_database_exceptions"
@@ -21494,7 +21494,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Generate_DB_Processing_List\462:invalid};#{Package\Generate_DB_Processing_List\463:invalid};</property>
+                  name="ParameterMap">#{Package\Generate_DB_Processing_List\448:invalid};#{Package\Generate_DB_Processing_List\449:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -22085,7 +22085,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0203_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Database Processor\reg_0203_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="614,363">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22121,7 +22121,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0203_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Database Processor\reg_0203_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="115.5,410">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22165,7 +22165,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0203_Insert\Audit Insert Split 0203"
           TopLeft="9.50000000000001,107.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output]"
+          Id="Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output1]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22221,7 +22221,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0203_Insert\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 1]"
+          Id="Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 11]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22256,11 +22256,11 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           <GroupLayout.ChildrenIds>
             <s:String>Package\Database Processor\reg_0203_Insert\Audit Set 0203</s:String>
             <s:String>Package\Database Processor\reg_0203_Insert\Audit Insert Split 0203</s:String>
-            <s:String>Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Database Processor\reg_0203_Insert\Audit Aggregate</s:String>
             <s:String>Package\Database Processor\reg_0203_Insert.Paths[Multicast Output 2]</s:String>
             <s:String>Package\Database Processor\reg_0203_Insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -22373,7 +22373,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0203_Insert\TRK_SSIS_Import_Errors"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 11]"
+          Id="Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 1]"
           TopLeft="105,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22425,7 +22425,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output1]"
+          Id="Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output]"
           TopLeft="105,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22461,10 +22461,10 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
             <s:String>Package\Database Processor\reg_0203_Insert\Audit Set Errors</s:String>
             <s:String>Package\Database Processor\reg_0203_Insert\Error Aggregate</s:String>
             <s:String>Package\Database Processor\reg_0203_Insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Database Processor\reg_0203_Insert.Paths[Aggregate Output 1]</s:String>
             <s:String>Package\Database Processor\reg_0203_Insert\Union All</s:String>
             <s:String>Package\Database Processor\reg_0203_Insert.Paths[Union All Output 1]</s:String>
-            <s:String>Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_0203_Insert.Paths[Derived Column Output]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -22559,7 +22559,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="125.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22595,7 +22595,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="420.5,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22639,7 +22639,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0204_0300_Insert\Audit Insert Split 0204_0300"
           TopLeft="5.50000000000001,107.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output1]"
+          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output]"
           TopLeft="113.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22671,7 +22671,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0204_0300_Insert\Audit Aggregate"
           TopLeft="35.5,209.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 1]"
+          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 11]"
           TopLeft="113.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22730,10 +22730,10 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           <GroupLayout.ChildrenIds>
             <s:String>Package\Database Processor\reg_0204_0300_Insert\Audit Set 0204_0300</s:String>
             <s:String>Package\Database Processor\reg_0204_0300_Insert\Audit Insert Split 0204_0300</s:String>
-            <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Database Processor\reg_0204_0300_Insert\TRK_Data_Audit_Import</s:String>
             <s:String>Package\Database Processor\reg_0204_0300_Insert\Audit Aggregate</s:String>
-            <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 11]</s:String>
             <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Multicast Output 2]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
@@ -22847,7 +22847,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0204_0300_Insert\Error Aggregate"
           TopLeft="27.5,209.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output]"
+          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output1]"
           TopLeft="105,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22871,7 +22871,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 11]"
+          Id="Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 1]"
           TopLeft="105,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22935,8 +22935,8 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
             <s:String>Package\Database Processor\reg_0204_0300_Insert\Audit Set Errors</s:String>
             <s:String>Package\Database Processor\reg_0204_0300_Insert\TRK_SSIS_Import_Errors</s:String>
             <s:String>Package\Database Processor\reg_0204_0300_Insert\Error Aggregate</s:String>
-            <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output]</s:String>
-            <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Aggregate Output 1]</s:String>
             <s:String>Package\Database Processor\reg_0204_0300_Insert\Union All</s:String>
             <s:String>Package\Database Processor\reg_0204_0300_Insert.Paths[Union All Output 1]</s:String>
           </GroupLayout.ChildrenIds>
@@ -23033,7 +23033,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="730.5,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23069,7 +23069,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="125.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23113,7 +23113,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0300_0401_Insert\Audit Insert Split 0300_0401"
           TopLeft="5.50000000000001,107.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output]"
+          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output1]"
           TopLeft="113.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23169,7 +23169,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0300_0401_Insert\TRK_Data_Audit_Insert"
           TopLeft="18,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 1]"
+          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 11]"
           TopLeft="113.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23204,11 +23204,11 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           <GroupLayout.ChildrenIds>
             <s:String>Package\Database Processor\reg_0300_0401_Insert\Audit Set 0300_0401</s:String>
             <s:String>Package\Database Processor\reg_0300_0401_Insert\Audit Insert Split 0300_0401</s:String>
-            <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Database Processor\reg_0300_0401_Insert\Audit Aggregate</s:String>
             <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Multicast Output 2]</s:String>
             <s:String>Package\Database Processor\reg_0300_0401_Insert\TRK_Data_Audit_Insert</s:String>
-            <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -23345,7 +23345,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0300_0401_Insert\Error Aggregate"
           TopLeft="46,209.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output1]"
+          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23373,7 +23373,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0300_0401_Insert\TRK_SSIS_Import_Errors"
           TopLeft="24,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 11]"
+          Id="Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 1]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23410,9 +23410,9 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
             <s:String>Package\Database Processor\reg_0300_0401_Insert\Union All</s:String>
             <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Union All Output 1]</s:String>
             <s:String>Package\Database Processor\reg_0300_0401_Insert\Error Aggregate</s:String>
-            <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Database Processor\reg_0300_0401_Insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Database Processor\reg_0300_0401_Insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -23507,7 +23507,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="730.5,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23543,7 +23543,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="125.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23587,7 +23587,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0500_0501_Insert\Audit Insert Split 0500_0501"
           TopLeft="5.50000000000001,107.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output1]"
+          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output]"
           TopLeft="113.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23619,7 +23619,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0500_0501_Insert\TRK_Data_Audit_Import"
           TopLeft="16,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 11]"
+          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 1]"
           TopLeft="113.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23678,10 +23678,10 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           <GroupLayout.ChildrenIds>
             <s:String>Package\Database Processor\reg_0500_0501_Insert\Audit Set 0500_0501</s:String>
             <s:String>Package\Database Processor\reg_0500_0501_Insert\Audit Insert Split 0500_0501</s:String>
-            <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Database Processor\reg_0500_0501_Insert\Audit Aggregate</s:String>
             <s:String>Package\Database Processor\reg_0500_0501_Insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 1]</s:String>
             <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Multicast Output 2]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
@@ -23819,7 +23819,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0500_0501_Insert\Error Aggregate"
           TopLeft="46,209.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output]"
+          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output1]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23847,7 +23847,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0500_0501_Insert\TRK_SSIS_Import_Errors"
           TopLeft="24,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 1]"
+          Id="Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 11]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23884,9 +23884,9 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
             <s:String>Package\Database Processor\reg_0500_0501_Insert\Union All</s:String>
             <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Union All Output 1]</s:String>
             <s:String>Package\Database Processor\reg_0500_0501_Insert\Error Aggregate</s:String>
-            <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Database Processor\reg_0500_0501_Insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Database Processor\reg_0500_0501_Insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -23981,7 +23981,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0600_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Database Processor\reg_0600_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="662,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24017,7 +24017,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0600_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Database Processor\reg_0600_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="113.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24061,7 +24061,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0600_Insert\Audit Insert Split 0600"
           TopLeft="7.50000000000001,107.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output]"
+          Id="Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output1]"
           TopLeft="101,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24117,7 +24117,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 11]"
+          Id="Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 1]"
           TopLeft="101,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24152,11 +24152,11 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           <GroupLayout.ChildrenIds>
             <s:String>Package\Database Processor\reg_0600_Insert\Audit Set 0600</s:String>
             <s:String>Package\Database Processor\reg_0600_Insert\Audit Insert Split 0600</s:String>
-            <s:String>Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Database Processor\reg_0600_Insert\TRK_Data_Audit_Insert</s:String>
             <s:String>Package\Database Processor\reg_0600_Insert\Audit Aggregate</s:String>
             <s:String>Package\Database Processor\reg_0600_Insert.Paths[Multicast Output 2]</s:String>
-            <s:String>Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -24293,7 +24293,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output1]"
+          Id="Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24321,7 +24321,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_0600_Insert\TRK_SSIS_Import_Errors"
           TopLeft="24,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 1]"
+          Id="Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 11]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24358,9 +24358,9 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
             <s:String>Package\Database Processor\reg_0600_Insert\Union All</s:String>
             <s:String>Package\Database Processor\reg_0600_Insert\Error Aggregate</s:String>
             <s:String>Package\Database Processor\reg_0600_Insert.Paths[Union All Output 1]</s:String>
-            <s:String>Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_0600_Insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Database Processor\reg_0600_Insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Database Processor\reg_0600_Insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -24467,7 +24467,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Constraint_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Database Processor\reg_Constraint_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="378.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24503,7 +24503,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Constraint_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Database Processor\reg_Constraint_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="902,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24547,7 +24547,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Constraint_Insert\Audit Split DFCK"
           TopLeft="24.5,107.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output1]"
+          Id="Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24603,7 +24603,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Constraint_Insert\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 11]"
+          Id="Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 1]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24638,11 +24638,11 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           <GroupLayout.ChildrenIds>
             <s:String>Package\Database Processor\reg_Constraint_Insert\Audit Set DFCK</s:String>
             <s:String>Package\Database Processor\reg_Constraint_Insert\Audit Split DFCK</s:String>
-            <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Database Processor\reg_Constraint_Insert\Audit Aggregate</s:String>
             <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Multicast Output 1]</s:String>
             <s:String>Package\Database Processor\reg_Constraint_Insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -24783,7 +24783,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output]"
+          Id="Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output1]"
           TopLeft="105,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24807,7 +24807,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 1]"
+          Id="Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 11]"
           TopLeft="105,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24845,8 +24845,8 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
             <s:String>Package\Database Processor\reg_Constraint_Insert\TRK_SSIS_Import_Errors</s:String>
             <s:String>Package\Database Processor\reg_Constraint_Insert\Union All</s:String>
             <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Union All Output 1]</s:String>
-            <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output]</s:String>
-            <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_Constraint_Insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -24905,7 +24905,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <EdgeLayout
-          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="115.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24941,7 +24941,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="676.5,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25021,7 +25021,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Foreign_Key_Insert\Audit Insert Split FK"
           TopLeft="15.5,107.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output]"
+          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output1]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25077,7 +25077,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 11]"
+          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 1]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25112,11 +25112,11 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           <GroupLayout.ChildrenIds>
             <s:String>Package\Database Processor\reg_Foreign_Key_Insert\Audit Set FK</s:String>
             <s:String>Package\Database Processor\reg_Foreign_Key_Insert\Audit Insert Split FK</s:String>
-            <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Database Processor\reg_Foreign_Key_Insert\TRK_Data_Audit_Import</s:String>
             <s:String>Package\Database Processor\reg_Foreign_Key_Insert\Audit Aggregate</s:String>
             <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Multicast Output 3]</s:String>
-            <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -25253,7 +25253,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Foreign_Key_Insert\Error Aggregate"
           TopLeft="46,209.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output1]"
+          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25281,7 +25281,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Foreign_Key_Insert\TRK_SSIS_Import_Errors"
           TopLeft="24,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 1]"
+          Id="Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 11]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25318,9 +25318,9 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
             <s:String>Package\Database Processor\reg_Foreign_Key_Insert\Union All</s:String>
             <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Union All Output 1]</s:String>
             <s:String>Package\Database Processor\reg_Foreign_Key_Insert\Error Aggregate</s:String>
-            <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Database Processor\reg_Foreign_Key_Insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Database Processor\reg_Foreign_Key_Insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -25415,7 +25415,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Index_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Database Processor\reg_Index_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="677.5,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25451,7 +25451,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Index_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Database Processor\reg_Index_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="115.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25495,7 +25495,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Index_Insert\Audit Insert Split IDX"
           TopLeft="12.5,107.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output1]"
+          Id="Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25551,7 +25551,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Index_Insert\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 1]"
+          Id="Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 11]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25586,11 +25586,11 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           <GroupLayout.ChildrenIds>
             <s:String>Package\Database Processor\reg_Index_Insert\Audit Set IDX</s:String>
             <s:String>Package\Database Processor\reg_Index_Insert\Audit Insert Split IDX</s:String>
-            <s:String>Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Database Processor\reg_Index_Insert\Audit Aggregate</s:String>
             <s:String>Package\Database Processor\reg_Index_Insert.Paths[Multicast Output 3]</s:String>
             <s:String>Package\Database Processor\reg_Index_Insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -25727,7 +25727,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Index_Insert\Error Aggregate"
           TopLeft="46,209.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output]"
+          Id="Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output1]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25755,7 +25755,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Index_Insert\TRK_SSIS_Import_Errors"
           TopLeft="24,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 11]"
+          Id="Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 1]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25792,9 +25792,9 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
             <s:String>Package\Database Processor\reg_Index_Insert\Union All</s:String>
             <s:String>Package\Database Processor\reg_Index_Insert.Paths[Union All Output 1]</s:String>
             <s:String>Package\Database Processor\reg_Index_Insert\Error Aggregate</s:String>
-            <s:String>Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Database Processor\reg_Index_Insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Database Processor\reg_Index_Insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Database Processor\reg_Index_Insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -25889,7 +25889,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Trigger_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Database Processor\reg_Trigger_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="115.5,410">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25925,7 +25925,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Trigger_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Database Processor\reg_Trigger_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="377.5,259">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25969,7 +25969,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Trigger_Insert\Audit Insert Split TGR"
           TopLeft="11.5,107.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output]"
+          Id="Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output1]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26025,7 +26025,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Trigger_Insert\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 1]"
+          Id="Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 11]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26060,11 +26060,11 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           <GroupLayout.ChildrenIds>
             <s:String>Package\Database Processor\reg_Trigger_Insert\Audit Set TGR</s:String>
             <s:String>Package\Database Processor\reg_Trigger_Insert\Audit Insert Split TGR</s:String>
-            <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Database Processor\reg_Trigger_Insert\Audit Aggregate</s:String>
             <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Multicast Output 2]</s:String>
             <s:String>Package\Database Processor\reg_Trigger_Insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -26205,7 +26205,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           Id="Package\Database Processor\reg_Trigger_Insert\Error Aggregate"
           TopLeft="46,209.5" />
         <EdgeLayout
-          Id="Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output1]"
+          Id="Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26229,7 +26229,7 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 11]"
+          Id="Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 1]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26267,8 +26267,8 @@ where [refTable].[Target_Database] = ? and [refTable].[Target_Server] = ?</prope
             <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Union All Output 1]</s:String>
             <s:String>Package\Database Processor\reg_Trigger_Insert\TRK_SSIS_Import_Errors</s:String>
             <s:String>Package\Database Processor\reg_Trigger_Insert\Error Aggregate</s:String>
-            <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output1]</s:String>
-            <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Database Processor\reg_Trigger_Insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>

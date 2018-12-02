@@ -7,13 +7,13 @@
   DTS:CreatorName="Corruscant\FDPugh"
   DTS:DTSID="{365DD3CA-1739-4CE7-9A91-F7A2A39E002E}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="SUB_Index_Integrity"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="236"
-  DTS:VersionGUID="{62D925E7-63F6-47D7-878C-CD6601BD30DE}">
+  DTS:VersionBuild="238"
+  DTS:VersionGUID="{4DFE3BF9-A2AD-4439-9F2B-328A9989FAF2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         DTS:Name="ConnectionString">"Data Source="+ @[$Package::TargetServer] +";Initial Catalog="+ @[$Package::TargetDatabase] +";Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=CORRUSCANT\MOS_EISLEY;Initial Catalog=DWMgmt;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=CORRUSCANT\IMPERIAL_SENATE;Initial Catalog=DWMgmt;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -77,7 +77,7 @@
       DTS:ObjectName="TargetServer">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">CORRUSCANT\MOS_EISLEY</DTS:Property>
+        DTS:Name="ParameterValue">CORRUSCANT\IMPERIAL_SENATE</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -190,7 +190,7 @@ OR CHARINDEX('ALL', DB_NAME()+'.'+scm.name+'.'+obj.name) &gt; 0)
           <components>
             <component
               refId="Package\Execute Index Metric Capture\Audit Aggregate"
-              componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+              componentClassID="DTSTransform.Aggregate.3"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
               name="Audit Aggregate"
@@ -409,7 +409,7 @@ OR CHARINDEX('ALL', DB_NAME()+'.'+scm.name+'.'+obj.name) &gt; 0)
             </component>
             <component
               refId="Package\Execute Index Metric Capture\Audit Set Errors"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Audit Set Errors"
@@ -552,7 +552,7 @@ OR CHARINDEX('ALL', DB_NAME()+'.'+scm.name+'.'+obj.name) &gt; 0)
             </component>
             <component
               refId="Package\Execute Index Metric Capture\Error Aggregate"
-              componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+              componentClassID="DTSTransform.Aggregate.3"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
               name="Error Aggregate"
@@ -833,7 +833,7 @@ OR CHARINDEX('ALL', DB_NAME()+'.'+scm.name+'.'+obj.name) &gt; 0)
             </component>
             <component
               refId="Package\Execute Index Metric Capture\Index_Metric_Capture"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="Index_Metric_Capture"
@@ -1444,7 +1444,7 @@ WHERE     (? = 'ALL' OR
             </component>
             <component
               refId="Package\Execute Index Metric Capture\TRK_0350 Audit Set"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="TRK_0350 Audit Set"
@@ -1611,7 +1611,7 @@ WHERE     (? = 'ALL' OR
             </component>
             <component
               refId="Package\Execute Index Metric Capture\TRK_0350_Audit_Split"
-              componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+              componentClassID="DTSTransform.Multicast.3"
               contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
               name="TRK_0350_Audit_Split">
@@ -1649,7 +1649,7 @@ WHERE     (? = 'ALL' OR
             </component>
             <component
               refId="Package\Execute Index Metric Capture\TRK_0350_Index_Metric_Insert"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_0350_Index_Metric_Insert"
@@ -2054,7 +2054,7 @@ WHERE     (? = 'ALL' OR
             </component>
             <component
               refId="Package\Execute Index Metric Capture\TRK_Data_Audit_Import"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_Data_Audit_Import"
@@ -2219,7 +2219,7 @@ WHERE     (? = 'ALL' OR
             </component>
             <component
               refId="Package\Execute Index Metric Capture\TRK_SSIS_Import_Errors"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_SSIS_Import_Errors"
@@ -2403,7 +2403,7 @@ WHERE     (? = 'ALL' OR
             </component>
             <component
               refId="Package\Execute Index Metric Capture\Union All"
-              componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+              componentClassID="DTSTransform.UnionAll.3"
               contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
               name="Union All"
@@ -2508,22 +2508,22 @@ WHERE     (? = 'ALL' OR
           </components>
           <paths>
             <path
-              refId="Package\Execute Index Metric Capture.Paths[Aggregate Output 11]"
+              refId="Package\Execute Index Metric Capture.Paths[Aggregate Output 1]"
               endId="Package\Execute Index Metric Capture\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
               name="Aggregate Output 1"
               startId="Package\Execute Index Metric Capture\Audit Aggregate.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\Execute Index Metric Capture.Paths[Aggregate Output 1]"
+              refId="Package\Execute Index Metric Capture.Paths[Aggregate Output 11]"
               endId="Package\Execute Index Metric Capture\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
               name="Aggregate Output 1"
               startId="Package\Execute Index Metric Capture\Error Aggregate.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\Execute Index Metric Capture.Paths[Derived Column Output1]"
+              refId="Package\Execute Index Metric Capture.Paths[Derived Column Output]"
               endId="Package\Execute Index Metric Capture\TRK_0350_Audit_Split.Inputs[Multicast Input 1]"
               name="Derived Column Output"
               startId="Package\Execute Index Metric Capture\TRK_0350 Audit Set.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Execute Index Metric Capture.Paths[Derived Column Output]"
+              refId="Package\Execute Index Metric Capture.Paths[Derived Column Output1]"
               endId="Package\Execute Index Metric Capture\Error Aggregate.Inputs[Aggregate Input 1]"
               name="Derived Column Output"
               startId="Package\Execute Index Metric Capture\Audit Set Errors.Outputs[Derived Column Output]" />
@@ -2538,12 +2538,12 @@ WHERE     (? = 'ALL' OR
               name="Multicast Output 2"
               startId="Package\Execute Index Metric Capture\TRK_0350_Audit_Split.Outputs[Multicast Output 2]" />
             <path
-              refId="Package\Execute Index Metric Capture.Paths[OLE DB Destination Error Output1]"
+              refId="Package\Execute Index Metric Capture.Paths[OLE DB Destination Error Output]"
               endId="Package\Execute Index Metric Capture\Union All.Inputs[Union All Input 3]"
               name="OLE DB Destination Error Output"
               startId="Package\Execute Index Metric Capture\TRK_0350_Index_Metric_Insert.Outputs[OLE DB Destination Error Output]" />
             <path
-              refId="Package\Execute Index Metric Capture.Paths[OLE DB Destination Error Output]"
+              refId="Package\Execute Index Metric Capture.Paths[OLE DB Destination Error Output1]"
               endId="Package\Execute Index Metric Capture\Union All.Inputs[Union All Input 2]"
               name="OLE DB Destination Error Output"
               startId="Package\Execute Index Metric Capture\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
@@ -2585,7 +2585,7 @@ WHERE     (? = 'ALL' OR
           <components>
             <component
               refId="Package\TRK_0350_OIM_Insert\Audit Aggregate"
-              componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+              componentClassID="DTSTransform.Aggregate.3"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
               name="Audit Aggregate"
@@ -2804,7 +2804,7 @@ WHERE     (? = 'ALL' OR
             </component>
             <component
               refId="Package\TRK_0350_OIM_Insert\Audit Set Errors"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Audit Set Errors"
@@ -2947,7 +2947,7 @@ WHERE     (? = 'ALL' OR
             </component>
             <component
               refId="Package\TRK_0350_OIM_Insert\Error Aggregate"
-              componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+              componentClassID="DTSTransform.Aggregate.3"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
               name="Error Aggregate"
@@ -3228,7 +3228,7 @@ WHERE     (? = 'ALL' OR
             </component>
             <component
               refId="Package\TRK_0350_OIM_Insert\Index_Metrics_Source"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="Index_Metrics_Source"
@@ -3727,7 +3727,7 @@ WHERE TMP.Index_Type = 0</property>
             </component>
             <component
               refId="Package\TRK_0350_OIM_Insert\TRK_0350 Audit Set"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="TRK_0350 Audit Set"
@@ -3893,7 +3893,7 @@ WHERE TMP.Index_Type = 0</property>
             </component>
             <component
               refId="Package\TRK_0350_OIM_Insert\TRK_0350_MultiCast"
-              componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+              componentClassID="DTSTransform.Multicast.3"
               contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
               name="TRK_0350_MultiCast">
@@ -3931,7 +3931,7 @@ WHERE TMP.Index_Type = 0</property>
             </component>
             <component
               refId="Package\TRK_0350_OIM_Insert\TRK_0350_Object_Index_Metrics"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_0350_Object_Index_Metrics"
@@ -4258,7 +4258,7 @@ WHERE TMP.Index_Type = 0</property>
             </component>
             <component
               refId="Package\TRK_0350_OIM_Insert\TRK_Data_Audit_Import"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_Data_Audit_Import"
@@ -4423,7 +4423,7 @@ WHERE TMP.Index_Type = 0</property>
             </component>
             <component
               refId="Package\TRK_0350_OIM_Insert\TRK_SSIS_Import_Errors"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_SSIS_Import_Errors"
@@ -4607,7 +4607,7 @@ WHERE TMP.Index_Type = 0</property>
             </component>
             <component
               refId="Package\TRK_0350_OIM_Insert\Union All"
-              componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+              componentClassID="DTSTransform.UnionAll.3"
               contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
               name="Union All"
@@ -4689,22 +4689,22 @@ WHERE TMP.Index_Type = 0</property>
           </components>
           <paths>
             <path
-              refId="Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 11]"
+              refId="Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 1]"
               endId="Package\TRK_0350_OIM_Insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
               name="Aggregate Output 1"
               startId="Package\TRK_0350_OIM_Insert\Error Aggregate.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 1]"
+              refId="Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 11]"
               endId="Package\TRK_0350_OIM_Insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
               name="Aggregate Output 1"
               startId="Package\TRK_0350_OIM_Insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\TRK_0350_OIM_Insert.Paths[Derived Column Output1]"
+              refId="Package\TRK_0350_OIM_Insert.Paths[Derived Column Output]"
               endId="Package\TRK_0350_OIM_Insert\Error Aggregate.Inputs[Aggregate Input 1]"
               name="Derived Column Output"
               startId="Package\TRK_0350_OIM_Insert\Audit Set Errors.Outputs[Derived Column Output]" />
             <path
-              refId="Package\TRK_0350_OIM_Insert.Paths[Derived Column Output]"
+              refId="Package\TRK_0350_OIM_Insert.Paths[Derived Column Output1]"
               endId="Package\TRK_0350_OIM_Insert\Audit Aggregate.Inputs[Aggregate Input 1]"
               name="Derived Column Output"
               startId="Package\TRK_0350_OIM_Insert\TRK_0350 Audit Set.Outputs[Derived Column Output]" />
@@ -4719,12 +4719,12 @@ WHERE TMP.Index_Type = 0</property>
               name="Multicast Output 3"
               startId="Package\TRK_0350_OIM_Insert\TRK_0350_MultiCast.Outputs[Multicast Output 3]" />
             <path
-              refId="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output1]"
+              refId="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output]"
               endId="Package\TRK_0350_OIM_Insert\Union All.Inputs[Union All Input 4]"
               name="OLE DB Destination Error Output"
               startId="Package\TRK_0350_OIM_Insert\TRK_0350_Object_Index_Metrics.Outputs[OLE DB Destination Error Output]" />
             <path
-              refId="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output]"
+              refId="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output1]"
               endId="Package\TRK_0350_OIM_Insert\Union All.Inputs[Union All Input 2]"
               name="OLE DB Destination Error Output"
               startId="Package\TRK_0350_OIM_Insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
@@ -4995,47 +4995,13 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Execute Index Metric Capture.Paths[OLE DB Destination Error Output1]"
-          TopLeft="364.5,210.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="261.5,-114.5"
-              Start="0,0"
-              End="261.5,-107">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-63.8106796116505" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-63.8106796116505"
-                    Point2="0,-67.8106796116505"
-                    Point3="4,-67.8106796116505" />
-                  <mssgle:LineSegment
-                    End="257.5,-67.8106796116505" />
-                  <mssgle:CubicBezierSegment
-                    Point1="257.5,-67.8106796116505"
-                    Point2="261.5,-67.8106796116505"
-                    Point3="261.5,-71.8106796116505" />
-                  <mssgle:LineSegment
-                    End="261.5,-107" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="57.54109375,-62.8106796116505,146.4178125,11.43359375"
+              BoundingBox="392.29640625,-52.25,30.9071875,9.568359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Execute Index Metric Capture.Paths[OLE DB Destination Error Output]"
+          Id="Package\Execute Index Metric Capture.Paths[OLE DB Destination Error Output1]"
           TopLeft="913.5,360">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5066,7 +5032,43 @@ WHERE TMP.Index_Type = 0</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-197.95890625,-151.349514563107,146.4178125,11.43359375"
+              BoundingBox="-217.8442578125,-151.349514563107,186.188515625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Execute Index Metric Capture.Paths[OLE DB Destination Error Output]"
+          TopLeft="364.5,210.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="261.5,-114.5"
+              Start="0,0"
+              End="261.5,-107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-63.8106796116505" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-63.8106796116505"
+                    Point2="0,-67.8106796116505"
+                    Point3="4,-67.8106796116505" />
+                  <mssgle:LineSegment
+                    End="257.5,-67.8106796116505" />
+                  <mssgle:CubicBezierSegment
+                    Point1="257.5,-67.8106796116505"
+                    Point2="261.5,-67.8106796116505"
+                    Point3="261.5,-71.8106796116505" />
+                  <mssgle:LineSegment
+                    End="261.5,-107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.6557421875,-62.8106796116505,186.188515625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5101,7 +5103,9 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-185.95359375,-15.568359375,30.9071875,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -5117,7 +5121,7 @@ WHERE TMP.Index_Type = 0</property>
           Id="Package\Execute Index Metric Capture\TRK_SSIS_Import_Errors"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Execute Index Metric Capture.Paths[Derived Column Output]"
+          Id="Package\Execute Index Metric Capture.Paths[Derived Column Output1]"
           TopLeft="105,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5135,11 +5139,13 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Execute Index Metric Capture.Paths[Aggregate Output 1]"
+          Id="Package\Execute Index Metric Capture.Paths[Aggregate Output 11]"
           TopLeft="105,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5157,7 +5163,9 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -5183,7 +5191,9 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -5191,7 +5201,7 @@ WHERE TMP.Index_Type = 0</property>
           ParentId="Package\Execute Index Metric Capture"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="210,409"
+          PanelSize="210,408"
           Size="210,452"
           Id="44b4fa3f-0d47-413f-89ff-95a69978930d"
           TopLeft="539.5,5.49999999999989">
@@ -5199,8 +5209,8 @@ WHERE TMP.Index_Type = 0</property>
             <s:String>Package\Execute Index Metric Capture\Audit Set Errors</s:String>
             <s:String>Package\Execute Index Metric Capture\Error Aggregate</s:String>
             <s:String>Package\Execute Index Metric Capture\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Execute Index Metric Capture.Paths[Derived Column Output]</s:String>
-            <s:String>Package\Execute Index Metric Capture.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Execute Index Metric Capture.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Execute Index Metric Capture.Paths[Aggregate Output 11]</s:String>
             <s:String>Package\Execute Index Metric Capture\Union All</s:String>
             <s:String>Package\Execute Index Metric Capture.Paths[Union All Output 1]</s:String>
           </GroupLayout.ChildrenIds>
@@ -5218,7 +5228,7 @@ WHERE TMP.Index_Type = 0</property>
           Id="Package\Execute Index Metric Capture\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Execute Index Metric Capture.Paths[Aggregate Output 11]"
+          Id="Package\Execute Index Metric Capture.Paths[Aggregate Output 1]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5236,7 +5246,9 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -5244,7 +5256,7 @@ WHERE TMP.Index_Type = 0</property>
           Id="Package\Execute Index Metric Capture\TRK_0350_Audit_Split"
           TopLeft="9.50000000000001,107.5" />
         <EdgeLayout
-          Id="Package\Execute Index Metric Capture.Paths[Derived Column Output1]"
+          Id="Package\Execute Index Metric Capture.Paths[Derived Column Output]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5262,7 +5274,9 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5284,7 +5298,9 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -5292,7 +5308,7 @@ WHERE TMP.Index_Type = 0</property>
           ParentId="Package\Execute Index Metric Capture"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="206,409"
+          PanelSize="206,408"
           Size="206,452"
           Id="7c8b7b29-6115-4fea-a804-83fb07448900"
           TopLeft="810.5,5.49999999999989">
@@ -5300,9 +5316,9 @@ WHERE TMP.Index_Type = 0</property>
             <s:String>Package\Execute Index Metric Capture\TRK_0350 Audit Set</s:String>
             <s:String>Package\Execute Index Metric Capture\Audit Aggregate</s:String>
             <s:String>Package\Execute Index Metric Capture\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Execute Index Metric Capture.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Execute Index Metric Capture.Paths[Aggregate Output 1]</s:String>
             <s:String>Package\Execute Index Metric Capture\TRK_0350_Audit_Split</s:String>
-            <s:String>Package\Execute Index Metric Capture.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Execute Index Metric Capture.Paths[Derived Column Output]</s:String>
             <s:String>Package\Execute Index Metric Capture.Paths[Multicast Output 2]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
@@ -5442,7 +5458,7 @@ WHERE TMP.Index_Type = 0</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output]"
           TopLeft="949.833333333333,210.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5478,7 +5494,7 @@ WHERE TMP.Index_Type = 0</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="353.5,361">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5590,7 +5606,7 @@ WHERE TMP.Index_Type = 0</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\TRK_0350_OIM_Insert.Paths[Derived Column Output]"
+          Id="Package\TRK_0350_OIM_Insert.Paths[Derived Column Output1]"
           TopLeft="102,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5614,7 +5630,7 @@ WHERE TMP.Index_Type = 0</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 1]"
+          Id="Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 11]"
           TopLeft="102,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5652,8 +5668,8 @@ WHERE TMP.Index_Type = 0</property>
             <s:String>Package\TRK_0350_OIM_Insert\TRK_Data_Audit_Import</s:String>
             <s:String>Package\TRK_0350_OIM_Insert\TRK_0350_MultiCast</s:String>
             <s:String>Package\TRK_0350_OIM_Insert.Paths[Multicast Output 1]</s:String>
-            <s:String>Package\TRK_0350_OIM_Insert.Paths[Derived Column Output]</s:String>
-            <s:String>Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\TRK_0350_OIM_Insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -5669,7 +5685,7 @@ WHERE TMP.Index_Type = 0</property>
           Id="Package\TRK_0350_OIM_Insert\TRK_SSIS_Import_Errors"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\TRK_0350_OIM_Insert.Paths[Derived Column Output1]"
+          Id="Package\TRK_0350_OIM_Insert.Paths[Derived Column Output]"
           TopLeft="105,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5693,7 +5709,7 @@ WHERE TMP.Index_Type = 0</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 11]"
+          Id="Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 1]"
           TopLeft="105,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5757,8 +5773,8 @@ WHERE TMP.Index_Type = 0</property>
             <s:String>Package\TRK_0350_OIM_Insert\Audit Set Errors</s:String>
             <s:String>Package\TRK_0350_OIM_Insert\Error Aggregate</s:String>
             <s:String>Package\TRK_0350_OIM_Insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\TRK_0350_OIM_Insert.Paths[Derived Column Output1]</s:String>
-            <s:String>Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\TRK_0350_OIM_Insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\TRK_0350_OIM_Insert.Paths[Aggregate Output 1]</s:String>
             <s:String>Package\TRK_0350_OIM_Insert\Union All</s:String>
             <s:String>Package\TRK_0350_OIM_Insert.Paths[Union All Output 1]</s:String>
           </GroupLayout.ChildrenIds>

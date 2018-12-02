@@ -7,13 +7,13 @@
   DTS:CreatorName="CORRUSCANT\fdpugh"
   DTS:DTSID="{3F22C4DA-5147-4BBB-BBD7-2393C9CF2062}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="CTL_Data_Profile_Controller"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{B742B851-2DF4-4F75-B5C5-8BA4C6953AFF}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{D74ADFDA-9573-4487-BD86-90C257EDDAB3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:PackageParameters>
@@ -109,7 +109,7 @@
           <components>
             <component
               refId="Package\Data Profile Candidates\Data Profile Source"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="Data Profile Source"
@@ -185,11 +185,10 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServerID]"
-                      dataType="wstr"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServerID]"
-                      length="50"
                       lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServerID]"
                       name="TargetServerID"
                       truncationRowDisposition="FailComponent" />
@@ -209,7 +208,7 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[NamePart]"
-                      length="513"
+                      length="517"
                       lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[NamePart]"
                       name="NamePart"
                       truncationRowDisposition="FailComponent" />
@@ -233,7 +232,7 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
                     <externalMetadataColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[NamePart]"
                       dataType="wstr"
-                      length="513"
+                      length="517"
                       name="NamePart" />
                   </externalMetadataColumns>
                 </output>
@@ -262,7 +261,7 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[NamePart]"
                       dataType="wstr"
-                      length="513"
+                      length="517"
                       lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[NamePart]"
                       name="NamePart" />
                     <outputColumn
@@ -284,7 +283,7 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
             </component>
             <component
               refId="Package\Data Profile Candidates\Recordset Destination"
-              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              componentClassID="DTSAdapter.RecordsetDestination.3"
               contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
               name="Recordset Destination">
@@ -308,8 +307,7 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
                       lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServer]" />
                     <inputColumn
                       refId="Package\Data Profile Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[TargetServerID]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="TargetServerID"
                       lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServerID]" />
                     <inputColumn
@@ -321,7 +319,7 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
                     <inputColumn
                       refId="Package\Data Profile Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[NamePart]"
                       cachedDataType="wstr"
-                      cachedLength="513"
+                      cachedLength="517"
                       cachedName="NamePart"
                       lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[NamePart]" />
                   </inputColumns>

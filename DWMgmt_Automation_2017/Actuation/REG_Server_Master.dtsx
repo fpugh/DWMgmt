@@ -8,14 +8,14 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{B4D4C11E-543E-4BDF-856D-11D7355888AD}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="REG_Server_Master"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="543"
-  DTS:VersionGUID="{3C09F659-F174-4A4C-897C-3C4C1C82BB59}">
+  DTS:VersionBuild="547"
+  DTS:VersionGUID="{8691A678-D483-453D-BDF8-B2EEF1C53C32}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,7 +43,7 @@
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">CORRUSCANT\MOS_EISLEY</DTS:Property>
+        DTS:Name="ParameterValue">CORRUSCANT\IMPERIAL_SENATE</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -53,7 +53,7 @@
       DTS:ObjectName="ExecuteStatus">
       <DTS:Property
         DTS:DataType="2"
-        DTS:Name="ParameterValue">0</DTS:Property>
+        DTS:Name="ParameterValue">2</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -64,7 +64,7 @@
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">CORRUSCANT\MOS_EISLEY</DTS:Property>
+        DTS:Name="ParameterValue">CORRUSCANT\IMPERIAL_SENATE</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -106,7 +106,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="MP_003_Execute">
       <DTS:VariableValue
-        DTS:DataType="8">EXEC CAT.MP_003_CENTRAL_REGISTRY_PROCESS @ExecuteStatus = '0'</DTS:VariableValue>
+        DTS:DataType="8">EXEC CAT.MP_003_CENTRAL_REGISTRY_PROCESS @ExecuteStatus = '2'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -379,14 +379,35 @@
                       VSTAMinorVersion="0"
                       Language="CSharp">
                       <ProjectItem
-                        Name="Properties\Settings.settings"
-                        Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                        Name="Properties\AssemblyInfo.cs"
+                        Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_cb19defa9d504216bf3cfb6f2ff97a58")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_cb19defa9d504216bf3cfb6f2ff97a58")]
+[assembly: AssemblyCopyright("Copyright @  2014")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                       <ProjectItem
                         Name="Properties\Resources.resx"
                         Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -674,35 +695,14 @@ namespace ST_cb19defa9d504216bf3cfb6f2ff97a58.Properties {
     }
 }]]></ProjectItem>
                       <ProjectItem
-                        Name="Properties\AssemblyInfo.cs"
-                        Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_cb19defa9d504216bf3cfb6f2ff97a58")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_cb19defa9d504216bf3cfb6f2ff97a58")]
-[assembly: AssemblyCopyright("Copyright @  2014")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                        Name="Properties\Settings.settings"
+                        Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                       <ProjectItem
                         Name="Properties\Resources.Designer.cs"
                         Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -892,7 +892,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               <components>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -1111,7 +1111,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Insert Split 0100_0200"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0100_0200">
@@ -1205,7 +1205,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Set 0100_0200"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0100_0200"
@@ -1347,7 +1347,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -1490,7 +1490,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -1771,7 +1771,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0100_0200_destination"
@@ -2004,7 +2004,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0100_0200_source"
@@ -2065,106 +2065,106 @@ AND srv.name = @@SERVERNAME</property>
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[lnk_T2_id]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[lnk_T2_id]"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[lnk_T2_id]"
                           name="lnk_T2_id"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[reg_0100_id]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[reg_0100_id]"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[reg_0100_id]"
                           name="reg_0100_id"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[reg_0200_id]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[reg_0200_id]"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[reg_0200_id]"
                           name="reg_0200_id"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[server_name]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[server_name]"
                           length="128"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[server_name]"
                           name="server_name"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[product]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[product]"
                           length="256"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[product]"
                           name="product"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[database_id]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[database_id]"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[database_id]"
                           name="database_id"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[database_name]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[database_name]"
                           length="128"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[database_name]"
                           name="database_name"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[compatibility_level]"
                           dataType="ui1"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[compatibility_level]"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[compatibility_level]"
                           name="compatibility_level"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[collation_name]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[collation_name]"
                           length="128"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[collation_name]"
                           name="collation_name"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[recovery_model_desc]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[recovery_model_desc]"
                           length="60"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[recovery_model_desc]"
                           name="recovery_model_desc"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[create_date]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].ExternalColumns[create_date]"
                           lineageId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output].Columns[create_date]"
                           name="create_date"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2303,7 +2303,7 @@ AND srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -2468,7 +2468,7 @@ AND srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -2652,7 +2652,7 @@ AND srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -2728,9 +2728,15 @@ AND srv.name = @@SERVERNAME</property>
                     </input>
                     <input
                       refId="Package\Foreach Loop Container\reg_0100_0200_insert\Union All.Inputs[Union All Input 4]"
-                      dangling="true"
                       hasSideEffects="true"
                       name="Union All Input 4">
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Foreach Loop Container\reg_0100_0200_insert\Union All.Inputs[Union All Input 1]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 1">
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -2757,27 +2763,32 @@ AND srv.name = @@SERVERNAME</property>
               </components>
               <paths>
                 <path
+                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[ADO NET Source Error Output]"
+                  endId="Package\Foreach Loop Container\reg_0100_0200_insert\Union All.Inputs[Union All Input 4]"
+                  name="ADO NET Source Error Output"
+                  startId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Error Output]" />
+                <path
                   refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[ADO NET Source Output]"
                   endId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Set 0100_0200.Inputs[Derived Column Input]"
                   name="ADO NET Source Output"
                   startId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_source.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 11]"
+                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 1]"
                   endId="Package\Foreach Loop Container\reg_0100_0200_insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0100_0200_insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 1]"
+                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 11]"
                   endId="Package\Foreach Loop Container\reg_0100_0200_insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output1]"
+                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output]"
                   endId="Package\Foreach Loop Container\reg_0100_0200_insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output]"
+                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output1]"
                   endId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Insert Split 0100_0200.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Set 0100_0200.Outputs[Derived Column Output]" />
@@ -2792,12 +2803,12 @@ AND srv.name = @@SERVERNAME</property>
                   name="Multicast Output 2"
                   startId="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Insert Split 0100_0200.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Foreach Loop Container\reg_0100_0200_insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0100_0200_insert\gtmp_reg_0100_0200_destination.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Foreach Loop Container\reg_0100_0200_insert\Union All.Inputs[Union All Input 3]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0100_0200_insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
@@ -2830,7 +2841,7 @@ AND srv.name = @@SERVERNAME</property>
               <components>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -3049,7 +3060,7 @@ AND srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\Audit Insert Split 0101"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0101">
@@ -3151,7 +3162,7 @@ AND srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\Audit Set 0101"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0101"
@@ -3316,7 +3327,7 @@ AND srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -3459,7 +3470,7 @@ AND srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -3740,7 +3751,7 @@ AND srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\gtmp_reg_0101_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0101_destination"
@@ -3975,7 +3986,7 @@ AND srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\gtmp_reg_0101_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0101_insert"
@@ -4286,7 +4297,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -4451,7 +4462,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -4635,7 +4646,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0101_insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -4783,22 +4794,22 @@ WHERE srv.name = @@SERVERNAME</property>
                   name="ADO NET Source Output"
                   startId="Package\Foreach Loop Container\reg_0101_insert\gtmp_reg_0101_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 11]"
+                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 1]"
                   endId="Package\Foreach Loop Container\reg_0101_insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0101_insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 1]"
+                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 11]"
                   endId="Package\Foreach Loop Container\reg_0101_insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0101_insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output1]"
+                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output]"
                   endId="Package\Foreach Loop Container\reg_0101_insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0101_insert\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output]"
+                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output1]"
                   endId="Package\Foreach Loop Container\reg_0101_insert\Audit Insert Split 0101.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0101_insert\Audit Set 0101.Outputs[Derived Column Output]" />
@@ -4813,12 +4824,12 @@ WHERE srv.name = @@SERVERNAME</property>
                   name="Multicast Output 2"
                   startId="Package\Foreach Loop Container\reg_0101_insert\Audit Insert Split 0101.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Foreach Loop Container\reg_0101_insert\Union All.Inputs[Union All Input 3]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0101_insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Foreach Loop Container\reg_0101_insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Foreach Loop Container\reg_0101_insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0101_insert\gtmp_reg_0101_destination.Outputs[OLE DB Destination Error Output]" />
@@ -4851,7 +4862,7 @@ WHERE srv.name = @@SERVERNAME</property>
               <components>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -5070,7 +5081,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\Audit Insert Split 0102"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0102">
@@ -5172,7 +5183,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\Audit Set 0102"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0102"
@@ -5337,7 +5348,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -5480,7 +5491,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -5761,7 +5772,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\gtmp_reg_0102_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0102_destination"
@@ -5934,7 +5945,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\gtmp_reg_0102_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0102_insert"
@@ -6128,7 +6139,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -6293,7 +6304,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -6477,7 +6488,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0102_insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -6625,22 +6636,22 @@ WHERE srv.name = @@SERVERNAME</property>
                   name="ADO NET Source Output"
                   startId="Package\Foreach Loop Container\reg_0102_insert\gtmp_reg_0102_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 11]"
+                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 1]"
                   endId="Package\Foreach Loop Container\reg_0102_insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0102_insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 1]"
+                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 11]"
                   endId="Package\Foreach Loop Container\reg_0102_insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0102_insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output1]"
+                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output]"
                   endId="Package\Foreach Loop Container\reg_0102_insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0102_insert\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output]"
+                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output1]"
                   endId="Package\Foreach Loop Container\reg_0102_insert\Audit Insert Split 0102.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0102_insert\Audit Set 0102.Outputs[Derived Column Output]" />
@@ -6655,12 +6666,12 @@ WHERE srv.name = @@SERVERNAME</property>
                   name="Multicast Output 2"
                   startId="Package\Foreach Loop Container\reg_0102_insert\Audit Insert Split 0102.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Foreach Loop Container\reg_0102_insert\Union All.Inputs[Union All Input 3]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0102_insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Foreach Loop Container\reg_0102_insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Foreach Loop Container\reg_0102_insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0102_insert\gtmp_reg_0102_destination.Outputs[OLE DB Destination Error Output]" />
@@ -6693,7 +6704,7 @@ WHERE srv.name = @@SERVERNAME</property>
               <components>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -6912,7 +6923,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\Audit Insert Split 0103"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0103">
@@ -7014,7 +7025,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\Audit Set 0103"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0103"
@@ -7179,7 +7190,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -7322,7 +7333,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -7603,7 +7614,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\gtmp_reg_0103_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0103_destination"
@@ -7774,7 +7785,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\gtmp_reg_0103_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0103_insert"
@@ -7960,7 +7971,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\OLE DB Destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="OLE DB Destination"
@@ -8144,7 +8155,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -8309,7 +8320,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0103_insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -8457,22 +8468,22 @@ WHERE srv.name = @@SERVERNAME</property>
                   name="ADO NET Source Output"
                   startId="Package\Foreach Loop Container\reg_0103_insert\gtmp_reg_0103_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 11]"
+                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 1]"
                   endId="Package\Foreach Loop Container\reg_0103_insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0103_insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 1]"
+                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 11]"
                   endId="Package\Foreach Loop Container\reg_0103_insert\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0103_insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output1]"
+                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output]"
                   endId="Package\Foreach Loop Container\reg_0103_insert\Audit Insert Split 0103.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0103_insert\Audit Set 0103.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output]"
+                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output1]"
                   endId="Package\Foreach Loop Container\reg_0103_insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0103_insert\Audit Set Errors.Outputs[Derived Column Output]" />
@@ -8487,12 +8498,12 @@ WHERE srv.name = @@SERVERNAME</property>
                   name="Multicast Output 2"
                   startId="Package\Foreach Loop Container\reg_0103_insert\Audit Insert Split 0103.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Foreach Loop Container\reg_0103_insert\Union All.Inputs[Union All Input 3]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0103_insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Foreach Loop Container\reg_0103_insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Foreach Loop Container\reg_0103_insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0103_insert\gtmp_reg_0103_destination.Outputs[OLE DB Destination Error Output]" />
@@ -8525,7 +8536,7 @@ WHERE srv.name = @@SERVERNAME</property>
               <components>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -8744,7 +8755,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\Audit Insert Split 0201"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0201">
@@ -8846,7 +8857,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\Audit Set 0201"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0201"
@@ -9011,7 +9022,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -9154,7 +9165,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -9435,7 +9446,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\gtmp_reg_0201_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0201_destination"
@@ -9728,7 +9739,7 @@ WHERE srv.name = @@SERVERNAME</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\gtmp_reg_0201_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0201_insert"
@@ -10135,7 +10146,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -10300,7 +10311,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -10484,7 +10495,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0201_insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -10632,22 +10643,22 @@ FROM sys.databases AS db</property>
                   name="ADO NET Source Output"
                   startId="Package\Foreach Loop Container\reg_0201_insert\gtmp_reg_0201_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 11]"
+                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 1]"
                   endId="Package\Foreach Loop Container\reg_0201_insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0201_insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 1]"
+                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 11]"
                   endId="Package\Foreach Loop Container\reg_0201_insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0201_insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output1]"
+                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output]"
                   endId="Package\Foreach Loop Container\reg_0201_insert\Audit Insert Split 0201.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0201_insert\Audit Set 0201.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output]"
+                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output1]"
                   endId="Package\Foreach Loop Container\reg_0201_insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0201_insert\Audit Set Errors.Outputs[Derived Column Output]" />
@@ -10662,12 +10673,12 @@ FROM sys.databases AS db</property>
                   name="Multicast Output 2"
                   startId="Package\Foreach Loop Container\reg_0201_insert\Audit Insert Split 0201.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Foreach Loop Container\reg_0201_insert\Union All.Inputs[Union All Input 3]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0201_insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Foreach Loop Container\reg_0201_insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Foreach Loop Container\reg_0201_insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0201_insert\gtmp_reg_0201_destination.Outputs[OLE DB Destination Error Output]" />
@@ -10700,7 +10711,7 @@ FROM sys.databases AS db</property>
               <components>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -10919,7 +10930,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\Audit Insert Split 0202"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split 0202">
@@ -11021,7 +11032,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\Audit Set 0202"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set 0202"
@@ -11186,7 +11197,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -11329,7 +11340,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -11610,7 +11621,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\gtmp_reg_0202_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_reg_0202_destination"
@@ -11893,7 +11904,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\gtmp_reg_0202_insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_reg_0202_insert"
@@ -12281,7 +12292,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -12446,7 +12457,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -12630,7 +12641,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\reg_0202_insert\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -12778,22 +12789,22 @@ FROM sys.databases AS db</property>
                   name="ADO NET Source Output"
                   startId="Package\Foreach Loop Container\reg_0202_insert\gtmp_reg_0202_insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 11]"
+                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 1]"
                   endId="Package\Foreach Loop Container\reg_0202_insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0202_insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 1]"
+                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 11]"
                   endId="Package\Foreach Loop Container\reg_0202_insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\reg_0202_insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output1]"
+                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output]"
                   endId="Package\Foreach Loop Container\reg_0202_insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0202_insert\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output]"
+                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output1]"
                   endId="Package\Foreach Loop Container\reg_0202_insert\Audit Insert Split 0202.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\reg_0202_insert\Audit Set 0202.Outputs[Derived Column Output]" />
@@ -12808,12 +12819,12 @@ FROM sys.databases AS db</property>
                   name="Multicast Output 2"
                   startId="Package\Foreach Loop Container\reg_0202_insert\Audit Insert Split 0202.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Foreach Loop Container\reg_0202_insert\Union All.Inputs[Union All Input 3]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0202_insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Foreach Loop Container\reg_0202_insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Foreach Loop Container\reg_0202_insert\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\reg_0202_insert\gtmp_reg_0202_destination.Outputs[OLE DB Destination Error Output]" />
@@ -12883,7 +12894,7 @@ FROM sys.databases AS db</property>
               <components>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\Audit Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Audit Aggregate"
@@ -13102,7 +13113,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\Audit Error Collection"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Audit Error Collection"
@@ -13240,7 +13251,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\Audit Insert Split UTIL"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Audit Insert Split UTIL">
@@ -13350,7 +13361,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -13493,7 +13504,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\Audit Set UTIL"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set UTIL"
@@ -13658,7 +13669,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\Error Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Error Aggregate"
@@ -13939,7 +13950,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\gtmp_Utilization_Metric_destination"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="gtmp_Utilization_Metric_destination"
@@ -14142,7 +14153,7 @@ FROM sys.databases AS db</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\gtmp_Utilization_Metric_Insert"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
                   name="gtmp_Utilization_Metric_Insert"
@@ -14415,7 +14426,7 @@ AND T3.object_id = T1.object_id</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\TRK_Data_Audit_Import"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_Data_Audit_Import"
@@ -14580,7 +14591,7 @@ AND T3.object_id = T1.object_id</property>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\trk_utilization_insert\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"
@@ -14775,22 +14786,22 @@ AND T3.object_id = T1.object_id</property>
                   name="ADO NET Source Output"
                   startId="Package\Foreach Loop Container\trk_utilization_insert\gtmp_Utilization_Metric_Insert.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 11]"
+                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 1]"
                   endId="Package\Foreach Loop Container\trk_utilization_insert\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\trk_utilization_insert\Audit Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 1]"
+                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 11]"
                   endId="Package\Foreach Loop Container\trk_utilization_insert\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\trk_utilization_insert\Error Aggregate.Outputs[Aggregate Output 1]" />
                 <path
-                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output1]"
+                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output]"
                   endId="Package\Foreach Loop Container\trk_utilization_insert\Error Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\trk_utilization_insert\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output]"
+                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output1]"
                   endId="Package\Foreach Loop Container\trk_utilization_insert\Audit Insert Split UTIL.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\trk_utilization_insert\Audit Set UTIL.Outputs[Derived Column Output]" />
@@ -14805,12 +14816,12 @@ AND T3.object_id = T1.object_id</property>
                   name="Multicast Output 2"
                   startId="Package\Foreach Loop Container\trk_utilization_insert\Audit Insert Split UTIL.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[OLE DB Destination Error Output1]"
+                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[OLE DB Destination Error Output]"
                   endId="Package\Foreach Loop Container\trk_utilization_insert\Audit Error Collection.Inputs[Union All Input 1]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\trk_utilization_insert\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[OLE DB Destination Error Output]"
+                  refId="Package\Foreach Loop Container\trk_utilization_insert.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Foreach Loop Container\trk_utilization_insert\Audit Error Collection.Inputs[Union All Input 4]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Foreach Loop Container\trk_utilization_insert\gtmp_Utilization_Metric_destination.Outputs[OLE DB Destination Error Output]" />
@@ -14992,7 +15003,6 @@ AND T3.object_id = T1.object_id</property>
           DTS:refId="Package\Process Collected Metrics into Catalog\MP_006_Clear_Registry_II"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{03D8FE2C-2B3E-4E68-BD62-CB064997C7D0}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
@@ -15083,7 +15093,7 @@ AND T3.object_id = T1.object_id</property>
           <components>
             <component
               refId="Package\Server_Process_List\reg_0100_Catalog_List"
-              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              componentClassID="DTSAdapter.RecordsetDestination.3"
               contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
               name="reg_0100_Catalog_List">
@@ -15117,7 +15127,7 @@ AND T3.object_id = T1.object_id</property>
             </component>
             <component
               refId="Package\Server_Process_List\REG_0100_Server_Registry"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="REG_0100_Server_Registry"
@@ -15782,7 +15792,7 @@ AND SUB.Target_Server IS NULL</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="127,42"
           Id="Package.EventHandlers[OnError]\Log Errors"
           TopLeft="NaN,NaN" />
       </GraphLayout>
@@ -15795,73 +15805,73 @@ AND SUB.Target_Server IS NULL</property>
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <EdgeLayout
           Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[OLE DB Destination Error Output1]"
-          TopLeft="424,258">
+          TopLeft="125.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="612,-110"
+              EndConnector="863,-261"
               Start="0,0"
-              End="612,-102.5">
+              End="863,-253.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-61.1456310679612" />
+                    End="0,-166.27807486631" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-61.1456310679612"
-                    Point2="0,-65.1456310679612"
-                    Point3="4,-65.1456310679612" />
+                    Point1="0,-166.27807486631"
+                    Point2="0,-170.27807486631"
+                    Point3="4,-170.27807486631" />
                   <mssgle:LineSegment
-                    End="608,-65.1456310679612" />
+                    End="859,-170.27807486631" />
                   <mssgle:CubicBezierSegment
-                    Point1="608,-65.1456310679612"
-                    Point2="612,-65.1456310679612"
-                    Point3="612,-69.1456310679612" />
+                    Point1="859,-170.27807486631"
+                    Point2="863,-170.27807486631"
+                    Point3="863,-174.27807486631" />
                   <mssgle:LineSegment
-                    End="612,-102.5" />
+                    End="863,-253.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="232.79109375,-60.1456310679612,146.4178125,11.43359375"
+              BoundingBox="358.29109375,-165.27807486631,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[OLE DB Destination Error Output]"
-          TopLeft="125.5,409">
+          TopLeft="424,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="872.5,-261"
+              EndConnector="593,-110"
               Start="0,0"
-              End="872.5,-253.5">
+              End="593,-102.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-150.572815533981" />
+                    End="0,-51" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-150.572815533981"
-                    Point2="0,-154.572815533981"
-                    Point3="4,-154.572815533981" />
+                    Point1="0,-51"
+                    Point2="0,-55"
+                    Point3="4,-55" />
                   <mssgle:LineSegment
-                    End="868.5,-154.572815533981" />
+                    End="589,-55" />
                   <mssgle:CubicBezierSegment
-                    Point1="868.5,-154.572815533981"
-                    Point2="872.5,-154.572815533981"
-                    Point3="872.5,-158.572815533981" />
+                    Point1="589,-55"
+                    Point2="593,-55"
+                    Point3="593,-59" />
                   <mssgle:LineSegment
-                    End="872.5,-253.5" />
+                    End="593,-102.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="363.04109375,-149.572815533981,146.4178125,11.43359375"
+              BoundingBox="223.29109375,-50,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15900,7 +15910,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 1]"
+          Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 11]"
           TopLeft="113.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15926,7 +15936,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0100_0200_insert\Audit Set 0100_0200"
           TopLeft="5.5,5.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output]"
+          Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output1]"
           TopLeft="113.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15961,9 +15971,9 @@ AND SUB.Target_Server IS NULL</property>
             <s:String>Package\Foreach Loop Container\reg_0100_0200_insert\Audit Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\reg_0100_0200_insert\TRK_Data_Audit_Import</s:String>
             <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Multicast Output 2]</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 11]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0100_0200_insert\Audit Set 0100_0200</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -16098,7 +16108,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output1]"
+          Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output]"
           TopLeft="105,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16120,7 +16130,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 11]"
+          Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 1]"
           TopLeft="105,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16156,10 +16166,46 @@ AND SUB.Target_Server IS NULL</property>
             <s:String>Package\Foreach Loop Container\reg_0100_0200_insert\Error Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\reg_0100_0200_insert\TRK_SSIS_Import_Errors</s:String>
             <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Union All Output 1]</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output1]</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0100_0200_insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\reg_0100_0200_insert.Paths[ADO NET Source Error Output]"
+          TopLeft="728,258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="317.5,-110"
+              Start="0,0"
+              End="317.5,-102.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-67.7647058823529" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-67.7647058823529"
+                    Point2="0,-71.7647058823529"
+                    Point3="4,-71.7647058823529" />
+                  <mssgle:LineSegment
+                    End="313.5,-71.7647058823529" />
+                  <mssgle:CubicBezierSegment
+                    Point1="313.5,-71.7647058823529"
+                    Point2="317.5,-71.7647058823529"
+                    Point3="317.5,-75.7647058823529" />
+                  <mssgle:LineSegment
+                    End="317.5,-102.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="91.310546875,-66.7647058823529,134.87890625,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -16269,42 +16315,6 @@ AND SUB.Target_Server IS NULL</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\reg_0101_insert.Paths[OLE DB Destination Error Output1]"
-          TopLeft="115.5,409">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="833,-261"
-              Start="0,0"
-              End="833,-253.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-166.27807486631" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-166.27807486631"
-                    Point2="0,-170.27807486631"
-                    Point3="4,-170.27807486631" />
-                  <mssgle:LineSegment
-                    End="829,-170.27807486631" />
-                  <mssgle:CubicBezierSegment
-                    Point1="829,-170.27807486631"
-                    Point2="833,-170.27807486631"
-                    Point3="833,-174.27807486631" />
-                  <mssgle:LineSegment
-                    End="833,-253.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="343.29109375,-165.27807486631,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[OLE DB Destination Error Output]"
           TopLeft="682,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16339,6 +16349,42 @@ AND SUB.Target_Server IS NULL</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[OLE DB Destination Error Output]"
+          TopLeft="115.5,409">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="833,-261"
+              Start="0,0"
+              End="833,-253.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-166.27807486631" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-166.27807486631"
+                    Point2="0,-170.27807486631"
+                    Point3="4,-170.27807486631" />
+                  <mssgle:LineSegment
+                    End="829,-170.27807486631" />
+                  <mssgle:CubicBezierSegment
+                    Point1="829,-170.27807486631"
+                    Point2="833,-170.27807486631"
+                    Point3="833,-174.27807486631" />
+                  <mssgle:LineSegment
+                    End="833,-253.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="343.29109375,-165.27807486631,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
           Size="187,42"
           Id="Package\Foreach Loop Container\reg_0101_insert\Audit Set 0101"
@@ -16348,7 +16394,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0101_insert\Audit Insert Split 0101"
           TopLeft="9.50000000000001,107.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output]"
+          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output1]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16366,7 +16412,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -16396,11 +16444,13 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 11]"
+          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 1]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16418,7 +16468,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -16433,11 +16485,11 @@ AND SUB.Target_Server IS NULL</property>
           <GroupLayout.ChildrenIds>
             <s:String>Package\Foreach Loop Container\reg_0101_insert\Audit Set 0101</s:String>
             <s:String>Package\Foreach Loop Container\reg_0101_insert\Audit Insert Split 0101</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0101_insert\TRK_Data_Audit_Import</s:String>
             <s:String>Package\Foreach Loop Container\reg_0101_insert\Audit Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Multicast Output 2]</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -16475,7 +16527,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -16513,7 +16567,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -16546,7 +16602,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0101_insert\Error Aggregate"
           TopLeft="46,209.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output1]"
+          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16564,7 +16620,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -16590,11 +16648,13 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 1]"
+          Id="Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 11]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16624,7 +16684,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -16640,10 +16702,10 @@ AND SUB.Target_Server IS NULL</property>
             <s:String>Package\Foreach Loop Container\reg_0101_insert\Audit Set Errors</s:String>
             <s:String>Package\Foreach Loop Container\reg_0101_insert\TRK_SSIS_Import_Errors</s:String>
             <s:String>Package\Foreach Loop Container\reg_0101_insert\Error Aggregate</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0101_insert\Union All</s:String>
             <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Union All Output 1]</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0101_insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -16738,7 +16800,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="674,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16774,7 +16836,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[OLE DB Destination Error Output]"
           TopLeft="115.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16818,7 +16880,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0102_insert\Audit Insert Split 0102"
           TopLeft="9.50000000000001,107.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output]"
+          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output1]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16850,7 +16912,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0102_insert\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 11]"
+          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 1]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16909,10 +16971,10 @@ AND SUB.Target_Server IS NULL</property>
           <GroupLayout.ChildrenIds>
             <s:String>Package\Foreach Loop Container\reg_0102_insert\Audit Set 0102</s:String>
             <s:String>Package\Foreach Loop Container\reg_0102_insert\Audit Insert Split 0102</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0102_insert\Audit Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\reg_0102_insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 1]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Multicast Output 2]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
@@ -17026,7 +17088,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0102_insert\Error Aggregate"
           TopLeft="46,209.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output1]"
+          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17054,7 +17116,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0102_insert\Union All"
           TopLeft="62.5,5.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 1]"
+          Id="Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 11]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17114,9 +17176,9 @@ AND SUB.Target_Server IS NULL</property>
             <s:String>Package\Foreach Loop Container\reg_0102_insert\Audit Set Errors</s:String>
             <s:String>Package\Foreach Loop Container\reg_0102_insert\TRK_SSIS_Import_Errors</s:String>
             <s:String>Package\Foreach Loop Container\reg_0102_insert\Error Aggregate</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0102_insert\Union All</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Aggregate Output 11]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0102_insert.Paths[Union All Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
@@ -17176,7 +17238,7 @@ AND SUB.Target_Server IS NULL</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[OLE DB Destination Error Output]"
           TopLeft="115.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17248,7 +17310,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="674,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17292,7 +17354,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0103_insert\Audit Set 0103"
           TopLeft="9.5,5.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output1]"
+          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17310,7 +17372,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -17336,7 +17400,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -17344,7 +17410,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0103_insert\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 11]"
+          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 1]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17362,7 +17428,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -17377,11 +17445,11 @@ AND SUB.Target_Server IS NULL</property>
           <GroupLayout.ChildrenIds>
             <s:String>Package\Foreach Loop Container\reg_0103_insert\Audit Insert Split 0103</s:String>
             <s:String>Package\Foreach Loop Container\reg_0103_insert\Audit Set 0103</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0103_insert\Audit Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Multicast Output 2]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0103_insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -17419,7 +17487,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -17457,7 +17527,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -17512,11 +17584,13 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output]"
+          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output1]"
           TopLeft="91.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17534,11 +17608,13 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 1]"
+          Id="Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 11]"
           TopLeft="91.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17556,7 +17632,9 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -17574,8 +17652,8 @@ AND SUB.Target_Server IS NULL</property>
             <s:String>Package\Foreach Loop Container\reg_0103_insert\Error Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\reg_0103_insert\OLE DB Destination</s:String>
             <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Union All Output 1]</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output]</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0103_insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -17634,7 +17712,7 @@ AND SUB.Target_Server IS NULL</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="668,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17670,7 +17748,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[OLE DB Destination Error Output]"
           TopLeft="115.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17750,7 +17828,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0201_insert\Audit Insert Split 0201"
           TopLeft="9.50000000000001,107.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output1]"
+          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17806,7 +17884,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0201_insert\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 11]"
+          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 1]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17841,11 +17919,11 @@ AND SUB.Target_Server IS NULL</property>
           <GroupLayout.ChildrenIds>
             <s:String>Package\Foreach Loop Container\reg_0201_insert\Audit Set 0201</s:String>
             <s:String>Package\Foreach Loop Container\reg_0201_insert\Audit Insert Split 0201</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0201_insert\Audit Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Multicast Output 2]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0201_insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -17982,7 +18060,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0201_insert\Error Aggregate"
           TopLeft="27.5,209.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output]"
+          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output1]"
           TopLeft="105,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18010,7 +18088,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0201_insert\TRK_SSIS_Import_Errors"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 1]"
+          Id="Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 11]"
           TopLeft="105,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18047,9 +18125,9 @@ AND SUB.Target_Server IS NULL</property>
             <s:String>Package\Foreach Loop Container\reg_0201_insert\Union All</s:String>
             <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Union All Output 1]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0201_insert\Error Aggregate</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0201_insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0201_insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -18108,7 +18186,7 @@ AND SUB.Target_Server IS NULL</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="688,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18144,7 +18222,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[OLE DB Destination Error Output]"
           TopLeft="115.5,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18224,7 +18302,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0202_insert\Audit Insert Split 0202"
           TopLeft="10,107.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output]"
+          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output1]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18280,7 +18358,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0202_insert\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 1]"
+          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 11]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18315,11 +18393,11 @@ AND SUB.Target_Server IS NULL</property>
           <GroupLayout.ChildrenIds>
             <s:String>Package\Foreach Loop Container\reg_0202_insert\Audit Set 0202</s:String>
             <s:String>Package\Foreach Loop Container\reg_0202_insert\Audit Insert Split 0202</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0202_insert\Audit Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Multicast Output 2]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0202_insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -18456,7 +18534,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output1]"
+          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18484,7 +18562,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\reg_0202_insert\TRK_SSIS_Import_Errors"
           TopLeft="24,311.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 11]"
+          Id="Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 1]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18521,9 +18599,9 @@ AND SUB.Target_Server IS NULL</property>
             <s:String>Package\Foreach Loop Container\reg_0202_insert\Error Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\reg_0202_insert\Union All</s:String>
             <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Union All Output 1]</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Foreach Loop Container\reg_0202_insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Foreach Loop Container\reg_0202_insert.Paths[Aggregate Output 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -18618,7 +18696,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[OLE DB Destination Error Output]"
+          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[OLE DB Destination Error Output1]"
           TopLeft="449,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18654,7 +18732,7 @@ AND SUB.Target_Server IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[OLE DB Destination Error Output]"
           TopLeft="737.5,408">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18698,7 +18776,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\trk_utilization_insert\Audit Insert Split UTIL"
           TopLeft="10.5,107.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output]"
+          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output1]"
           TopLeft="103,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18730,7 +18808,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\trk_utilization_insert\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 11]"
+          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 1]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18789,10 +18867,10 @@ AND SUB.Target_Server IS NULL</property>
           <GroupLayout.ChildrenIds>
             <s:String>Package\Foreach Loop Container\trk_utilization_insert\Audit Set UTIL</s:String>
             <s:String>Package\Foreach Loop Container\trk_utilization_insert\Audit Insert Split UTIL</s:String>
-            <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output1]</s:String>
             <s:String>Package\Foreach Loop Container\trk_utilization_insert\Audit Aggregate</s:String>
             <s:String>Package\Foreach Loop Container\trk_utilization_insert\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 1]</s:String>
             <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Multicast Output 2]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
@@ -18930,7 +19008,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\trk_utilization_insert\Error Aggregate"
           TopLeft="46,209.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output1]"
+          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output]"
           TopLeft="123.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18958,7 +19036,7 @@ AND SUB.Target_Server IS NULL</property>
           Id="Package\Foreach Loop Container\trk_utilization_insert\TRK_SSIS_Import_Errors"
           TopLeft="24,311.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 1]"
+          Id="Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 11]"
           TopLeft="123.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18995,9 +19073,9 @@ AND SUB.Target_Server IS NULL</property>
             <s:String>Package\Foreach Loop Container\trk_utilization_insert\Audit Error Collection</s:String>
             <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Union All Output 1]</s:String>
             <s:String>Package\Foreach Loop Container\trk_utilization_insert\Error Aggregate</s:String>
-            <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Derived Column Output]</s:String>
             <s:String>Package\Foreach Loop Container\trk_utilization_insert\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Foreach Loop Container\trk_utilization_insert.Paths[Aggregate Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -19054,7 +19132,7 @@ AND SUB.Target_Server IS NULL</property>
     design-time-name="Package\Server_Process_List">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="188,42"
           Id="Package\Server_Process_List\reg_0100_Catalog_List"
@@ -19094,9 +19172,7 @@ AND SUB.Target_Server IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

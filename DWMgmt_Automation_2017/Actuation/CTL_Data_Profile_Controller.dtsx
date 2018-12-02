@@ -1,61 +1,61 @@
 ﻿<?xml version="1.0"?>
-<DTS:Executable
-  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ExecutableType="SSIS.Package.3"
-  DTS:CreatorName="CORRUSCANT\fdpugh"
-  DTS:CreatorComputerName="CORRUSCANT"
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
   DTS:CreationDate="9/4/2017 12:22:58 PM"
-  DTS:PackageType="5"
-  DTS:ProtectionLevel="0"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{B742B851-2DF4-4F75-B5C5-8BA4C6953AFF}"
-  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="CORRUSCANT"
+  DTS:CreatorName="CORRUSCANT\fdpugh"
+  DTS:DTSID="{3F22C4DA-5147-4BBB-BBD7-2393C9CF2062}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="CTL_Data_Profile_Controller"
-  DTS:DTSID="{3F22C4DA-5147-4BBB-BBD7-2393C9CF2062}"
-  DTS:CreationName="SSIS.Package.3">
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{D74ADFDA-9573-4487-BD86-90C257EDDAB3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
+      DTS:CreationName=""
       DTS:DataType="3"
-      DTS:ObjectName="Blades"
       DTS:DTSID="{0243E568-92BB-4979-AFBA-BAF1D0B0A532}"
-      DTS:CreationName="">
+      DTS:ObjectName="Blades">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="3">6</DTS:Property>
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">6</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="6789"
-      DTS:ObjectName="NameExactFlag"
+      DTS:CreationName=""
       DTS:DTSID="{D1E8FD39-9BDA-4823-93E2-C0B2349DDBEF}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NameExactFlag">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="NamePart"
+      DTS:CreationName=""
       DTS:DTSID="{C0E9804C-788A-4E48-A88B-7203FE412610}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NamePart">
       <DTS:VariableValue
         DTS:DataType="8">dbo.</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="6789"
-      DTS:ObjectName="ProfilingCandidates"
+      DTS:CreationName=""
       DTS:DTSID="{C638B44A-E3A3-4385-BE08-CC2AA534B037}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ProfilingCandidates">
       <DTS:VariableValue
         DTS:DataSubType="ManagedSerializable"
         DTS:DataType="13">
-        <SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0"
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
           <SOAP-ENV:Body>
             <xsd:anyType
@@ -65,29 +65,29 @@
       </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="TargetDatabase"
+      DTS:CreationName=""
       DTS:DTSID="{AA888B4E-3520-4ACE-8597-61259E0E6D1C}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetDatabase">
       <DTS:VariableValue
         DTS:DataType="8">DWMgmt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="TargetServer"
+      DTS:CreationName=""
       DTS:DTSID="{F5E72911-96AB-4E7A-A366-4728723B8CF7}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetServer">
       <DTS:VariableValue
         DTS:DataType="8">CORRUSCANT\MOS_EISLEY</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="TargetServerID"
+      DTS:CreationName=""
       DTS:DTSID="{1D2F320F-ED65-4374-B1C7-FC0CF8BA2C90}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetServerID">
       <DTS:VariableValue
         DTS:DataType="8">1</DTS:VariableValue>
     </DTS:Variable>
@@ -95,13 +95,13 @@
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Data Profile Candidates"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{182e91bf-5390-426a-953c-708b490d8ca9}"
       DTS:ExecutableType="SSIS.Pipeline.3"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Profile Candidates"
-      DTS:DTSID="{182e91bf-5390-426a-953c-708b490d8ca9}"
-      DTS:Description="Data Flow Task"
-      DTS:CreationName="SSIS.Pipeline.3">
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
@@ -109,29 +109,29 @@
           <components>
             <component
               refId="Package\Data Profile Candidates\Data Profile Source"
-              name="Data Profile Source"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
+              name="Data Profile Source"
               usesDispositions="true"
-              version="7"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              version="7">
               <properties>
                 <property
-                  name="CommandTimeout"
                   dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
                 <property
-                  name="OpenRowset"
                   dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset.">[CAT].[VM_0454_Data_Profile_Assessor]</property>
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[CAT].[VM_0454_Data_Profile_Assessor]</property>
                 <property
-                  name="OpenRowsetVariable"
                   dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
                 <property
-                  name="SqlCommand"
                   dataType="System.String"
                   description="The SQL command to be executed."
+                  name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [REG_Server_Name] as TargetServer
 , [LNK_FK_0100_ID] as TargetServerID
 , [REG_Database_Name] as TargetDatabase
@@ -139,34 +139,34 @@
 FROM [DWMgmt].[CAT].[VM_0454_Data_Profile_Assessor]
 ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
                 <property
-                  name="SqlCommandVariable"
                   dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."></property>
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
                 <property
-                  name="DefaultCodePage"
                   dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
                 <property
-                  name="AlwaysUseDefaultCodePage"
                   dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
                 <property
-                  name="AccessMode"
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
+                  name="AccessMode"
                   typeConverter="AccessMode">2</property>
                 <property
-                  name="ParameterMapping"
                   dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."></property>
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
               </properties>
               <connections>
                 <connection
                   refId="Package\Data Profile Candidates\Data Profile Source.Connections[OleDbConnection]"
-                  name="OleDbConnection"
-                  description="The OLE DB runtime connection used to access the database."
                   connectionManagerID="{746F9285-349E-460D-B4DB-67E8D24A726B}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DynamicDestinationOLEDB]" />
+                  connectionManagerRefId="Project.ConnectionManagers[DynamicDestinationOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
@@ -175,107 +175,106 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServer]"
-                      name="TargetServer"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServer]"
-                      length="256"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServer]" />
+                      externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServer]"
+                      length="256"
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServer]"
+                      name="TargetServer"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServerID]"
-                      name="TargetServerID"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServerID]"
-                      length="50"
-                      dataType="wstr"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServerID]" />
+                      externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServerID]"
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServerID]"
+                      name="TargetServerID"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]"
-                      name="TargetDatabase"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]"
-                      length="256"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetDatabase]" />
+                      externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetDatabase]"
+                      length="256"
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]"
+                      name="TargetDatabase"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[NamePart]"
-                      name="NamePart"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[NamePart]"
-                      length="513"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[NamePart]" />
+                      externalMetadataColumnId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[NamePart]"
+                      length="517"
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[NamePart]"
+                      name="NamePart"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServer]"
-                      name="TargetServer"
                       dataType="wstr"
-                      length="256" />
+                      length="256"
+                      name="TargetServer" />
                     <externalMetadataColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServerID]"
-                      name="TargetServerID"
-                      dataType="i4" />
+                      dataType="i4"
+                      name="TargetServerID" />
                     <externalMetadataColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[TargetDatabase]"
-                      name="TargetDatabase"
                       dataType="wstr"
-                      length="256" />
+                      length="256"
+                      name="TargetDatabase" />
                     <externalMetadataColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].ExternalColumns[NamePart]"
-                      name="NamePart"
                       dataType="wstr"
-                      length="513" />
+                      length="517"
+                      name="NamePart" />
                   </externalMetadataColumns>
                 </output>
                 <output
                   refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output]"
-                  name="OLE DB Source Error Output"
-                  isErrorOut="true">
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[TargetServer]"
-                      name="TargetServer"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[TargetServer]"
+                      dataType="wstr"
                       length="256"
-                      dataType="wstr" />
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[TargetServer]"
+                      name="TargetServer" />
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[TargetServerID]"
-                      name="TargetServerID"
+                      dataType="i4"
                       lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[TargetServerID]"
-                      dataType="i4" />
+                      name="TargetServerID" />
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[TargetDatabase]"
-                      name="TargetDatabase"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[TargetDatabase]"
+                      dataType="wstr"
                       length="256"
-                      dataType="wstr" />
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[TargetDatabase]"
+                      name="TargetDatabase" />
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[NamePart]"
-                      name="NamePart"
+                      dataType="wstr"
+                      length="517"
                       lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[NamePart]"
-                      length="513"
-                      dataType="wstr" />
+                      name="NamePart" />
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
                       refId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -284,46 +283,45 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
             </component>
             <component
               refId="Package\Data Profile Candidates\Recordset Destination"
-              name="Recordset Destination"
-              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              componentClassID="DTSAdapter.RecordsetDestination.3"
+              contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
-              contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              name="Recordset Destination">
               <properties>
                 <property
-                  name="VariableName"
                   dataType="System.String"
-                  description="Specifies the variable that contains the recordset.">User::ProfilingCandidates</property>
+                  description="Specifies the variable that contains the recordset."
+                  name="VariableName">User::ProfilingCandidates</property>
               </properties>
               <inputs>
                 <input
                   refId="Package\Data Profile Candidates\Recordset Destination.Inputs[Recordset Destination Input]"
-                  name="Recordset Destination Input"
-                  hasSideEffects="true">
+                  hasSideEffects="true"
+                  name="Recordset Destination Input">
                   <inputColumns>
                     <inputColumn
                       refId="Package\Data Profile Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[TargetServer]"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServer]"
-                      cachedName="TargetServer"
                       cachedDataType="wstr"
-                      cachedLength="256" />
+                      cachedLength="256"
+                      cachedName="TargetServer"
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServer]" />
                     <inputColumn
                       refId="Package\Data Profile Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[TargetServerID]"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServerID]"
+                      cachedDataType="i4"
                       cachedName="TargetServerID"
-                      cachedDataType="wstr"
-                      cachedLength="50" />
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetServerID]" />
                     <inputColumn
                       refId="Package\Data Profile Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[TargetDatabase]"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]"
-                      cachedName="TargetDatabase"
                       cachedDataType="wstr"
-                      cachedLength="256" />
+                      cachedLength="256"
+                      cachedName="TargetDatabase"
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]" />
                     <inputColumn
                       refId="Package\Data Profile Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[NamePart]"
-                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[NamePart]"
-                      cachedName="NamePart"
                       cachedDataType="wstr"
-                      cachedLength="513" />
+                      cachedLength="517"
+                      cachedName="NamePart"
+                      lineageId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output].Columns[NamePart]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -333,26 +331,26 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
           <paths>
             <path
               refId="Package\Data Profile Candidates.Paths[OLE DB Source Output]"
+              endId="Package\Data Profile Candidates\Recordset Destination.Inputs[Recordset Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output]"
-              endId="Package\Data Profile Candidates\Recordset Destination.Inputs[Recordset Destination Input]" />
+              startId="Package\Data Profile Candidates\Data Profile Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Foreach Data Profile Candidate"
-      DTS:ExecutableType="STOCK:FOREACHLOOP"
-      DTS:MaxErrorCount="0"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Foreach Data Profile Candidate"
-      DTS:DTSID="{618CC085-FC1F-4280-91DC-5DF11ACBE2BA}"
+      DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:CreationName="STOCK:FOREACHLOOP">
+      DTS:DTSID="{618CC085-FC1F-4280-91DC-5DF11ACBE2BA}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="0"
+      DTS:ObjectName="Foreach Data Profile Candidate">
       <DTS:ForEachEnumerator
-        DTS:ObjectName="{4779037D-4011-4A37-850D-A741004405BA}"
+        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
         DTS:DTSID="{4779037D-4011-4A37-850D-A741004405BA}"
-        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+        DTS:ObjectName="{4779037D-4011-4A37-850D-A741004405BA}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -363,13 +361,13 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Foreach Data Profile Candidate\REG_Data_Profile"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{CAD8FDE3-BE74-4AF6-9580-3F0AD454DD9B}"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="REG_Data_Profile"
-          DTS:DTSID="{CAD8FDE3-BE74-4AF6-9580-3F0AD454DD9B}"
-          DTS:Description="Execute Package Task"
-          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
@@ -405,58 +403,58 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
       </DTS:Executables>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::TargetServer"
-          DTS:ValueIndex="0"
-          DTS:ObjectName="{2D2FF914-2AFC-45C4-9FAF-B29176746DA1}"
+          DTS:CreationName=""
           DTS:DTSID="{2D2FF914-2AFC-45C4-9FAF-B29176746DA1}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{2D2FF914-2AFC-45C4-9FAF-B29176746DA1}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::TargetServer" />
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::TargetServerID"
-          DTS:ValueIndex="1"
-          DTS:ObjectName="{AE642001-2C1E-496E-8D8E-A0B4F30BBF0F}"
+          DTS:CreationName=""
           DTS:DTSID="{AE642001-2C1E-496E-8D8E-A0B4F30BBF0F}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{AE642001-2C1E-496E-8D8E-A0B4F30BBF0F}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::TargetServerID" />
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::TargetDatabase"
-          DTS:ValueIndex="2"
-          DTS:ObjectName="{072CD6CB-C536-486C-9002-6A6989D753D6}"
+          DTS:CreationName=""
           DTS:DTSID="{072CD6CB-C536-486C-9002-6A6989D753D6}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{072CD6CB-C536-486C-9002-6A6989D753D6}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::TargetDatabase" />
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::NamePart"
-          DTS:ValueIndex="3"
-          DTS:ObjectName="{7C8296FE-A0F5-4371-926B-82223686F123}"
+          DTS:CreationName=""
           DTS:DTSID="{7C8296FE-A0F5-4371-926B-82223686F123}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{7C8296FE-A0F5-4371-926B-82223686F123}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::NamePart" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{442B9BAF-DBE4-4F47-89BF-E0176B1B6D20}"
       DTS:From="Package\Data Profile Candidates"
-      DTS:To="Package\Foreach Data Profile Candidate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:DTSID="{442B9BAF-DBE4-4F47-89BF-E0176B1B6D20}"
-      DTS:CreationName="" />
+      DTS:To="Package\Foreach Data Profile Candidate" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{5486FBED-709F-4B48-B1B2-91552CD5E4FE}"
       DTS:EventID="0"
       DTS:EventName="OnError"
-      DTS:LocaleID="-1"
-      DTS:DTSID="{5486FBED-709F-4B48-B1B2-91552CD5E4FE}"
-      DTS:CreationName="OnError">
+      DTS:LocaleID="-1">
       <DTS:Variables>
         <DTS:Variable
-          DTS:Namespace="System"
-          DTS:IncludeInDebugDump="6789"
-          DTS:ObjectName="Propagate"
-          DTS:DTSID="{32BA6F90-F0AF-473B-9E6B-E41FCE0632DA}"
+          DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:CreationName="">
+          DTS:DTSID="{32BA6F90-F0AF-473B-9E6B-E41FCE0632DA}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
           <DTS:VariableValue
             DTS:DataType="11">-1</DTS:VariableValue>
         </DTS:Variable>
@@ -464,13 +462,13 @@ ORDER BY [LNK_FK_0100_ID],[REG_Database_Name]</property>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Log Errors"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{64a80871-3774-495c-aae2-7ffb8c94fbea}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Errors"
-          DTS:DTSID="{64a80871-3774-495c-aae2-7ffb8c94fbea}"
-          DTS:Description="Execute SQL Task"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData

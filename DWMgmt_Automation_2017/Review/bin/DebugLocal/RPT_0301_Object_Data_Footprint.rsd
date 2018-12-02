@@ -29,14 +29,14 @@
     <Fields>
       <Field Name="Data_Class">
         <DataField>Data_Class</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Column_Definition">
+        <DataField>Column_Definition</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Target_Name">
         <DataField>Target_Name</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="User_Data_Type">
-        <DataField>User_Data_Type</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Column_Count">

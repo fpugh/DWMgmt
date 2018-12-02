@@ -8,7 +8,7 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{C99DE722-FE74-4A4C-AB7E-B548E2714FE5}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:MaxConcurrentExecutables="1"
   DTS:ObjectName="IMP_Excel_File_Imports"
@@ -28,7 +28,7 @@
         DTS:Name="ConnectionString">"Data Source="+ @[$Project::DestinationServer] +";Initial Catalog="+ @[$Project::DestinationDatabase] +";Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=CORRUSCANT\MOS_EISLEY;Initial Catalog=DWMgmt;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=CORRUSCANT\IMPERIAL_SENATE;Initial Catalog=DWMgmt;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -225,7 +225,7 @@
               <components>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Aggregate"
@@ -510,7 +510,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Aggregate 1"
@@ -791,7 +791,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Capture_Errors"
@@ -934,7 +934,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Derived Column"
@@ -1054,7 +1054,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Destination - Relations"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="Destination - Relations"
@@ -1254,7 +1254,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
                   name="Error_Logs"
@@ -1266,7 +1266,7 @@
                       description="The Destination database table name."
                       expressionType="Notify"
                       name="TableOrViewName"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"CAT"."trk_SSIS_Import_Errors"</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"CAT"."trk_SSIS_Import_Errors"</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
@@ -1417,7 +1417,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="ICD10_Sets"
@@ -1598,7 +1598,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast"
-                  componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+                  componentClassID="DTSTransform.Multicast.3"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
                   name="Multicast">
@@ -1636,7 +1636,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Set Markup"
@@ -1756,7 +1756,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Source - Relations$"
-                  componentClassID="{8C084929-27D1-479F-9641-ABB7CDADF1AC}"
+                  componentClassID="DTSAdapter.ExcelSource.3"
                   contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Excel Source"
                   name="Source - Relations$"
@@ -1984,7 +1984,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Import Excel WkBooks\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Union All"
@@ -2095,35 +2095,35 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Aggregate Output 11]"
-                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input]"
-                  name="Aggregate Output 1"
-                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1]" />
-                <path
                   refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Aggregate Output 1]"
                   endId="Package\Foreach Loop Container\Import Excel WkBooks\ICD10_Sets.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Outputs[Aggregate Output 1]" />
+                <path
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Aggregate Output 11]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Error_Logs.Inputs[ADO NET Destination Input]"
+                  name="Aggregate Output 1"
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Outputs[Aggregate Output 1]" />
                 <path
                   refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Error Output]"
                   endId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 3]"
                   name="Derived Column Error Output"
                   startId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output2]"
-                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1]"
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
-                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output]" />
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output1]"
                   endId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\Import Excel WkBooks\Set Markup.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output]"
-                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Multicast.Inputs[Multicast Input 1]"
+                  refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Derived Column Output2]"
+                  endId="Package\Foreach Loop Container\Import Excel WkBooks\Aggregate 1.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
-                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Derived Column.Outputs[Derived Column Output]" />
+                  startId="Package\Foreach Loop Container\Import Excel WkBooks\Capture_Errors.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Import Excel WkBooks.Paths[Excel Source Error Output]"
                   endId="Package\Foreach Loop Container\Import Excel WkBooks\Union All.Inputs[Union All Input 2]"

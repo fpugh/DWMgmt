@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Actuation", "Actuation\Actuation.dtproj", "{412A9AA3-9D92-4E98-970E-F745F120D201}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		DebugLocal|x86 = DebugLocal|x86
+		Development|x86 = Development|x86
+		Production|x86 = Production|x86
+		Release|x86 = Release|x86
+		Test|x86 = Test|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.Debug|x86.ActiveCfg = Development
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.Debug|x86.Build.0 = Development
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.DebugLocal|x86.ActiveCfg = Development
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.DebugLocal|x86.Build.0 = Development
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.Development|x86.ActiveCfg = Development
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.Development|x86.Build.0 = Development
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.Production|x86.ActiveCfg = Production
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.Production|x86.Build.0 = Production
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.Release|x86.ActiveCfg = Development
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.Release|x86.Build.0 = Development
+		{412A9AA3-9D92-4E98-970E-F745F120D201}.Test|x86.ActiveCfg = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

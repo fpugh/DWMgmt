@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Description />
   <DataSet Name="RPT_0001_Object_Lookup">
     <Query>
@@ -11,40 +11,23 @@
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>String</rd:DbType>
         </DataSetParameter>
-        <DataSetParameter Name="@ObjectType">
-          <DefaultValue>U</DefaultValue>
+        <DataSetParameter Name="@ExactName">
           <ReadOnly>false</ReadOnly>
           <Nullable>false</Nullable>
           <OmitFromQuery>false</OmitFromQuery>
-          <rd:DbType>String</rd:DbType>
-          <rd:IsMultiValued>true</rd:IsMultiValued>
-        </DataSetParameter>
-        <DataSetParameter Name="@SearchDate">
-          <DefaultValue>GETDATE()</DefaultValue>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <OmitFromQuery>false</OmitFromQuery>
-          <rd:DbType>DateTime</rd:DbType>
+          <rd:DbType>Boolean</rd:DbType>
         </DataSetParameter>
       </DataSetParameters>
       <CommandType>StoredProcedure</CommandType>
-      <CommandText>CAT.RPT_0100_Object_Detail_Lookup</CommandText>
+      <CommandText>CAT.RPT_0300_Object_Lookup</CommandText>
     </Query>
     <Fields>
       <Field Name="Fully_Qualified_Name">
         <DataField>Fully_Qualified_Name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
-      <Field Name="Title">
-        <DataField>Title</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
       <Field Name="reg_Server_Name">
         <DataField>REG_Server_Name</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="REG_Product">
-        <DataField>REG_Product</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Schema_Bound_Name">
@@ -55,10 +38,6 @@
         <DataField>REG_Database_Name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
-      <Field Name="REG_Monitored">
-        <DataField>REG_Monitored</DataField>
-        <rd:TypeName>System.Boolean</rd:TypeName>
-      </Field>
       <Field Name="reg_Schema_Name">
         <DataField>REG_Schema_Name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
@@ -67,20 +46,8 @@
         <DataField>REG_Object_Name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
-      <Field Name="REG_Compatibility">
-        <DataField>REG_Compatibility</DataField>
-        <rd:TypeName>System.Byte</rd:TypeName>
-      </Field>
       <Field Name="reg_Object_Type">
         <DataField>REG_Object_Type</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="REG_Collation">
-        <DataField>REG_Collation</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="REG_Recovery_Model">
-        <DataField>REG_Recovery_Model</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="reg_column_name">
@@ -91,68 +58,8 @@
         <DataField>Column_Definition</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
-      <Field Name="REG_Column_Type">
-        <DataField>REG_Column_Type</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="Column_Type_Desc">
-        <DataField>Column_Type_Desc</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="REG_Size">
-        <DataField>REG_Size</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="REG_Scale">
-        <DataField>REG_Scale</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="Is_Identity">
-        <DataField>Is_Identity</DataField>
-        <rd:TypeName>System.Boolean</rd:TypeName>
-      </Field>
-      <Field Name="Is_Nullable">
-        <DataField>Is_Nullable</DataField>
-        <rd:TypeName>System.Boolean</rd:TypeName>
-      </Field>
-      <Field Name="Is_Default_Collation">
-        <DataField>Is_Default_Collation</DataField>
-        <rd:TypeName>System.Boolean</rd:TypeName>
-      </Field>
       <Field Name="REG_Column_Rank">
         <DataField>REG_Column_Rank</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="LNK_T2_ID">
-        <DataField>LNK_T2_ID</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="LNK_T3_ID">
-        <DataField>LNK_T3_ID</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="LNK_T4_ID">
-        <DataField>LNK_T4_ID</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="REG_0100_ID">
-        <DataField>REG_0100_ID</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="REG_0200_ID">
-        <DataField>REG_0200_ID</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="REG_0204_ID">
-        <DataField>REG_0204_ID</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="REG_0300_ID">
-        <DataField>REG_0300_ID</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="REG_0400_ID">
-        <DataField>REG_0400_ID</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
     </Fields>

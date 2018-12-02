@@ -22,6 +22,10 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Development' ">
     <OutputPath>bin\</OutputPath>
+    <DeploymentOptionADALCache>Default</DeploymentOptionADALCache>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == '' ">
+    <DeploymentOptionADALCache>Default</DeploymentOptionADALCache>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Enviornment_Evolution.bim">

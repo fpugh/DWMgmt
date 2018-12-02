@@ -7,13 +7,13 @@
       <DataSetParameters>
         <DataSetParameter Name="@NamePart">
           <ReadOnly>false</ReadOnly>
-          <Nullable>true</Nullable>
+          <Nullable>false</Nullable>
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>String</rd:DbType>
         </DataSetParameter>
         <DataSetParameter Name="@ExactName">
           <ReadOnly>false</ReadOnly>
-          <Nullable>true</Nullable>
+          <Nullable>false</Nullable>
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>Boolean</rd:DbType>
         </DataSetParameter>
@@ -25,6 +25,10 @@
       <Field Name="Tbl_ID">
         <DataField>Tbl_ID</DataField>
         <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="Target_Database">
+        <DataField>Target_Database</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Fully_Qualified_Name">
         <DataField>Fully_Qualified_Name</DataField>
@@ -38,13 +42,13 @@
         <DataField>REG_Column_Name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
-      <Field Name="Column_Type">
-        <DataField>Column_Type</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
       <Field Name="REG_Column_Rank">
         <DataField>REG_Column_Rank</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Column_Type">
+        <DataField>Column_Type</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Column_Nulls">
         <DataField>Column_Nulls</DataField>

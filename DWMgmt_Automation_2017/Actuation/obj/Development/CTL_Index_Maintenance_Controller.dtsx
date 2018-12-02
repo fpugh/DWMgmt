@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
-<DTS:Executable
-  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ExecutableType="SSIS.Package.3"
-  DTS:CreatorName="CORRUSCANT\fdpugh"
-  DTS:CreatorComputerName="CORRUSCANT"
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
   DTS:CreationDate="9/4/2017 12:22:58 PM"
-  DTS:PackageType="5"
-  DTS:ProtectionLevel="0"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{E6A7FCF4-FB95-44C1-B822-4E96D945596E}"
-  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="CORRUSCANT"
+  DTS:CreatorName="CORRUSCANT\fdpugh"
+  DTS:DTSID="{B1EBFE61-21D8-4D2E-9272-37FCDD8E41AF}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="CTL_Index_Maintenance_Controller"
-  DTS:DTSID="{B1EBFE61-21D8-4D2E-9272-37FCDD8E41AF}"
-  DTS:CreationName="SSIS.Package.3">
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{73EBB166-A5CA-43BA-9609-AF10D47C49D6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalDynamicOLEDB]"
+      DTS:CreationName="OLEDB"
       DTS:DelayValidation="True"
-      DTS:ObjectName="LocalDynamicOLEDB"
       DTS:DTSID="{FC317A07-EBA1-4B97-9E81-0365BC3FD418}"
-      DTS:CreationName="OLEDB">
+      DTS:ObjectName="LocalDynamicOLEDB">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Data Source="+ @[User::TargetServer] +";Initial Catalog="+ @[User::TargetDatabase] +";Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;"</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -33,47 +33,47 @@
   </DTS:ConnectionManagers>
   <DTS:PackageParameters>
     <DTS:PackageParameter
+      DTS:CreationName=""
       DTS:DataType="8"
-      DTS:ObjectName="Operation"
-      DTS:DTSID="{4E8FE0BE-4CB7-4752-A218-90191DB0AB76}"
       DTS:Description="Identify which class of maintenance opperations should be invoked. REORGANIZE_ONLINE = Anytime, REBUILD_ONLINE = Scheduled in Batches, REBUILD_OFFLINE = During Overnight/Downtime maintenance."
-      DTS:CreationName="">
+      DTS:DTSID="{4E8FE0BE-4CB7-4752-A218-90191DB0AB76}"
+      DTS:ObjectName="Operation">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="8">REBUILD</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">REBUILD</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="CheckDBOptions"
+      DTS:CreationName=""
       DTS:DTSID="{286A7E67-1DA1-44EA-8A69-B15BD137F7E1}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CheckDBOptions">
       <DTS:VariableValue
         DTS:DataType="8">Placeholder for Future Use</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="&quot;DBCC CHECKDB (&quot;+ @[User::TargetDatabase] +&quot;)&quot;"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="CheckDBStatement"
+      DTS:CreationName=""
       DTS:DTSID="{50CFA5A0-3ED6-480E-9BA5-706B643AC9CE}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DBCC CHECKDB (&quot;+ @[User::TargetDatabase] +&quot;)&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CheckDBStatement">
       <DTS:VariableValue
         DTS:DataType="8">DBCC CHECKDB (DWMgmt)</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="6789"
-      DTS:ObjectName="IndexMaintenanceCandidates"
+      DTS:CreationName=""
       DTS:DTSID="{573C2541-72AB-4157-B0DD-92CF7DB2A042}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IndexMaintenanceCandidates">
       <DTS:VariableValue
         DTS:DataSubType="ManagedSerializable"
         DTS:DataType="13">
-        <SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0"
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
           <SOAP-ENV:Body>
             <xsd:anyType
@@ -83,125 +83,125 @@
       </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="&quot;ALTER INDEX &quot;+ @[User::IndexName] +&quot; ON &quot;+ @[User::SchemaBoundName] +&quot; &quot;+ @[User::Operation]"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="IndexMaintenanceStatement"
+      DTS:CreationName=""
       DTS:DTSID="{069F4B3B-B348-4AEC-B104-C6704D2CDD13}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;ALTER INDEX &quot;+ @[User::IndexName] +&quot; ON &quot;+ @[User::SchemaBoundName] +&quot; &quot;+ @[User::Operation]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IndexMaintenanceStatement">
       <DTS:VariableValue
         DTS:DataType="8">ALTER INDEX  ON  REBUILD</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="IndexName"
+      DTS:CreationName=""
       DTS:DTSID="{FD452AD3-BC46-4ECD-9974-36D12FDC3B3E}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IndexName">
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="IndexRebuildOptions"
+      DTS:CreationName=""
       DTS:DTSID="{4019BB7C-1AA6-4F49-83A3-46A7F0A418A3}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IndexRebuildOptions">
       <DTS:VariableValue
         DTS:DataType="8">Placeholder for Future Use</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="6789"
-      DTS:ObjectName="NameExactFlag"
+      DTS:CreationName=""
       DTS:DTSID="{1B403CBC-F689-457D-8AAB-B93586FE1F6C}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NameExactFlag">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="NamePart"
+      DTS:CreationName=""
       DTS:DTSID="{E651A4C2-B92A-46F7-B2EB-DB51893284C6}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NamePart">
       <DTS:VariableValue
         DTS:DataType="8">dbo.</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="@[$Package::Operation]"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="Operation"
+      DTS:CreationName=""
       DTS:DTSID="{A2D3E462-07D7-44A3-A2F9-F73AEDAAC634}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::Operation]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Operation">
       <DTS:VariableValue
         DTS:DataType="8">REBUILD</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="RescanMode"
+      DTS:CreationName=""
       DTS:DTSID="{A0042924-6BB0-4CF0-9ECC-DFCEB9AC68D4}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RescanMode">
       <DTS:VariableValue
         DTS:DataType="8">Sampled</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="6789"
-      DTS:ObjectName="RescanProcessMode"
+      DTS:CreationName=""
       DTS:DTSID="{EADE53BF-AE55-49CF-BD37-DE7FB141F463}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RescanProcessMode">
       <DTS:VariableValue
         DTS:DataType="3">3</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="SchemaBoundName"
+      DTS:CreationName=""
       DTS:DTSID="{856A7E2E-3C4D-45EB-89BB-FB529C163D5F}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SchemaBoundName">
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="TargetDatabase"
+      DTS:CreationName=""
       DTS:DTSID="{FC7F60D6-89FE-4A8B-A927-FAAB59BF4412}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetDatabase">
       <DTS:VariableValue
         DTS:DataType="8">DWMgmt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="TargetServer"
+      DTS:CreationName=""
       DTS:DTSID="{8C0189B0-1AE4-4CA8-A3E6-8130CEA6774D}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetServer">
       <DTS:VariableValue
         DTS:DataType="8">CORRUSCANT\MOS_EISLEY</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="TargetServerID"
+      DTS:CreationName=""
       DTS:DTSID="{B5B2B91A-2813-42FE-9109-5E76122E33C0}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetServerID">
       <DTS:VariableValue
         DTS:DataType="3">1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="6789"
-      DTS:ObjectName="Variable"
+      DTS:CreationName=""
       DTS:DTSID="{A59FD63B-0175-44CE-B895-CC016FA4125C}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
@@ -209,18 +209,18 @@
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Foreach Data Index Maintenance Candidate"
-      DTS:ExecutableType="STOCK:FOREACHLOOP"
-      DTS:MaxErrorCount="0"
-      DTS:LocaleID="-1"
+      DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:DelayValidation="True"
-      DTS:ObjectName="Foreach Data Index Maintenance Candidate"
-      DTS:DTSID="{90C9D1DF-AA79-446D-B373-11BF45C477B1}"
       DTS:Description="Foreach Loop Container"
-      DTS:CreationName="STOCK:FOREACHLOOP">
+      DTS:DTSID="{90C9D1DF-AA79-446D-B373-11BF45C477B1}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="0"
+      DTS:ObjectName="Foreach Data Index Maintenance Candidate">
       <DTS:ForEachEnumerator
-        DTS:ObjectName="{9F69E87E-3A8E-443F-B379-546298EF62B1}"
+        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
         DTS:DTSID="{9F69E87E-3A8E-443F-B379-546298EF62B1}"
-        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+        DTS:ObjectName="{9F69E87E-3A8E-443F-B379-546298EF62B1}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -231,15 +231,15 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Foreach Data Index Maintenance Candidate\Execute SQL Task"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:ThreadHint="0"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:LocaleID="-1"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:DelayValidation="True"
-          DTS:ObjectName="Execute SQL Task"
-          DTS:DTSID="{84D67A6B-AEB2-4497-B988-EFB0F1C89370}"
           DTS:Description="Execute SQL Task"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+          DTS:DTSID="{84D67A6B-AEB2-4497-B988-EFB0F1C89370}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -250,13 +250,13 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Foreach Data Index Maintenance Candidate\Run SUB Index Integrity Rescan Procces"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{E051739A-3790-4177-9CF5-D4AAE2053FBE}"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="Run SUB Index Integrity Rescan Procces"
-          DTS:DTSID="{E051739A-3790-4177-9CF5-D4AAE2053FBE}"
-          DTS:Description="Execute Package Task"
-          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
@@ -293,55 +293,55 @@
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Data Index Maintenance Candidate.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{5E8A257E-61EE-463D-88BE-D36B2BF83906}"
           DTS:From="Package\Foreach Data Index Maintenance Candidate\Execute SQL Task"
-          DTS:To="Package\Foreach Data Index Maintenance Candidate\Run SUB Index Integrity Rescan Procces"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:DTSID="{5E8A257E-61EE-463D-88BE-D36B2BF83906}"
-          DTS:CreationName="" />
+          DTS:To="Package\Foreach Data Index Maintenance Candidate\Run SUB Index Integrity Rescan Procces" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::TargetServer"
-          DTS:ValueIndex="3"
-          DTS:ObjectName="{5DB75799-5143-4BEA-A598-B4DC0CDE1D86}"
+          DTS:CreationName=""
           DTS:DTSID="{5DB75799-5143-4BEA-A598-B4DC0CDE1D86}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{5DB75799-5143-4BEA-A598-B4DC0CDE1D86}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::TargetServer" />
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::TargetDatabase"
-          DTS:ValueIndex="4"
-          DTS:ObjectName="{4C6CF623-D97E-4352-AEA4-C24220EE5EBE}"
+          DTS:CreationName=""
           DTS:DTSID="{4C6CF623-D97E-4352-AEA4-C24220EE5EBE}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{4C6CF623-D97E-4352-AEA4-C24220EE5EBE}"
+          DTS:ValueIndex="4"
+          DTS:VariableName="User::TargetDatabase" />
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::SchemaBoundName"
-          DTS:ValueIndex="1"
-          DTS:ObjectName="{81F3E668-21F3-4D4A-814D-137EB2D35F94}"
+          DTS:CreationName=""
           DTS:DTSID="{81F3E668-21F3-4D4A-814D-137EB2D35F94}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{81F3E668-21F3-4D4A-814D-137EB2D35F94}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::SchemaBoundName" />
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::IndexName"
-          DTS:ValueIndex="0"
-          DTS:ObjectName="{F256E2AA-9CEE-4668-81E5-D85E6EB49165}"
+          DTS:CreationName=""
           DTS:DTSID="{F256E2AA-9CEE-4668-81E5-D85E6EB49165}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{F256E2AA-9CEE-4668-81E5-D85E6EB49165}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::IndexName" />
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::Operation"
-          DTS:ValueIndex="2"
-          DTS:ObjectName="{9EFE8DEA-C0FF-4509-8C95-F795D7DE2BF1}"
+          DTS:CreationName=""
           DTS:DTSID="{9EFE8DEA-C0FF-4509-8C95-F795D7DE2BF1}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{9EFE8DEA-C0FF-4509-8C95-F795D7DE2BF1}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::Operation" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Index Maintenance Candidates"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2CD36FAB-028E-476A-A610-7053779C8D45}"
       DTS:ExecutableType="SSIS.Pipeline.3"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:LocaleID="-1"
       DTS:ObjectName="Index Maintenance Candidates"
-      DTS:DTSID="{2CD36FAB-028E-476A-A610-7053779C8D45}"
-      DTS:Description="Data Flow Task"
-      DTS:CreationName="SSIS.Pipeline.3">
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
@@ -349,62 +349,62 @@
           <components>
             <component
               refId="Package\Index Maintenance Candidates\Index Maintenance Source"
-              name="Index Maintenance Source"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
+              name="Index Maintenance Source"
               usesDispositions="true"
-              version="7"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              version="7">
               <properties>
                 <property
-                  name="CommandTimeout"
                   dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
                 <property
-                  name="OpenRowset"
                   dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset.">[CAT].[VM_0454_Data_Profile_Assessor]</property>
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[CAT].[VM_0454_Data_Profile_Assessor]</property>
                 <property
-                  name="OpenRowsetVariable"
                   dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
                 <property
-                  name="SqlCommand"
                   dataType="System.String"
                   description="The SQL command to be executed."
+                  name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        REG_Server_Name AS TargetServer, REG_Database_Name AS TargetDatabase, Schema_Bound_Name AS ObjectName, Index_Name AS IndexName, Operation
 FROM            CAT.VM_0350_Index_Maintenance_Assessor
 WHERE        (Operation = ?)
 ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
                 <property
-                  name="SqlCommandVariable"
                   dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."></property>
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
                 <property
-                  name="DefaultCodePage"
                   dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
                 <property
-                  name="AlwaysUseDefaultCodePage"
                   dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
                 <property
-                  name="AccessMode"
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
+                  name="AccessMode"
                   typeConverter="AccessMode">2</property>
                 <property
-                  name="ParameterMapping"
                   dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables.">"Parameter0:Input",{4E8FE0BE-B348-4752-A218-90191DB0AB76};</property>
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{4E8FE0BE-B348-4752-A218-90191DB0AB76};</property>
               </properties>
               <connections>
                 <connection
                   refId="Package\Index Maintenance Candidates\Index Maintenance Source.Connections[OleDbConnection]"
-                  name="OleDbConnection"
-                  description="The OLE DB runtime connection used to access the database."
                   connectionManagerID="{746F9285-349E-460D-B4DB-67E8D24A726B}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DynamicDestinationOLEDB]" />
+                  connectionManagerRefId="Project.ConnectionManagers[DynamicDestinationOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
@@ -413,133 +413,133 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[IndexName]"
-                      name="IndexName"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[IndexName]"
-                      length="256"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[IndexName]" />
+                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[IndexName]"
+                      length="256"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[IndexName]"
+                      name="IndexName"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[ObjectName]"
-                      name="ObjectName"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[ObjectName]"
-                      length="513"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[ObjectName]" />
+                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[ObjectName]"
+                      length="776"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[ObjectName]"
+                      name="ObjectName"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[Operation]"
-                      name="Operation"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[Operation]"
-                      length="10"
-                      dataType="str"
                       codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[Operation]" />
+                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[Operation]"
+                      length="10"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[Operation]"
+                      name="Operation"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetServer]"
-                      name="TargetServer"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetServer]"
-                      length="256"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServer]" />
+                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServer]"
+                      length="256"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetServer]"
+                      name="TargetServer"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]"
-                      name="TargetDatabase"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]"
-                      length="256"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[TargetDatabase]" />
+                      externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[TargetDatabase]"
+                      length="256"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]"
+                      name="TargetDatabase"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[IndexName]"
-                      name="IndexName"
                       dataType="wstr"
-                      length="256" />
+                      length="256"
+                      name="IndexName" />
                     <externalMetadataColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[ObjectName]"
-                      name="ObjectName"
                       dataType="wstr"
-                      length="513" />
+                      length="776"
+                      name="ObjectName" />
                     <externalMetadataColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[Operation]"
-                      name="Operation"
+                      codePage="1252"
                       dataType="str"
                       length="10"
-                      codePage="1252" />
+                      name="Operation" />
                     <externalMetadataColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[TargetServer]"
-                      name="TargetServer"
                       dataType="wstr"
-                      length="256" />
+                      length="256"
+                      name="TargetServer" />
                     <externalMetadataColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[TargetDatabase]"
-                      name="TargetDatabase"
                       dataType="wstr"
-                      length="256" />
+                      length="256"
+                      name="TargetDatabase" />
                   </externalMetadataColumns>
                 </output>
                 <output
                   refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output]"
-                  name="OLE DB Source Error Output"
-                  isErrorOut="true">
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[TargetServer]"
-                      name="TargetServer"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[TargetServer]"
+                      dataType="wstr"
                       length="256"
-                      dataType="wstr" />
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[TargetServer]"
+                      name="TargetServer" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[TargetDatabase]"
-                      name="TargetDatabase"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[TargetDatabase]"
+                      dataType="wstr"
                       length="256"
-                      dataType="wstr" />
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[TargetDatabase]"
+                      name="TargetDatabase" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[IndexName]"
-                      name="IndexName"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[IndexName]"
+                      dataType="wstr"
                       length="256"
-                      dataType="wstr" />
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[IndexName]"
+                      name="IndexName" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ObjectName]"
-                      name="ObjectName"
+                      dataType="wstr"
+                      length="776"
                       lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ObjectName]"
-                      length="513"
-                      dataType="wstr" />
+                      name="ObjectName" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[Operation]"
-                      name="Operation"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[Operation]"
-                      length="10"
+                      codePage="1252"
                       dataType="str"
-                      codePage="1252" />
+                      length="10"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[Operation]"
+                      name="Operation" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -548,53 +548,53 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
             </component>
             <component
               refId="Package\Index Maintenance Candidates\Recordset Destination"
-              name="Recordset Destination"
-              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              componentClassID="DTSAdapter.RecordsetDestination.3"
+              contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
-              contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              name="Recordset Destination">
               <properties>
                 <property
-                  name="VariableName"
                   dataType="System.String"
-                  description="Specifies the variable that contains the recordset.">User::IndexMaintenanceCandidates</property>
+                  description="Specifies the variable that contains the recordset."
+                  name="VariableName">User::IndexMaintenanceCandidates</property>
               </properties>
               <inputs>
                 <input
                   refId="Package\Index Maintenance Candidates\Recordset Destination.Inputs[Recordset Destination Input]"
-                  name="Recordset Destination Input"
-                  hasSideEffects="true">
+                  hasSideEffects="true"
+                  name="Recordset Destination Input">
                   <inputColumns>
                     <inputColumn
                       refId="Package\Index Maintenance Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[IndexName]"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[IndexName]"
-                      cachedName="IndexName"
                       cachedDataType="wstr"
-                      cachedLength="256" />
+                      cachedLength="256"
+                      cachedName="IndexName"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[IndexName]" />
                     <inputColumn
                       refId="Package\Index Maintenance Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[ObjectName]"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[ObjectName]"
-                      cachedName="ObjectName"
                       cachedDataType="wstr"
-                      cachedLength="513" />
+                      cachedLength="776"
+                      cachedName="ObjectName"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[ObjectName]" />
                     <inputColumn
                       refId="Package\Index Maintenance Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[Operation]"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[Operation]"
-                      cachedName="Operation"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
-                      cachedCodepage="1252" />
+                      cachedName="Operation"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[Operation]" />
                     <inputColumn
                       refId="Package\Index Maintenance Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[TargetServer]"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetServer]"
-                      cachedName="TargetServer"
                       cachedDataType="wstr"
-                      cachedLength="256" />
+                      cachedLength="256"
+                      cachedName="TargetServer"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetServer]" />
                     <inputColumn
                       refId="Package\Index Maintenance Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[TargetDatabase]"
-                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]"
-                      cachedName="TargetDatabase"
                       cachedDataType="wstr"
-                      cachedLength="256" />
+                      cachedLength="256"
+                      cachedName="TargetDatabase"
+                      lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[TargetDatabase]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -604,9 +604,9 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
           <paths>
             <path
               refId="Package\Index Maintenance Candidates.Paths[OLE DB Source Output]"
+              endId="Package\Index Maintenance Candidates\Recordset Destination.Inputs[Recordset Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output]"
-              endId="Package\Index Maintenance Candidates\Recordset Destination.Inputs[Recordset Destination Input]" />
+              startId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -615,29 +615,29 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FDF3BA83-C218-436B-9CC6-8476424C686E}"
       DTS:From="Package\Index Maintenance Candidates"
-      DTS:To="Package\Foreach Data Index Maintenance Candidate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:DTSID="{FDF3BA83-C218-436B-9CC6-8476424C686E}"
-      DTS:CreationName="" />
+      DTS:To="Package\Foreach Data Index Maintenance Candidate" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{FB2A0CD7-3FAF-4905-AE67-806BA4C7E61D}"
       DTS:EventID="0"
       DTS:EventName="OnError"
-      DTS:LocaleID="-1"
-      DTS:DTSID="{FB2A0CD7-3FAF-4905-AE67-806BA4C7E61D}"
-      DTS:CreationName="OnError">
+      DTS:LocaleID="-1">
       <DTS:Variables>
         <DTS:Variable
-          DTS:Namespace="System"
-          DTS:IncludeInDebugDump="6789"
-          DTS:ObjectName="Propagate"
-          DTS:DTSID="{B274163C-0648-44CD-AE4B-A1839FF8D7F3}"
+          DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:CreationName="">
+          DTS:DTSID="{B274163C-0648-44CD-AE4B-A1839FF8D7F3}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
           <DTS:VariableValue
             DTS:DataType="11">-1</DTS:VariableValue>
         </DTS:Variable>
@@ -645,13 +645,13 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Log Errors"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6DF98F7E-E73B-4A08-9D49-112906255E38}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Errors"
-          DTS:DTSID="{6DF98F7E-E73B-4A08-9D49-112906255E38}"
-          DTS:Description="Execute SQL Task"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData

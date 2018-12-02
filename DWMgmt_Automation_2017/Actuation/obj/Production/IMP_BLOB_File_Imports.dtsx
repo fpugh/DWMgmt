@@ -8,7 +8,7 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{7CB2B8C9-81A5-4855-A89C-C6A256F0170B}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:MaxConcurrentExecutables="1"
   DTS:ObjectName="IMP_BLOB_File_Imports"
@@ -216,7 +216,7 @@
               <components>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
                   contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
                   name="Aggregate"
@@ -499,7 +499,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
                   name="Audit Set Errors"
@@ -690,7 +690,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Error Collection"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
                   name="Error Collection"
@@ -895,7 +895,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="External_String_Content_ Intake_Stack"
@@ -1138,7 +1138,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Import Column"
-                  componentClassID="{9053CAE0-140B-48E4-AEEC-4E6A26E9E436}"
+                  componentClassID="TxFileInserter.Inserter.3"
                   contactInfo="Import Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Reads data from files and adds it to columns in a data flow. For example, use an input column of file paths to import photographs from a directory."
                   name="Import Column"
@@ -1215,7 +1215,7 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Script Component"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
                   contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;8"
                   description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
                   name="Script Component"
@@ -2298,7 +2298,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
                   name="TRK_SSIS_Import_Errors"

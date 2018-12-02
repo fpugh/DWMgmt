@@ -7,7 +7,7 @@
   DTS:CreatorName="DNVRHLTH\fpugh"
   DTS:DTSID="{E326C0FF-F6B7-4F9B-A0B8-0565801E512C}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="SSRS_Schema_Capture"
   DTS:PackageType="5"
@@ -117,7 +117,7 @@
           <components>
             <component
               refId="Package\Data Flow Task\Audit Insert Split SSRS Schemas"
-              componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+              componentClassID="DTSTransform.Multicast.3"
               contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
               name="Audit Insert Split SSRS Schemas">
@@ -235,7 +235,7 @@
             </component>
             <component
               refId="Package\Data Flow Task\Audit Set Errors"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Audit Set Errors"
@@ -399,7 +399,7 @@
             </component>
             <component
               refId="Package\Data Flow Task\Audit Set SSRS Schemas"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Audit Set SSRS Schemas"
@@ -563,7 +563,7 @@
             </component>
             <component
               refId="Package\Data Flow Task\Capture_Errors"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Capture_Errors"
@@ -662,7 +662,7 @@
             </component>
             <component
               refId="Package\Data Flow Task\Error_Count"
-              componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
+              componentClassID="DTSTransform.RowCount.3"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
               name="Error_Count">
@@ -691,7 +691,7 @@
             </component>
             <component
               refId="Package\Data Flow Task\Error_Logs"
-              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              componentClassID="DTS.ManagedComponentWrapper.3"
               contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
               name="Error_Logs"
@@ -703,7 +703,7 @@
                   description="The Destination database table name."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"CAT"."trk_SSIS_Import_Errors"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"CAT"."trk_SSIS_Import_Errors"</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
@@ -853,7 +853,7 @@
             </component>
             <component
               refId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack"
-              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              componentClassID="DTS.ManagedComponentWrapper.3"
               contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
               name="LIB_XML_Module_Intake_Stack"
@@ -865,7 +865,7 @@
                   description="The Destination database table name."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"LIB"."XML_Schema_Intake_Stack"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"LIB"."XML_Schema_Intake_Stack"</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
@@ -977,7 +977,7 @@
             </component>
             <component
               refId="Package\Data Flow Task\reg_Audit_Insert"
-              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              componentClassID="DTS.ManagedComponentWrapper.3"
               contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
               name="reg_Audit_Insert"
@@ -989,7 +989,7 @@
                   description="The Destination database table name."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"LIB"."XML_Schema_Intake_Stack"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"LIB"."XML_Schema_Intake_Stack"</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
@@ -1101,7 +1101,7 @@
             </component>
             <component
               refId="Package\Data Flow Task\SSRS Schema Count"
-              componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
+              componentClassID="DTSTransform.RowCount.3"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
               name="SSRS Schema Count">
@@ -1130,7 +1130,7 @@
             </component>
             <component
               refId="Package\Data Flow Task\SSRS Schema Sources"
-              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              componentClassID="DTS.ManagedComponentWrapper.3"
               contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
               name="SSRS Schema Sources"
@@ -1306,7 +1306,7 @@ WHERE Type in (2,8)</property>
             </component>
             <component
               refId="Package\Data Flow Task\Union All"
-              componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+              componentClassID="DTSTransform.UnionAll.3"
               contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
               name="Union All"
@@ -1722,20 +1722,20 @@ WHERE Type in (2,8)</property>
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\SSRS Schema Sources.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
-              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output1]"
               endId="Package\Data Flow Task\Error_Logs.Inputs[ADO NET Destination Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\Capture_Errors.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Inputs[Multicast Input 1]"
+              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Audit Set SSRS Schemas.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Multicast Output 1]"
               endId="Package\Data Flow Task\LIB_XML_Module_Intake_Stack.Inputs[ADO NET Destination Input]"
@@ -1747,15 +1747,15 @@ WHERE Type in (2,8)</property>
               name="Multicast Output 2"
               startId="Package\Data Flow Task\Audit Insert Split SSRS Schemas.Outputs[Multicast Output 2]" />
             <path
-              refId="Package\Data Flow Task.Paths[Row Count Output 11]"
-              endId="Package\Data Flow Task\Audit Set SSRS Schemas.Inputs[Derived Column Input]"
-              name="Row Count Output 1"
-              startId="Package\Data Flow Task\SSRS Schema Count.Outputs[Row Count Output 1]" />
-            <path
               refId="Package\Data Flow Task.Paths[Row Count Output 1]"
               endId="Package\Data Flow Task\Capture_Errors.Inputs[Derived Column Input]"
               name="Row Count Output 1"
               startId="Package\Data Flow Task\Error_Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Row Count Output 11]"
+              endId="Package\Data Flow Task\Audit Set SSRS Schemas.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\Data Flow Task\SSRS Schema Count.Outputs[Row Count Output 1]" />
             <path
               refId="Package\Data Flow Task.Paths[Union All Output 1]"
               endId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]"

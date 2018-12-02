@@ -1,0 +1,11 @@
+<Configurations>
+  <Configuration>
+    <Name>Development</Name>
+    <Options>
+      <DeploymentType>FilePathDestination</DeploymentType>
+      <FilePath>C:\Users\Forrest\Documents\Visual Studio 2010\Projects\DWMgmt_Actuation_and_Reporting.zip\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Actuation</FilePath>
+      <DestinationServer>localhost</DestinationServer>
+      <DestinationFolder />
+    </Options>
+  </Configuration>
+</Configurations>

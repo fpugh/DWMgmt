@@ -5,15 +5,16 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="DH87NRXR1"
   DTS:CreatorName="DNVRHLTH\fpugh"
+  DTS:DelayValidation="True"
   DTS:DTSID="{7FC972C5-7631-4D61-B316-870C2F8E1209}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="SQL_Turbo_Shredder"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="276"
-  DTS:VersionGUID="{C51298E5-4E0C-42D6-8AB1-53F04ABE9FF4}">
+  DTS:VersionBuild="280"
+  DTS:VersionGUID="{02671DE6-0F69-4B61-BF90-22D460BAAD9F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:PackageParameters>
@@ -315,8 +316,6 @@
               DTS:ObjectName="Shredder Blade 1"
               DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <ExecutePackageTask>
                   <UseProjectReference>True</UseProjectReference>
@@ -383,8 +382,6 @@
               DTS:ObjectName="Shredder Blade 2"
               DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <ExecutePackageTask>
                   <UseProjectReference>True</UseProjectReference>
@@ -451,8 +448,6 @@
               DTS:ObjectName="Shredder Blade 3"
               DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <ExecutePackageTask>
                   <UseProjectReference>True</UseProjectReference>
@@ -519,8 +514,6 @@
               DTS:ObjectName="Shredder Blade 4"
               DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <ExecutePackageTask>
                   <UseProjectReference>True</UseProjectReference>
@@ -587,8 +580,6 @@
               DTS:ObjectName="Shredder Blade 5"
               DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <ExecutePackageTask>
                   <UseProjectReference>True</UseProjectReference>
@@ -655,8 +646,6 @@
               DTS:ObjectName="Shredder Blade 6"
               DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <ExecutePackageTask>
                   <UseProjectReference>True</UseProjectReference>
@@ -724,8 +713,6 @@
               DTS:ObjectName="Shredder Blade 7"
               DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <ExecutePackageTask>
                   <UseProjectReference>True</UseProjectReference>
@@ -793,8 +780,6 @@
               DTS:ObjectName="Shredder Blade 8"
               DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="ExecuteOutOfProcess">@[$Project::ExecuteOutOfProcess]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <ExecutePackageTask>
                   <UseProjectReference>True</UseProjectReference>
@@ -1011,7 +996,7 @@
           PanelSize="170,103"
           Size="170,146"
           Id="Package\Sequence Container\Mapper Loop 7"
-          TopLeft="1394,5.49999999999977" />
+          TopLeft="1394,4.49999999999977" />
         <NodeLayout
           Size="159,42"
           Id="Package\Sequence Container\Mapper Loop 8\Shredder Blade 8"

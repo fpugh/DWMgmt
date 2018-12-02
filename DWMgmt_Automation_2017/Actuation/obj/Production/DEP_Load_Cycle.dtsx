@@ -7,7 +7,7 @@
   DTS:CreatorName="Mordor\Forrest"
   DTS:DTSID="{9C2363E4-CFB2-477E-BC7C-3AF1A472CBBB}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="DEP_Load_Cycle"
@@ -147,7 +147,7 @@
           <components>
             <component
               refId="Package\Deployment_Modules_to_Execution_List\Deployment_Module_Collection"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="Deployment_Module_Collection"
@@ -324,7 +324,7 @@ ORDER BY S2.File_Rank</property>
             </component>
             <component
               refId="Package\Deployment_Modules_to_Execution_List\Recordset Destination"
-              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              componentClassID="DTSAdapter.RecordsetDestination.3"
               contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
               name="Recordset Destination">

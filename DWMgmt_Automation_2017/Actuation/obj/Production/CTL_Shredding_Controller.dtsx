@@ -7,13 +7,13 @@
   DTS:CreatorName="CORRUSCANT\fdpugh"
   DTS:DTSID="{B2DB4890-0AE1-496F-9D79-386EF802DD28}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="CTL_Shredding_Controller"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{2B3A984B-54AE-4A16-8811-154876B9688A}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{B003F9DF-9C93-4DBB-9812-B075D153AF4E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:PackageParameters>
@@ -205,7 +205,7 @@
           <components>
             <component
               refId="Package\Text Shred Candidates\Recordset Destination"
-              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              componentClassID="DTSAdapter.RecordsetDestination.3"
               contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
               name="Recordset Destination">
@@ -244,7 +244,7 @@
             </component>
             <component
               refId="Package\Text Shred Candidates\Shredding Candidate Selection"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="Shredding Candidate Selection"
@@ -426,13 +426,13 @@ WHERE Batch_ID = 'TXTF'</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="225,42"
-          Id="Package\Shredding by Batch\REG_TXT_Turbo_Shredder"
-          TopLeft="5.5,5.5" />
-        <NodeLayout
           Size="183,42"
           Id="Package\Shredding by Batch\Cleanup Intake Tables"
           TopLeft="52,82" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Shredding by Batch\REG_TXT_Turbo_Shredder"
+          TopLeft="5.5,5.5" />
         <EdgeLayout
           Id="Package\Shredding by Batch.PrecedenceConstraints[Constraint]"
           TopLeft="118,47.5">

@@ -8,7 +8,7 @@
   DTS:DTSID="{5D1CA94E-3580-4F3D-A8D2-23669DB91DFC}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:ISOLevel="256"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="SUB_Shredder_Blade"
   DTS:PackageType="5"

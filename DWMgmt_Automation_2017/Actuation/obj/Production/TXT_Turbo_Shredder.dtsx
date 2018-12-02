@@ -7,7 +7,7 @@
   DTS:CreatorName="DNVRHLTH\fpugh"
   DTS:DTSID="{555EE709-752D-45D9-BCFF-94438EC7AB45}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="TXT_Turbo_Shredder"
   DTS:PackageType="5"

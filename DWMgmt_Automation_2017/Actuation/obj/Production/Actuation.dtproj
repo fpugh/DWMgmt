@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DeploymentModel>Project</DeploymentModel>
-  <ProductVersion>11.0.2100.60</ProductVersion>
+  <ProductVersion>15.0.900.40</ProductVersion>
   <SchemaVersion>9.0.1.0</SchemaVersion>
-  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
   <Database>
     <Name>DSS_Automation_Tests.database</Name>
     <FullPath>DSS_Automation_Tests.database</FullPath>
@@ -108,7 +108,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -181,7 +181,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -207,10 +207,10 @@
                 <SSIS:Property SSIS:Name="Name">SQL_Turbo_Shredder</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">276</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">280</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C51298E5-4E0C-42D6-8AB1-53F04ABE9FF4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{02671DE6-0F69-4B61-BF90-22D460BAAD9F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -402,7 +402,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -879,10 +879,10 @@
                 <SSIS:Property SSIS:Name="Name">SUB_Index_Integrity</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">236</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">238</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{62D925E7-63F6-47D7-878C-CD6601BD30DE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4DFE3BF9-A2AD-4439-9F2B-328A9989FAF2}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -953,7 +953,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1026,7 +1026,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1052,10 +1052,10 @@
                 <SSIS:Property SSIS:Name="Name">REG_Server_Master</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">541</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">547</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{391B3D94-6455-4523-BF55-36630F0216A3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8691A678-D483-453D-BDF8-B2EEF1C53C32}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1071,7 +1071,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">1</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1084,7 +1084,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">7</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1097,7 +1097,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">1</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1663,10 +1663,10 @@
                 <SSIS:Property SSIS:Name="Name">CTL_Shredding_Controller</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">35</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{2B3A984B-54AE-4A16-8811-154876B9688A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B003F9DF-9C93-4DBB-9812-B075D153AF4E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1838,7 +1838,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1864,10 +1864,10 @@
                 <SSIS:Property SSIS:Name="Name">CTL_Data_Profile_Controller</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">40</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">42</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B742B851-2DF4-4F75-B5C5-8BA4C6953AFF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D74ADFDA-9573-4487-BD86-90C257EDDAB3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1896,10 +1896,10 @@
                 <SSIS:Property SSIS:Name="Name">CTL_Index_Maintenance_Controller</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">62</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">63</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E6A7FCF4-FB95-44C1-B822-4E96D945596E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{73EBB166-A5CA-43BA-9609-AF10D47C49D6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2000,10 +2000,10 @@
                 <SSIS:Property SSIS:Name="Name">SUB_Database_Child</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">606</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">607</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DEF081F3-DE33-4E8D-A5F9-8934A708927E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A4630589-FC56-47C8-B692-AFD121449E43}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2019,7 +2019,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2045,7 +2045,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2117,7 +2117,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\MOS_EISLEY</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CORRUSCANT\IMPERIAL_SENATE</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2142,6 +2142,7 @@
       </SSIS:Project>
     </Manifest>
   </DeploymentModelSpecificContent>
+  <ControlFlowParts />
   <Miscellaneous>
     <ProjectItem>
       <Name>BimlScript.biml</Name>
@@ -2157,11 +2158,12 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
+        <TargetServerVersion>SQLServer2012</TargetServerVersion>
         <ParameterConfigurationValues>
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2018-09-17T02:40:44.978324Z</Value>
+            <Value xsi:type="xsd:dateTime">2018-12-01T23:10:24.7130508Z</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{5a58518c-4768-4c59-a818-ebeb49dda191}</Id>
@@ -2181,12 +2183,12 @@
           <ConfigurationSetting>
             <Id>{34995603-fe18-4502-9ec5-6f5de80593fb}</Id>
             <Name>Project::DTSXFileDirectory</Name>
-            <Value xsi:type="xsd:string">DWMgmt_Automation\Actuation\</Value>
+            <Value xsi:type="xsd:string">DWMgmt_Automation_2017\Actuation\</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{29527117-efc8-4691-8744-2e238093d1db}</Id>
             <Name>Project::RDLFileDirectory</Name>
-            <Value xsi:type="xsd:string">DWMgmt_Automation\Review\</Value>
+            <Value xsi:type="xsd:string">DWMgmt_Automation_2017\Review\</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{9521a419-c9e4-417f-b87a-591e67f4dbc2}</Id>
@@ -2211,7 +2213,7 @@
           <ConfigurationSetting>
             <Id>{1336c1a4-fadb-48c6-8629-364d3caa4a34}</Id>
             <Name>Project::RootDirectory</Name>
-            <Value xsi:type="xsd:string">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\</Value>
+            <Value xsi:type="xsd:string">E:\Mos Eisley\Git\DWMgmt_Projects\</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{32af6699-3a56-4b9c-959b-340907e9193c}</Id>
@@ -2309,21 +2311,22 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
+        <TargetServerVersion>SQLServer2012</TargetServerVersion>
         <ParameterConfigurationValues>
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2018-11-20T04:33:24.1852992Z</Value>
+            <Value xsi:type="xsd:dateTime">2018-12-01T23:12:46.7578188Z</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{5a58518c-4768-4c59-a818-ebeb49dda191}</Id>
             <Name>Project::TargetServer</Name>
-            <Value xsi:type="xsd:string">CORRUSCANT\MOS_EISLEY</Value>
+            <Value xsi:type="xsd:string">CORRUSCANT\IMPERIAL_SENATE</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{20243905-6d24-4ee2-9039-d5dc8b76d56b}</Id>
             <Name>Project::DestinationServer</Name>
-            <Value xsi:type="xsd:string">CORRUSCANT\MOS_EISLEY</Value>
+            <Value xsi:type="xsd:string">CORRUSCANT\IMPERIAL_SENATE</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{a8b99fdc-6b6f-4911-942a-7c8be68d844e}</Id>
@@ -2333,12 +2336,12 @@
           <ConfigurationSetting>
             <Id>{34995603-fe18-4502-9ec5-6f5de80593fb}</Id>
             <Name>Project::DTSXFileDirectory</Name>
-            <Value xsi:type="xsd:string">DWMgmt_Automation_2012\Actuation\</Value>
+            <Value xsi:type="xsd:string">DWMgmt_Automation_2017\Actuation\</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{29527117-efc8-4691-8744-2e238093d1db}</Id>
             <Name>Project::RDLFileDirectory</Name>
-            <Value xsi:type="xsd:string">DWMgmt_Automation_2012\Review\</Value>
+            <Value xsi:type="xsd:string">DWMgmt_Automation_2017\Review\</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{9521a419-c9e4-417f-b87a-591e67f4dbc2}</Id>
@@ -2408,7 +2411,7 @@
           <ConfigurationSetting>
             <Id>{6AD8F012-6333-46D0-9BE0-69101BF0A64C}</Id>
             <Name>SUB_Index_Integrity::TargetServer</Name>
-            <Value xsi:type="xsd:string">CORRUSCANT\MOS_EISLEY</Value>
+            <Value xsi:type="xsd:string">CORRUSCANT\IMPERIAL_SENATE</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{95E79169-3605-4349-B594-2486AB99CA31}</Id>
@@ -2461,6 +2464,7 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
+        <TargetServerVersion>SQLServer2012</TargetServerVersion>
         <ParameterConfigurationValues>
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>

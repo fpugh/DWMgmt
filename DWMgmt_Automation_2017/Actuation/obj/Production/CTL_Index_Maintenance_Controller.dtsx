@@ -7,13 +7,13 @@
   DTS:CreatorName="CORRUSCANT\fdpugh"
   DTS:DTSID="{B1EBFE61-21D8-4D2E-9272-37FCDD8E41AF}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="CTL_Index_Maintenance_Controller"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{E6A7FCF4-FB95-44C1-B822-4E96D945596E}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{73EBB166-A5CA-43BA-9609-AF10D47C49D6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -349,7 +349,7 @@
           <components>
             <component
               refId="Package\Index Maintenance Candidates\Index Maintenance Source"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="Index Maintenance Source"
@@ -427,7 +427,7 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[ObjectName]"
-                      length="513"
+                      length="776"
                       lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[ObjectName]"
                       name="ObjectName"
                       truncationRowDisposition="FailComponent" />
@@ -473,7 +473,7 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
                     <externalMetadataColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[ObjectName]"
                       dataType="wstr"
-                      length="513"
+                      length="776"
                       name="ObjectName" />
                     <externalMetadataColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[Operation]"
@@ -519,7 +519,7 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ObjectName]"
                       dataType="wstr"
-                      length="513"
+                      length="776"
                       lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ObjectName]"
                       name="ObjectName" />
                     <outputColumn
@@ -548,7 +548,7 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
             </component>
             <component
               refId="Package\Index Maintenance Candidates\Recordset Destination"
-              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              componentClassID="DTSAdapter.RecordsetDestination.3"
               contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
               name="Recordset Destination">
@@ -573,7 +573,7 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
                     <inputColumn
                       refId="Package\Index Maintenance Candidates\Recordset Destination.Inputs[Recordset Destination Input].Columns[ObjectName]"
                       cachedDataType="wstr"
-                      cachedLength="513"
+                      cachedLength="776"
                       cachedName="ObjectName"
                       lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].Columns[ObjectName]" />
                     <inputColumn
