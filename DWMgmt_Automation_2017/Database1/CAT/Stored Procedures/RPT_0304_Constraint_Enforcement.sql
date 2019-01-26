@@ -14,7 +14,7 @@ SELECT V200.Fully_Qualified_Name
 	* (1 + sum(case when isnull(V344.REG_Constraint_Type,'') = 'D' then 1 else 0 end) * .0125) END AS Data_Integrity_Ratio
 , COUNT(distinct V344.REG_Constraint_Name) as Constraint_Count
 FROM CAT.VI_0344_Constraint_Column_Latches AS V344 WITH(NOLOCK)
-JOIN CAT.VI_0200_Column_Tier_Latches AS V200 WITH(NOLOCK)
+JOIN CAT.VI_0300_Full_Object_Map AS V200 WITH(NOLOCK)
 ON V200.LNK_T3_ID = V344.LNK_T3P_ID
 WHERE (@ExactName = 0 AND (@NamePart = 'ALL'
 OR CHARINDEX(REPLACE(REPLACE(v200.Fully_Qualified_Name,'[',''),']',''), ''+@NamePart+'') > 0 

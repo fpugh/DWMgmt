@@ -13,7 +13,7 @@ SELECT V200.Fully_Qualified_Name
 , CASE WHEN count(distinct V200.REG_Column_Name) = 0 OR count(distinct V343.REG_Column_Name) = 0 THEN 0
 	ELSE count(distinct V343.REG_Column_Name) / cast(count(distinct V200.REG_Column_Name) as money) END AS Structural_Integrity_Ratio
 FROM CAT.VI_0343_Index_Column_Latches AS V343 WITH(NOLOCK)
-JOIN CAT.VI_0200_Column_Tier_Latches AS V200 WITH(NOLOCK)
+JOIN CAT.VI_0300_Full_Object_Map AS V200 WITH(NOLOCK)
 ON V200.LNK_T3_ID = V343.LNK_T3P_ID
 WHERE (@ExactName = 0 AND (@NamePart = 'ALL'
 OR CHARINDEX(REPLACE(REPLACE(v200.Fully_Qualified_Name,'[',''),']',''), ''+@NamePart+'') > 0 

@@ -296,5 +296,6 @@
     <Build Include="Security\LIB.sql" />
     <Build Include="Security\ECO.sql" />
     <Build Include="Security\CAT.sql" />
+    <Build Include="Security\CORRUSCANT_DWMgmt_Agent.sql" />
   </ItemGroup>
 </Project>

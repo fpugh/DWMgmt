@@ -6,6 +6,9 @@
     [File_Type]     NVARCHAR (16)  NULL,
     [String_Length] BIGINT         NULL,
     [String]        NVARCHAR (MAX) DEFAULT ('') NULL,
-    [Batch_ID]      NCHAR (10)     NULL
+    [Batch_ID]      NCHAR (10)     NULL,
+    CONSTRAINT [pk_TXT_Process_Hash] PRIMARY KEY CLUSTERED ([Version_Stamp] ASC)
 );
+
+
 

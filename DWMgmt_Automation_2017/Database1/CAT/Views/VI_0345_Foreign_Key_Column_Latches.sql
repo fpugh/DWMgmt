@@ -43,7 +43,7 @@ AS (
 SELECT DISTINCT DENSE_RANK() OVER(ORDER BY fky.LNK_T2_ID, lod.LNK_FK_T3R_ID, lod.LNK_FK_T3P_ID) AS VID
 , '['+prm.REG_Database_Name+'].['+prm.REG_Schema_Name+'].['+prm.REG_Object_Name+'].['+fky.REG_Object_Name+']' AS Fully_Qualified_Name
 , '['+prm.REG_Server_Name+'].['+prm.REG_Database_Name+']' as Target_Database
-, '['+prm.REG_Schema_Name+'].['+prm.REG_Object_Name+'].['+fky.REG_Object_Name+']' as Schema_Bound_Name
+, '['+prm.REG_Schema_Name+'].['+prm.REG_Object_Name+']' as Schema_Bound_Name
 , fky.LNK_T2_ID
 , fky.LNK_T3_ID AS LNK_T3K_ID
 , prm.LNK_T3_ID AS LNK_T3P_ID
@@ -76,6 +76,7 @@ SELECT DISTINCT DENSE_RANK() OVER(ORDER BY fky.LNK_T2_ID, lod.LNK_FK_T3R_ID, lod
 + CASE WHEN s1.REG_Column_Type IN (34,98,99,106,108,165,167,173,175,231,239,241,256)  THEN ' ('+CAST(s1.REG_Size AS NVARCHAR) + ')'
 	WHEN s1.REG_Column_Type IN (106,108) THEN ' ('+CAST(s1.REG_Size AS NVARCHAR) + ',' + CAST(s1.REG_Scale AS NVARCHAR)+')'
 	ELSE '' END AS Referenced_Column_Definition
+, CASE WHEN prm.REG_Schema_Name IN ('INFORMATION_SCHEMA','sys') THEN 1 ELSE 0 END AS Is_System_Meta
 FROM CAT.LNK_0300_0300_Object_Dependencies AS lod WITH(NOLOCK)
 JOIN Sparse_Map AS fky
 ON fky.LNK_T3_ID = lod.LNK_FK_T3P_ID

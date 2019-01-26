@@ -38,7 +38,7 @@ DECLARE @TargetServer NVARCHAR(256)
 , @SQL NVARCHAR(MAX)
 
 DECLARE ServerResolver CURSOR FOR
-SELECT sys.name
+SELECT '['+sys.name+']'
 FROM sys.servers as sys
 LEFT JOIN cat.REG_0100_Server_Registry as reg
 ON reg.REG_Server_Name = sys.name
@@ -56,7 +56,7 @@ BEGIN
 
 	/* Check for Destination Server <> Source Server If destination different, 
 		queue ETL statements for extraction prior to local catalog and timming. */
-	SET @TargetDBLocation = @TargetServer+'].[master'
+	SET @TargetDBLocation = @TargetServer+'.master'
 
 	EXEC	CAT.MP_001_SERVER_CENSUS
 			@TargetDBLocation = @TargetDBLocation,
@@ -81,7 +81,7 @@ BEGIN
 	BEGIN
   
 		SET @SQL = '
-		IF EXISTS (SELECT count(*) FROM ['+@TargetDBLocation+'].sys.objects) PRINT '''';
+		IF EXISTS (SELECT count(*) FROM '+@TargetDBLocation+'.sys.objects) PRINT '''';
 		'
 		IF @ExecuteStatus in (1,2)
 		BEGIN TRY
@@ -239,7 +239,7 @@ IF @TrackingStatus = 1
 BEGIN
 
 	DECLARE TrackingResolver CURSOR FOR
-	SELECT sys.name
+	SELECT '['+sys.name+']'
 	FROM sys.servers as sys
 	LEFT JOIN cat.REG_0100_Server_Registry as reg
 	ON reg.REG_Server_Name = sys.name
@@ -274,7 +274,7 @@ BEGIN
 		BEGIN
   
 			SET @SQL = '
-			IF EXISTS (SELECT count(*) FROM ['+@TargetDBLocation+'].sys.objects) PRINT '''';
+			IF EXISTS (SELECT count(*) FROM '+@TargetDBLocation+'.sys.objects) PRINT '''';
 			'
 			IF @ExecuteStatus in (1,2)
 			BEGIN TRY

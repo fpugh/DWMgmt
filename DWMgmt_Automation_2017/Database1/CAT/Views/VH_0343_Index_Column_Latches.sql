@@ -36,7 +36,7 @@ AS (
 SELECT DISTINCT DENSE_RANK() OVER(ORDER BY idx.LNK_T2_ID, lod.LNK_FK_T3R_ID, lod.LNK_FK_T3P_ID) as VID
 , '['+prm.REG_Database_Name+'].['+prm.REG_Schema_Name+'].['+prm.REG_Object_Name+'].['+idx.REG_Object_Name+']' as Fully_Qualified_Name
 , '['+prm.REG_Server_Name+'].['+prm.REG_Database_Name+']' AS Target_Database
-, '['+prm.REG_Schema_Name+'].['+prm.REG_Object_Name+'].['+idx.REG_Object_Name+']' as Schema_Bound_Name
+, '['+prm.REG_Schema_Name+'].['+prm.REG_Object_Name+']' as Schema_Bound_Name
 , idx.LNK_T2_ID
 , prm.LNK_T3_ID as LNK_T3P_ID
 , idx.LNK_T3_ID AS LNK_T3I_ID
@@ -64,6 +64,7 @@ SELECT DISTINCT DENSE_RANK() OVER(ORDER BY idx.LNK_T2_ID, lod.LNK_FK_T3R_ID, lod
 , rcp.Is_Identity
 , cdi.Is_Descending_Key
 , cdi.Is_Included_Column
+, CASE WHEN prm.REG_Schema_Name IN ('INFORMATION_SCHEMA','sys') THEN 1 ELSE 0 END AS Is_System_Meta
 , lod.LNK_Post_Date
 , lod.LNK_Term_Date
 FROM CAT.LNK_0300_0300_Object_Dependencies as lod WITH(NOLOCK)

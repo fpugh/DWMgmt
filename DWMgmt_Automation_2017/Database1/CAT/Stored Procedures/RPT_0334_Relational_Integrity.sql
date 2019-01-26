@@ -16,7 +16,7 @@ SELECT v200.Fully_Qualified_Name
 	ELSE count(distinct v345.LNK_T4P_ID) / cast(count(distinct v200.LNK_T4_ID) as money) END AS Relational_Integrity_Ratio
 , COUNT(distinct V345.REG_Foreign_Key_Name) as Foreign_Key_Count
 FROM CAT.VI_0345_Foreign_Key_Column_Latches AS V345 WITH(NOLOCK)
-LEFT JOIN CAT.VI_0200_Column_Tier_Latches AS V200 WITH(NOLOCK)
+LEFT JOIN CAT.VI_0300_Full_Object_Map AS V200 WITH(NOLOCK)
 ON V200.LNK_T2_ID = V345.LNK_T2_ID
 AND V200.LNK_T3_ID = V345.LNK_T3P_ID
 WHERE (@ExactName = 0 AND (@NamePart = 'ALL'
@@ -37,7 +37,7 @@ SELECT v200.Fully_Qualified_Name
 	ELSE count(distinct v345.LNK_T4R_ID) / cast(count(distinct v200.LNK_T4_ID) as money) END AS Relational_Integrity_Ratio
 , count(distinct V345.REG_Foreign_Key_Name) as Foreign_Key_Count
 FROM CAT.VI_0345_Foreign_Key_Column_Latches AS V345 WITH(NOLOCK)
-LEFT JOIN CAT.VI_0200_Column_Tier_Latches AS V200 WITH(NOLOCK)
+LEFT JOIN CAT.VI_0300_Full_Object_Map AS V200 WITH(NOLOCK)
 ON V200.LNK_T2_ID = V345.LNK_T2_ID
 AND V200.LNK_T3_ID = V345.LNK_T3R_ID
 WHERE (@ExactName = 0 AND (@NamePart = 'ALL'

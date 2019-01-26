@@ -19,7 +19,6 @@ SELECT DENSE_RANK() OVER(ORDER BY lsd.LNK_T2_ID, lsb.LNK_T3_ID, loc.LNK_Rank) AS
 , ror.REG_Object_Type
 , loc.LNK_Rank as REG_Line_No
 , ocl.REG_Code_Content
-, CASE WHEN rds.REG_Schema_Name IN ('INFORMATION_SCHEMA','sys') THEN 1 ELSE 0 END AS Is_System_Meta
 FROM CAT.LNK_0100_0200_Server_Databases AS lsd WITH(NOLOCK)
 JOIN CAT.LNK_0204_0300_Schema_binding AS lsb WITH(NOLOCK)
 ON lsb.LNK_FK_T2_ID = lsd.LNK_T2_ID

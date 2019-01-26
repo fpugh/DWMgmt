@@ -5,7 +5,7 @@ AS
 SELECT DENSE_RANK() OVER(ORDER BY met1.TRK_FK_T2_ID, met1.TRK_FK_T3_OBJ_ID , met1.TRK_FK_T3_IDX_ID, met1.TRK_Index_Rank, met1.TRK_Index_Depth, met1.TRK_Index_Level) AS VID
 , '['+rdr.REG_Database_Name+'].['+rds.REG_Schema_Name+'].['+roro.REG_Object_Name+'].['+rori.REG_Object_Name+']' as Fully_Qualified_Name
 , '['+rsr.REG_Server_Name+'].['+rdr.REG_Database_Name+']' AS Target_Database
-, '['+rds.REG_Schema_Name+'].['+roro.REG_Object_Name+']' as Schema_Bound_Name
+, '['+rds.REG_Schema_Name+'].['+roro.REG_Object_Name+'].['+rori.REG_Object_Name+']' as Schema_Bound_Name
 , met1.TRK_FK_T2_ID
 , met1.TRK_FK_T3_OBJ_ID 
 , met1.TRK_FK_T3_IDX_ID

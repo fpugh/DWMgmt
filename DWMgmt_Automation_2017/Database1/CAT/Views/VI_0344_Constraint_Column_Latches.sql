@@ -44,7 +44,7 @@ AS (
 SELECT DISTINCT DENSE_RANK() OVER(ORDER BY con.LNK_T2_ID, lod.LNK_FK_T3R_ID, lod.LNK_FK_T3P_ID) as VID
 , '['+prm.REG_Database_Name+'].['+prm.REG_Schema_Name+'].['+prm.REG_Object_Name+'].['+con.REG_Object_Name+']' as Fully_Qualified_Name
 , '['+prm.REG_Server_Name+'].['+prm.REG_Database_Name+']' AS Target_Database
-, '['+prm.REG_Schema_Name+'].['+prm.REG_Object_Name+'].['+con.REG_Object_Name+']' as Schema_Bound_Name
+, '['+prm.REG_Schema_Name+'].['+prm.REG_Object_Name+']' as Schema_Bound_Name
 , con.LNK_T2_ID
 , prm.LNK_T3_ID as LNK_T3P_ID
 , con.LNK_T3_ID AS LNK_T3C_ID
@@ -59,7 +59,9 @@ SELECT DISTINCT DENSE_RANK() OVER(ORDER BY con.LNK_T2_ID, lod.LNK_FK_T3R_ID, lod
 , con.REG_Database_Name
 , con.REG_Schema_Name
 , prm.REG_Object_Name
+, con.REG_Object_Name as REG_Constraint_Name
 , con.REG_Object_Type as REG_Constraint_Type
+, ocl.REG_Code_Content AS REG_Contstraint_Definition
 , con.REG_Column_Name
 , con.REG_Column_Rank
 , '['+prm.REG_Column_Name+'] ['+ prm.User_Data_Type
@@ -67,10 +69,9 @@ SELECT DISTINCT DENSE_RANK() OVER(ORDER BY con.LNK_T2_ID, lod.LNK_FK_T3R_ID, lod
 + CASE WHEN prm.REG_Column_Type IN (34,98,99,106,108,165,167,173,175,231,239,241,256)  THEN ' ('+CAST(prm.REG_Size AS nvarchar) + ')'
 	WHEN prm.REG_Column_Type IN (106,108) THEN ' ('+CAST(prm.REG_Size AS nvarchar) + ',' + cast(prm.REG_Scale as nvarchar)+')'
 	ELSE '' END 
-+ ' CONSTRAINT '+ con.REG_Object_Name + CASE WHEN LNK_Latch_Type = 'D' THEN 'DEFAULT' WHEN LNK_Latch_Type = 'C' THEN 'CHECK' END 
++' CONSTRAINT '+ con.REG_Object_Name + CASE WHEN LNK_Latch_Type = 'D' THEN ' DEFAULT' WHEN LNK_Latch_Type = 'C' THEN ' CHECK' END 
 +' '+ ocl.REG_Code_Content AS Column_Definition
-, con.REG_Object_Name as REG_Constraint_Name
-, ocl.REG_Code_Content AS REG_Contstraint_Definition
+, CASE WHEN prm.REG_Schema_Name IN ('INFORMATION_SCHEMA','sys') THEN 1 ELSE 0 END AS Is_System_Meta
 FROM CAT.LNK_0300_0300_Object_Dependencies as lod WITH(NOLOCK)
 JOIN Sparse_Map AS con
 ON con.LNK_T3_ID = lod.LNK_FK_T3P_ID
