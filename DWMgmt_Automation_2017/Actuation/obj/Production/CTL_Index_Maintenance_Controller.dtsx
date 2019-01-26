@@ -12,8 +12,8 @@
   DTS:ObjectName="CTL_Index_Maintenance_Controller"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{73EBB166-A5CA-43BA-9609-AF10D47C49D6}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{DF0CAB72-01CA-402C-A37B-4E8BD97A7464}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -143,6 +143,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{287189C5-38FB-4D91-8289-E6489825E21D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RegisterProcessMode">
+      <DTS:VariableValue
+        DTS:DataType="3">2</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{A0042924-6BB0-4CF0-9ECC-DFCEB9AC68D4}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -157,7 +166,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RescanProcessMode">
       <DTS:VariableValue
-        DTS:DataType="3">3</DTS:VariableValue>
+        DTS:DataType="3">1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -252,6 +261,7 @@
           DTS:refId="Package\Foreach Data Index Maintenance Candidate\Run SUB Index Integrity Rescan Procces"
           DTS:CreationName="SSIS.ExecutePackageTask.3"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{E051739A-3790-4177-9CF5-D4AAE2053FBE}"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
           DTS:LocaleID="-1"
@@ -372,7 +382,11 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        REG_Server_Name AS TargetServer, REG_Database_Name AS TargetDatabase, Schema_Bound_Name AS ObjectName, Index_Name AS IndexName, Operation
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT REG_Server_Name AS TargetServer
+, REG_Database_Name AS TargetDatabase
+, Schema_Bound_Name AS ObjectName
+, Index_Name AS IndexName
+, Operation
 FROM            CAT.VM_0350_Index_Maintenance_Assessor
 WHERE        (Operation = ?)
 ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
@@ -473,7 +487,7 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
                     <externalMetadataColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[ObjectName]"
                       dataType="wstr"
-                      length="776"
+                      length="517"
                       name="ObjectName" />
                     <externalMetadataColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Output].ExternalColumns[Operation]"
@@ -519,7 +533,7 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
                     <outputColumn
                       refId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ObjectName]"
                       dataType="wstr"
-                      length="776"
+                      length="517"
                       lineageId="Package\Index Maintenance Candidates\Index Maintenance Source.Outputs[OLE DB Source Error Output].Columns[ObjectName]"
                       name="ObjectName" />
                     <outputColumn
@@ -611,6 +625,40 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SUB_Index_Integrity"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{ddfc1a0c-90c6-40dd-98f6-d23fbe5f5f50}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SUB_Index_Integrity"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>SUB_Index_Integrity.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>ProcessMode</ParameterName>
+            <BindedVariableOrParameterName>User::RegisterProcessMode</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>TargetDatabase</ParameterName>
+            <BindedVariableOrParameterName>User::TargetDatabase</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>TargetServer</ParameterName>
+            <BindedVariableOrParameterName>User::TargetServer</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>TargetServerID</ParameterName>
+            <BindedVariableOrParameterName>User::TargetServerID</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -621,6 +669,14 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Foreach Data Index Maintenance Candidate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B239611-1F2C-446A-9EB6-644EE43AFE1C}"
+      DTS:From="Package\Foreach Data Index Maintenance Candidate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SUB_Index_Integrity" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
@@ -774,6 +830,44 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\SUB_Index_Integrity"
+          TopLeft="73,402" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="145,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.9999999999999,46.5"
+              Start="0,0"
+              End="21.9999999999999,39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.25"
+                    Point2="0,23.25"
+                    Point3="4,23.25" />
+                  <mssgle:LineSegment
+                    End="17.9999999999999,23.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.9999999999999,23.25"
+                    Point2="21.9999999999999,23.25"
+                    Point3="21.9999999999999,27.25" />
+                  <mssgle:LineSegment
+                    End="21.9999999999999,39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -783,7 +877,7 @@ ORDER BY TargetServer, ObjectName, TRK_Index_Rank</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="127,42"
           Id="Package.EventHandlers[OnError]\Log Errors"
           TopLeft="NaN,NaN" />
       </GraphLayout>

@@ -188,8 +188,8 @@
           <FullPath>dbo.SUB_0999_DBCC_Show_Stats.StoredProcedure.sql</FullPath>
         </FileNode>
         <FileNode Name="Debug.Internal_String_Intake_Stack_Tracking.Script.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Debug.Internal_String_Intake_Stack_Tracking.Script.sql</FullPath>
         </FileNode>

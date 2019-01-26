@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [ECO]
+    AUTHORIZATION [dbo];
+

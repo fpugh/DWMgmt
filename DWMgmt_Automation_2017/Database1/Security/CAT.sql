@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [CAT]
+    AUTHORIZATION [dbo];
+

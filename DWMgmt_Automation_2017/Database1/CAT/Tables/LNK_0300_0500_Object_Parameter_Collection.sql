@@ -1,0 +1,51 @@
+﻿CREATE TABLE [CAT].[LNK_0300_0500_Object_Parameter_Collection] (
+    [LNK_OPC_ID]     INT      IDENTITY (1, 1) NOT NULL,
+    [LNK_FK_T3_ID]   INT      NOT NULL,
+    [LNK_FK_0300_ID] INT      NOT NULL,
+    [LNK_FK_0500_ID] INT      NOT NULL,
+    [LNK_Rank]       SMALLINT CONSTRAINT [DF_LNK_0300_0500_Rank] DEFAULT ((1)) NOT NULL,
+    [LNK_Class]      INT      NULL,
+    [LNK_Post_Date]  DATETIME CONSTRAINT [DF_LNK_0300_0500_Post_Date] DEFAULT (getdate()) NOT NULL,
+    [LNK_Term_Date]  DATETIME CONSTRAINT [DF_LNK_0300_0500_Term_Date] DEFAULT ('12/31/2099') NOT NULL,
+    CONSTRAINT [PK_LNK_0300_0500] PRIMARY KEY CLUSTERED ([LNK_FK_T3_ID] ASC, [LNK_FK_0300_ID] ASC, [LNK_FK_0500_ID] ASC, [LNK_Rank] ASC, [LNK_Term_Date] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [FK_LNK_0300_0500_REG_0300_Object_Registry] FOREIGN KEY ([LNK_FK_0300_ID]) REFERENCES [CAT].[REG_0300_Object_Registry] ([REG_0300_ID]),
+    CONSTRAINT [FK_LNK_0300_0500_REG_0500_Parameter_Registry] FOREIGN KEY ([LNK_FK_0500_ID]) REFERENCES [CAT].[REG_0500_Parameter_Registry] ([REG_0500_ID]),
+    CONSTRAINT [UQ_LNK_0300_0500_ID] UNIQUE NONCLUSTERED ([LNK_OPC_ID] ASC)
+);
+
+
+GO
+
+
+CREATE TRIGGER [CAT].[TGR_L3_Object_Parameter_Collection]
+   ON  [CAT].[LNK_0300_0500_Object_Parameter_Collection]
+   INSTEAD OF INSERT
+AS 
+BEGIN
+	SET NOCOUNT ON;
+  
+    UPDATE lat SET LNK_Term_Date = getdate()
+    FROM CAT.LNK_0300_0500_Object_Parameter_Collection AS lat
+    LEFT JOIN inserted AS i
+    ON lat.LNK_FK_T3_ID = i.LNK_FK_T3_ID
+    AND lat.LNK_FK_0300_ID = i.LNK_FK_0300_ID
+    AND lat.LNK_FK_0500_ID = i.LNK_FK_0500_ID
+	AND lat.LNK_Rank = i.LNK_Rank
+    WHERE lat.LNK_Term_Date >= getdate()
+    AND i.LNK_FK_T3_ID IS NULL
+
+    ; WITH Latch_OPC (LNK_FK_T3_ID, LNK_FK_0300_ID, LNK_FK_0500_ID, LNK_Class, LNK_Rank)
+    AS (
+        SELECT DISTINCT LNK_FK_T3_ID, LNK_FK_0300_ID, LNK_FK_0500_ID, LNK_Class, LNK_Rank
+        FROM CAT.LNK_0300_0500_Object_Parameter_Collection
+        WHERE LNK_Term_Date > getdate()
+        )
+	
+    INSERT INTO CAT.LNK_0300_0500_Object_Parameter_Collection (LNK_FK_T3_ID, LNK_FK_0300_ID, LNK_FK_0500_ID, LNK_Class, LNK_Rank)
+    SELECT DISTINCT LNK_FK_T3_ID, LNK_FK_0300_ID, LNK_FK_0500_ID, LNK_Class, LNK_Rank
+    FROM inserted 
+    EXCEPT
+    SELECT LNK_FK_T3_ID, LNK_FK_0300_ID, LNK_FK_0500_ID, LNK_Class, LNK_Rank
+    FROM Latch_OPC
+
+END

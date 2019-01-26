@@ -24,9 +24,9 @@
     <Configuration>
       <Name>Production</Name>
       <Options>
-        <ServerName>CORRUSCANT\MOS_EISLEY</ServerName>
+        <ServerName>CORRUSCANT\IMPERIAL_SENATE</ServerName>
         <PathOnServer>/SSISDB/DWMgmt/Actuation</PathOnServer>
-        <StartObjectID>SUB_Shredder_Blade.dtsx</StartObjectID>
+        <StartObjectID>CTL_Deployment_Controller.dtsx</StartObjectID>
         <Run64BitRuntime>false</Run64BitRuntime>
         <UserIDs />
         <UserPasswords />

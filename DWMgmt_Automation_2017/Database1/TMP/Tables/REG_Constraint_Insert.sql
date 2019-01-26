@@ -1,0 +1,28 @@
+﻿CREATE TABLE [TMP].[REG_Constraint_Insert] (
+    [LNK_T2_ID]             INT             NULL,
+    [LNK_T3_ID]             INT             NULL,
+    [LNK_T4_ID]             INT             NULL,
+    [REG_0204_ID]           INT             NULL,
+    [REG_0300_Ref_ID]       INT             NULL,
+    [REG_0300_Prm_ID]       INT             NULL,
+    [REG_0302_ID]           INT             NULL,
+    [REG_0400_ID]           INT             NULL,
+    [Server_ID]             INT             DEFAULT ((0)) NOT NULL,
+    [Database_ID]           INT             NULL,
+    [Schema_ID]             INT             NULL,
+    [Parent_Object_ID]      INT             NULL,
+    [Parent_Object_Name]    NVARCHAR (256)  NULL,
+    [Parent_object_type]    NVARCHAR (5)    NULL,
+    [Parent_Column_Name]    NVARCHAR (256)  NULL,
+    [Parent_Column_Type]    INT             NULL,
+    [Parent_Column_ID]      INT             NULL,
+    [Constraint_Object_ID]  INT             NULL,
+    [Constraint_name]       NVARCHAR (256)  NULL,
+    [Constraint_type]       NVARCHAR (2)    NULL,
+    [Constraint_Definition] NVARCHAR (4000) NULL,
+    [is_ms_shipped]         BIT             NULL,
+    [is_published]          BIT             NULL,
+    [is_schema_published]   BIT             NULL,
+    [is_system_named]       BIT             NULL
+);
+

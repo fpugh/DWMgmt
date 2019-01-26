@@ -3,7 +3,19 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="CORRUSCANT\MOS_EISLEY:CORRUSCANT\fdpugh">
+        <ConnectionNode Name="CORRUSCANT\IMPERIAL_SENATE:CORRUSCANT\Forrest Pugh">
+          <Created>2018-12-01T14:38:56.8730716-07:00</Created>
+          <Type>SQL</Type>
+          <Server>CORRUSCANT\IMPERIAL_SENATE</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>DWMgmt</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="CORRUSCANT\MOS_EISLEY:CORRUSCANT\Forrest Pugh">
           <Created>2018-04-28T18:21:36.2730824-06:00</Created>
           <Type>SQL</Type>
           <Server>CORRUSCANT\MOS_EISLEY</Server>
@@ -62,8 +74,8 @@
           <FullPath>CAT.LNK_0300_0500_Object_Parameter_Collection.Table.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.LNK_0300_0600_Object_Code_Sections.Table.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.LNK_0300_0600_Object_Code_Sections.Table.sql</FullPath>
         </FileNode>
@@ -290,14 +302,14 @@
           <FullPath>CAT.RPT_0301_Data_Footprint.StoredProcedure.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.RPT_0303_Index_Coverage.StoredProcedure.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.RPT_0303_Index_Coverage.StoredProcedure.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.RPT_0304_Constraint_Enforcement.StoredProcedure.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.RPT_0304_Constraint_Enforcement.StoredProcedure.sql</FullPath>
         </FileNode>
@@ -308,8 +320,8 @@
           <FullPath>CAT.RPT_0306_Referencing_Code.StoredProcedure.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.RPT_0334_Relational_Integrity.StoredProcedure.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.RPT_0334_Relational_Integrity.StoredProcedure.sql</FullPath>
         </FileNode>
@@ -433,33 +445,33 @@
           <AssociatedConnUserName />
           <FullPath>CAT.VH_0100_Server_Database_Reference.View.sql</FullPath>
         </FileNode>
-        <FileNode Name="CAT.VH_0200_Column_Tier_Latches.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>CAT.VH_0200_Column_Tier_Latches.View.sql</FullPath>
-        </FileNode>
         <FileNode Name="CAT.VH_0300_Full_Object_Map.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VH_0300_Full_Object_Map.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VH_0343_Index_Column_Latches.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VH_0343_Index_Column_Latches.View.sql</FullPath>
         </FileNode>
+        <FileNode Name="CAT.VH_0344_Constraint_Column_Latches.View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_0344_Constraint_Column_Latches.View.sql</FullPath>
+        </FileNode>
         <FileNode Name="CAT.VH_0345_Foreign_Key_Column_Latches.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VH_0345_Foreign_Key_Column_Latches.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VH_0354_Object_Data_Profile.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VH_0354_Object_Data_Profile.View.sql</FullPath>
         </FileNode>
@@ -499,15 +511,9 @@
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0101_Database_Compatibility_List.View.sql</FullPath>
         </FileNode>
-        <FileNode Name="CAT.VI_0200_Column_Tier_Latches.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>CAT.VI_0200_Column_Tier_Latches.View.sql</FullPath>
-        </FileNode>
         <FileNode Name="CAT.VI_0201_Schema_Inventory_Core.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0201_Schema_Inventory_Core.View.sql</FullPath>
         </FileNode>
@@ -524,10 +530,16 @@
           <FullPath>CAT.VI_0205_Maintenance_Job_Perfomance_History.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VI_0300_Full_Object_Map.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0300_Full_Object_Map.View.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CAT.VH_0330_Object_Dependencies.View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_0330_Object_Dependencies.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VI_0330_Object_Dependencies.View.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
@@ -536,20 +548,20 @@
           <FullPath>CAT.VI_0330_Object_Dependencies.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VI_0343_Index_Column_Latches.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0343_Index_Column_Latches.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VI_0344_Constraint_Column_Latches.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0344_Constraint_Column_Latches.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VI_0345_Foreign_Key_Column_Latches.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0345_Foreign_Key_Column_Latches.View.sql</FullPath>
         </FileNode>
@@ -565,29 +577,47 @@
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0354_Object_Data_Profile.View.sql</FullPath>
         </FileNode>
+        <FileNode Name="CAT.VH_0360_Object_Code_Reference.View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_0360_Object_Code_Reference.View.sql</FullPath>
+        </FileNode>
         <FileNode Name="CAT.VI_0360_Object_Code_Reference.View.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0360_Object_Code_Reference.View.sql</FullPath>
         </FileNode>
+        <FileNode Name="CAT.VH_0361_Code_Object_Reference.View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_0361_Code_Object_Reference.View.sql</FullPath>
+        </FileNode>
         <FileNode Name="CAT.VI_0361_Code_Object_Reference.View.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0361_Code_Object_Reference.View.sql</FullPath>
         </FileNode>
+        <FileNode Name="CAT.VH_0362_Code_Column_Reference.View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CAT.VH_0362_Code_Column_Reference.View.sql</FullPath>
+        </FileNode>
         <FileNode Name="CAT.VI_0362_Code_Column_Reference.View.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VI_0362_Code_Column_Reference.View.sql</FullPath>
         </FileNode>
-        <FileNode Name="CAT.VI_1454_Data_Model_Overview.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+        <FileNode Name="CAT.VM_1454_Data_Model_Overview.View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>CAT.VI_1454_Data_Model_Overview.View.sql</FullPath>
+          <FullPath>CAT.VM_1454_Data_Model_Overview.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VI_Tier1_Full_Current.View.sql">
           <AssociatedConnectionMoniker />
@@ -632,8 +662,8 @@
           <FullPath>CAT.VM_0350_Index_Maintenance_Assessor.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VM_0454_Data_Profile_Assessor.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VM_0454_Data_Profile_Assessor.View.sql</FullPath>
         </FileNode>
@@ -644,8 +674,8 @@
           <FullPath>CAT.VT_0203_Database_File_Size_Tracking.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VT_0241_Schema_Inventory_Tracking.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VT_0241_Schema_Inventory_Tracking.View.sql</FullPath>
         </FileNode>
@@ -668,8 +698,8 @@
           <FullPath>CAT.VT_0302_New_Objects_Last_Seven_Days.View.sql</FullPath>
         </FileNode>
         <FileNode Name="CAT.VT_0331_Table_Disparity.View.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CAT.VT_0331_Table_Disparity.View.sql</FullPath>
         </FileNode>
@@ -866,14 +896,14 @@
           <FullPath>LIB.REG_Rules.Table.sql</FullPath>
         </FileNode>
         <FileNode Name="LIB.SQL_010_Module_Logging.StoredProcedure.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>LIB.SQL_010_Module_Logging.StoredProcedure.sql</FullPath>
         </FileNode>
         <FileNode Name="LIB.SQL_012_Shredder.StoredProcedure.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\MOS_EISLEY:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>CORRUSCANT\MOS_EISLEY</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CORRUSCANT\IMPERIAL_SENATE:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CORRUSCANT\IMPERIAL_SENATE</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>LIB.SQL_012_Shredder.StoredProcedure.sql</FullPath>
         </FileNode>

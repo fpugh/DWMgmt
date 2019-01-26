@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0"?>
-<DTS:Executable
-  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ExecutableType="SSIS.Package.3"
-  DTS:CreatorName="Mordor\Forrest"
-  DTS:CreatorComputerName="MORDOR"
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
   DTS:CreationDate="3/5/2015 9:52:00 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="MORDOR"
+  DTS:CreatorName="Mordor\Forrest"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{7CB2B8C9-81A5-4855-A89C-C6A256F0170B}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1033"
+  DTS:MaxConcurrentExecutables="1"
+  DTS:ObjectName="IMP_BLOB_File_Imports"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:MaxConcurrentExecutables="1"
-  DTS:VersionBuild="483"
-  DTS:VersionGUID="{A9DE9F21-A1B6-4874-8D4D-26566FA2A679}"
-  DTS:LastModifiedProductVersion="11.0.2100.60"
-  DTS:LocaleID="1033"
-  DTS:DelayValidation="True"
-  DTS:ObjectName="IMP_BLOB_File_Imports"
-  DTS:DTSID="{7CB2B8C9-81A5-4855-A89C-C6A256F0170B}"
-  DTS:CreationName="SSIS.Package.3">
+  DTS:VersionBuild="484"
+  DTS:VersionGUID="{411182A5-A506-4040-AF4E-93C0F7FDE876}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Source_File_Location]"
+      DTS:CreationName="FILE"
       DTS:DelayValidation="True"
-      DTS:ObjectName="Source_File_Location"
       DTS:DTSID="{83958530-84D2-41AA-B5D8-4C38FD9903C5}"
-      DTS:CreationName="FILE">
+      DTS:ObjectName="Source_File_Location">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::FilePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -35,111 +35,111 @@
   </DTS:ConnectionManagers>
   <DTS:PackageParameters>
     <DTS:PackageParameter
+      DTS:CreationName=""
       DTS:DataType="11"
-      DTS:ObjectName="DirTraverse"
-      DTS:DTSID="{E65186B1-D4CB-46E7-B1A2-09D0AFE21D81}"
       DTS:Description="Send &quot;True&quot; flag for full folder traverse. Should be &quot;False&quot; by default"
-      DTS:CreationName="">
+      DTS:DTSID="{E65186B1-D4CB-46E7-B1A2-09D0AFE21D81}"
+      DTS:ObjectName="DirTraverse">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="11">0</DTS:Property>
+        DTS:DataType="11"
+        DTS:Name="ParameterValue">0</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
+      DTS:CreationName=""
       DTS:DataType="8"
-      DTS:ObjectName="FileDir"
-      DTS:DTSID="{C9A5FE7E-1B8B-4EFD-9FA6-8987284873DE}"
       DTS:Description="Specify the path to the required files. Default path specifies location of required .sql script files."
-      DTS:CreationName="">
+      DTS:DTSID="{C9A5FE7E-1B8B-4EFD-9FA6-8987284873DE}"
+      DTS:ObjectName="FileDir">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="8">G:\Mos Espa\</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">G:\Mos Espa\</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
+      DTS:CreationName=""
       DTS:DataType="8"
-      DTS:ObjectName="FileSpec"
-      DTS:DTSID="{71CE0237-EBB4-4BDC-AB6E-6D2881D414B6}"
       DTS:Description="This package can work with any file type. *.sql is specified by default for ease of deployment."
-      DTS:CreationName="">
+      DTS:DTSID="{71CE0237-EBB4-4BDC-AB6E-6D2881D414B6}"
+      DTS:ObjectName="FileSpec">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="8">*.sql</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">*.sql</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="CodePage"
+      DTS:CreationName=""
       DTS:DTSID="{EFC29A8C-26F8-48F4-83D4-24AB13326194}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CodePage">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="@[$Package::DirTraverse]"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:RaiseChangedEvent="True"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="DirTraverse"
+      DTS:CreationName=""
       DTS:DTSID="{D349EAD8-93FD-4B97-94C3-5B765C58C500}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::DirTraverse]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DirTraverse"
+      DTS:RaiseChangedEvent="True">
       <DTS:VariableValue
         DTS:DataType="11">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="&quot;EXECUTE LIB.TXT_009_File_System_Logging&quot;"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="ExecuteLogger"
+      DTS:CreationName=""
       DTS:DTSID="{49A0082A-3048-428B-A6AA-CBDDB4B7A09D}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;EXECUTE LIB.TXT_010_File_System_Logging&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExecuteLogger">
       <DTS:VariableValue
-        DTS:DataType="8">EXECUTE LIB.TXT_009_File_System_Logging</DTS:VariableValue>
+        DTS:DataType="8">EXECUTE LIB.TXT_010_File_System_Logging</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="@[$Project::ExecuteStatus]"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="ExecuteStatus"
+      DTS:CreationName=""
       DTS:DTSID="{49F3F371-D2D4-4C42-990A-5B0A521F09EB}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ExecuteStatus]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExecuteStatus">
       <DTS:VariableValue
         DTS:DataType="2">2</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="@[$Package::FileDir]"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:RaiseChangedEvent="True"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="FileDir"
+      DTS:CreationName=""
       DTS:DTSID="{9D2546EF-7EAB-4A3D-A360-E19A1F1BBD65}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::FileDir]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileDir"
+      DTS:RaiseChangedEvent="True">
       <DTS:VariableValue
         DTS:DataType="8">G:\Mos Espa\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="FilePath"
+      DTS:CreationName=""
       DTS:DTSID="{ED930321-D3F6-49FF-9223-B848618FE248}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="@[$Package::FileSpec]"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:RaiseChangedEvent="True"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="FileSpec"
+      DTS:CreationName=""
       DTS:DTSID="{7F5B673A-3598-4B60-B9DE-35DC737F3EEB}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::FileSpec]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileSpec"
+      DTS:RaiseChangedEvent="True">
       <DTS:VariableValue
         DTS:DataType="8">*.sql</DTS:VariableValue>
     </DTS:Variable>
@@ -147,15 +147,15 @@
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Execute TXT File Logger"
-      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-      DTS:ThreadHint="0"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:LocaleID="-1"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:DelayValidation="True"
-      DTS:ObjectName="Execute TXT File Logger"
-      DTS:DTSID="{6fc57684-364f-43be-9562-6c91bc8bfc2c}"
       DTS:Description="Execute SQL Task"
-      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      DTS:DTSID="{6fc57684-364f-43be-9562-6c91bc8bfc2c}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute TXT File Logger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -166,18 +166,18 @@
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Foreach Loop Container"
-      DTS:ExecutableType="STOCK:FOREACHLOOP"
-      DTS:MaxErrorCount="0"
-      DTS:LocaleID="-1"
+      DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:DelayValidation="True"
-      DTS:ObjectName="Foreach Loop Container"
-      DTS:DTSID="{569FC1B5-190E-4CEC-8BA5-F4BC39448C21}"
       DTS:Description="Foreach Loop Container"
-      DTS:CreationName="STOCK:FOREACHLOOP">
+      DTS:DTSID="{569FC1B5-190E-4CEC-8BA5-F4BC39448C21}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="0"
+      DTS:ObjectName="Foreach Loop Container">
       <DTS:ForEachEnumerator
-        DTS:ObjectName="{7D7F51D5-ACB8-46CC-B0B6-F18D21ED338F}"
+        DTS:CreationName="DTS.ForEachFileEnumerator.3"
         DTS:DTSID="{7D7F51D5-ACB8-46CC-B0B6-F18D21ED338F}"
-        DTS:CreationName="DTS.ForEachFileEnumerator.3">
+        DTS:ObjectName="{7D7F51D5-ACB8-46CC-B0B6-F18D21ED338F}">
         <DTS:PropertyExpression
           DTS:Name="Directory">@[$Package::FileDir]</DTS:PropertyExpression>
         <DTS:PropertyExpression
@@ -201,14 +201,14 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Data Flow Task"
-          DTS:ExecutableType="SSIS.Pipeline.3"
-          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:LocaleID="-1"
+          DTS:CreationName="SSIS.Pipeline.3"
           DTS:DelayValidation="True"
-          DTS:ObjectName="Data Flow Task"
-          DTS:DTSID="{e0ac97c5-2313-4244-a7b5-1201c615e2af}"
           DTS:Description="Data Flow Task"
-          DTS:CreationName="SSIS.Pipeline.3">
+          DTS:DTSID="{e0ac97c5-2313-4244-a7b5-1201c615e2af}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <pipeline
@@ -216,34 +216,34 @@
               <components>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Aggregate"
-                  name="Aggregate"
-                  componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+                  componentClassID="DTSTransform.Aggregate.3"
+                  contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
                   description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
-                  version="3"
-                  contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3">
+                  name="Aggregate"
+                  version="3">
                   <properties>
                     <property
-                      name="KeyScale"
                       dataType="System.Int32"
                       description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
                       typeConverter="KeyScaleType">0</property>
                     <property
-                      name="Keys"
                       dataType="System.Null"
-                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence." />
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
                     <property
-                      name="CountDistinctScale"
                       dataType="System.Int32"
                       description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                      name="CountDistinctScale"
                       typeConverter="KeyScaleType">0</property>
                     <property
-                      name="CountDistinctKeys"
                       dataType="System.Null"
-                      description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence." />
+                      description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                      name="CountDistinctKeys" />
                     <property
-                      name="AutoExtendFactor"
                       dataType="System.Int32"
-                      description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100.">25</property>
+                      description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                      name="AutoExtendFactor">25</property>
                   </properties>
                   <inputs>
                     <input
@@ -252,39 +252,39 @@
                       <inputColumns>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[Execution_ID]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Execution_ID]"
-                          cachedName="Execution_ID"
                           cachedDataType="wstr"
-                          cachedLength="38" />
+                          cachedLength="38"
+                          cachedName="Execution_ID"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Execution_ID]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[Target_Server]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Server]"
-                          cachedName="Target_Server"
                           cachedDataType="wstr"
-                          cachedLength="256" />
+                          cachedLength="256"
+                          cachedName="Target_Server"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Server]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[Target_Database]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Database]"
-                          cachedName="Target_Database"
                           cachedDataType="wstr"
-                          cachedLength="256" />
+                          cachedLength="256"
+                          cachedName="Target_Database"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Database]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[Task_Name]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Task_Name]"
-                          cachedName="Task_Name"
                           cachedDataType="wstr"
-                          cachedLength="21" />
+                          cachedLength="21"
+                          cachedName="Task_Name"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Task_Name]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[Error_Description]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Error_Description]"
-                          cachedName="Error_Description"
                           cachedDataType="wstr"
-                          cachedLength="1024" />
+                          cachedLength="1024"
+                          cachedName="Error_Description"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Error_Description]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[ErrorCode]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]"
+                          cachedDataType="i4"
                           cachedName="ErrorCode"
-                          cachedDataType="i4" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -295,201 +295,201 @@
                       name="Aggregate Output 1">
                       <properties>
                         <property
-                          name="KeyScale"
                           dataType="System.Int32"
                           description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                          name="KeyScale"
                           typeConverter="KeyScaleType">0</property>
                         <property
-                          name="Keys"
                           dataType="System.Null"
-                          description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence." />
+                          description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                          name="Keys" />
                       </properties>
                       <outputColumns>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Execution_ID]"
-                          name="Execution_ID"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Execution_ID]"
+                          dataType="wstr"
                           length="38"
-                          dataType="wstr">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Execution_ID]"
+                          name="Execution_ID">
                           <properties>
                             <property
-                              name="AggregationColumnId"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Specifies the ID of the input column used in the aggregation."
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Execution_ID]}</property>
+                              name="AggregationColumnId">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Execution_ID]}</property>
                             <property
-                              name="AggregationType"
                               dataType="System.Int32"
                               description="Specifies the type of aggregation."
+                              name="AggregationType"
                               typeConverter="AggregationType">0</property>
                             <property
-                              name="IsBig"
                               dataType="System.Int32"
-                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                              name="IsBig">1</property>
                             <property
-                              name="AggregationComparisonFlags"
                               dataType="System.Int32"
-                              description="Specifies the string comparison options.">0</property>
+                              description="Specifies the string comparison options."
+                              name="AggregationComparisonFlags">0</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Server]"
-                          name="Target_Server"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Server]"
+                          dataType="wstr"
                           length="256"
-                          dataType="wstr">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Server]"
+                          name="Target_Server">
                           <properties>
                             <property
-                              name="AggregationColumnId"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Specifies the ID of the input column used in the aggregation."
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Server]}</property>
+                              name="AggregationColumnId">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Server]}</property>
                             <property
-                              name="AggregationType"
                               dataType="System.Int32"
                               description="Specifies the type of aggregation."
+                              name="AggregationType"
                               typeConverter="AggregationType">0</property>
                             <property
-                              name="IsBig"
                               dataType="System.Int32"
-                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                              name="IsBig">1</property>
                             <property
-                              name="AggregationComparisonFlags"
                               dataType="System.Int32"
-                              description="Specifies the string comparison options.">0</property>
+                              description="Specifies the string comparison options."
+                              name="AggregationComparisonFlags">0</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Database]"
-                          name="Target_Database"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Database]"
+                          dataType="wstr"
                           length="256"
-                          dataType="wstr">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Database]"
+                          name="Target_Database">
                           <properties>
                             <property
-                              name="AggregationColumnId"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Specifies the ID of the input column used in the aggregation."
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Database]}</property>
+                              name="AggregationColumnId">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Database]}</property>
                             <property
-                              name="AggregationType"
                               dataType="System.Int32"
                               description="Specifies the type of aggregation."
+                              name="AggregationType"
                               typeConverter="AggregationType">0</property>
                             <property
-                              name="IsBig"
                               dataType="System.Int32"
-                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                              name="IsBig">1</property>
                             <property
-                              name="AggregationComparisonFlags"
                               dataType="System.Int32"
-                              description="Specifies the string comparison options.">0</property>
+                              description="Specifies the string comparison options."
+                              name="AggregationComparisonFlags">0</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Task_Name]"
-                          name="Task_Name"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Task_Name]"
+                          dataType="wstr"
                           length="21"
-                          dataType="wstr">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Task_Name]"
+                          name="Task_Name">
                           <properties>
                             <property
-                              name="AggregationColumnId"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Specifies the ID of the input column used in the aggregation."
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Task_Name]}</property>
+                              name="AggregationColumnId">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Task_Name]}</property>
                             <property
-                              name="AggregationType"
                               dataType="System.Int32"
                               description="Specifies the type of aggregation."
+                              name="AggregationType"
                               typeConverter="AggregationType">0</property>
                             <property
-                              name="IsBig"
                               dataType="System.Int32"
-                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                              name="IsBig">1</property>
                             <property
-                              name="AggregationComparisonFlags"
                               dataType="System.Int32"
-                              description="Specifies the string comparison options.">0</property>
+                              description="Specifies the string comparison options."
+                              name="AggregationComparisonFlags">0</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Error_Description]"
-                          name="Error_Description"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Error_Description]"
+                          dataType="wstr"
                           length="1024"
-                          dataType="wstr">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Error_Description]"
+                          name="Error_Description">
                           <properties>
                             <property
-                              name="AggregationColumnId"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Specifies the ID of the input column used in the aggregation."
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Error_Description]}</property>
+                              name="AggregationColumnId">#{Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Error_Description]}</property>
                             <property
-                              name="AggregationType"
                               dataType="System.Int32"
                               description="Specifies the type of aggregation."
+                              name="AggregationType"
                               typeConverter="AggregationType">0</property>
                             <property
-                              name="IsBig"
                               dataType="System.Int32"
-                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                              name="IsBig">1</property>
                             <property
-                              name="AggregationComparisonFlags"
                               dataType="System.Int32"
-                              description="Specifies the string comparison options.">0</property>
+                              description="Specifies the string comparison options."
+                              name="AggregationComparisonFlags">0</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Error_Code]"
-                          name="Error_Code"
+                          dataType="i4"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Error_Code]"
-                          dataType="i4">
+                          name="Error_Code">
                           <properties>
                             <property
-                              name="AggregationColumnId"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Specifies the ID of the input column used in the aggregation."
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                              name="AggregationColumnId">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
                             <property
-                              name="AggregationType"
                               dataType="System.Int32"
                               description="Specifies the type of aggregation."
+                              name="AggregationType"
                               typeConverter="AggregationType">0</property>
                             <property
-                              name="IsBig"
                               dataType="System.Int32"
-                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                              name="IsBig">1</property>
                             <property
-                              name="AggregationComparisonFlags"
                               dataType="System.Int32"
-                              description="Specifies the string comparison options.">0</property>
+                              description="Specifies the string comparison options."
+                              name="AggregationComparisonFlags">0</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Records]"
-                          name="Records"
+                          dataType="ui8"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Records]"
-                          dataType="ui8">
+                          name="Records">
                           <properties>
                             <property
-                              name="AggregationColumnId"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Specifies the ID of the input column used in the aggregation."
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\0:invalid}</property>
+                              name="AggregationColumnId">#{Package\Foreach Loop Container\Data Flow Task\0:invalid}</property>
                             <property
-                              name="AggregationType"
                               dataType="System.Int32"
                               description="Specifies the type of aggregation."
+                              name="AggregationType"
                               typeConverter="AggregationType">2</property>
                             <property
-                              name="IsBig"
                               dataType="System.Int32"
-                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type.">1</property>
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                              name="IsBig">1</property>
                             <property
-                              name="AggregationComparisonFlags"
                               dataType="System.Int32"
-                              description="Specifies the string comparison options.">0</property>
+                              description="Specifies the string comparison options."
+                              name="AggregationComparisonFlags">0</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -499,40 +499,40 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors"
-                  name="Audit Set Errors"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  componentClassID="DTSTransform.DerivedColumn.3"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  usesDispositions="true"
-                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  name="Audit Set Errors"
+                  usesDispositions="true">
                   <inputs>
                     <input
                       refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]"
-                      name="Derived Column Input"
-                      description="Input to the Derived Column Transformation">
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
                       <inputColumns>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input].Columns[Encoding]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]"
-                          cachedName="Encoding"
                           cachedDataType="wstr"
-                          cachedLength="64" />
+                          cachedLength="64"
+                          cachedName="Encoding"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input].Columns[FilePath]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]"
-                          cachedName="FilePath"
                           cachedDataType="wstr"
-                          cachedLength="1024" />
+                          cachedLength="1024"
+                          cachedName="FilePath"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input].Columns[ErrorColumn]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                          cachedDataType="i4"
                           cachedName="ErrorColumn"
-                          cachedDataType="i4" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input].Columns[FileName]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]"
-                          cachedName="FileName"
                           cachedDataType="wstr"
-                          cachedLength="256" />
+                          cachedLength="256"
+                          cachedName="FileName"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -540,124 +540,124 @@
                   <outputs>
                     <output
                       refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output]"
-                      name="Derived Column Output"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
+                      name="Derived Column Output"
                       synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Server]"
-                          name="Target_Server"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Server]"
-                          length="256"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
+                          length="256"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Server]"
+                          name="Target_Server"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
-                              name="Expression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              containsID="true">"File System"</property>
+                              name="Expression">"File System"</property>
                             <property
-                              name="FriendlyExpression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
-                              containsID="true"
-                              expressionType="Notify">"File System"</property>
+                              expressionType="Notify"
+                              name="FriendlyExpression">"File System"</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Database]"
-                          name="Target_Database"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Database]"
-                          length="256"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
+                          length="256"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Target_Database]"
+                          name="Target_Database"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
-                              name="Expression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              containsID="true">[RIGHT](#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]},256)</property>
+                              name="Expression">[RIGHT](#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]},256)</property>
                             <property
-                              name="FriendlyExpression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
-                              containsID="true"
-                              expressionType="Notify">RIGHT(FilePath,256)</property>
+                              expressionType="Notify"
+                              name="FriendlyExpression">RIGHT(FilePath,256)</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Task_Name]"
-                          name="Task_Name"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Task_Name]"
-                          length="21"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
+                          length="21"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Task_Name]"
+                          name="Task_Name"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
-                              name="Expression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              containsID="true">"IMP_BLOB_File_Imports"</property>
+                              name="Expression">"IMP_BLOB_File_Imports"</property>
                             <property
-                              name="FriendlyExpression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
-                              containsID="true"
-                              expressionType="Notify">"IMP_BLOB_File_Imports"</property>
+                              expressionType="Notify"
+                              name="FriendlyExpression">"IMP_BLOB_File_Imports"</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Error_Description]"
-                          name="Error_Description"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Error_Description]"
-                          length="1024"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
+                          length="1024"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Error_Description]"
+                          name="Error_Description"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
-                              name="Expression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              containsID="true">(DT_WSTR,10)#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]} + ":" + #{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]} + " - E" + #{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]}</property>
+                              name="Expression">(DT_WSTR,10)#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]} + ":" + #{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]} + " - E" + #{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]}</property>
                             <property
-                              name="FriendlyExpression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
-                              containsID="true"
-                              expressionType="Notify">(DT_WSTR,10)ErrorColumn + ":" + FileName + " - E" + Encoding</property>
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,10)ErrorColumn + ":" + FileName + " - E" + Encoding</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Execution_ID]"
-                          name="Execution_ID"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Execution_ID]"
-                          length="38"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
+                          length="38"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output].Columns[Execution_ID]"
+                          name="Execution_ID"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
-                              name="Expression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              containsID="true">@[System::ExecutionInstanceGUID]</property>
+                              name="Expression">@[System::ExecutionInstanceGUID]</property>
                             <property
-                              name="FriendlyExpression"
+                              containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
-                              containsID="true"
-                              expressionType="Notify">@[System::ExecutionInstanceGUID]</property>
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::ExecutionInstanceGUID]</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -665,23 +665,23 @@
                     </output>
                     <output
                       refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output]"
-                      name="Derived Column Error Output"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
-                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]"
-                      isErrorOut="true">
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[Error_Code]"
-                          name="Error_Code"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[Error_Code]"
                           dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[Error_Code]"
+                          name="Error_Code"
                           specialFlags="1" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[Error_Description]"
-                          name="Error_Description"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[Error_Description]"
                           dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Error Output].Columns[Error_Description]"
+                          name="Error_Description"
                           specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns />
@@ -690,11 +690,11 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Error Collection"
-                  name="Error Collection"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+                  componentClassID="DTSTransform.UnionAll.3"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-                  version="1"
-                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
+                  name="Error Collection"
+                  version="1">
                   <inputs>
                     <input
                       refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 1]"
@@ -702,70 +702,70 @@
                       <inputColumns>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 1].Columns[ErrorCode]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorCode]"
+                          cachedDataType="i4"
                           cachedName="ErrorCode"
-                          cachedDataType="i4">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorCode]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 1].Columns[ErrorColumn]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorColumn]"
+                          cachedDataType="i4"
                           cachedName="ErrorColumn"
-                          cachedDataType="i4">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorColumn]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 1].Columns[FileName]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileName]"
-                          cachedName="FileName"
                           cachedDataType="wstr"
-                          cachedLength="256">
+                          cachedLength="256"
+                          cachedName="FileName"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileName]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 1].Columns[Encoding]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Encoding]"
-                          cachedName="Encoding"
                           cachedDataType="wstr"
-                          cachedLength="64">
+                          cachedLength="64"
+                          cachedName="Encoding"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Encoding]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 1].Columns[FilePath]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]"
-                          cachedName="FilePath"
                           cachedDataType="wstr"
-                          cachedLength="1024">
+                          cachedLength="1024"
+                          cachedName="FilePath"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -773,75 +773,75 @@
                     </input>
                     <input
                       refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 3]"
-                      name="Union All Input 3"
-                      hasSideEffects="true">
+                      hasSideEffects="true"
+                      name="Union All Input 3">
                       <inputColumns>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 3].Columns[ErrorCode]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          cachedDataType="i4"
                           cachedName="ErrorCode"
-                          cachedDataType="i4">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 3].Columns[ErrorColumn]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          cachedDataType="i4"
                           cachedName="ErrorColumn"
-                          cachedDataType="i4">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 3].Columns[FileName]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileName]"
-                          cachedName="FileName"
                           cachedDataType="wstr"
-                          cachedLength="256">
+                          cachedLength="256"
+                          cachedName="FileName"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileName]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 3].Columns[Encoding]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Encoding]"
-                          cachedName="Encoding"
                           cachedDataType="wstr"
-                          cachedLength="64">
+                          cachedLength="64"
+                          cachedName="Encoding"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Encoding]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 3].Columns[FilePath]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]"
-                          cachedName="FilePath"
                           cachedDataType="wstr"
-                          cachedLength="1024">
+                          cachedLength="1024"
+                          cachedName="FilePath"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]">
                           <properties>
                             <property
-                              name="OutputColumnLineageID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]}</property>
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -849,9 +849,9 @@
                     </input>
                     <input
                       refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 2]"
-                      name="Union All Input 2"
+                      dangling="true"
                       hasSideEffects="true"
-                      dangling="true">
+                      name="Union All Input 2">
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -862,32 +862,32 @@
                       <outputColumns>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]"
-                          name="ErrorCode"
+                          dataType="i4"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorCode]"
-                          dataType="i4" />
+                          name="ErrorCode" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]"
-                          name="ErrorColumn"
+                          dataType="i4"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[ErrorColumn]"
-                          dataType="i4" />
+                          name="ErrorColumn" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]"
-                          name="FileName"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]"
+                          dataType="wstr"
                           length="256"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FileName]"
+                          name="FileName" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]"
-                          name="Encoding"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]"
+                          dataType="wstr"
                           length="64"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[Encoding]"
+                          name="Encoding" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]"
-                          name="FilePath"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]"
+                          dataType="wstr"
                           length="1024"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1].Columns[FilePath]"
+                          name="FilePath" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -895,241 +895,241 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack"
-                  name="External_String_Content_ Intake_Stack"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
+                  name="External_String_Content_ Intake_Stack"
                   usesDispositions="true"
-                  version="4"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+                  version="4">
                   <properties>
                     <property
-                      name="CommandTimeout"
                       dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
                     <property
-                      name="OpenRowset"
                       dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset.">[LIB].[External_String_Intake_Stack]</property>
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[LIB].[External_String_Intake_Stack]</property>
                     <property
-                      name="OpenRowsetVariable"
                       dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
                     <property
-                      name="SqlCommand"
                       dataType="System.String"
                       description="The SQL command to be executed."
+                      name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
-                      name="DefaultCodePage"
                       dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
                     <property
-                      name="AlwaysUseDefaultCodePage"
                       dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
                     <property
-                      name="AccessMode"
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
+                      name="AccessMode"
                       typeConverter="AccessMode">0</property>
                     <property
-                      name="FastLoadKeepIdentity"
                       dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
                     <property
-                      name="FastLoadKeepNulls"
                       dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
                     <property
-                      name="FastLoadOptions"
                       dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                     <property
-                      name="FastLoadMaxInsertCommitSize"
                       dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
                   </properties>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Connections[OleDbConnection]"
-                      name="OleDbConnection"
-                      description="The OLE DB runtime connection used to access the database."
                       connectionManagerID="{746F9285-349E-460D-B4DB-67E8D24A726B}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DynamicDestinationOLEDB]" />
+                      connectionManagerRefId="Project.ConnectionManagers[DynamicDestinationOLEDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
                   </connections>
                   <inputs>
                     <input
                       refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input]"
-                      name="OLE DB Destination Input"
-                      hasSideEffects="true"
                       errorOrTruncationOperation="Insert"
-                      errorRowDisposition="RedirectRow">
+                      errorRowDisposition="RedirectRow"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[FilePath]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Path]"
-                          cachedName="FilePath"
                           cachedDataType="wstr"
-                          cachedLength="1024" />
+                          cachedLength="1024"
+                          cachedName="FilePath"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Path]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[FileName]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileName]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Name]"
-                          cachedName="FileName"
                           cachedDataType="wstr"
-                          cachedLength="256" />
+                          cachedLength="256"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Name]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileName]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[IsReadOnly]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[IsReadOnly]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Status]"
-                          cachedName="IsReadOnly"
                           cachedDataType="wstr"
-                          cachedLength="64" />
+                          cachedLength="64"
+                          cachedName="IsReadOnly"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Status]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[IsReadOnly]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[FileType]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileType]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Type]"
-                          cachedName="FileType"
                           cachedDataType="wstr"
-                          cachedLength="64" />
+                          cachedLength="64"
+                          cachedName="FileType"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Type]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileType]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[FileSize]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileSize]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Size]"
-                          cachedName="FileSize"
                           cachedDataType="wstr"
-                          cachedLength="64" />
+                          cachedLength="64"
+                          cachedName="FileSize"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Size]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileSize]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[Encoding]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Encoding]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Encoding]"
-                          cachedName="Encoding"
                           cachedDataType="wstr"
-                          cachedLength="64" />
+                          cachedLength="64"
+                          cachedName="Encoding"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Encoding]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Encoding]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[FileAuthor]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileAuthor]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Author]"
-                          cachedName="FileAuthor"
                           cachedDataType="wstr"
-                          cachedLength="128" />
+                          cachedLength="128"
+                          cachedName="FileAuthor"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Author]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileAuthor]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[CodePage]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[CodePage]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[Code_Page]"
+                          cachedDataType="i4"
                           cachedName="CodePage"
-                          cachedDataType="i4" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[Code_Page]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[CodePage]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[FileCreated]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileCreated]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Created]"
-                          cachedName="FileCreated"
                           cachedDataType="wstr"
-                          cachedLength="64" />
+                          cachedLength="64"
+                          cachedName="FileCreated"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Created]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileCreated]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[FileContent]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output].Columns[FileContent]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Content]"
+                          cachedDataType="image"
                           cachedName="FileContent"
-                          cachedDataType="image" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Content]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output].Columns[FileContent]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].Columns[FileModified]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileModified]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[Post_Date]"
-                          cachedName="FileModified"
                           cachedDataType="wstr"
-                          cachedLength="64" />
+                          cachedLength="64"
+                          cachedName="FileModified"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[Post_Date]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileModified]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[STK_ID]"
-                          name="STK_ID"
-                          dataType="i4" />
+                          dataType="i4"
+                          name="STK_ID" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Path]"
-                          name="File_Path"
                           dataType="wstr"
-                          length="2000" />
+                          length="2000"
+                          name="File_Path" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Name]"
-                          name="File_Name"
                           dataType="wstr"
-                          length="256" />
+                          length="256"
+                          name="File_Name" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Status]"
-                          name="File_Status"
                           dataType="wstr"
-                          length="65" />
+                          length="65"
+                          name="File_Status" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Type]"
-                          name="File_Type"
                           dataType="wstr"
-                          length="65" />
+                          length="65"
+                          name="File_Type" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Size]"
-                          name="File_Size"
-                          dataType="i4" />
+                          dataType="i4"
+                          name="File_Size" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Encoding]"
-                          name="File_Encoding"
                           dataType="wstr"
-                          length="65" />
+                          length="65"
+                          name="File_Encoding" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Author]"
-                          name="File_Author"
                           dataType="wstr"
-                          length="256" />
+                          length="256"
+                          name="File_Author" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[Code_Page]"
-                          name="Code_Page"
-                          dataType="i4" />
+                          dataType="i4"
+                          name="Code_Page" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Created]"
-                          name="File_Created"
-                          dataType="dbTimeStamp" />
+                          dataType="dbTimeStamp"
+                          name="File_Created" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[File_Content]"
-                          name="File_Content"
-                          dataType="image" />
+                          dataType="image"
+                          name="File_Content" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[Post_Date]"
-                          name="Post_Date"
-                          dataType="dbTimeStamp" />
+                          dataType="dbTimeStamp"
+                          name="Post_Date" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[Version_Stamp]"
-                          name="Version_Stamp"
+                          codePage="1252"
                           dataType="str"
                           length="40"
-                          codePage="1252" />
+                          name="Version_Stamp" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input].ExternalColumns[Batch_ID]"
-                          name="Batch_ID"
                           dataType="wstr"
-                          length="7" />
+                          length="7"
+                          name="Batch_ID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
                       refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output]"
-                      name="OLE DB Destination Error Output"
                       exclusionGroup="1"
-                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input]"
-                      isErrorOut="true">
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns />
@@ -1138,11 +1138,11 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Import Column"
-                  name="Import Column"
-                  componentClassID="{9053CAE0-140B-48E4-AEEC-4E6A26E9E436}"
+                  componentClassID="TxFileInserter.Inserter.3"
+                  contactInfo="Import Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Reads data from files and adds it to columns in a data flow. For example, use an input column of file paths to import photographs from a directory."
-                  usesDispositions="true"
-                  contactInfo="Import Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  name="Import Column"
+                  usesDispositions="true">
                   <inputs>
                     <input
                       refId="Package\Foreach Loop Container\Data Flow Task\Import Column.Inputs[Import Column Input]"
@@ -1150,22 +1150,22 @@
                       <inputColumns>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Import Column.Inputs[Import Column Input].Columns[FilePath]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]"
+                          cachedDataType="wstr"
+                          cachedLength="1024"
+                          cachedName="FilePath"
                           errorOrTruncationOperation="File Open"
                           errorRowDisposition="FailComponent"
-                          cachedName="FilePath"
-                          cachedDataType="wstr"
-                          cachedLength="1024">
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]">
                           <properties>
                             <property
-                              name="FileDataColumnID"
+                              containsID="true"
                               dataType="System.Int32"
                               description="Specifies the ID of the output column to receive the file data."
-                              containsID="true">#{Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output].Columns[FileContent]}</property>
+                              name="FileDataColumnID">#{Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output].Columns[FileContent]}</property>
                             <property
-                              name="ExpectBOM"
                               dataType="System.Boolean"
-                              description="TRUE if the file is expected to begin with a BOM">false</property>
+                              description="TRUE if the file is expected to begin with a BOM"
+                              name="ExpectBOM">false</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -1175,38 +1175,38 @@
                   <outputs>
                     <output
                       refId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output]"
-                      name="Import Column Output"
                       exclusionGroup="1"
+                      name="Import Column Output"
                       synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Import Column.Inputs[Import Column Input]">
                       <outputColumns>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output].Columns[FileContent]"
-                          name="FileContent"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output].Columns[FileContent]"
                           dataType="image"
                           errorOrTruncationOperation="File Read"
-                          errorRowDisposition="RedirectRow" />
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output].Columns[FileContent]"
+                          name="FileContent" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
                       refId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output]"
-                      name="Import Column Error Output"
                       exclusionGroup="1"
-                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Import Column.Inputs[Import Column Input]"
-                      isErrorOut="true">
+                      isErrorOut="true"
+                      name="Import Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Import Column.Inputs[Import Column Input]">
                       <outputColumns>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns />
@@ -1215,18 +1215,18 @@
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Script Component"
-                  name="Script Component"
-                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;8"
                   description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
-                  version="8"
-                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;8">
+                  name="Script Component"
+                  version="8">
                   <properties>
                     <property
-                      name="SourceCode"
-                      state="cdata"
                       dataType="System.String"
+                      description="Stores the source code of the component"
                       isArray="true"
-                      description="Stores the source code of the component">
+                      name="SourceCode"
+                      state="cdata">
                       <arrayElements
                         arrayElementCount="30">
                         <arrayElement
@@ -1980,11 +1980,11 @@ namespace SC_40fd78f0fabe486e8837392792395d14.Properties {
                       </arrayElements>
                     </property>
                     <property
-                      name="BinaryCode"
-                      state="cdata"
                       dataType="System.String"
+                      description="Stores the binary representation of the component"
                       isArray="true"
-                      description="Stores the binary representation of the component">
+                      name="BinaryCode"
+                      state="cdata">
                       <arrayElements
                         arrayElementCount="2">
                         <arrayElement
@@ -2182,115 +2182,115 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       </arrayElements>
                     </property>
                     <property
-                      name="VSTAProjectName"
                       dataType="System.String"
                       description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
                       typeConverter="NOTBROWSABLE">SC_6f48a2b12bac47b9aac56eeef73d460c</property>
                     <property
-                      name="ScriptLanguage"
                       dataType="System.String"
                       description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
                       typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages, Microsoft.SqlServer.VSTAScriptingLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">CSharp</property>
                     <property
-                      name="ReadOnlyVariables"
                       dataType="System.String"
                       description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">User::FilePath</property>
                     <property
-                      name="ReadWriteVariables"
                       dataType="System.String"
                       description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
-                      name="BreakpointCollection"
                       dataType="System.String"
-                      isArray="true"
                       description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
                       typeConverter="NOTBROWSABLE">
                       <arrayElements
                         arrayElementCount="0" />
                     </property>
                     <property
-                      name="MetadataChecksum"
                       dataType="System.String"
                       description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
                       typeConverter="NOTBROWSABLE">e8b6dea920c85a1553809362a18c3ec4</property>
                     <property
-                      name="UserComponentTypeName"
-                      dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.ScriptComponentHost, Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.ScriptComponentHost, Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
                   </properties>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Connections[File_Source]"
-                      name="File_Source"
                       connectionManagerID="Package.ConnectionManagers[Source_File_Location]"
-                      connectionManagerRefId="Package.ConnectionManagers[Source_File_Location]" />
+                      connectionManagerRefId="Package.ConnectionManagers[Source_File_Location]"
+                      name="File_Source" />
                   </connections>
                   <outputs>
                     <output
                       refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0]"
-                      name="Output 0"
-                      hasSideEffects="true">
+                      hasSideEffects="true"
+                      name="Output 0">
                       <outputColumns>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[CodePage]"
-                          name="CodePage"
+                          dataType="i4"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[CodePage]"
-                          dataType="i4" />
+                          name="CodePage" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileType]"
-                          name="FileType"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileType]"
+                          dataType="wstr"
                           length="64"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileType]"
+                          name="FileType" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileCreated]"
-                          name="FileCreated"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileCreated]"
+                          dataType="wstr"
                           length="64"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileCreated]"
+                          name="FileCreated" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileSize]"
-                          name="FileSize"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileSize]"
+                          dataType="wstr"
                           length="64"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileSize]"
+                          name="FileSize" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileModified]"
-                          name="FileModified"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileModified]"
+                          dataType="wstr"
                           length="64"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileModified]"
+                          name="FileModified" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[IsReadOnly]"
-                          name="IsReadOnly"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[IsReadOnly]"
+                          dataType="wstr"
                           length="64"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[IsReadOnly]"
+                          name="IsReadOnly" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileName]"
-                          name="FileName"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileName]"
+                          dataType="wstr"
                           length="256"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileName]"
+                          name="FileName" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Encoding]"
-                          name="Encoding"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Encoding]"
+                          dataType="wstr"
                           length="64"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Encoding]"
+                          name="Encoding" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]"
-                          name="FilePath"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]"
+                          dataType="wstr"
                           length="1024"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FilePath]"
+                          name="FilePath" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileAuthor]"
-                          name="FileAuthor"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileAuthor]"
+                          dataType="wstr"
                           length="128"
-                          dataType="wstr" />
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[FileAuthor]"
+                          name="FileAuthor" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2298,183 +2298,183 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors"
-                  name="TRK_SSIS_Import_Errors"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
+                  name="TRK_SSIS_Import_Errors"
                   usesDispositions="true"
-                  version="4"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+                  version="4">
                   <properties>
                     <property
-                      name="CommandTimeout"
                       dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
                     <property
-                      name="OpenRowset"
                       dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset.">[CAT].[TRK_SSIS_Import_Errors]</property>
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[CAT].[TRK_SSIS_Import_Errors]</property>
                     <property
-                      name="OpenRowsetVariable"
                       dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
                     <property
-                      name="SqlCommand"
                       dataType="System.String"
                       description="The SQL command to be executed."
+                      name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
-                      name="DefaultCodePage"
                       dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
                     <property
-                      name="AlwaysUseDefaultCodePage"
                       dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
                     <property
-                      name="AccessMode"
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
+                      name="AccessMode"
                       typeConverter="AccessMode">3</property>
                     <property
-                      name="FastLoadKeepIdentity"
                       dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
                     <property
-                      name="FastLoadKeepNulls"
                       dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
                     <property
-                      name="FastLoadOptions"
                       dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 1</property>
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 1</property>
                     <property
-                      name="FastLoadMaxInsertCommitSize"
                       dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
                   </properties>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Connections[OleDbConnection]"
-                      name="OleDbConnection"
-                      description="The OLE DB runtime connection used to access the database."
                       connectionManagerID="{746F9285-349E-460D-B4DB-67E8D24A726B}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DynamicDestinationOLEDB]" />
+                      connectionManagerRefId="Project.ConnectionManagers[DynamicDestinationOLEDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
                   </connections>
                   <inputs>
                     <input
                       refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
-                      name="OLE DB Destination Input"
-                      hasSideEffects="true"
                       errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent">
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].Columns[Execution_ID]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Execution_ID]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Execution_ID]"
-                          cachedName="Execution_ID"
                           cachedDataType="wstr"
-                          cachedLength="38" />
+                          cachedLength="38"
+                          cachedName="Execution_ID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Execution_ID]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Execution_ID]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].Columns[Target_Server]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Server]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Target_Server]"
-                          cachedName="Target_Server"
                           cachedDataType="wstr"
-                          cachedLength="256" />
+                          cachedLength="256"
+                          cachedName="Target_Server"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Target_Server]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Server]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].Columns[Target_Database]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Database]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Target_Database]"
-                          cachedName="Target_Database"
                           cachedDataType="wstr"
-                          cachedLength="256" />
+                          cachedLength="256"
+                          cachedName="Target_Database"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Target_Database]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Target_Database]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].Columns[Task_Name]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Task_Name]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Task_Name]"
-                          cachedName="Task_Name"
                           cachedDataType="wstr"
-                          cachedLength="21" />
+                          cachedLength="21"
+                          cachedName="Task_Name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Task_Name]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Task_Name]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].Columns[Error_Description]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Error_Description]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Error_Description]"
-                          cachedName="Error_Description"
                           cachedDataType="wstr"
-                          cachedLength="1024" />
+                          cachedLength="1024"
+                          cachedName="Error_Description"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Error_Description]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Error_Description]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].Columns[Error_Code]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Error_Code]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Error_Code]"
+                          cachedDataType="i4"
                           cachedName="Error_Code"
-                          cachedDataType="i4" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Error_Code]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Error_Code]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].Columns[Records]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Records]"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Records]"
+                          cachedDataType="ui8"
                           cachedName="Records"
-                          cachedDataType="ui8" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Records]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Records]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Post_Date]"
-                          name="Post_Date"
-                          dataType="dbTimeStamp" />
+                          dataType="dbTimeStamp"
+                          name="Post_Date" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Execution_ID]"
-                          name="Execution_ID"
-                          dataType="guid" />
+                          dataType="guid"
+                          name="Execution_ID" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Target_Server]"
-                          name="Target_Server"
                           dataType="wstr"
-                          length="256" />
+                          length="256"
+                          name="Target_Server" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Target_Database]"
-                          name="Target_Database"
                           dataType="wstr"
-                          length="256" />
+                          length="256"
+                          name="Target_Database" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Task_Name]"
-                          name="Task_Name"
                           dataType="wstr"
-                          length="256" />
+                          length="256"
+                          name="Task_Name" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Error_Code]"
-                          name="Error_Code"
-                          dataType="i4" />
+                          dataType="i4"
+                          name="Error_Code" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Error_Description]"
-                          name="Error_Description"
-                          dataType="nText" />
+                          dataType="nText"
+                          name="Error_Description" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Records]"
-                          name="Records"
-                          dataType="i4" />
+                          dataType="i4"
+                          name="Records" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
                       refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Outputs[OLE DB Destination Error Output]"
-                      name="OLE DB Destination Error Output"
                       exclusionGroup="1"
-                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
-                      isErrorOut="true">
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns />
@@ -2485,39 +2485,39 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               <paths>
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Aggregate Output 1]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
-                  startId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]" />
+                  startId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Outputs[Aggregate Output 1]" />
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Inputs[Aggregate Input 1]"
                   name="Derived Column Output"
-                  startId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\Aggregate.Inputs[Aggregate Input 1]" />
+                  startId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Import Column Error Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 1]"
                   name="Import Column Error Output"
-                  startId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 1]" />
+                  startId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Import Column Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input]"
                   name="Import Column Output"
-                  startId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Inputs[OLE DB Destination Input]" />
+                  startId="Package\Foreach Loop Container\Data Flow Task\Import Column.Outputs[Import Column Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[OLE DB Destination Error Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 3]"
                   name="OLE DB Destination Error Output"
-                  startId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Inputs[Union All Input 3]" />
+                  startId="Package\Foreach Loop Container\Data Flow Task\External_String_Content_ Intake_Stack.Outputs[OLE DB Destination Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Output 0]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Import Column.Inputs[Import Column Input]"
                   name="Output 0"
-                  startId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\Import Column.Inputs[Import Column Input]" />
+                  startId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0]" />
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Union All Output 1]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]"
                   name="Union All Output 1"
-                  startId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\Audit Set Errors.Inputs[Derived Column Input]" />
+                  startId="Package\Foreach Loop Container\Data Flow Task\Error Collection.Outputs[Union All Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -2525,40 +2525,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </DTS:Executables>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
-          DTS:VariableName="User::FilePath"
-          DTS:ValueIndex="0"
-          DTS:ObjectName="{955E782C-2418-4AED-899B-54C16F34A686}"
+          DTS:CreationName=""
           DTS:DTSID="{955E782C-2418-4AED-899B-54C16F34A686}"
-          DTS:CreationName="" />
+          DTS:ObjectName="{955E782C-2418-4AED-899B-54C16F34A686}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FilePath" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3FA048DA-A0F7-4607-8833-73915E94D859}"
       DTS:From="Package\Foreach Loop Container"
-      DTS:To="Package\Execute TXT File Logger"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:DTSID="{3FA048DA-A0F7-4607-8833-73915E94D859}"
-      DTS:CreationName="" />
+      DTS:To="Package\Execute TXT File Logger" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{24D5DEBB-FA73-4F55-8572-5AB59FE886E5}"
       DTS:EventID="0"
       DTS:EventName="OnError"
-      DTS:LocaleID="-1"
-      DTS:DTSID="{24D5DEBB-FA73-4F55-8572-5AB59FE886E5}"
-      DTS:CreationName="OnError">
+      DTS:LocaleID="-1">
       <DTS:Variables>
         <DTS:Variable
-          DTS:Namespace="System"
-          DTS:IncludeInDebugDump="6789"
-          DTS:ObjectName="Propagate"
-          DTS:DTSID="{4DA102B3-D5C1-4D62-9EA3-DAA688624E94}"
+          DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:CreationName="">
+          DTS:DTSID="{4DA102B3-D5C1-4D62-9EA3-DAA688624E94}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
           <DTS:VariableValue
             DTS:DataType="11">-1</DTS:VariableValue>
         </DTS:Variable>
@@ -2566,13 +2566,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Log Errors"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{98fb91d1-18a3-4118-8ee4-538976fe5b67}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Errors"
-          DTS:DTSID="{98fb91d1-18a3-4118-8ee4-538976fe5b67}"
-          DTS:Description="Execute SQL Task"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2633,20 +2633,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="194,42"
+          Id="Package\Execute TXT File Logger"
+          TopLeft="5.50000000000003,211.5" />
+        <NodeLayout
           Size="152,42"
           Id="Package\Foreach Loop Container\Data Flow Task"
           TopLeft="5.5,5.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="163,102"
+          PanelSize="163,103"
           Size="163,146"
           Id="Package\Foreach Loop Container"
           TopLeft="21,5.5" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\Execute TXT File Logger"
-          TopLeft="5.50000000000003,211.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="102.5,151.5">

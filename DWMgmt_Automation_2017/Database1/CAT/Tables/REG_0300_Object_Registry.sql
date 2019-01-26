@@ -1,0 +1,15 @@
+﻿CREATE TABLE [CAT].[REG_0300_Object_Registry] (
+    [REG_0300_ID]     INT            IDENTITY (1, 1) NOT NULL,
+    [REG_Object_Name] NVARCHAR (256) NOT NULL,
+    [REG_Object_Type] NVARCHAR (25)  NOT NULL,
+    [REG_Create_Date] DATETIME       CONSTRAINT [DF_REG_0300_CDate] DEFAULT (getdate()) NOT NULL,
+    CONSTRAINT [PK_REG_0300] PRIMARY KEY CLUSTERED ([REG_Object_Name] ASC, [REG_Object_Type] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [UQ_REG_0300_ID] UNIQUE NONCLUSTERED ([REG_0300_ID] ASC)
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [idx_nc_REG_0300_K3_I1_2]
+    ON [CAT].[REG_0300_Object_Registry]([REG_Object_Type] ASC)
+    INCLUDE([REG_0300_ID], [REG_Object_Name]);
+

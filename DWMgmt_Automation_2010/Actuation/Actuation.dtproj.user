@@ -4,7 +4,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <ServerName>CORRUSCANT\JEDI_COUNCIL</ServerName>
+        <ServerName>CORRUSCANT\MOS_EISLEY</ServerName>
         <PathOnServer>/SSISDB/DWMgmt/Actuation</PathOnServer>
         <StartObjectID>SUB_Database_Child.dtsx</StartObjectID>
         <Run64BitRuntime>false</Run64BitRuntime>

@@ -1,0 +1,9 @@
+﻿CREATE TABLE [CAT].[REG_0500_Parameter_Registry] (
+    [REG_0500_ID]        INT            IDENTITY (1, 1) NOT NULL,
+    [REG_Parameter_Name] NVARCHAR (256) NOT NULL,
+    [REG_Parameter_Type] NVARCHAR (25)  NOT NULL,
+    [REG_Create_Date]    DATETIME       CONSTRAINT [DF_0500_CDate] DEFAULT (getdate()) NOT NULL,
+    CONSTRAINT [PK_REG_0500] PRIMARY KEY CLUSTERED ([REG_Parameter_Name] ASC, [REG_Parameter_Type] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [UQ_REG_0500_ID] UNIQUE NONCLUSTERED ([REG_0500_ID] ASC)
+);
+

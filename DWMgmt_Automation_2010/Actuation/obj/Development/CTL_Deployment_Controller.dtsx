@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
-<DTS:Executable
-  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ExecutableType="SSIS.Package.3"
-  DTS:CreatorName="Mordor\Forrest"
-  DTS:CreatorComputerName="MORDOR"
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
   DTS:CreationDate="3/5/2015 11:32:34 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="MORDOR"
+  DTS:CreatorName="Mordor\Forrest"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{6AD68E2B-16A3-4443-BD70-7CDC5594F9DF}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CTL_Deployment_Controller"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="163"
-  DTS:VersionGUID="{69DCC027-72A5-4987-B3C4-75A890C456FA}"
-  DTS:LastModifiedProductVersion="11.0.2100.60"
-  DTS:LocaleID="1033"
-  DTS:DelayValidation="True"
-  DTS:ObjectName="CTL_Deployment_Controller"
-  DTS:DTSID="{6AD68E2B-16A3-4443-BD70-7CDC5594F9DF}"
-  DTS:CreationName="SSIS.Package.3">
+  DTS:VersionBuild="164"
+  DTS:VersionGUID="{8C1B5B3D-CB46-4007-A300-E7D59495045D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[AAA.Primary_Deployment_Structures.sql]"
-      DTS:ObjectName="AAA.Primary_Deployment_Structures.sql"
+      DTS:CreationName="FILE"
       DTS:DTSID="{A5CEAA3D-09FC-418A-8C46-D1C2AD8564CF}"
-      DTS:CreationName="FILE">
+      DTS:ObjectName="AAA.Primary_Deployment_Structures.sql">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::RootDirectory] + @[$Project::SQLFileDirectory] +"AAA.Primary_Deployment_Structures.sql"</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -32,9 +32,9 @@
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DynamicDeploymentMasterOLEDB]"
-      DTS:ObjectName="DynamicDeploymentMasterOLEDB"
+      DTS:CreationName="OLEDB"
       DTS:DTSID="{426C315E-0AF1-4ADB-A913-6F8F4FE6237D}"
-      DTS:CreationName="OLEDB">
+      DTS:ObjectName="DynamicDeploymentMasterOLEDB">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Data Source="+ @[$Project::DestinationServer] +";Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;MARS Connection=True;"</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -45,103 +45,103 @@
   </DTS:ConnectionManagers>
   <DTS:PackageParameters>
     <DTS:PackageParameter
-      DTS:Required="True"
+      DTS:CreationName=""
       DTS:DataType="8"
-      DTS:ObjectName="DestinationDatabase"
-      DTS:DTSID="{384A9708-9E57-4A97-96E2-10A09331239C}"
       DTS:Description="Database where deployment will occur."
-      DTS:CreationName="">
+      DTS:DTSID="{384A9708-9E57-4A97-96E2-10A09331239C}"
+      DTS:ObjectName="DestinationDatabase"
+      DTS:Required="True">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="8">DWMgmt</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">DWMgmt</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
-      DTS:Required="True"
+      DTS:CreationName=""
       DTS:DataType="8"
-      DTS:ObjectName="DestinationServer"
-      DTS:DTSID="{1A03A2F1-5F7F-45E6-98BE-FAFE2BDF8045}"
       DTS:Description="Server where deployment will occur."
-      DTS:CreationName="">
+      DTS:DTSID="{1A03A2F1-5F7F-45E6-98BE-FAFE2BDF8045}"
+      DTS:ObjectName="DestinationServer"
+      DTS:Required="True">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="8">CORRUSCANT\IMPERIAL_SENATE</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CORRUSCANT\IMPERIAL_SENATE</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
-      DTS:Required="True"
+      DTS:CreationName=""
       DTS:DataType="8"
-      DTS:ObjectName="DTSXFileDirectory"
-      DTS:DTSID="{06AB1422-3BDE-4856-A1D1-C5172E82B541}"
       DTS:Description="Subfolder where package files (.dtsx) are stored."
-      DTS:CreationName="">
+      DTS:DTSID="{06AB1422-3BDE-4856-A1D1-C5172E82B541}"
+      DTS:ObjectName="DTSXFileDirectory"
+      DTS:Required="True">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="8">DWMgmt_Automation\Actuation\</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">DWMgmt_Automation\Actuation\</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
-      DTS:Required="True"
+      DTS:CreationName=""
       DTS:DataType="8"
-      DTS:ObjectName="RDLFileDirectory"
-      DTS:DTSID="{E69C7E06-CAA6-4509-83BA-A31902C76571}"
       DTS:Description="Subfolder where report files (.rdl) are stored."
-      DTS:CreationName="">
+      DTS:DTSID="{E69C7E06-CAA6-4509-83BA-A31902C76571}"
+      DTS:ObjectName="RDLFileDirectory"
+      DTS:Required="True">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="8">DWMgmt_Automation\Review\</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">DWMgmt_Automation\Review\</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
-      DTS:Required="True"
+      DTS:CreationName=""
       DTS:DataType="8"
-      DTS:ObjectName="RootDirectory"
-      DTS:DTSID="{A88E6A26-59D1-4B8C-8241-9AF4630A8E25}"
       DTS:Description="Root path of solution files."
-      DTS:CreationName="">
+      DTS:DTSID="{A88E6A26-59D1-4B8C-8241-9AF4630A8E25}"
+      DTS:ObjectName="RootDirectory"
+      DTS:Required="True">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="8">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
-      DTS:Required="True"
+      DTS:CreationName=""
       DTS:DataType="8"
-      DTS:ObjectName="SQLFileDirectory"
-      DTS:DTSID="{02E35404-DA4A-4B6B-9255-94D8AAE9263F}"
       DTS:Description="Subfolder where TSQL scripts (.sql) are stored."
-      DTS:CreationName="">
+      DTS:DTSID="{02E35404-DA4A-4B6B-9255-94D8AAE9263F}"
+      DTS:ObjectName="SQLFileDirectory"
+      DTS:Required="True">
       <DTS:Property
-        DTS:Name="ParameterValue"
-        DTS:DataType="8">DWMgmt_SQL_Code\DWMgmt_SQL_PROD_Scripts\</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">DWMgmt_SQL_Code\DWMgmt_SQL_PROD_Scripts\</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="6789"
-      DTS:ObjectName="DBStatus"
+      DTS:CreationName=""
       DTS:DTSID="{624E1147-2C30-4800-B0D2-6E7151AB1555}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DBStatus">
       <DTS:VariableValue
         DTS:DataType="3">1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="&quot;SELECT count(*) AS DBStatus&#xA;FROM sys.databases&#xA;WHERE name = N'&quot;+ @[$Project::DestinationDatabase] +&quot;'&quot;"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="DB_Check_String"
+      DTS:CreationName=""
       DTS:DTSID="{19FC2157-1F85-4EBD-864B-6C88DAD0C06A}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT count(*) AS DBStatus&#xA;FROM sys.databases&#xA;WHERE name = N'&quot;+ @[$Project::DestinationDatabase] +&quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DB_Check_String">
       <DTS:VariableValue
         DTS:DataType="8">SELECT count(*) AS DBStatus
 FROM sys.databases
 WHERE name = N'DWMgmt'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="&quot;CREATE DATABASE &quot;+ @[$Project::DestinationDatabase] +&quot;&#xA;GO&#xA;&#xA;USE &quot;+ @[$Project::DestinationDatabase] +&quot;&#xA;GO&quot;"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="DB_Creation_String"
+      DTS:CreationName=""
       DTS:DTSID="{562E6F2F-17E7-4E83-8B6D-B6C3C09CEBA0}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;CREATE DATABASE &quot;+ @[$Project::DestinationDatabase] +&quot;&#xA;GO&#xA;&#xA;USE &quot;+ @[$Project::DestinationDatabase] +&quot;&#xA;GO&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DB_Creation_String">
       <DTS:VariableValue
         DTS:DataType="8">CREATE DATABASE DWMgmt
 GO
@@ -150,62 +150,62 @@ USE DWMgmt
 GO</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="@[$Package::RootDirectory]+ @[$Package::DTSXFileDirectory]"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="SSISFileDir"
+      DTS:CreationName=""
       DTS:DTSID="{85191A04-A3BF-4DE1-94E6-D11469E2CE0C}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::RootDirectory]+ @[$Package::DTSXFileDirectory]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SSISFileDir">
       <DTS:VariableValue
         DTS:DataType="8">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Actuation\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="SSISFileSpec"
+      DTS:CreationName=""
       DTS:DTSID="{55C2BE3E-E5BB-497E-835E-DAA97B173A4A}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SSISFileSpec">
       <DTS:VariableValue
         DTS:DataType="8">*.dtsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="@[$Package::RootDirectory]+ @[$Package::RDLFileDirectory]"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="SSRSFileDir"
+      DTS:CreationName=""
       DTS:DTSID="{DF5F1641-7334-4665-8FA9-46D29A794172}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::RootDirectory]+ @[$Package::RDLFileDirectory]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SSRSFileDir">
       <DTS:VariableValue
         DTS:DataType="8">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_Automation\Review\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="SSRSFileSpec"
+      DTS:CreationName=""
       DTS:DTSID="{441FDC71-6132-4FA8-8C00-BCE38BCF72C4}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SSRSFileSpec">
       <DTS:VariableValue
         DTS:DataType="8">*.rdl</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Expression="@[$Package::RootDirectory]+ @[$Package::SQLFileDirectory]"
-      DTS:EvaluateAsExpression="True"
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="TSQLFileDir"
+      DTS:CreationName=""
       DTS:DTSID="{4856BB89-8EF8-4F59-96D3-AB11F0E9FA91}"
-      DTS:CreationName="">
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::RootDirectory]+ @[$Package::SQLFileDirectory]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TSQLFileDir">
       <DTS:VariableValue
         DTS:DataType="8">G:\Mos Eisley\DWMgmt_Projects\DWMgmt_Actuation_and_Reporting\DWMgmt_SQL_Code\DWMgmt_SQL_PROD_Scripts\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="TSQLFileSpec"
+      DTS:CreationName=""
       DTS:DTSID="{D65FB710-5625-4CAE-A42C-F9BBBF42A6E6}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TSQLFileSpec">
       <DTS:VariableValue
         DTS:DataType="8">*.sql</DTS:VariableValue>
     </DTS:Variable>
@@ -213,13 +213,13 @@ GO</DTS:VariableValue>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Acquire SSIS Packages"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{B729065D-BA8A-43C7-9A18-2C0DE4B3C6C4}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:LocaleID="-1"
       DTS:ObjectName="Acquire SSIS Packages"
-      DTS:DTSID="{B729065D-BA8A-43C7-9A18-2C0DE4B3C6C4}"
-      DTS:Description="Execute Package Task"
-      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
@@ -238,13 +238,13 @@ GO</DTS:VariableValue>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Acquire SSRS Reports"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{78ABEE83-216D-4C92-AE6A-774585E8F5F2}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:LocaleID="-1"
       DTS:ObjectName="Acquire SSRS Reports"
-      DTS:DTSID="{78ABEE83-216D-4C92-AE6A-774585E8F5F2}"
-      DTS:Description="Execute Package Task"
-      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
@@ -263,15 +263,15 @@ GO</DTS:VariableValue>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Create Database"
-      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-      DTS:ThreadHint="0"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:LocaleID="-1"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:DelayValidation="True"
-      DTS:ObjectName="Create Database"
-      DTS:DTSID="{1DE351CF-CB45-4973-88B2-847A3232480E}"
       DTS:Description="Execute SQL Task"
-      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      DTS:DTSID="{1DE351CF-CB45-4973-88B2-847A3232480E}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Database"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -282,15 +282,15 @@ GO</DTS:VariableValue>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Deploy Primary Control Structures and Error Tracking"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F02EDAA7-350C-41EA-9D41-D36F00A2AB85}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-      DTS:ThreadHint="0"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:FailParentOnFailure="True"
       DTS:LocaleID="-1"
       DTS:ObjectName="Deploy Primary Control Structures and Error Tracking"
-      DTS:DTSID="{F02EDAA7-350C-41EA-9D41-D36F00A2AB85}"
-      DTS:Description="Execute SQL Task"
-      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -301,15 +301,15 @@ GO</DTS:VariableValue>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\DEP_LoadCycle"
-      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:MaxErrorCount="0"
-      DTS:LocaleID="-1"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:DelayValidation="True"
-      DTS:ObjectName="DEP_LoadCycle"
-      DTS:DTSID="{79722F99-9082-45D3-8D12-51AE5A3FC04A}"
       DTS:Description="Execute Package Task"
-      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      DTS:DTSID="{79722F99-9082-45D3-8D12-51AE5A3FC04A}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="0"
+      DTS:ObjectName="DEP_LoadCycle"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
@@ -328,32 +328,36 @@ GO</DTS:VariableValue>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Execute XML_Turbo_Shredder"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{61319FE0-8DA9-4545-BF43-AC8CF6010CDB}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:Disabled="True"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute XML_Turbo_Shredder"
-      DTS:DTSID="{61319FE0-8DA9-4545-BF43-AC8CF6010CDB}"
-      DTS:Description="Execute Package Task"
-      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
+          <PackageName>XML_Turbo_Shredder.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>Blades</ParameterName>
+            <BindedVariableOrParameterName>$Project::Blades</BindedVariableOrParameterName>
+          </ParameterAssignment>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\REG_Server_Master"
-      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:MaxErrorCount="0"
-      DTS:LocaleID="-1"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:DelayValidation="True"
-      DTS:ObjectName="REG_Server_Master"
-      DTS:DTSID="{64463AA8-AB44-4AA7-B6B9-FD1638A94526}"
       DTS:Description="Execute Package Task"
-      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      DTS:DTSID="{64463AA8-AB44-4AA7-B6B9-FD1638A94526}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="0"
+      DTS:ObjectName="REG_Server_Master"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
@@ -372,14 +376,14 @@ GO</DTS:VariableValue>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\SQL_Turbo_Shredder"
-      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:LocaleID="-1"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:DelayValidation="True"
-      DTS:ObjectName="SQL_Turbo_Shredder"
-      DTS:DTSID="{CED146D6-EB9A-4A50-9231-31DB25E12428}"
       DTS:Description="Execute Package Task"
-      DTS:CreationName="SSIS.ExecutePackageTask.3">
+      DTS:DTSID="{CED146D6-EB9A-4A50-9231-31DB25E12428}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Turbo_Shredder"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
@@ -394,14 +398,14 @@ GO</DTS:VariableValue>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Test for DB Deployment"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1F612D36-B78D-4908-A45A-3AECDD01D3B8}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-      DTS:ThreadHint="0"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:LocaleID="-1"
       DTS:ObjectName="Test for DB Deployment"
-      DTS:DTSID="{1F612D36-B78D-4908-A45A-3AECDD01D3B8}"
-      DTS:Description="Execute SQL Task"
-      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -420,109 +424,109 @@ GO</DTS:VariableValue>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:From="Package\Test for DB Deployment"
-      DTS:To="Package\Create Database"
-      DTS:EvalOp="1"
-      DTS:LogicalAnd="True"
-      DTS:Expression="@[User::DBStatus] == 0"
-      DTS:ObjectName="Constraint"
+      DTS:CreationName=""
       DTS:DTSID="{1C0D5C72-3C4E-4D38-87A9-9DCF4929CA94}"
-      DTS:CreationName="" />
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::DBStatus] == 0"
+      DTS:From="Package\Test for DB Deployment"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Create Database" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
-      DTS:From="Package\Deploy Primary Control Structures and Error Tracking"
-      DTS:To="Package\DEP_LoadCycle"
-      DTS:ObjectName="Constraint 1"
+      DTS:CreationName=""
       DTS:DTSID="{2C24F9F0-9DD4-4C97-8683-611370A80CA6}"
-      DTS:CreationName="" />
+      DTS:From="Package\Deploy Primary Control Structures and Error Tracking"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DEP_LoadCycle" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{ABBEA685-91A2-4197-8BFC-359AAE3507DA}"
       DTS:From="Package\REG_Server_Master"
-      DTS:To="Package\Acquire SSIS Packages"
-      DTS:Value="2"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
-      DTS:DTSID="{ABBEA685-91A2-4197-8BFC-359AAE3507DA}"
-      DTS:CreationName="" />
+      DTS:To="Package\Acquire SSIS Packages"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{AC3F8014-CE32-4CB0-9D97-210CDC4B1C56}"
       DTS:From="Package\Acquire SSRS Reports"
-      DTS:To="Package\Execute XML_Turbo_Shredder"
-      DTS:Value="2"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 11"
-      DTS:DTSID="{AC3F8014-CE32-4CB0-9D97-210CDC4B1C56}"
-      DTS:CreationName="" />
+      DTS:To="Package\Execute XML_Turbo_Shredder"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{1D9203EB-B303-4D13-82C7-57BFB35E3161}"
       DTS:From="Package\Acquire SSIS Packages"
-      DTS:To="Package\Execute XML_Turbo_Shredder"
-      DTS:Value="2"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 12"
-      DTS:DTSID="{1D9203EB-B303-4D13-82C7-57BFB35E3161}"
-      DTS:CreationName="" />
+      DTS:To="Package\Execute XML_Turbo_Shredder"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{03D7DAF3-BAE4-4CA0-B3E2-AC0459B3F63D}"
       DTS:From="Package\Create Database"
-      DTS:To="Package\Deploy Primary Control Structures and Error Tracking"
-      DTS:Value="2"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:DTSID="{03D7DAF3-BAE4-4CA0-B3E2-AC0459B3F63D}"
-      DTS:CreationName="" />
+      DTS:To="Package\Deploy Primary Control Structures and Error Tracking"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
-      DTS:From="Package\DEP_LoadCycle"
-      DTS:To="Package\REG_Server_Master"
-      DTS:Value="2"
-      DTS:ObjectName="Constraint 3"
+      DTS:CreationName=""
       DTS:DTSID="{DDD0C9ED-ADF5-4178-AD94-3571FCAF603F}"
-      DTS:CreationName="" />
+      DTS:From="Package\DEP_LoadCycle"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\REG_Server_Master"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
-      DTS:From="Package\Test for DB Deployment"
-      DTS:To="Package\REG_Server_Master"
+      DTS:CreationName=""
+      DTS:DTSID="{056AFAC3-A2D3-4619-AB64-48BC7F3C0AE4}"
       DTS:EvalOp="1"
       DTS:Expression="@[User::DBStatus]==1"
+      DTS:From="Package\Test for DB Deployment"
       DTS:ObjectName="Constraint 4"
-      DTS:DTSID="{056AFAC3-A2D3-4619-AB64-48BC7F3C0AE4}"
-      DTS:CreationName="" />
+      DTS:To="Package\REG_Server_Master" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{B9F3129B-C95D-470D-8310-BC707E414B72}"
       DTS:From="Package\REG_Server_Master"
-      DTS:To="Package\SQL_Turbo_Shredder"
-      DTS:Value="2"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
-      DTS:DTSID="{B9F3129B-C95D-470D-8310-BC707E414B72}"
-      DTS:CreationName="" />
+      DTS:To="Package\SQL_Turbo_Shredder"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{7784FFFA-8861-4536-8EED-D2274C6A7AF2}"
       DTS:From="Package\REG_Server_Master"
-      DTS:To="Package\Acquire SSRS Reports"
-      DTS:Value="2"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
-      DTS:DTSID="{7784FFFA-8861-4536-8EED-D2274C6A7AF2}"
-      DTS:CreationName="" />
+      DTS:To="Package\Acquire SSRS Reports"
+      DTS:Value="2" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{8F0C2687-1C22-4276-B824-D0AB22D0D68B}"
       DTS:EventID="0"
       DTS:EventName="OnError"
-      DTS:LocaleID="-1"
-      DTS:DTSID="{8F0C2687-1C22-4276-B824-D0AB22D0D68B}"
-      DTS:CreationName="OnError">
+      DTS:LocaleID="-1">
       <DTS:Variables>
         <DTS:Variable
-          DTS:Namespace="System"
-          DTS:IncludeInDebugDump="6789"
-          DTS:ObjectName="Propagate"
-          DTS:DTSID="{60164258-D36E-4A0E-9718-811AD2BBD250}"
+          DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:CreationName="">
+          DTS:DTSID="{60164258-D36E-4A0E-9718-811AD2BBD250}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
           <DTS:VariableValue
             DTS:DataType="11">-1</DTS:VariableValue>
         </DTS:Variable>
@@ -530,13 +534,13 @@ GO</DTS:VariableValue>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Log Errors"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fb84473c-5c7d-4e06-9b5a-78e80e92a895}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Errors"
-          DTS:DTSID="{fb84473c-5c7d-4e06-9b5a-78e80e92a895}"
-          DTS:Description="Execute SQL Task"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData

@@ -12,8 +12,8 @@
   DTS:ObjectName="SUB_Index_Integrity"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="238"
-  DTS:VersionGUID="{4DFE3BF9-A2AD-4439-9F2B-328A9989FAF2}">
+  DTS:VersionBuild="240"
+  DTS:VersionGUID="{596497D3-C728-4C8A-8FD5-041346300A17}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4995,9 +4995,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="392.29640625,-52.25,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5032,7 +5030,7 @@ WHERE TMP.Index_Type = 0</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-217.8442578125,-151.349514563107,186.188515625,11.609375"
+              BoundingBox="-197.95890625,-151.349514563107,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5068,7 +5066,7 @@ WHERE TMP.Index_Type = 0</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="37.6557421875,-62.8106796116505,186.188515625,11.609375"
+              BoundingBox="57.54109375,-62.8106796116505,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5103,9 +5101,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-185.95359375,-15.568359375,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -5139,9 +5135,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5163,9 +5157,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -5191,9 +5183,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -5201,7 +5191,7 @@ WHERE TMP.Index_Type = 0</property>
           ParentId="Package\Execute Index Metric Capture"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="210,408"
+          PanelSize="210,409"
           Size="210,452"
           Id="44b4fa3f-0d47-413f-89ff-95a69978930d"
           TopLeft="539.5,5.49999999999989">
@@ -5246,9 +5236,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -5274,9 +5262,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5298,9 +5284,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.45359375,21.4658203125,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -5308,7 +5292,7 @@ WHERE TMP.Index_Type = 0</property>
           ParentId="Package\Execute Index Metric Capture"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="206,408"
+          PanelSize="206,409"
           Size="206,452"
           Id="7c8b7b29-6115-4fea-a804-83fb07448900"
           TopLeft="810.5,5.49999999999989">
@@ -5416,9 +5400,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5454,42 +5436,6 @@ WHERE TMP.Index_Type = 0</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="322.399427083333,-59.2472844701047,126.8678125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output]"
-          TopLeft="949.833333333333,210.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-298.333333333333,-114.5"
-              Start="0,0"
-              End="-298.333333333333,-107">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-60.0993227990971" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-60.0993227990971"
-                    Point2="0,-64.0993227990971"
-                    Point3="-4,-64.0993227990971" />
-                  <mssgle:LineSegment
-                    End="-294.333333333333,-64.0993227990971" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-294.333333333333,-64.0993227990971"
-                    Point2="-298.333333333333,-64.0993227990971"
-                    Point3="-298.333333333333,-68.0993227990971" />
-                  <mssgle:LineSegment
-                    End="-298.333333333333,-107" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="184.374427083333,-41.2475570032573,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5530,6 +5476,42 @@ WHERE TMP.Index_Type = 0</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\TRK_0350_OIM_Insert.Paths[OLE DB Destination Error Output]"
+          TopLeft="949.833333333333,210.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-298.333333333333,-114.5"
+              Start="0,0"
+              End="-298.333333333333,-107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-60.0993227990971" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-60.0993227990971"
+                    Point2="0,-64.0993227990971"
+                    Point3="-4,-64.0993227990971" />
+                  <mssgle:LineSegment
+                    End="-294.333333333333,-64.0993227990971" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-294.333333333333,-64.0993227990971"
+                    Point2="-298.333333333333,-64.0993227990971"
+                    Point3="-298.333333333333,-68.0993227990971" />
+                  <mssgle:LineSegment
+                    End="-298.333333333333,-107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="184.374427083333,-41.2475570032573,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\TRK_0350_OIM_Insert.Paths[Multicast Output 3]"
           TopLeft="380.666666666667,97">
           <EdgeLayout.Curve>
@@ -5560,9 +5542,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -5600,9 +5580,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5624,9 +5602,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5648,9 +5624,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -5703,9 +5677,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5727,9 +5699,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -5755,9 +5725,7 @@ WHERE TMP.Index_Type = 0</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout

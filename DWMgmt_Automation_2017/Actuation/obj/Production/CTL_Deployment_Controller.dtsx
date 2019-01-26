@@ -39,7 +39,7 @@
         DTS:Name="ConnectionString">"Data Source="+ @[$Project::DestinationServer] +";Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;MARS Connection=True;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=CORRUSCANT\IMPERIAL_SENATE;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;MARS Connection=True;" />
+          DTS:ConnectionString="Data Source=CORRUSCANT\MOS_EISLEY;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;MARS Connection=True;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>

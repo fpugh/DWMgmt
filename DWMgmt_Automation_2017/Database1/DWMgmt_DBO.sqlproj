@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DWMgmt_DBO</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{12546bfe-26be-48ea-bd29-b86e629fa8cd}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Database1</RootNamespace>
+    <AssemblyName>Database1</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetDatabase>Database1</TargetDatabase>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="TMP\" />
+    <Folder Include="TMP\Tables\" />
+    <Folder Include="LIB\" />
+    <Folder Include="LIB\Tables\" />
+    <Folder Include="ECO\" />
+    <Folder Include="ECO\Tables\" />
+    <Folder Include="CAT\" />
+    <Folder Include="CAT\Tables\" />
+    <Folder Include="LIB\Views\" />
+    <Folder Include="CAT\Views\" />
+    <Folder Include="Storage\" />
+    <Folder Include="LIB\Functions\" />
+    <Folder Include="LIB\Stored Procedures\" />
+    <Folder Include="CAT\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="TMP\Tables\REG_0600_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0500_0501_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0300_0401_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0300_0300_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0204_0300_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0203_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0202_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0201_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0103_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0102_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0101_Insert.sql" />
+    <Build Include="TMP\Tables\REG_0100_0200_Insert.sql" />
+    <Build Include="TMP\Tables\XML_String_Map.sql" />
+    <Build Include="TMP\Tables\XML_PropertyMap.sql" />
+    <Build Include="TMP\Tables\XML_Property_Owners.sql" />
+    <Build Include="TMP\Tables\XML_Property_Map.sql" />
+    <Build Include="TMP\Tables\XML_Property_Bounds.sql" />
+    <Build Include="TMP\Tables\XML_Process_Hash.sql" />
+    <Build Include="TMP\Tables\XML_Parsed_Segments.sql" />
+    <Build Include="TMP\Tables\XML_Parsed_Properties.sql" />
+    <Build Include="TMP\Tables\XML_Parsed_Nodes.sql" />
+    <Build Include="TMP\Tables\XML_Nodes.sql" />
+    <Build Include="TMP\Tables\TXT_String_Map.sql" />
+    <Build Include="TMP\Tables\TXT_Process_Hash.sql" />
+    <Build Include="TMP\Tables\TXT_Parsed_Segments.sql" />
+    <Build Include="TMP\Tables\TRK_0354_Value_Hash_Objects.sql" />
+    <Build Include="TMP\Tables\TRK_0354_Value_Hash.sql" />
+    <Build Include="TMP\Tables\TRK_0354_Long_String_Values.sql" />
+    <Build Include="TMP\Tables\TRK_0350_Index_Metric_Insert.sql" />
+    <Build Include="TMP\Tables\TRK_0300_Utiliztion_Insert.sql" />
+    <Build Include="TMP\Tables\SQL_String_Map.sql" />
+    <Build Include="TMP\Tables\SQL_Process_Hash.sql" />
+    <Build Include="TMP\Tables\TMP_File_Stage.sql" />
+    <Build Include="TMP\Tables\SQL_Parsed_Segments.sql" />
+    <Build Include="TMP\Tables\Object_Latch_Insert.sql" />
+    <Build Include="TMP\Tables\Database_Latch_Insert.sql" />
+    <Build Include="TMP\Tables\Column_Latch_Insert.sql" />
+    <Build Include="TMP\Tables\BatchSort.sql" />
+    <Build Include="TMP\Tables\BatchEstimates.sql" />
+    <Build Include="TMP\Tables\REG_Trigger_Insert.sql" />
+    <Build Include="TMP\Tables\REG_Index_Insert.sql" />
+    <Build Include="TMP\Tables\REG_Foreign_Key_insert.sql" />
+    <Build Include="TMP\Tables\REG_Constraint_Insert.sql" />
+    <Build Include="LIB\Tables\REG_Rules.sql" />
+    <Build Include="LIB\Tables\REG_Graphemes.sql" />
+    <Build Include="LIB\Tables\HSH_Word_Categories.sql" />
+    <Build Include="LIB\Tables\REG_Documents.sql" />
+    <Build Include="LIB\Tables\HSH_Phrases.sql" />
+    <Build Include="LIB\Tables\REG_Dictionary.sql" />
+    <Build Include="LIB\Tables\REG_Collections.sql" />
+    <Build Include="LIB\Tables\REG_Categories.sql" />
+    <Build Include="LIB\Tables\HSH_Collection_Source_Catalog.sql" />
+    <Build Include="LIB\Tables\REG_Alphabet.sql" />
+    <Build Include="LIB\Tables\HSH_Collection_Rules.sql" />
+    <Build Include="LIB\Tables\HSH_Collection_Lexicon.sql" />
+    <Build Include="LIB\Tables\HSH_Collection_Hierarchy.sql" />
+    <Build Include="LIB\Tables\HSH_Collection_Graphemes.sql" />
+    <Build Include="LIB\Tables\HSH_Collection_Documents.sql" />
+    <Build Include="LIB\Tables\HSH_Collection_Alphabet.sql" />
+    <Build Include="LIB\Tables\REG_Sources.sql" />
+    <Build Include="LIB\Tables\Internal_String_Intake_Stack.sql" />
+    <Build Include="LIB\Tables\External_String_Intake_Stack.sql" />
+    <Build Include="ECO\Tables\REG_1104_XML_Property_Values.sql" />
+    <Build Include="ECO\Tables\REG_1103_XML_Node_Properties.sql" />
+    <Build Include="ECO\Tables\REG_1102_XML_Nodes.sql" />
+    <Build Include="ECO\Tables\REG_1101_XML_Namespaces.sql" />
+    <Build Include="ECO\Tables\REG_1100_XML_Schema_Registry.sql" />
+    <Build Include="ECO\Tables\LNK_1100_LIB_Docuent_Paths.sql" />
+    <Build Include="ECO\Tables\LNK_1100_1104_Node_Properties.sql" />
+    <Build Include="ECO\Tables\LNK_1100_1102_Schema_Heirarchy.sql" />
+    <Build Include="ECO\Tables\LNK_1100_1101_Schema_Namespaces.sql" />
+    <Build Include="CAT\Tables\REG_0301_Index_Details.sql" />
+    <Build Include="CAT\Tables\REG_0300_Object_Registry.sql" />
+    <Build Include="CAT\Tables\TRK_0350_Object_Index_Metrics.sql" />
+    <Build Include="CAT\Tables\LNK_Tier4_Peers.sql" />
+    <Build Include="CAT\Tables\REG_0205_Database_Maintenance_Properties_Old.sql" />
+    <Build Include="CAT\Tables\TRK_0300_Object_Utiliztion_Metrics.sql" />
+    <Build Include="CAT\Tables\REG_0204_Database_Schemas.sql" />
+    <Build Include="CAT\Tables\TRK_0205_DB_Maintenance_Job_Tracking.sql" />
+    <Build Include="CAT\Tables\REG_0203_Database_Files.sql" />
+    <Build Include="CAT\Tables\LNK_Tier3_Peers.sql" />
+    <Build Include="CAT\Tables\TRK_0203_Database_File_Changes.sql" />
+    <Build Include="CAT\Tables\REG_0205_Database_Maintenance_Properties.sql" />
+    <Build Include="CAT\Tables\LNK_Tier2_Peers.sql" />
+    <Build Include="CAT\Tables\REG_0202_Database_Extended_Properties_B.sql" />
+    <Build Include="CAT\Tables\LNK_Tier1_Peers.sql" />
+    <Build Include="CAT\Tables\LNK_T500_Peers.sql" />
+    <Build Include="CAT\Tables\REG_0201_Database_Extended_Properties_A.sql" />
+    <Build Include="CAT\Tables\REG_0200_Database_Registry.sql" />
+    <Build Include="CAT\Tables\LNK_0300_0600_Object_Code_Sections.sql" />
+    <Build Include="CAT\Tables\REG_0103_Server_Providers.sql" />
+    <Build Include="CAT\Tables\REG_0600_Object_Code_Library.sql" />
+    <Build Include="CAT\Tables\LNK_0300_0500_Object_Parameter_Collection.sql" />
+    <Build Include="CAT\Tables\REG_0102_Publication_Replication_Server_Settings.sql" />
+    <Build Include="CAT\Tables\REG_0501_Parameter_Properties.sql" />
+    <Build Include="CAT\Tables\LNK_0300_0400_Object_Column_Collection.sql" />
+    <Build Include="CAT\Tables\REG_0500_Parameter_Registry.sql" />
+    <Build Include="CAT\Tables\LNK_0300_0300_Object_Dependencies.sql" />
+    <Build Include="CAT\Tables\REG_0101_Linked_Server_Settings.sql" />
+    <Build Include="CAT\Tables\REG_0402_Column_Index_Details.sql" />
+    <Build Include="CAT\Tables\REG_0100_Server_Registry.sql" />
+    <Build Include="CAT\Tables\LNK_0204_0300_Schema_Binding.sql" />
+    <Build Include="CAT\Tables\REG_0401_Column_Properties.sql" />
+    <Build Include="CAT\Tables\REG_0400_Column_Registry.sql" />
+    <Build Include="CAT\Tables\LNK_0200_0205_Database_Maintenance_Links.sql" />
+    <Build Include="CAT\Tables\TRK_SSIS_Import_Errors.sql" />
+    <Build Include="CAT\Tables\TRK_SSIS_Import_Error_Summary.sql" />
+    <Build Include="CAT\Tables\LNK_0100_0200_Server_Databases.sql" />
+    <Build Include="CAT\Tables\TRK_SSIS_Import_Audit.sql" />
+    <Build Include="CAT\Tables\REG_0302_Foreign_Key_Details.sql" />
+    <Build Include="CAT\Tables\TRK_0454_Column_Metrics.sql" />
+    <Build Include="LIB\Views\VC_2313_Collection_Lexicon.sql" />
+    <Build Include="LIB\Views\VI_2011_Grapheme_List.sql" />
+    <Build Include="LIB\Views\VC_2100_Meta_Dictionary.sql" />
+    <Build Include="LIB\Views\VC_2110_Collection_Alphabet.sql" />
+    <Build Include="LIB\Views\VI_2119_Simple_Collection_List.sql" />
+    <Build Include="LIB\Views\VC_2211_Collection_Graphemes.sql" />
+    <Build Include="CAT\Views\VH_0343_Index_Column_Latches.sql" />
+    <Build Include="CAT\Views\VT_0302_New_Objects_Last_Seven_Days.sql" />
+    <Build Include="CAT\Views\VI_0360_Object_Code_Reference.sql" />
+    <Build Include="CAT\Views\VI_0354_Object_Data_Profile.sql" />
+    <Build Include="CAT\Views\VI_0361_Code_Object_Reference.sql" />
+    <Build Include="CAT\Views\VI_0345_Foreign_Key_Column_Latches.sql" />
+    <Build Include="CAT\Views\VI_0364_Code_JOIN_Reference.sql" />
+    <Build Include="CAT\Views\VH_Tier3_Full_Historic.sql" />
+    <Build Include="CAT\Views\VH_0100_Server_Database_Reference.sql" />
+    <Build Include="CAT\Views\VM_0207_Database_Backup_Assessor.sql" />
+    <Build Include="CAT\Views\VM_0203_Database_File_Change_Assessor.sql" />
+    <Build Include="CAT\Views\VI_0100_Server_Database_Reference.sql" />
+    <Build Include="CAT\Views\VT_0203_Database_File_Size_Tracking.sql" />
+    <Build Include="CAT\Views\VM_0454_Data_Profile_Assessor.sql" />
+    <Build Include="CAT\Views\VI_0201_Schema_Inventory_Core.sql" />
+    <Build Include="CAT\Views\VH_0361_Code_Object_Reference.sql" />
+    <Build Include="CAT\Views\VH_0360_Object_Code_Reference.sql" />
+    <Build Include="CAT\Views\VH_0344_Constraint_Column_Latches.sql" />
+    <Build Include="CAT\Views\VM_1454_Data_Model_Overview.sql" />
+    <Build Include="CAT\Views\VH_0330_Object_Dependencies.sql" />
+    <Build Include="CAT\Views\VI_1454_Data_Model_Overview.sql" />
+    <Build Include="CAT\Views\VI_0362_Code_INTO_Reference.sql" />
+    <Build Include="CAT\Views\VI_Tier3_Full_Current.sql" />
+    <Build Include="CAT\Views\VI_Tier2_Full_Current.sql" />
+    <Build Include="CAT\Views\VH_Tier4_Full_Historic.sql" />
+    <Build Include="CAT\Views\VI_0344_Constraint_Column_Latches.sql" />
+    <Build Include="CAT\Views\VI_0363_Code_WHERE_Reference.sql" />
+    <Build Include="CAT\Views\VH_0363_Code_Column_Reference.sql" />
+    <Build Include="CAT\Views\VI_Tier1_Full_Current.sql" />
+    <Build Include="CAT\Views\VM_0350_Index_Maintenance_Assessor.sql" />
+    <Build Include="CAT\Views\VT_0301_Dropped_Objects_Last_Seven_Days.sql" />
+    <Build Include="CAT\Views\VI_0200_Column_Tier_Latches.sql" />
+    <Build Include="CAT\Views\VI_0101_Database_Compatibility_List.sql" />
+    <Build Include="CAT\Views\VH_0300_Full_Object_Map.sql" />
+    <Build Include="CAT\Views\VH_0200_Column_Tier_Latches.sql" />
+    <Build Include="CAT\Views\VH_Tier2_Full_Historic.sql" />
+    <Build Include="CAT\Views\VH_Tier1_Full_Historic.sql" />
+    <Build Include="CAT\Views\VI_0350_Index_Integrity_Report.sql" />
+    <Build Include="CAT\Views\VI_0343_Index_Column_Latches.sql" />
+    <Build Include="CAT\Views\VI_0330_Object_Dependencies.sql" />
+    <Build Include="CAT\Views\VI_0300_Full_Object_Map.sql" />
+    <Build Include="CAT\Views\VI_Tier4_Full_Current.sql" />
+    <Build Include="CAT\Views\VT_0331_Table_Disparity.sql" />
+    <Build Include="CAT\Views\VH_0354_Object_Data_Profile.sql" />
+    <Build Include="CAT\Views\VH_0345_Foreign_Key_Column_Latches.sql" />
+    <Build Include="CAT\Views\VI_0361_Code_FROM_Reference.sql" />
+    <Build Include="CAT\Views\VI_0363_Code_Column_Reference.sql" />
+    <Build Include="CAT\Views\VI_0205_Maintenance_Job_Perfomance_History.sql" />
+    <Build Include="CAT\Views\VI_0205_DB_Maintenance_Plan.sql" />
+    <Build Include="CAT\Views\VT_0300_Object_Utilization_Vectors.sql" />
+    <Build Include="CAT\Views\VT_0241_Schema_Inventory_Tracking.sql" />
+    <Build Include="Storage\CodeContent.sql" />
+    <Build Include="FullTextIndexes.sql" />
+    <Build Include="LIB\Functions\Decimator.sql" />
+    <Build Include="LIB\Functions\Levenshtein.sql" />
+    <Build Include="LIB\Functions\TRK_0354_LSV_Restringer.sql" />
+    <Build Include="LIB\Functions\Document_Directory_Structure.sql" />
+    <Build Include="LIB\Functions\SplitTable.sql" />
+    <Build Include="LIB\Stored Procedures\CUR_Txt_GlyphStripper.sql" />
+    <Build Include="LIB\Stored Procedures\CUR_DB_Collection_Currator.sql" />
+    <Build Include="LIB\Stored Procedures\TXT_010_Text_Process_Hash_Preparation.sql" />
+    <Build Include="LIB\Stored Procedures\TXT_009_File_System_Logging.sql" />
+    <Build Include="LIB\Stored Procedures\TXT_011_Text_Process_Hash_Preparation.sql" />
+    <Build Include="LIB\Stored Procedures\TXT_012_String_Processing.sql" />
+    <Build Include="LIB\Stored Procedures\TXT_011_String_Mapper.sql" />
+    <Build Include="LIB\Stored Procedures\XML_012_Shredder.sql" />
+    <Build Include="LIB\Stored Procedures\TXT_010_File_System_Logging.sql" />
+    <Build Include="LIB\Stored Procedures\SQL_012_Shredder.sql" />
+    <Build Include="LIB\Stored Procedures\SQL_010_Module_Logging.sql" />
+    <Build Include="LIB\Stored Procedures\MP_Load_Library_Defaults.sql" />
+    <Build Include="LIB\Stored Procedures\MP_Library_Content_Collection_Processing.sql" />
+    <Build Include="CAT\Stored Procedures\SUB_1350_Index_Metric_Capture_and_Load.sql" />
+    <Build Include="CAT\Stored Procedures\SUB_1203_Database_File_Change_Capture_and_Load.sql" />
+    <Build Include="CAT\Stored Procedures\SUB_1300_Object_Utilization_Capture_and_Load.sql" />
+    <Build Include="CAT\Stored Procedures\CRITICAL_FIELD_ANALYSIS.sql" />
+    <Build Include="CAT\Stored Procedures\SUB_1354_Data_Profile_Executor.sql" />
+    <Build Include="CAT\Stored Procedures\SUB_1350_Index_Maintenance_Executor.sql" />
+    <Build Include="CAT\Stored Procedures\SUB_1207_Database_Backup_Executor.sql" />
+    <Build Include="CAT\Stored Procedures\SUB_0350_Index_Metric_Capture_and_Load.sql" />
+    <Build Include="CAT\Stored Procedures\SUB_0300_Object_Utilization_Capture_and_Load.sql" />
+    <Build Include="CAT\Stored Procedures\SUB_0203_Database_File_Change_Capture_and_Load.sql" />
+    <Build Include="CAT\Stored Procedures\RPT_0354_Data_Quality_Overview.sql" />
+    <Build Include="CAT\Stored Procedures\RPT_0350_Full_Object_Data_Profile.sql" />
+    <Build Include="CAT\Stored Procedures\RPT_0334_Relational_Integrity.sql" />
+    <Build Include="CAT\Stored Procedures\RPT_0306_Referencing_Code.sql" />
+    <Build Include="CAT\Stored Procedures\RPT_0304_Constraint_Enforcement.sql" />
+    <Build Include="CAT\Stored Procedures\RPT_0303_Index_Coverage.sql" />
+    <Build Include="CAT\Stored Procedures\RPT_0301_Data_Footprint.sql" />
+    <Build Include="CAT\Stored Procedures\RPT_0300_Object_Lookup.sql" />
+    <Build Include="CAT\Stored Procedures\RPT_0200_Tier_Inventory_Summary.sql" />
+    <Build Include="CAT\Stored Procedures\MP_Load_Registry_Defaults.sql" />
+    <Build Include="CAT\Stored Procedures\MP_DataDiver_2022.sql" />
+    <Build Include="CAT\Stored Procedures\MP_008_INDEX_MAINTENANCE_DRIVER.sql" />
+    <Build Include="CAT\Stored Procedures\MP_007_MAINTENANCE_JOB_LOGGER.sql" />
+    <Build Include="CAT\Stored Procedures\MP_006_CLEAR_INVENTORY.sql" />
+    <Build Include="CAT\Stored Procedures\MP_005_OBJECT_METRIC_CAPTURE_DRIVER.sql" />
+    <Build Include="CAT\Stored Procedures\MP_003_CENTRAL_REGISTRY_PROCESS.sql" />
+    <Build Include="CAT\Stored Procedures\MP_002_DATABASE_CENSUS.sql" />
+    <Build Include="CAT\Stored Procedures\MP_001_SERVER_CENSUS.sql" />
+    <Build Include="CAT\Stored Procedures\MP_000_FULL_SERVER_SCAN.sql" />
+    <Build Include="Security\TMP.sql" />
+    <Build Include="Security\LIB.sql" />
+    <Build Include="Security\ECO.sql" />
+    <Build Include="Security\CAT.sql" />
+  </ItemGroup>
+</Project>

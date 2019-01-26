@@ -2,15 +2,10 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Actuation</Name>
-    <LastWriteTime>2018-11-19T01:25:33.0472479Z</LastWriteTime>
+    <LastWriteTime>2018-11-20T04:41:38.1554336Z</LastWriteTime>
     <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
-    <ProjectBuildItemInfo>
-      <Name>REG_Database_Child.dtsx</Name>
-      <LastWriteTime>2018-04-29T20:09:23.20644Z</LastWriteTime>
-      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>SQL_Turbo_Shredder.dtsx</Name>
       <LastWriteTime>2018-10-21T05:15:28.3140899Z</LastWriteTime>
@@ -43,17 +38,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>SUB_Index_Integrity.dtsx</Name>
-      <LastWriteTime>2018-09-29T17:40:17.6595893Z</LastWriteTime>
+      <LastWriteTime>2018-11-20T04:34:23.3558211Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>REG_Server_Master.dtsx</Name>
-      <LastWriteTime>2018-09-17T05:12:01.8291745Z</LastWriteTime>
+      <LastWriteTime>2018-11-20T05:03:03.2267225Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>REG_Data_Profile.dtsx</Name>
-      <LastWriteTime>2018-10-30T23:31:44.0438475Z</LastWriteTime>
+      <LastWriteTime>2018-11-20T04:41:22.6495256Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -78,7 +73,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CTL_Deployment_Controller.dtsx</Name>
-      <LastWriteTime>2018-09-17T04:59:48.5550809Z</LastWriteTime>
+      <LastWriteTime>2018-11-19T02:44:50.4262126Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -89,6 +84,11 @@
     <ProjectBuildItemInfo>
       <Name>CTL_Index_Maintenance_Controller.dtsx</Name>
       <LastWriteTime>2018-09-30T04:52:12.5629503Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>SUB_Database_Child.dtsx</Name>
+      <LastWriteTime>2018-11-20T04:41:38.0954423Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

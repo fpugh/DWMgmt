@@ -46,6 +46,7 @@
     <OverwriteDatasets>False</OverwriteDatasets>
     <OverwriteDataSources>False</OverwriteDataSources>
     <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform />
     <TargetReportFolder>Observation</TargetReportFolder>
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>

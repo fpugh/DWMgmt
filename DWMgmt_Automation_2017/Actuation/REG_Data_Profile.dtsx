@@ -8,14 +8,14 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{F03AA1C5-FF87-408C-8289-AFC3DD8F3DC5}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="REG_Data_Profile"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="429"
-  DTS:VersionGUID="{D09C6608-8E33-42FC-A4AD-2F9C384E57A2}">
+  DTS:VersionBuild="431"
+  DTS:VersionGUID="{E9146022-B8C3-4226-B1F6-E944B98C456B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -42,7 +42,7 @@
         DTS:Name="ConnectionString">@[$Project::RootDirectory] +@[$Project::DTSXFileDirectory] +"SUB_Value_Scraper.dtsx"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="E:\Mos Eisley\Git\DWMgmt_Projects\DWMgmt_Automation_2012\Actuation\SUB_Value_Scraper.dtsx" />
+          DTS:ConnectionString="E:\Mos Eisley\Git\DWMgmt_Projects\DWMgmt_Automation_2017\Actuation\SUB_Value_Scraper.dtsx" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -210,7 +210,7 @@ AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Na
           <components>
             <component
               refId="Package\Execute Mass Value Hash\Derived Column"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Derived Column"
@@ -307,7 +307,7 @@ AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Na
             </component>
             <component
               refId="Package\Execute Mass Value Hash\TRK_0354_Valuehash_Objects"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_0354_Valuehash_Objects"
@@ -496,7 +496,7 @@ AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Na
             </component>
             <component
               refId="Package\Execute Mass Value Hash\Value Hash Candidate Selection"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="Value Hash Candidate Selection"
@@ -736,7 +736,7 @@ AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Na
           <components>
             <component
               refId="Package\Process Value Hash Content\Audit Aggregate"
-              componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+              componentClassID="DTSTransform.Aggregate.3"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
               name="Audit Aggregate"
@@ -955,7 +955,7 @@ AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Na
             </component>
             <component
               refId="Package\Process Value Hash Content\Audit Insert Split 0454"
-              componentClassID="{EC139FBC-694E-490B-8EA7-35690FB0F445}"
+              componentClassID="DTSTransform.Multicast.3"
               contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
               name="Audit Insert Split 0454">
@@ -1081,7 +1081,7 @@ AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Na
             </component>
             <component
               refId="Package\Process Value Hash Content\Audit Set 0454"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Audit Set 0454"
@@ -1247,7 +1247,7 @@ AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Na
             </component>
             <component
               refId="Package\Process Value Hash Content\Audit Set Errors"
-              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              componentClassID="DTSTransform.DerivedColumn.3"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
               name="Audit Set Errors"
@@ -1390,7 +1390,7 @@ AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Na
             </component>
             <component
               refId="Package\Process Value Hash Content\Error Aggregate"
-              componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+              componentClassID="DTSTransform.Aggregate.3"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
               name="Error Aggregate"
@@ -1671,7 +1671,7 @@ AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Na
             </component>
             <component
               refId="Package\Process Value Hash Content\Primary Data Quality Analysis"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="Primary Data Quality Analysis"
@@ -1913,7 +1913,7 @@ GROUP BY VHO.LNK_T4_ID</property>
             </component>
             <component
               refId="Package\Process Value Hash Content\TRK_0454_Column_Metrics"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_0454_Column_Metrics"
@@ -2088,7 +2088,7 @@ GROUP BY VHO.LNK_T4_ID</property>
             </component>
             <component
               refId="Package\Process Value Hash Content\TRK_Data_Audit_Import"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_Data_Audit_Import"
@@ -2253,7 +2253,7 @@ GROUP BY VHO.LNK_T4_ID</property>
             </component>
             <component
               refId="Package\Process Value Hash Content\TRK_SSIS_Import_Errors"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="TRK_SSIS_Import_Errors"
@@ -2437,7 +2437,7 @@ GROUP BY VHO.LNK_T4_ID</property>
             </component>
             <component
               refId="Package\Process Value Hash Content\Union All"
-              componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+              componentClassID="DTSTransform.UnionAll.3"
               contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
               name="Union All"
@@ -2520,22 +2520,22 @@ GROUP BY VHO.LNK_T4_ID</property>
           </components>
           <paths>
             <path
-              refId="Package\Process Value Hash Content.Paths[Aggregate Output 11]"
+              refId="Package\Process Value Hash Content.Paths[Aggregate Output 1]"
               endId="Package\Process Value Hash Content\TRK_Data_Audit_Import.Inputs[OLE DB Destination Input]"
               name="Aggregate Output 1"
               startId="Package\Process Value Hash Content\Audit Aggregate.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\Process Value Hash Content.Paths[Aggregate Output 1]"
+              refId="Package\Process Value Hash Content.Paths[Aggregate Output 11]"
               endId="Package\Process Value Hash Content\TRK_SSIS_Import_Errors.Inputs[OLE DB Destination Input]"
               name="Aggregate Output 1"
               startId="Package\Process Value Hash Content\Error Aggregate.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\Process Value Hash Content.Paths[Derived Column Output1]"
+              refId="Package\Process Value Hash Content.Paths[Derived Column Output]"
               endId="Package\Process Value Hash Content\Error Aggregate.Inputs[Aggregate Input 1]"
               name="Derived Column Output"
               startId="Package\Process Value Hash Content\Audit Set Errors.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Process Value Hash Content.Paths[Derived Column Output]"
+              refId="Package\Process Value Hash Content.Paths[Derived Column Output1]"
               endId="Package\Process Value Hash Content\Audit Insert Split 0454.Inputs[Multicast Input 1]"
               name="Derived Column Output"
               startId="Package\Process Value Hash Content\Audit Set 0454.Outputs[Derived Column Output]" />
@@ -2550,12 +2550,12 @@ GROUP BY VHO.LNK_T4_ID</property>
               name="Multicast Output 2"
               startId="Package\Process Value Hash Content\Audit Insert Split 0454.Outputs[Multicast Output 2]" />
             <path
-              refId="Package\Process Value Hash Content.Paths[OLE DB Destination Error Output1]"
+              refId="Package\Process Value Hash Content.Paths[OLE DB Destination Error Output]"
               endId="Package\Process Value Hash Content\Union All.Inputs[Union All Input 1]"
               name="OLE DB Destination Error Output"
               startId="Package\Process Value Hash Content\TRK_Data_Audit_Import.Outputs[OLE DB Destination Error Output]" />
             <path
-              refId="Package\Process Value Hash Content.Paths[OLE DB Destination Error Output]"
+              refId="Package\Process Value Hash Content.Paths[OLE DB Destination Error Output1]"
               endId="Package\Process Value Hash Content\Union All.Inputs[Union All Input 3]"
               name="OLE DB Destination Error Output"
               startId="Package\Process Value Hash Content\TRK_0454_Column_Metrics.Outputs[OLE DB Destination Error Output]" />
@@ -2657,7 +2657,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_1"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2770,7 +2770,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_2"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2883,7 +2883,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_3"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="7">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3109,7 +3109,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_5"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3222,7 +3222,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_6"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3336,7 +3336,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_7"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3450,7 +3450,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_8"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -4333,7 +4333,7 @@ GROUP BY VHO.LNK_T4_ID</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process Value Hash Content.Paths[OLE DB Destination Error Output]"
+          Id="Package\Process Value Hash Content.Paths[OLE DB Destination Error Output1]"
           TopLeft="491,499">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4369,7 +4369,7 @@ GROUP BY VHO.LNK_T4_ID</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process Value Hash Content.Paths[OLE DB Destination Error Output1]"
+          Id="Package\Process Value Hash Content.Paths[OLE DB Destination Error Output]"
           TopLeft="178.5,435">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4441,7 +4441,7 @@ GROUP BY VHO.LNK_T4_ID</property>
           Id="Package\Process Value Hash Content\TRK_Data_Audit_Import"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Process Value Hash Content.Paths[Aggregate Output 11]"
+          Id="Package\Process Value Hash Content.Paths[Aggregate Output 1]"
           TopLeft="103,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4469,7 +4469,7 @@ GROUP BY VHO.LNK_T4_ID</property>
           Id="Package\Process Value Hash Content\Audit Set 0454"
           TopLeft="9.5,5.5" />
         <EdgeLayout
-          Id="Package\Process Value Hash Content.Paths[Derived Column Output]"
+          Id="Package\Process Value Hash Content.Paths[Derived Column Output1]"
           TopLeft="84,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4518,9 +4518,9 @@ GROUP BY VHO.LNK_T4_ID</property>
             <s:String>Package\Process Value Hash Content\Audit Aggregate</s:String>
             <s:String>Package\Process Value Hash Content.Paths[Multicast Output 2]</s:String>
             <s:String>Package\Process Value Hash Content\TRK_Data_Audit_Import</s:String>
-            <s:String>Package\Process Value Hash Content.Paths[Aggregate Output 11]</s:String>
+            <s:String>Package\Process Value Hash Content.Paths[Aggregate Output 1]</s:String>
             <s:String>Package\Process Value Hash Content\Audit Set 0454</s:String>
-            <s:String>Package\Process Value Hash Content.Paths[Derived Column Output]</s:String>
+            <s:String>Package\Process Value Hash Content.Paths[Derived Column Output1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -4536,7 +4536,7 @@ GROUP BY VHO.LNK_T4_ID</property>
           Id="Package\Process Value Hash Content\TRK_SSIS_Import_Errors"
           TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\Process Value Hash Content.Paths[Aggregate Output 1]"
+          Id="Package\Process Value Hash Content.Paths[Aggregate Output 11]"
           TopLeft="105,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4600,7 +4600,7 @@ GROUP BY VHO.LNK_T4_ID</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process Value Hash Content.Paths[Derived Column Output1]"
+          Id="Package\Process Value Hash Content.Paths[Derived Column Output]"
           TopLeft="105,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4636,10 +4636,10 @@ GROUP BY VHO.LNK_T4_ID</property>
             <s:String>Package\Process Value Hash Content\Audit Set Errors</s:String>
             <s:String>Package\Process Value Hash Content\Error Aggregate</s:String>
             <s:String>Package\Process Value Hash Content\TRK_SSIS_Import_Errors</s:String>
-            <s:String>Package\Process Value Hash Content.Paths[Aggregate Output 1]</s:String>
+            <s:String>Package\Process Value Hash Content.Paths[Aggregate Output 11]</s:String>
             <s:String>Package\Process Value Hash Content\Union All</s:String>
             <s:String>Package\Process Value Hash Content.Paths[Union All Output 1]</s:String>
-            <s:String>Package\Process Value Hash Content.Paths[Derived Column Output1]</s:String>
+            <s:String>Package\Process Value Hash Content.Paths[Derived Column Output]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>

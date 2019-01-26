@@ -14,8 +14,8 @@
   DTS:ObjectName="REG_Data_Profile"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="429"
-  DTS:VersionGUID="{D09C6608-8E33-42FC-A4AD-2F9C384E57A2}">
+  DTS:VersionBuild="430"
+  DTS:VersionGUID="{35A723D4-FEBA-420E-99F8-8159DE6DB629}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
         DTS:Name="ConnectionString">"Data Source="+ @[$Package::TargetServer] +";Initial Catalog="+ @[$Package::TargetDatabase] +";Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=CORRUSCANT\MOS_EISLEY;Initial Catalog=DWMgmt;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=CORRUSCANT\MOS_EISLEY;Initial Catalog=Denver_Stats;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -84,7 +84,7 @@
       DTS:ObjectName="NamePart">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">VI_0300_Full_Object_Map</DTS:Property>
+        DTS:Name="ParameterValue">Libraries</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -93,7 +93,7 @@
       DTS:ObjectName="TargetDatabase">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">DWMgmt</DTS:Property>
+        DTS:Name="ParameterValue">Denver_Stats</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -159,8 +159,8 @@ FROM [DWMgmt].[CAT].[VI_0200_Column_Tier_Latches] AS ctl
 WHERE ctl.[REG_Object_Type] IN ('U','V')
 AND ctl.[REG_Column_Type] NOT IN (34,35,99,129,130,240,241)
 AND ctl.[REG_Server_Name] = 'CORRUSCANT\MOS_EISLEY'
-AND ctl.[REG_Database_Name] =  'DWMgmt'
-AND CHARINDEX('VI_0300_Full_Object_Map', REPLACE(REPLACE(ctl.[Fully_Qualified_Name],'[',''),']','')) &gt; 0
+AND ctl.[REG_Database_Name] =  'Denver_Stats'
+AND CHARINDEX('Libraries', REPLACE(REPLACE(ctl.[Fully_Qualified_Name],'[',''),']','')) &gt; 0
 </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
@@ -2657,7 +2657,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_1"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2770,7 +2770,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_2"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2883,7 +2883,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_3"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2996,7 +2996,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_4"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3109,7 +3109,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_5"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3222,7 +3222,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_6"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3336,7 +3336,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_7"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3450,7 +3450,7 @@ GROUP BY VHO.LNK_T4_ID</property>
               DTS:LocaleID="-1"
               DTS:ObjectName="Statement_Prepare_8"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="7">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
